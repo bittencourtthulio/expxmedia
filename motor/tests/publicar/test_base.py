@@ -270,3 +270,50 @@ def test_peca_nao_aprovada_nao_publica(instalacao, servidor_stub):
         base.publicar(instalacao, peca["peca_id"], adaptador=adaptador)
     assert erro.value.codigo == "peca_nao_aprovada"
     assert adaptador.pedidos == []
+
+
+# --- B-02: aviso de escolha implícita (CONTRATO-capacidades, regra 2) -----------------------
+
+META = "META_GRAPH_TOKEN=token-falso-meta\nMETA_IG_USER_ID=17800000000000b2\n"
+
+
+class Seco(AdaptadorHttp):
+    def enviar(self, pedido):
+        self.pedidos.append(pedido)
+        return base.Resultado(canais={}, payload={"caption": "x"})
+
+
+def _aviso_implicito(avisos, variavel="PROVEDOR_PUBLICAR"):
+    return [a for a in avisos if variavel in a and "expxflow" in a and "meta_graph" in a]
+
+
+def test_dry_run_com_dois_provedores_sem_provedor_publicar_devolve_o_aviso(instalacao, servidor_stub):
+    _env(instalacao, servidor_stub.url, META)
+    peca_id = _peca_aprovada(instalacao)
+    saida = base.publicar(instalacao, peca_id, adaptador=Seco(servidor_stub.url), dry_run=True)
+    assert saida["provedor"] == "expxflow"
+    assert len(_aviso_implicito(saida["avisos"])) == 1, saida
+
+
+def test_envio_com_dois_provedores_sem_provedor_publicar_devolve_o_aviso(instalacao, servidor_stub):
+    _env(instalacao, servidor_stub.url, META)
+    servidor_stub.rota("POST", "/post-api", status=201,
+                       json={"success": True, "data": {"scheduled_post_id": "sched_b02"}})
+    peca_id = _peca_aprovada(instalacao)
+    saida = base.publicar(instalacao, peca_id, adaptador=AdaptadorHttp(servidor_stub.url))
+    assert saida["dry_run"] is False and saida["canais"]["instagram"]["estado"] == "agendada"
+    assert len(_aviso_implicito(saida["avisos"])) == 1, saida
+
+
+def test_provedor_publicar_explicito_nao_gera_aviso(instalacao, servidor_stub):
+    _env(instalacao, servidor_stub.url, META + "PROVEDOR_PUBLICAR=expxflow\n")
+    peca_id = _peca_aprovada(instalacao)
+    saida = base.publicar(instalacao, peca_id, adaptador=Seco(servidor_stub.url), dry_run=True)
+    assert saida["avisos"] == []
+
+
+def test_um_so_provedor_satisfeito_nao_gera_aviso(instalacao, servidor_stub):
+    _env(instalacao, servidor_stub.url)
+    peca_id = _peca_aprovada(instalacao)
+    saida = base.publicar(instalacao, peca_id, adaptador=Seco(servidor_stub.url), dry_run=True)
+    assert saida["avisos"] == []

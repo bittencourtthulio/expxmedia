@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-10
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-10.01
     titulo: "Cinco tipos sem chave"
     fase: F-10.1
-    status: pendente
+    status: concluida
     objetivo: "Produzir post unico, carrossel, carrossel misto, apresentacao, reel e aula com a Alma ficticia, sem chave e com o provedor de teste."
     arquivos:
       cria: [motor/tests/e2e/test_cinco_tipos.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/e2e/test_cinco_tipos.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-07.06, T-06.07, T-05.11, T-05.07, T-04.12]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-10.02
     titulo: "Publicacao em dry-run nos dois provedores"
     fase: F-10.1
-    status: pendente
+    status: concluida
     objetivo: "Publicar em dry-run um carrossel e um reel por Expx Flow e por Graph contra stubs."
     arquivos:
       cria: [motor/tests/e2e/test_publicacao.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/e2e/test_publicacao.py termina com 0 failed"
     depende_de: [T-08.07]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-10.03
     titulo: "Reel por referencia guiado pela skill"
     fase: F-10.1
-    status: pendente
+    status: concluida
     objetivo: "Executar a skill reel-por-referencia sobre a referencia local ../Instagram-Carrosseis/series/recriacoes/pedidos/r20260924-221743/referencia/video.mp4 (so entrada, nunca copiada para o repositorio), com a Alma ficticia e o provedor de teste, numa instalacao persistente em docs/nucleo-expxmedia/validacao/reel-por-referencia/ (o MP4 fica fora do git e e registrado por sha256), gravando leitura, codigo, previas, MP4 e revisao, e um teste que confere mecanicamente o resultado lendo desse caminho."
     arquivos:
       cria: [docs/nucleo-expxmedia/validacao/reel-por-referencia.md, motor/tests/e2e/test_validacao_referencia.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/e2e/test_validacao_referencia.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-09.06]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-10.04
     titulo: "Documentacao do nucleo"
     fase: F-10.2
-    status: pendente
+    status: concluida
     objetivo: "Documentar o motor, o CLI e o uso do plugin com claude --plugin-dir nucleo, e atualizar o README do repositorio."
     arquivos:
       cria: [motor/README.md, nucleo/README.md, motor/tests/test_documentacao.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_documentacao.py termina com 0 failed"
     depende_de: [T-10.02, T-10.03]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-10.05
     titulo: "Suite completa e varredura final"
     fase: F-10.2
-    status: pendente
+    status: concluida
     objetivo: "Rodar a suite inteira e a varredura de marca e registrar o resultado."
     arquivos:
       cria: [docs/nucleo-expxmedia/validacao/suite-final.md]
@@ -79,8 +79,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest termina com 0 failed e 0 skipped e suite-final.md registra o total de testes"
     depende_de: [T-10.04]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 10
@@ -104,7 +104,8 @@ teste_funcional: Todo peca.json gerado valida contra o schema do contrato e tem 
 criterio_aceite: `cd motor && uv run pytest tests/e2e/test_cinco_tipos.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.06, T-06.07, T-05.11, T-05.07, T-04.12]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 10 passed, 0 skipped
 ```
 
 ---
@@ -124,7 +125,8 @@ teste_funcional: Com PROVEDOR_PUBLICAR ausente e os dois satisfeitos, o provedor
 criterio_aceite: `cd motor && uv run pytest tests/e2e/test_publicacao.py` termina com 0 failed
 depende_de: [T-08.07]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/e2e/test_publicacao.py 9 passed (após B-02)
 ```
 
 ---
@@ -144,7 +146,8 @@ teste_funcional: O teste confere que leitura.md tem as 9 seções não vazias, q
 criterio_aceite: `cd motor && uv run pytest tests/e2e/test_validacao_referencia.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-09.06]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 5 passed, 0 skipped
 ```
 
 ---
@@ -164,7 +167,8 @@ teste_funcional: O README do repositório marca o passo 2 como concluído e cita
 criterio_aceite: `cd motor && uv run pytest tests/test_documentacao.py` termina com 0 failed
 depende_de: [T-10.02, T-10.03]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 9 passed
 ```
 
 ---
@@ -184,5 +188,6 @@ teste_funcional: A varredura de marca sobre motor/src, motor/kit-remotion, nucle
 criterio_aceite: `cd motor && uv run pytest` termina com 0 failed e 0 skipped e suite-final.md registra o total de testes
 depende_de: [T-10.04]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 1131 passed, 0 skipped
 ```

@@ -4,18 +4,18 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-10
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-10.1
     titulo: "Ponta a ponta"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/e2e termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []
     tasks: [T-10.01, T-10.02, T-10.03]
   - id: F-10.2
     titulo: "Documentacao e fechamento"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

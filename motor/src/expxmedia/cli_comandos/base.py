@@ -67,8 +67,15 @@ def registrar(subparsers: argparse._SubParsersAction) -> None:
 def capacidades(args: argparse.Namespace) -> dict[str, Any]:
     verificador = Verificador(args.raiz)
     if args.capacidade:
-        return verificador.verificar(args.capacidade, args.porta_voz)
-    return {"capacidades": verificador.verificar_tudo(args.porta_voz)}
+        return _com_aviso(verificador, verificador.verificar(args.capacidade, args.porta_voz), args.porta_voz)
+    return {"capacidades": [_com_aviso(verificador, c, args.porta_voz)
+                            for c in verificador.verificar_tudo(args.porta_voz)]}
+
+
+def _com_aviso(verificador: Verificador, consulta: dict[str, Any], porta_voz: str | None) -> dict[str, Any]:
+    """Acrescenta `aviso` à consulta quando a escolha do provedor é implícita (regra 2 do contrato)."""
+    aviso = verificador.aviso(consulta["capacidade"], porta_voz)
+    return {**consulta, "aviso": aviso} if aviso else consulta
 
 
 # ---------------------------------------------------------------- alma

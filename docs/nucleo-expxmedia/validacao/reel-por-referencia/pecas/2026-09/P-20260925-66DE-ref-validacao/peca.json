@@ -1,0 +1,76 @@
+{
+  "expxmedia_peca": 1,
+  "peca_id": "P-20260925-66DE",
+  "slug": "ref-validacao",
+  "titulo": "Fila que some com a assinatura",
+  "tipo": "reel",
+  "formatos": [
+    "9:16"
+  ],
+  "status": "produzida",
+  "pack": "nucleo",
+  "serie": null,
+  "template": null,
+  "porta_voz": "porta-voz-teste",
+  "oferta": null,
+  "vaga": null,
+  "criada_em": "2026-09-25T04:08:23-03:00",
+  "atualizado_em": "2026-09-25T04:09:49-03:00",
+  "motivo_descarte": null,
+  "conteudo": {
+    "gancho": null,
+    "gancho_tipo": null,
+    "cta": null,
+    "cta_forma": null,
+    "legenda": "texto/legenda.txt",
+    "roteiro": "texto/roteiro.txt"
+  },
+  "slides": [],
+  "compoe": [],
+  "arquivos": [
+    {
+      "caminho": "saida/final.mp4",
+      "papel": "final",
+      "formato": "9:16"
+    },
+    {
+      "caminho": "texto/roteiro.txt",
+      "papel": "roteiro",
+      "formato": null
+    },
+    {
+      "caminho": "texto/legenda.txt",
+      "papel": "legenda",
+      "formato": null
+    },
+    {
+      "caminho": "midia/narracao.mp3",
+      "papel": "audio",
+      "formato": null
+    },
+    {
+      "caminho": "midia/alinhamento.json",
+      "papel": "alinhamento",
+      "formato": null
+    },
+    {
+      "caminho": "previa/previa.jpg",
+      "papel": "previa",
+      "formato": null
+    }
+  ],
+  "producao": {
+    "capacidades": [
+      "renderizar_motion",
+      "editar_video"
+    ],
+    "provedores": {
+      "renderizar_motion": "remotion",
+      "editar_video": "ffmpeg"
+    },
+    "segundos": 87.608,
+    "produzida_em": "2026-09-25T04:09:49-03:00"
+  },
+  "publicacoes": [],
+  "metricas": null
+}

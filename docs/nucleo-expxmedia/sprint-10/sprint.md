@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-10
 titulo: "Validacao ponta a ponta"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest termina com 0 failed e 0 skipped nesta maquina e os dois relatorios de validacao estao gravados"
 fases: [F-10.1, F-10.2]
 riscos: ["O reel por referencia depende de julgamento do modelo; o criterio e verificacao mecanica mais checklist gravado"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 10 — Validacao ponta a ponta

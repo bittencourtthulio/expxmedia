@@ -21,3 +21,15 @@ motor/.venv/
 motor/kit-remotion/node_modules/
 .pytest_cache/
 docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.mp4
+
+# Validação do reel por referência (T-10.03): o MP4 fica fora do git (registrado por sha256 em
+# docs/nucleo-expxmedia/validacao/reel-por-referencia.md), com os intermediários de áudio e vídeo, e o que
+# foi extraído da referência (quadros, folhas, fala transcrita) é de terceiro e só existe no disco local.
+docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.mp3
+docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.wav
+docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.parcial.*
+docs/nucleo-expxmedia/validacao/reel-por-referencia/referencias/*/analise/quadros/
+docs/nucleo-expxmedia/validacao/reel-por-referencia/referencias/*/analise/folhas/
+docs/nucleo-expxmedia/validacao/reel-por-referencia/referencias/*/analise/formato.json
+docs/nucleo-expxmedia/validacao/reel-por-referencia/referencias/*/analise/transcricao.json
+docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.lock

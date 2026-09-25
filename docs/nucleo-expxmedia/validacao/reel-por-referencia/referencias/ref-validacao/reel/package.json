@@ -1,0 +1,9 @@
+{
+  "name": "reel-ref-validacao",
+  "private": true,
+  "description": "Reel sob medida: código próprio, escrito para imitar a referência. Fontes, selo e o que é de quem publica chegam da Alma por props; o módulo @expxmedia/template é entregue pelo motor.",
+  "dependencies": {
+    "react": "19.3.0",
+    "remotion": "4.0.528"
+  }
+}

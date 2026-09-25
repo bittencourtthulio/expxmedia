@@ -8,7 +8,7 @@ mantém a **Alma** da empresa e sobe o painel que mostra o andamento de tudo.
 roda, o sistema cria a Alma da empresa (pelo site dela ou por entrevista) e orienta a
 configuração do `.env` — e cada recurso só é habilitado quando a chave dele está lá.
 
-> **Estado atual:** passo 0 — os contratos. Nenhum código ainda.
+> **Estado atual:** passos 1 e 2 concluídos: os contratos e o núcleo (motor em Python e plugin do Claude Code).
 
 ## Os contratos
 
@@ -25,7 +25,7 @@ configuração do `.env` — e cada recurso só é habilitado quando a chave del
 ## Ordem de construção
 
 1. Contratos ✅
-2. Núcleo (Python) — o motor com as capacidades e a produção genérica dos cinco tipos de peça, sem pack nenhum
+2. Núcleo ✅ — o motor em Python com as capacidades e a produção genérica dos cinco tipos de peça ([`motor/`](motor/README.md)) e o plugin `expxmedia` do Claude Code ([`nucleo/`](nucleo/README.md)), sem pack nenhum
 3. Central — CLI (TypeScript, a partir do expxdev) e casca do painel
 4. `expx-instagram` — o pack piloto
 5. `expx-galeria` — camada, versão local
@@ -33,6 +33,14 @@ configuração do `.env` — e cada recurso só é habilitado quando a chave del
 7. `expx-meta`
 8. `expx-cursos`
 9. Galeria compartilhada (`expxmedia-gallery`)
+
+## Como começar
+
+1. Prepare o motor uma vez por máquina (precisa de rede): `cd motor && uv run python scripts/preparar_ambiente.py`.
+   Requisitos e referência do CLI em [`motor/README.md`](motor/README.md).
+2. Na raiz deste repositório, abra o Claude Code com o plugin do núcleo: `claude --plugin-dir nucleo`.
+3. Rode `/expxmedia:alma` para montar a Alma da empresa; em seguida o portão leva ao
+   `/expxmedia:ambiente`, que cria o `.env`. Depois disso, é pedir a peça.
 
 ## Licença
 

@@ -21,6 +21,9 @@ Toda publicação (capacidades `publicar` e `agendar`) passa por `publicar()`, q
 7. grava o resultado de cada canal na peça, muda o `status` (agendada/publicada) e registra no
    rastro `publicacao_agendada`, `publicacao_concluida` ou `publicacao_falhou`.
 
+O retorno (dry-run e envio) traz `avisos`: lista com o aviso de `Verificador.aviso()` quando mais
+de um provedor está satisfeito e `PROVEDOR_<CAPACIDADE>` não está no `.env` (regra 2); vazia senão.
+
 Dry-run valida e monta o envio pelo adaptador, sem gravar nada na peça nem no rastro.
 
 Contrato do adaptador (duck typing): atributo `provedor` e os métodos
@@ -168,6 +171,8 @@ def publicar(
     capacidade = "agendar" if agendada_para else "publicar"
     verificador = verificador or Verificador(raiz)
     provedor = _escolher(raiz, verificador, capacidade, peca_id, origem, agente)
+    aviso = verificador.aviso(capacidade)  # escolha implícita entre vários satisfeitos (regra 2)
+    avisos = [aviso] if aviso else []
     if automacao is not None:
         _escolher(raiz, verificador, "automacao_dm", peca_id, origem, agente)
         if provedor != "expxflow":
@@ -201,7 +206,7 @@ def publicar(
     if dry_run:
         resultado = adaptador.enviar(pedido)
         return {"peca_id": peca_id, "capacidade": capacidade, "provedor": provedor, "dry_run": True,
-                "payload": resultado.payload, "canais": {}}
+                "payload": resultado.payload, "canais": {}, "avisos": avisos}
 
     inicio = tempo.agora_iso(raiz)
     for canal in canais:  # intenção antes do envio (D-29)
@@ -234,7 +239,7 @@ def publicar(
         saida[canal] = {"estado": rc.estado, "id_externo": rc.id_externo, "url": rc.url, "erro": rc.erro}
     _mudar_status(raiz, peca_id, [c["estado"] for c in saida.values()], origem, agente)
     return {"peca_id": peca_id, "capacidade": capacidade, "provedor": provedor, "dry_run": False,
-            "payload": resultado.payload, "canais": saida}
+            "payload": resultado.payload, "canais": saida, "avisos": avisos}
 
 
 def _escolher(raiz: Path, verificador: Verificador, capacidade: str, peca_id: str, origem: str,

@@ -366,3 +366,24 @@ def test_agendador_instalar_com_comando_que_falha_sai_1_sem_marcador(instalacao,
                            "--executavel", EXE, "--raiz", instalacao)
     assert codigo == 1 and saida["erro"] == "instalacao_agendador"
     assert not (instalacao / ".expxmedia" / "agendador.json").exists()
+
+
+# --- B-02: o aviso de escolha implícita chega à saída JSON ---------------------------------
+
+_META = "META_GRAPH_TOKEN=token-falso-meta\nMETA_IG_USER_ID=17800000000000b2\n"
+
+
+def test_publicar_dry_run_com_dois_provedores_traz_o_aviso_de_escolha_implicita(instalacao, servidor_stub, capsys):
+    _env(instalacao, servidor_stub.url, _META)
+    peca_id = _post(instalacao)
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--raiz", instalacao)
+    assert codigo == 0 and saida["provedor"] == "expxflow"
+    assert any("PROVEDOR_PUBLICAR" in a and "meta_graph" in a and "expxflow" in a for a in saida["avisos"]), saida
+    assert "token-falso-meta" not in json.dumps(saida)
+
+
+def test_publicar_dry_run_com_provedor_explicito_nao_traz_aviso(instalacao, servidor_stub, capsys):
+    _env(instalacao, servidor_stub.url, _META + "PROVEDOR_PUBLICAR=expxflow\n")
+    peca_id = _post(instalacao)
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--raiz", instalacao)
+    assert codigo == 0 and saida["avisos"] == []

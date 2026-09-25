@@ -1,0 +1,101 @@
+# Divergências entre o plano e a realidade — nucleo-expxmedia
+
+Uma linha por divergência, registrada durante a F6. Formato: `task | divergência`.
+
+- T-01.01 | sem cli.py stub; testpaths e uv_build acrescentados
+- T-01.03 | opencv fixado <5 (OpenCV 5 removeu CascadeClassifier); pythonpath=["tests"] acrescentado ao pytest pelo orquestrador
+- T-01.04 | stub importado direto no teste; pythonpath resolve importação
+- T-01.03 | teste de marca ignora a chave expxmedia_alma (nome do contrato)
+- T-01.06 | ids reais removidos da lista proibida pelo orquestrador para não publicá-los no repositório público
+- T-01.05 | registro gerado fora do git via postinstall; .gitignore próprio do kit
+- T-01.08 | licença LICENSE copiada como OFL.txt; npm ci reapaga o browser do Remotion
+- T-01.07 | G1 sem prancha (arte de terceiros); papel negativo preenchido #e5484d
+- T-01.07 | G3/G4 impacto.txt criado na cópia porque compose.py atual exige; PNGs seguem Pillow atual
+- T-01.07 | G5 cues.json é o gravado pela origem (gerar_voz não salva alinhamento)
+- T-01.07 | G7 whisper do --alinhar substituído pela transcrição gravada; recasado difere 0,02 s em 3 fins (versão anterior do código de origem)
+- T-02.01 | hash6 do template aleatório (contrato não define derivação); tempo exige fuso da Alma
+- T-02.02 | JSON quebrado sempre erro; função trava() extra; arquivos .lock ao lado do alvo
+- T-02.03 | vocabulário de eventos fechado ao do contrato
+- T-02.05 | só o .env da raiz é lido, variáveis do processo ignoradas (exceto EXPXMEDIA_PROVEDORES_TESTE)
+- T-02.06 | EXPXFLOW_BASE_URL obrigatória (D-50), contrato de capacidades atualizado pelo orquestrador
+- T-02.07 | marcadores de agendador/galeria/youtube em .expxmedia/*.json
+- T-02.08 | PROVEDOR_* vazios com opções no comentário
+- F6 | test_marca ignora trecho após "origem:" (D-50)
+- T-02.09 | aula com stability 0.5 e use_speaker_boost; pronuncia como lista {termo,fala}; visual.fontes.*.arquivo opcional no contrato
+- T-02.10 | tokens --alma-<papel> com sublinhado (fundo_alt); fallback Inter com aviso
+- T-02.11 | aprovada->publicada aceito; produzida exige producao; arquivos relativos à pasta da peça
+- T-02.13 | ranking por desempenho plugável sem padrão; templates reprovados/fora descartados
+- T-02.14 | cli.grupo() e cli.Falha() extras; eventos do CLI com origem skill
+- T-03.07 | OpenRouter via chat completions com image_config; OPENROUTER_MODELO_IMAGEM opcional (fora da tabela canônica)
+- T-03.08 | generate_audio false quando o esquema aceita
+- T-03.14 | cota injetada por parâmetro (CLI deve passar); teto 12/dia por provedor (origem: 12 somados)
+- T-03.01 | Google Fonts bloqueado na página, fontes como data URI do cache; checagem de fonte por peso/estilo usados (corrige origem)
+- T-03.03 | color(srgb 0..1) convertido corretamente (bug da origem)
+- T-03.04 | prancha só com slides; render.json sempre
+- T-03.05 | paridade 0% de diferença; adaptador lê layout do G1 direto de Instagram-Carrosseis (sha256 conferido) — depende da pasta de origem na máquina
+- T-03.09 | tira.png em vez de strip.png; captura.json com chave de versão
+- T-03.10 | post a partir do layout 0001 (numero, frase); carrossel a partir do 0007 (capa, conteudo, cta)
+- T-03.11 | produzir_estatico compartilhado em post.py; usa modelo._atualizar (privado) para slides/legenda
+- T-03.13 | subcomando imagem rosto extra; módulo escrito antes do teste (TDD não seguido nessa task)
+- T-03.01 | defeito achado na F-03.3: sem rede e sem cache a fonte do Google não cai para Inter — corrigido pelo orquestrador (ver abaixo)
+- CORRECAO-T-03.01 | fallback Inter de ponta a ponta com aviso fonte_substituida (458 passed)
+- T-04.01 | passada extra com alimiter -2,5/-3,5/-4,5 como o código atual da origem (base descrevia versão antiga); JPEG q95 sem calibração na origem
+- T-04.02 | sincronia alinhamento×roteiro em reel/reel_pagina/sob_medida; artefato ausente reprova; critérios de SRT da aula definidos pelo executor
+- T-04.07 | reserva openai-whisper pela API Python; para_alinhamento extra
+- T-04.08 | sem fallback regex "Comenta PALAVRA" (copy fixa, M13): CTA ausente é erro; card_final parametrizado; cores por papéis da Alma
+- T-04.09 | SRT arredonda ao milissegundo
+- T-04.03 | saída narracao.mp3 + alinhamento.json (nomes do contrato); base.py encadeia pronúncia e ritmo
+- T-04.04 | timeout 300 s para todos os tipos (origem reel sem timeout); url_base só por argumento
+- T-04.06 | ritmo mínimo só em reel (só o bloco reel tem ritmo_min_pps)
+- T-04.11 | loudnorm sobre a mistura inteira; visual.json depois do MP4 (origem gravava antes); mapa de cores por papéis definido pelo executor
+- T-04.12 | gate devolve todos os achados; aceita captura pronta; peça registra SRT, áudio, roteiro, site.md
+- T-04.13 | legendar reel grava SRT também
+- T-09.01 | hook de segredo cobre também Grep/Glob, $..API_KEY/TOKEN e printenv; validate --strict também
+- T-09.02 | site fictício com páginas extras
+- T-09.10 | abertura repetida: 1ª frase igual ou 3 primeiras palavras; tratamento nos não conferido
+- T-09.11 | cada âncora tem sonda literal conferida na linha de origem
+- T-09.03 | subcomandos alma extrair-site, alma confirmar, ambiente exemplo/criar-env/gravar-chave (valor via stdin)
+- T-05.01 | kit sem public/; fonte e retrato por props via public_dir; Vazio passou a usar FPS (orquestrador)
+- T-05.02 | timeline igual ao G2 byte a byte, trilha mesmo sha256; opções --assinatura/--avatar/--leitura
+- T-05.03 | entry temporário em out/entradas/; stills com um bundle só
+- T-05.04 | prévia em escala 0,3 como a origem
+- T-08.01 | intenção gravada como estado falhou com "resultado desconhecido" (contrato sem estado enviando); canal ocupado recusa sem forcar
+- T-08.02 | 207 sem detalhe por plataforma marca todos os canais como falhou com o id
+- T-08.03 | timeout 30 s (origem 60 s)
+- T-08.04 | Graph v23.0; só Instagram, sem Facebook; agendar só registra, agendador publica
+- T-08.05 | serviço chama adaptador direto (base recusaria canal_ocupado) com mesma disciplina de idempotência
+- T-08.06 | Linux sem systemctl usa cron; linger só instruído; Windows com limite PT30M
+- T-08.07 | --forcar, --sistema, --executavel extras; mapeamento de códigos de saída
+- T-06.05 | sem rosto e sem screencast usa fundo desfocado (origem: crop central); yt-dlp não portado, vídeo de entrada local
+- T-06.06 | checagem de relevância nova no b-roll
+- T-06.07 | loudness pelo normalizar_audio do motor; caixa do gancho com cores da Alma
+- T-06.08 | estilo visual do prompt da abertura virou parâmetro; montagem reusa montar_pagina
+- T-05.08 | CTA vem da Alma; campo marca virou tema opcional com contraste 3:1; regra de métricas do canal não portada
+- T-05.09 | slides do palco desenhados em HTML/CSS (origem usava <video> por slide)
+- T-05.10 | uma composição para o deck inteiro, 240 frames por slide, PNG = último frame
+- T-05.11 | sem mp4, slides apontam para apresentacao.html#N
+- T-07.01 | marcador repetido/ausente vira erro; dependências no cues.json; TDD parcial (módulo antes da 1ª execução)
+- T-07.02 | escolha heygen/teste fica para a produção; estado de retomada em .heygen.json; regravação ID3 não portada
+- T-07.03 | fim limitado à duração real; demo.json com duracao; 9:16 entregue como dado para a composição
+- T-05.05 | @expxmedia/template gerado em tempo de render como reexportação do kit (preparar_projeto em producao/reel.py); cenas.json com chave kinds
+- T-05.06 | caps/legendas do perfil reel extraídos do render (camada legenda); palavras por bloco pelo ritmo medido; trilha repetida é transposta (origem só recusava)
+- T-05.07 | slide de vídeo com slots etiqueta/titulo/texto e duracao_s 3–60 s
+- T-05.12 | módulo escrito antes do teste (sem vermelho observado)
+- T-06.01 | origem só com nome do arquivo; transcricao.json; scdet com falha vira erro
+- T-06.02 | pasta referencias/<slug>/ com referencia.json; timeline e áudio por props; valida instrumento e evento 0..1
+- T-06.03 | gate 130–180 antes de narrar; prévia em previa/NN/ até 3 voltas; montagem exige leitura.md escrita
+- T-06.09 | sem referencia narrar: o fluxo usa o subcomando narrar genérico apontando para midia/ do reel; abertura por flags com --dispensar
+- T-07.04 | composição única Aula, formato por props via calculateMetadata
+- T-07.05 | legenda com tempos do alinhamento da narração; tolerância avatar×narração 0,1 s (número novo do motor, não da origem)
+- T-07.06 | compilação por ffmpeg com a regra de quadros da origem, gera peça aula com compoe
+- T-09.06 | revisor sem Bash: skill grava verificacao.json e quadros para o revisor; veredito APROVADO/REPROVADO; artefatos em referencias/<slug>/
+- T-09.04 | revisor-editorial mantém Bash (só para revisar copy), sem Edit/Write
+- T-09.04 | lacuna achada: imagem pexels do CLI não aplicava filtrar_banco — corrigido pelo orquestrador (ver correção)
+- T-09.08 | lacuna achada: CLI publicar/agendar sem argumento de automação de DM — corrigido pelo orquestrador (ver correção)
+- CORRECAO-CLI | imagem pexels filtra por padrão (--sem-filtro); publicar/agendar com --dm no formato do adaptador; publicador cita --dm
+- T-09.05 | revisor-reel com Bash só para verificar/revisar copy/extrair quadros (regra de "só leitura" diferente do revisor-video)
+- T-09.05 | lacuna achada: abertura não chegava ao reel de página — corrigido pelo orquestrador (ver correção)
+- CORRECAO-ABERTURA | abertura da captura entra no reel de página como fundo; papel fonte (contrato sem papel abertura); créditos contam rascunhos/
+- B-02 | avisos de escolha implícita em publicar/agendar/capacidades
+- T-10.03 | avatar_id fictício na cópia da Alma da instalação de validação (referência tem apresentador); voz e avatar do provedor de teste — sincronia labial precisa ser revista com provedor real
+- T-10.04 | test_documentacao exige que todo subcomando/pacote/skill esteja documentado

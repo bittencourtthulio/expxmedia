@@ -1,0 +1,135 @@
+{
+  "expxmedia_alma": 1,
+  "metodo": "misto",
+  "fontes": ["https://www.trigodourado.example", "https://www.trigodourado.example/sobre"],
+  "criada_em": "2026-09-24T09:00:00-03:00",
+  "confirmada_em": "2026-09-24T09:20:00-03:00",
+  "atualizado_em": "2026-09-24T09:20:00-03:00",
+
+  "empresa": {
+    "nome": "Padaria Trigo Dourado",
+    "nome_curto": "Trigo Dourado",
+    "descricao_curta": "Padaria de bairro com pão de fermentação natural assado duas vezes por dia.",
+    "segmento": "padaria",
+    "site": "https://www.trigodourado.example",
+    "pais": "BR",
+    "idioma": "pt-BR",
+    "fuso": "America/Sao_Paulo"
+  },
+
+  "publico": {
+    "principal": "famílias e trabalhadores do bairro que tomam café da manhã fora ou levam pão para casa",
+    "dores": ["pão industrial que endurece no mesmo dia", "fila longa no horário de pico"],
+    "desejos": ["pão fresco e saudável sem pagar caro", "encomenda pronta na hora marcada"]
+  },
+
+  "ofertas": [
+    {
+      "id": "assinatura-pao",
+      "nome": "Assinatura do pão da semana",
+      "tipo": "assinatura",
+      "descricao": "Um pão de fermentação natural por dia, separado no balcão com seu nome.",
+      "url": "https://www.trigodourado.example/assinatura",
+      "principal": true
+    },
+    {
+      "id": "oficina-fermentacao",
+      "nome": "Oficina de fermentação natural",
+      "tipo": "curso",
+      "descricao": "Três horas de prática para fazer o primeiro pão de levain em casa.",
+      "url": null,
+      "principal": false
+    }
+  ],
+
+  "voz": {
+    "tom": ["acolhedor", "simples", "bem-humorado"],
+    "tratamento": "voce",
+    "formalidade": "baixa",
+    "palavras_preferidas": ["fresquinho", "feito aqui", "na hora"],
+    "palavras_proibidas": ["gourmet", "o melhor do mundo"],
+    "regras": ["frases curtas", "sempre dizer o horário da fornada quando falar de pão"],
+    "exemplos_bons": ["A fornada das 16h sai em dez minutos. Quer que a gente separe o seu?"],
+    "exemplos_ruins": ["Oferecemos soluções panificadoras de excelência premium."]
+  },
+
+  "visual": {
+    "cores": {
+      "fundo": "#FFF8EE",
+      "fundo_alt": "#F4E6CF",
+      "texto": "#2B1D12",
+      "texto_inverso": "#FFFFFF",
+      "apoio": "#7A6452",
+      "destaque": "#C8731E",
+      "destaque_2": "#5B7F3A",
+      "positivo": "#2E9E5B",
+      "negativo": "#D2453A"
+    },
+    "fontes": {
+      "titulo": { "familia": "Fraunces", "origem": "google" },
+      "texto": { "familia": "Nunito Sans", "origem": "google" }
+    },
+    "logo": {
+      "principal": "alma/assets/logo.svg",
+      "negativo": null,
+      "simbolo": null
+    },
+    "estilo": ["artesanal", "caloroso", "claro"]
+  },
+
+  "cta": {
+    "padrao": "Separe seu pão da próxima fornada",
+    "destino": "https://www.trigodourado.example/encomenda",
+    "variacoes": ["Comente PÃO que a gente te manda o horário das fornadas"]
+  },
+
+  "canais": [
+    { "canal": "instagram", "identificador": "@padariatrigodourado", "url": "https://instagram.com/padariatrigodourado" },
+    { "canal": "youtube", "identificador": "@padariatrigodourado", "url": null }
+  ],
+
+  "porta_vozes": [
+    {
+      "id": "porta-voz-teste",
+      "nome": "Rosa Farinha",
+      "papel": "padeira e sócia",
+      "principal": true,
+      "voz": {
+        "provedor": "elevenlabs",
+        "voz_id": "voz-ficticia-0001",
+        "modelo": "eleven_multilingual_v2",
+        "parametros": {
+          "reel": { "stability": 0.4, "similarity_boost": 0.75, "style": 0.3, "use_speaker_boost": true, "speed": 1.15, "ritmo_min_pps": 3.2 },
+          "aula": { "stability": 0.55, "similarity_boost": 0.9, "style": 0.1, "use_speaker_boost": true, "speed": 0.95, "timeout_s": 240 },
+          "padrao": { "stability": 0.5, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": false, "speed": 1.0 }
+        },
+        "pronuncia": [
+          { "termo": "petit gâteau", "fala": "petí gatô" },
+          { "termo": "croissant", "fala": "croassã" },
+          { "termo": "levain", "fala": "levã" }
+        ]
+      },
+      "avatar": { "provedor": "heygen", "avatar_id": "avatar-ficticio-0001" },
+      "rosto_ia": { "provedor": "higgsfield", "id": null },
+      "retratos": ["alma/assets/retratos/porta-voz-teste/01.png"]
+    }
+  ],
+
+  "restricoes": {
+    "temas_proibidos": ["política partidária", "dieta restritiva como promessa de saúde"],
+    "promessas_proibidas": ["pão que emagrece"],
+    "observacoes_legais": ["peça sobre produto sem glúten cita a possibilidade de contaminação cruzada"]
+  },
+
+  "origens": {
+    "empresa.nome": "site",
+    "empresa.descricao_curta": "site",
+    "publico.principal": "inferido",
+    "voz.tom": "inferido",
+    "visual.cores": "site",
+    "cta.padrao": "entrevista",
+    "porta_vozes": "entrevista"
+  },
+
+  "pendencias": ["visual.logo.negativo", "visual.logo.simbolo", "canais.youtube.url", "ofertas.oficina-fermentacao.url"]
+}

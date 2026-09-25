@@ -196,3 +196,24 @@ def test_sem_raiz_encontrada_sai_2(capsys, tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     codigo, dados = _rodar(capsys, "capacidades")
     assert codigo == 2 and dados["erro"] == "entrada_invalida"
+
+
+def test_capacidades_mostra_o_aviso_de_escolha_implicita_por_capacidade(capsys, instalacao):
+    # B-02: dois provedores de publicar satisfeitos e sem PROVEDOR_PUBLICAR (regra 2 do contrato)
+    (instalacao / ".env").write_text(
+        "EXPXFLOW_API_KEY=chave-falsa\nEXPXFLOW_CLIENT_ID=00000000-0000-4000-8000-000000000001\n"
+        "EXPXFLOW_BASE_URL=http://127.0.0.1:9\nMETA_GRAPH_TOKEN=token-falso\nMETA_IG_USER_ID=178000000000\n", encoding="utf-8")
+    codigo, dados = _rodar(capsys, "capacidades", "--raiz", str(instalacao))
+    assert codigo == 0
+    por_id = {c["capacidade"]: c for c in dados["capacidades"]}
+    aviso = por_id["publicar"].get("aviso") or ""
+    assert "PROVEDOR_PUBLICAR" in aviso and "expxflow" in aviso and "meta_graph" in aviso
+    assert "aviso" not in por_id["narrar"]
+    codigo, dados = _rodar(capsys, "capacidades", "--capacidade", "publicar", "--raiz", str(instalacao))
+    assert codigo == 0 and "PROVEDOR_PUBLICAR" in dados["aviso"]
+    assert "chave-falsa" not in json.dumps(dados) and "token-falso" not in json.dumps(dados)
+
+    (instalacao / ".env").write_text(
+        (instalacao / ".env").read_text(encoding="utf-8") + "PROVEDOR_PUBLICAR=meta_graph\n", encoding="utf-8")
+    codigo, dados = _rodar(capsys, "capacidades", "--capacidade", "publicar", "--raiz", str(instalacao))
+    assert codigo == 0 and dados["provedor"] == "meta_graph" and "aviso" not in dados

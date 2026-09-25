@@ -7,10 +7,10 @@ titulo: Nucleo do ExpxMedia - motor de capacidades e producao generica dos cinco
 tipo_trabalho: feature
 tipo_ocorrencia: null
 estagio: f6
-status: em_andamento
+status: concluido
 criado_em: 2026-09-24
-atualizado_em: 2026-09-24
-concluido_em: null
+atualizado_em: 2026-09-25
+concluido_em: 2026-09-25
 sprints: [sprint-01, sprint-02, sprint-03, sprint-04, sprint-05, sprint-06, sprint-07, sprint-08, sprint-09, sprint-10]
 caminho_critico: [T-01.01, T-01.02, T-01.03, T-02.04, T-02.05, T-02.06, T-02.07, T-04.03, T-04.04, T-04.05, T-05.06, T-06.03, T-06.09, T-09.06, T-10.03, T-10.04, T-10.05]
 ---
