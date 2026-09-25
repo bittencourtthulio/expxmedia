@@ -1,0 +1,24 @@
+/* Folha de estilo do site fictício da floricultura. #ABCDEF em comentário não conta. */
+:root {
+  --cor-primaria: #2F7D4F;
+  --cor-secundaria: #d9467a;
+  --fundo: #FFFDF8;
+}
+html, body {
+  background-color: #FFFDF8;
+  color: #1F2A24;
+  font-family: 'Work Sans', Arial, sans-serif;
+}
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #2F7D4F;
+}
+.botao {
+  background: #2F7D4F;
+  color: #fff;
+}
+.destaque { color: rgb(217, 70, 122); }
+footer { background: #1F2A24; color: #FFFFFF; }
+@media (max-width: 600px) {
+  .botao { background: #2f7d4f; }
+}

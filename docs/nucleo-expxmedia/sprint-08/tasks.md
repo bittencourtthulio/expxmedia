@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-08
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-08.01
     titulo: "Base de publicacao com idempotencia"
     fase: F-08.1
-    status: pendente
+    status: em_andamento
     objetivo: "Escolher provedor pela verificacao, gravar a intencao na peca antes do envio e nunca retentar POST (D-29)."
     arquivos:
       cria: [motor/src/expxmedia/publicar/base.py, motor/tests/publicar/test_base.py]
@@ -24,7 +24,7 @@ tasks:
   - id: T-08.02
     titulo: "Adaptador Expx Flow"
     fase: F-08.1
-    status: pendente
+    status: em_andamento
     objetivo: "Portar upload de midia, carousel-api com filhos imagem e video, post-api de reel, automacao de DM, 207 parcial e dry-run, com URL base configuravel (D-06)."
     arquivos:
       cria: [motor/src/expxmedia/publicar/expxflow.py, motor/tests/publicar/test_expxflow.py]
@@ -39,7 +39,7 @@ tasks:
   - id: T-08.03
     titulo: "Tunel de URL publica"
     fase: F-08.1
-    status: pendente
+    status: em_andamento
     objetivo: "Portar o tunel cloudflared que expoe a midia por URL temporaria durante a publicacao."
     arquivos:
       cria: [motor/src/expxmedia/publicar/tunel.py, motor/tests/publicar/test_tunel.py, motor/tests/stubs/cloudflared_falso.py]
@@ -54,7 +54,7 @@ tasks:
   - id: T-08.04
     titulo: "Adaptador Graph API"
     fase: F-08.1
-    status: pendente
+    status: em_andamento
     objetivo: "Publicar pela Graph: conteiner, status, media_publish, PNG para JPEG, validacao de proporcao e de no maximo 10 itens, reel, e limite conservador de 50 publicacoes em 24 h consultado em content_publishing_limit antes de publicar (D-44)."
     arquivos:
       cria: [motor/src/expxmedia/publicar/meta_graph.py, motor/tests/publicar/test_meta_graph.py]
@@ -134,7 +134,7 @@ teste_funcional: Um provedor que responde 503 gera publicacao_falhou com uma ún
 criterio_aceite: `cd motor && uv run pytest tests/publicar/test_base.py` termina com 0 failed
 depende_de: [T-02.07, T-02.11]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -154,7 +154,7 @@ teste_funcional: Resposta 207 grava na peça o estado de cada plataforma e dry-r
 criterio_aceite: `cd motor && uv run pytest tests/publicar/test_expxflow.py` termina com 0 failed
 depende_de: [T-08.01, T-01.04]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -174,7 +174,7 @@ teste_funcional: Se o processo não imprime URL em 30 s, abrir levanta erro e en
 criterio_aceite: `cd motor && uv run pytest tests/publicar/test_tunel.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -194,7 +194,7 @@ teste_funcional: Um post 9:16 é recusado antes de qualquer chamada com achado d
 criterio_aceite: `cd motor && uv run pytest tests/publicar/test_meta_graph.py` termina com 0 failed
 depende_de: [T-08.01, T-08.03, T-04.01]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---

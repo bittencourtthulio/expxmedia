@@ -1,0 +1,8 @@
+{
+  "name": "expxmedia",
+  "version": "0.1.0",
+  "description": "Núcleo do ExpxMedia: portão de Alma e ambiente, guarda de segredos e as skills de produção de peças com a marca da empresa.",
+  "author": {
+    "name": "ExpxMedia"
+  }
+}

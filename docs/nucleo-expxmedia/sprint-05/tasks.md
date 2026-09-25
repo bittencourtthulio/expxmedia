@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-05
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-05.01
     titulo: "Kit base do Remotion"
     fase: F-05.1
-    status: pendente
+    status: em_andamento
     objetivo: "Portar anim.ts, area segura e centralizacao, com FPS numa constante unica, useAlma por props e SeloPerfil a partir do porta-voz e do canal da Alma."
     arquivos:
       cria: [motor/kit-remotion/src/kit/constantes.ts, motor/kit-remotion/src/kit/anim.ts, motor/kit-remotion/src/kit/alma.tsx, motor/kit-remotion/src/kit/SeloPerfil.tsx, motor/kit-remotion/src/kit/fontes.ts, motor/kit-remotion/src/composicoes/TesteSelo/index.tsx, motor/tests/motion/test_kit.py]
@@ -24,7 +24,7 @@ tasks:
   - id: T-05.02
     titulo: "Montagem e trilha generalizadas"
     fase: F-05.1
-    status: pendente
+    status: em_andamento
     objetivo: "Portar montar-reel.mjs e audio.mjs com caminhos por argumento, mesmo PRNG e semente, sem reescrever registro global (D-19)."
     arquivos:
       cria: [motor/kit-remotion/scripts/montar.mjs, motor/kit-remotion/scripts/audio.mjs, motor/tests/motion/test_montar.py]
@@ -39,7 +39,7 @@ tasks:
   - id: T-05.03
     titulo: "Runner Remotion multi-versao"
     fase: F-05.1
-    status: pendente
+    status: em_andamento
     objetivo: "Renderizar com o kit na 4.0.528 e, para outras versoes, um projeto por versao em cache fora da instalacao; cada render faz bundle so da composicao pedida por um entry point proprio, com o browser compartilhado preparado na T-01.08, props JSON e timeout 1800 s; nenhum teste instala nada (D-17, D-46)."
     arquivos:
       cria: [motor/src/expxmedia/motion/remotion.py, motor/tests/motion/test_runner.py]
@@ -54,7 +54,7 @@ tasks:
   - id: T-05.04
     titulo: "Previa com guias"
     fase: F-05.1
-    status: pendente
+    status: em_andamento
     objetivo: "Gerar still a 60% de cada cena com as guias 220 e 1500 px."
     arquivos:
       cria: [motor/src/expxmedia/motion/previa.py, motor/tests/motion/test_previa.py]
@@ -209,7 +209,7 @@ teste_funcional: A busca pelo literal 30 como fps nos arquivos do kit encontra s
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_kit.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.05]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -229,7 +229,7 @@ teste_funcional: Uma âncora ausente da narração faz a montagem sair com erro 
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_montar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.01, T-01.07]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -249,7 +249,7 @@ teste_funcional: Pedir a versão 4.0.522 resolve um diretório de cache diferent
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_runner.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.01]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -269,7 +269,7 @@ teste_funcional: Cada imagem de prévia tem pixels da cor das guias nas linhas y
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_previa.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---

@@ -1,0 +1,135 @@
+{
+  "expxmedia_ancoras": 1,
+  "skill": "criar-carrossel",
+  "descricao": "Revisão editorial de carrossel e post: as duas passadas do revisor e os bloqueantes da origem, com a marca trocada pela Alma.",
+  "alvos": [
+    "nucleo/skills/criar-carrossel/SKILL.md",
+    "nucleo/agents/copywriter.md",
+    "nucleo/agents/revisor-editorial.md"
+  ],
+  "minimos": {
+    "duas_passadas": 2,
+    "bloqueantes": 13
+  },
+  "itens": [
+    {
+      "id": "passada-copy",
+      "categoria": "duas_passadas",
+      "ancora": "passada 1",
+      "origem": "Instagram-Carrosseis/.claude/agents/revisor-editorial.md:19",
+      "sonda": "## Passada 1: a copy, antes de renderizar"
+    },
+    {
+      "id": "passada-arte",
+      "categoria": "duas_passadas",
+      "ancora": "passada 2",
+      "origem": "Instagram-Carrosseis/.claude/agents/revisor-editorial.md:31",
+      "sonda": "## Passada 2: a arte, depois de renderizar"
+    },
+    {
+      "id": "bloqueante-impede-render",
+      "categoria": "duas_passadas",
+      "ancora": "bloqueante impede a renderização",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:6",
+      "sonda": "Achado bloqueante impede a"
+    },
+    {
+      "id": "travessao",
+      "categoria": "bloqueantes",
+      "ancora": "travessão",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:11",
+      "sonda": "1. Travessão em qualquer campo."
+    },
+    {
+      "id": "palavra-cta-publicacao",
+      "categoria": "bloqueantes",
+      "ancora": "palavra-chave do CTA",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:12",
+      "sonda": "2. Palavra-chave do CTA diferente"
+    },
+    {
+      "id": "arte-e-legenda",
+      "categoria": "bloqueantes",
+      "ancora": "arte e legenda com a mesma ação, palavra e promessa",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:13",
+      "sonda": "3. Arte e legenda com ação, palavra ou promessa diferentes."
+    },
+    {
+      "id": "numero-sem-fonte",
+      "categoria": "bloqueantes",
+      "ancora": "número sem fonte",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:14",
+      "sonda": "4. Número, benchmark ou comparação sem fonte e condições"
+    },
+    {
+      "id": "urgencia-nao-confirmada",
+      "categoria": "bloqueantes",
+      "ancora": "urgência, desconto, bônus, garantia ou vagas",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:16",
+      "sonda": "5. Urgência, desconto, bônus, garantia ou vagas não confirmados."
+    },
+    {
+      "id": "limite-do-template",
+      "categoria": "bloqueantes",
+      "ancora": "limite de caracteres do template",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:17",
+      "sonda": "campo acima do limite de"
+    },
+    {
+      "id": "glossario",
+      "categoria": "bloqueantes",
+      "ancora": "glossário",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:19",
+      "sonda": "7. Termo traduzido contra o glossário"
+    },
+    {
+      "id": "capa-promete-quantidade",
+      "categoria": "bloqueantes",
+      "ancora": "capa que promete quantidade",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:20",
+      "sonda": "8. Capa que promete quantidade"
+    },
+    {
+      "id": "erro-tecnico",
+      "categoria": "bloqueantes",
+      "ancora": "erro técnico factual",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:21",
+      "sonda": "9. Erro técnico factual"
+    },
+    {
+      "id": "voz-proibe",
+      "categoria": "bloqueantes",
+      "ancora": "o que a voz da Alma proíbe",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:22",
+      "sonda": "10. Item de `voz.md`"
+    },
+    {
+      "id": "acento",
+      "categoria": "bloqueantes",
+      "ancora": "palavra sem acento",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:23",
+      "sonda": "11. Palavra sem acento ou com acento errado"
+    },
+    {
+      "id": "abertura-14-dias",
+      "categoria": "bloqueantes",
+      "ancora": "abertura repetida em 14 dias",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:27",
+      "sonda": "nos últimos 14 dias"
+    },
+    {
+      "id": "tratamento",
+      "categoria": "bloqueantes",
+      "ancora": "tratamento da Alma",
+      "origem": "Instagram-Carrosseis/editorial/revisao.md:28",
+      "sonda": "13. Tratamento por \"tu\" em qualquer campo"
+    },
+    {
+      "id": "revisar-copy",
+      "categoria": "mecanicas",
+      "ancora": "revisar copy",
+      "origem": "Instagram-Carrosseis/.claude/agents/revisor-editorial.md:26",
+      "sonda": "Rode as checagens que dá para mecanizar"
+    }
+  ]
+}

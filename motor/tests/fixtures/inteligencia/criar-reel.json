@@ -1,0 +1,187 @@
+{
+  "expxmedia_ancoras": 1,
+  "skill": "criar-reel",
+  "descricao": "Roteiro do reel narrado: as 6 partes, o teste das dez primeiras palavras, a veracidade dos beats 2 a 6 e a palavra do CTA.",
+  "alvos": [
+    "nucleo/skills/criar-reel/SKILL.md",
+    "nucleo/skills/reel-de-pagina/SKILL.md",
+    "nucleo/agents/roteirista.md"
+  ],
+  "minimos": {
+    "seis_partes": 6,
+    "dez_palavras": 3
+  },
+  "itens": [
+    {
+      "id": "beat-gancho",
+      "categoria": "seis_partes",
+      "ancora": "1. Gancho",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:5",
+      "sonda": "1. **Gancho**"
+    },
+    {
+      "id": "beat-o-que-e",
+      "categoria": "seis_partes",
+      "ancora": "2. O que é",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:9",
+      "sonda": "2. **O que é**"
+    },
+    {
+      "id": "beat-prova",
+      "categoria": "seis_partes",
+      "ancora": "3. Prova",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:10",
+      "sonda": "3. **Prova**"
+    },
+    {
+      "id": "beat-como-usa",
+      "categoria": "seis_partes",
+      "ancora": "4. Como usa",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:11",
+      "sonda": "4. **Como usa**"
+    },
+    {
+      "id": "beat-para-quem",
+      "categoria": "seis_partes",
+      "ancora": "5. Para quem",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:12",
+      "sonda": "5. **Para quem**"
+    },
+    {
+      "id": "beat-cta",
+      "categoria": "seis_partes",
+      "ancora": "6. CTA",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:15",
+      "sonda": "6. **CTA**"
+    },
+    {
+      "id": "promessa-3-segundos",
+      "categoria": "estrutura",
+      "ancora": "promessa clara nos primeiros 3 segundos",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:5",
+      "sonda": "uma **promessa clara** nos primeiros 3 segundos"
+    },
+    {
+      "id": "para-quem-termina",
+      "categoria": "estrutura",
+      "ancora": "termina na frase de conexão",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:12",
+      "sonda": "e **termina aí**"
+    },
+    {
+      "id": "dez-palavras",
+      "categoria": "dez_palavras",
+      "ancora": "dez primeiras palavras",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:46",
+      "sonda": "os 3 segundos são as dez primeiras palavras"
+    },
+    {
+      "id": "olho-fechado",
+      "categoria": "dez_palavras",
+      "ancora": "de olho fechado",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:47",
+      "sonda": "de olho fechado, a pessoa enxerga a coisa?"
+    },
+    {
+      "id": "categoria-nao-passa",
+      "categoria": "dez_palavras",
+      "ancora": "categoria não passa",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:47",
+      "sonda": "Categoria (\"sistema\", \"processo\""
+    },
+    {
+      "id": "metafora-nao-passa",
+      "categoria": "dez_palavras",
+      "ancora": "metáfora também não passa",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:48",
+      "sonda": "Metáfora também não"
+    },
+    {
+      "id": "sem-fracao",
+      "categoria": "dez_palavras",
+      "ancora": "fração não prende",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:88",
+      "sonda": "Fração exige cálculo, fração não prende."
+    },
+    {
+      "id": "jargao-fora",
+      "categoria": "dez_palavras",
+      "ancora": "licença e jargão fora das dez palavras",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:49",
+      "sonda": "Licença e jargão jurídico não entram"
+    },
+    {
+      "id": "orientacao-nao-gate",
+      "categoria": "dez_palavras",
+      "ancora": "orientação, não gate",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:80",
+      "sonda": "orientação com três dias de dado e dois formatos, **não gate**"
+    },
+    {
+      "id": "veracidade-corpo",
+      "categoria": "veracidade",
+      "ancora": "beats 2 a 6",
+      "origem": "Instragram-Videos/.claude/agents/roteirista.md:42",
+      "sonda": "os beats 2 a 6 não são"
+    },
+    {
+      "id": "gancho-isento",
+      "categoria": "veracidade",
+      "ancora": "o gancho é isento de lastro",
+      "origem": "Instragram-Videos/.claude/agents/roteirista.md:42",
+      "sonda": "**O gancho é isento de lastro no README"
+    },
+    {
+      "id": "declaracao-corpo",
+      "categoria": "veracidade",
+      "ancora": "afirmação → linha da fonte",
+      "origem": "Instragram-Videos/.claude/agents/roteirista.md:138",
+      "sonda": "a lista \"afirmação → linha do"
+    },
+    {
+      "id": "numero-por-extenso",
+      "categoria": "voz",
+      "ancora": "números por extenso",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:137",
+      "sonda": "**Números por extenso no roteiro**"
+    },
+    {
+      "id": "faixa-palavras",
+      "categoria": "voz",
+      "ancora": "130 a 180 palavras",
+      "alternativas": [
+        "130-180 palavras"
+      ],
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:136",
+      "sonda": "130–180 palavras (~60s)"
+    },
+    {
+      "id": "cta-8-letras",
+      "categoria": "cta",
+      "ancora": "até 8 letras",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:199",
+      "sonda": "**Até 8 letras, uma palavra só.**"
+    },
+    {
+      "id": "cta-letra-dobrada",
+      "categoria": "cta",
+      "ancora": "nenhuma letra dobrada",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:205",
+      "sonda": "**Nenhuma letra dobrada**"
+    },
+    {
+      "id": "cta-no-roteiro",
+      "categoria": "cta",
+      "ancora": "a palavra do CTA aparece no roteiro",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:147",
+      "sonda": "A palavra do CTA **tem que aparecer no roteiro**"
+    },
+    {
+      "id": "cta-corruptelas",
+      "categoria": "cta",
+      "ancora": "plural e corruptelas",
+      "origem": "Instragram-Videos/.claude/rules/voz-e-cta.md:217",
+      "sonda": "`keywords` é lista e o `match_mode` é `any`"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Hooks do núcleo do ExpxMedia: portão de primeiro uso (falha aberta) e guarda de segredos (falha fechada).",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/expxmedia-portao.sh\"", "timeout": 10 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|MultiEdit|Write|NotebookEdit|Bash|Grep|Glob",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/expxmedia-segredo.sh\"", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "expxmedia_ancoras": 1,
+  "skill": "cortar-video",
+  "descricao": "Corte de vídeo longo em reel: as quatro perguntas de quem escolhe o trecho e as regras invioláveis da emenda.",
+  "alvos": [
+    "nucleo/skills/cortar-video/SKILL.md"
+  ],
+  "minimos": {
+    "perguntas_corte": 4,
+    "inviolaveis": 3
+  },
+  "itens": [
+    {
+      "id": "sustenta-sozinho",
+      "categoria": "perguntas_corte",
+      "ancora": "o trecho se sustenta sem o que veio antes?",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:68",
+      "sonda": "**O trecho se sustenta sem o que veio antes?**"
+    },
+    {
+      "id": "promete-3-segundos",
+      "categoria": "perguntas_corte",
+      "ancora": "os três primeiros segundos prometem alguma coisa?",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:70",
+      "sonda": "**Os três primeiros segundos prometem alguma coisa?**"
+    },
+    {
+      "id": "fecha",
+      "categoria": "perguntas_corte",
+      "ancora": "fecha?",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:73",
+      "sonda": "**Fecha?** Trecho que termina no meio"
+    },
+    {
+      "id": "rende-sem-apoio",
+      "categoria": "perguntas_corte",
+      "ancora": "rende sem imagem de apoio?",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:74",
+      "sonda": "**Rende sem imagem de apoio?**"
+    },
+    {
+      "id": "nota-desempate",
+      "categoria": "perguntas_corte",
+      "ancora": "a nota é desempate, não veredito",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:63",
+      "sonda": "**A nota dele é desempate, não veredito**"
+    },
+    {
+      "id": "sem-splice-frase",
+      "categoria": "inviolaveis",
+      "ancora": "nenhuma emenda cria frase que não foi dita",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:179",
+      "sonda": "**Nenhum splice pode criar uma frase que ele não disse.**"
+    },
+    {
+      "id": "ressalva-viaja",
+      "categoria": "inviolaveis",
+      "ancora": "a ressalva viaja com a afirmação",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:182",
+      "sonda": "**A ressalva viaja com a afirmação.**"
+    },
+    {
+      "id": "ordem-cronologica",
+      "categoria": "inviolaveis",
+      "ancora": "ordem cronológica",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:190",
+      "sonda": "vão em ordem cronológica.**"
+    },
+    {
+      "id": "pedaco-4-segundos",
+      "categoria": "inviolaveis",
+      "ancora": "no mínimo 4 segundos",
+      "origem": "Instragram-Videos/.claude/rules/curadoria-corte.md:188",
+      "sonda": "**Cada pedaço tem no mínimo 4 segundos.**"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "expxmedia_ancoras": 1,
+  "skill": "revisor-reel",
+  "descricao": "Auditoria só leitura do reel narrado: veracidade dos beats 2 a 6 com a linha da fonte, o frame da abertura como bloqueante e o veredito.",
+  "alvos": [
+    "nucleo/agents/revisor-reel.md"
+  ],
+  "minimos": {
+    "veracidade": 2,
+    "frame_abertura": 4,
+    "veredito": 2
+  },
+  "itens": [
+    {
+      "id": "veracidade-beats",
+      "categoria": "veracidade",
+      "ancora": "veracidade dos beats 2 a 6",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:28",
+      "sonda": "2. **Veracidade (beats 2 a 6)**"
+    },
+    {
+      "id": "linha-da-fonte",
+      "categoria": "veracidade",
+      "ancora": "cite a linha da fonte",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:29",
+      "sonda": "cite a linha do `readme.md`"
+    },
+    {
+      "id": "gancho-nao-se-audita",
+      "categoria": "veracidade",
+      "ancora": "o gancho não se audita por lastro",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:31",
+      "sonda": "**O beat 1 (gancho) não se audita por lastro**"
+    },
+    {
+      "id": "frame-abertura",
+      "categoria": "frame_abertura",
+      "ancora": "frame de abertura",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:63",
+      "sonda": "5. **Frame de abertura**"
+    },
+    {
+      "id": "sem-texto-inventado",
+      "categoria": "frame_abertura",
+      "ancora": "nenhum texto, logo ou interface inventados",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:66",
+      "sonda": "número, logo nem interface inventados pelo modelo"
+    },
+    {
+      "id": "rosto-porta-voz",
+      "categoria": "frame_abertura",
+      "ancora": "o rosto é o do porta-voz",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:69",
+      "sonda": "**o rosto tem que ser reconhecidamente"
+    },
+    {
+      "id": "unica-pessoa",
+      "categoria": "frame_abertura",
+      "ancora": "única pessoa em cena",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:70",
+      "sonda": "única pessoa em cena"
+    },
+    {
+      "id": "cartao-fora-do-rosto",
+      "categoria": "frame_abertura",
+      "ancora": "cartão não encosta no rosto",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:75",
+      "sonda": "amarelo não encosta no rosto"
+    },
+    {
+      "id": "bloqueante",
+      "categoria": "frame_abertura",
+      "ancora": "cartão em cima do rosto é BLOQUEANTE",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:76",
+      "sonda": "cartão em cima da cara é achado **BLOQUEANTE**"
+    },
+    {
+      "id": "selo-igual-cta",
+      "categoria": "frame_abertura",
+      "ancora": "a mesma palavra do cta.txt",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:87",
+      "sonda": "mostra a MESMA palavra do"
+    },
+    {
+      "id": "veredito-publicar",
+      "categoria": "veredito",
+      "ancora": "PUBLICAR",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:136",
+      "sonda": "**PUBLICAR** ou **SEGURAR**."
+    },
+    {
+      "id": "veredito-segurar",
+      "categoria": "veredito",
+      "ancora": "SEGURAR",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:136",
+      "sonda": "**PUBLICAR** ou **SEGURAR**."
+    },
+    {
+      "id": "formato-achado",
+      "categoria": "veredito",
+      "ancora": "BLOQUEANTE|IMPORTANTE|SUGESTÃO",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:128",
+      "sonda": "[BLOQUEANTE|IMPORTANTE|SUGESTÃO] título curto"
+    },
+    {
+      "id": "so-leitura",
+      "categoria": "veredito",
+      "ancora": "só leitura",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:14",
+      "sonda": "**Read-only.** Você reporta"
+    },
+    {
+      "id": "dez-palavras-sugestao",
+      "categoria": "veredito",
+      "ancora": "SUGESTÃO, nunca BLOQUEANTE",
+      "origem": "Instragram-Videos/.claude/agents/revisor-video.md:49",
+      "sonda": "os dois são SUGESTÃO,"
+    }
+  ]
+}

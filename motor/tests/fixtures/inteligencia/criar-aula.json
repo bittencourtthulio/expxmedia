@@ -1,0 +1,91 @@
+{
+  "expxmedia_ancoras": 1,
+  "skill": "criar-aula",
+  "descricao": "Aula narrada com avatar: a ordem do pipeline, com o avatar gerado a partir do áudio da narração e nunca do texto.",
+  "alvos": [
+    "nucleo/skills/criar-aula/SKILL.md"
+  ],
+  "minimos": {
+    "ordem_pipeline": 6,
+    "avatar_audio": 2
+  },
+  "itens": [
+    {
+      "id": "roteiro-com-cues",
+      "categoria": "ordem_pipeline",
+      "ancora": "roteiro com marcações de cue",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:9",
+      "sonda": "`roteiro.txt` com as marcações `[[cue]]`."
+    },
+    {
+      "id": "narracao-e-cues",
+      "categoria": "ordem_pipeline",
+      "ancora": "narração gera o áudio e os cues",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:10",
+      "sonda": "`public/narracao.mp3` e `src/cues.json`"
+    },
+    {
+      "id": "tela-no-tempo-da-fala",
+      "categoria": "ordem_pipeline",
+      "ancora": "gravação de tela no tempo da fala",
+      "origem": "cursos-ia/radar-ia-07-jev-codigo/README.md:54",
+      "sonda": "trecho no tempo da fala e com enquadramento próprio"
+    },
+    {
+      "id": "avatar-depois-da-narracao",
+      "categoria": "ordem_pipeline",
+      "ancora": "avatar depois da narração",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:13",
+      "sonda": "Avatar no HeyGen a partir de `narracao.mp3`"
+    },
+    {
+      "id": "transcricao-por-palavra",
+      "categoria": "ordem_pipeline",
+      "ancora": "transcrição com tempo por palavra",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:11",
+      "sonda": "--word_timestamps True"
+    },
+    {
+      "id": "legenda-do-roteiro",
+      "categoria": "ordem_pipeline",
+      "ancora": "legenda com o texto exato do roteiro",
+      "origem": "cursos-ia/aula-skills-2/plano-gravacao.md:72",
+      "sonda": "alinha o texto exato de `roteiro.txt` aos tempos por"
+    },
+    {
+      "id": "render-dois-formatos",
+      "categoria": "ordem_pipeline",
+      "ancora": "render 16:9 e 9:16",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:15",
+      "sonda": "`npm run render` (1920×1080) e `npm run render:9x16` (1080×1920)"
+    },
+    {
+      "id": "regerar-antes-do-render",
+      "categoria": "ordem_pipeline",
+      "ancora": "roteiro ou narração mudou, refaça antes do render",
+      "origem": "cursos-ia/aula-skills-2/plano-gravacao.md:75",
+      "sonda": "Rodar de novo sempre que o roteiro ou a narração mudarem, antes do render."
+    },
+    {
+      "id": "avatar-do-audio",
+      "categoria": "avatar_audio",
+      "ancora": "avatar a partir do áudio",
+      "origem": "cursos-ia/radar-ia-01-jev/README.md:13",
+      "sonda": "(asset de áudio"
+    },
+    {
+      "id": "avatar-nunca-do-texto",
+      "categoria": "avatar_audio",
+      "ancora": "nunca do texto",
+      "origem": "Instragram-Videos/.claude/skills/gerar-reel-recriado/SKILL.md:174",
+      "sonda": "Avatar gerado pelo texto (`script`/`voiceId`) em vez do áudio da narração."
+    },
+    {
+      "id": "texto-nao-sincroniza",
+      "categoria": "avatar_audio",
+      "ancora": "gerado pelo texto não sincroniza",
+      "origem": "Instragram-Videos/.claude/skills/gerar-reel-recriado/SKILL.md:124",
+      "sonda": "vídeo gerado pelo texto sai com outra duração e"
+    }
+  ]
+}
