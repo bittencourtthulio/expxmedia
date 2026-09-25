@@ -54,7 +54,7 @@ tasks:
   - id: T-07.04
     titulo: "Composicao de aula L16 e L9"
     fase: F-07.2
-    status: em_andamento
+    status: concluida
     objetivo: "Portar a composicao de aula com layouts 16:9 e 9:16, area segura, PiP do avatar e legenda, com marca da Alma."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/Aula/index.tsx, motor/kit-remotion/src/composicoes/Aula/layouts.ts, motor/tests/aula/test_composicao.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/aula/test_composicao.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.03, T-07.01]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.05
     titulo: "Producao de aula"
     fase: F-07.2
-    status: em_andamento
+    status: concluida
     objetivo: "Produzir aula: narrar com parametros de aula e sem ritmo minimo, cues, legendas 42x2, avatar opcional a partir do audio, tela opcional, render nos formatos pedidos, SRT e peca.json com compoe (D-40)."
     arquivos:
       cria: [motor/src/expxmedia/producao/aula.py, motor/tests/aula/test_producao.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/aula/test_producao.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-07.04, T-07.02, T-07.03, T-04.09, T-05.11]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.06
     titulo: "Template de aula e compilacao"
     fase: F-07.2
-    status: em_andamento
+    status: concluida
     objetivo: "Criar o template de aula embarcado e a compilacao de episodios com SRT unico."
     arquivos:
       cria: [templates/aula/padrao/template.json, templates/aula/padrao/package.json, templates/aula/padrao/src/Composicao.tsx, templates/aula/padrao/exemplo.json, motor/src/expxmedia/aula/compilar.py, motor/tests/aula/test_compilar.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/aula/test_compilar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-07.05]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.07
     titulo: "CLI de aula e avatar"
     fase: F-07.2
-    status: em_andamento
+    status: concluida
     objetivo: "Expor produzir aula, aula compilar, aula editar-tela e avatar gerar no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/aula.py, motor/tests/test_cli_aula.py]
@@ -109,8 +109,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli_aula.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-07.06]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 07
@@ -197,7 +197,8 @@ teste_funcional: O rótulo da janela do avatar vem do nome do porta-voz da Alma 
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_composicao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03, T-07.01]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: sprint 07: 50 passed, 0 skipped
 ```
 
 ---
@@ -217,7 +218,8 @@ teste_funcional: Uma aula que usa uma apresentação registra o peca_id dela em 
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_producao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.04, T-07.02, T-07.03, T-04.09, T-05.11]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: sprint 07: 50 passed, 0 skipped
 ```
 
 ---
@@ -237,7 +239,8 @@ teste_funcional: O template de aula passa em template.validar no modo template s
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_compilar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.05]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: sprint 07: 50 passed, 0 skipped
 ```
 
 ---
@@ -257,5 +260,6 @@ teste_funcional: avatar gerar sem HEYGEN_API_KEY e sem provedor de teste sai com
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_aula.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.06]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: sprint 07: 50 passed, 0 skipped
 ```

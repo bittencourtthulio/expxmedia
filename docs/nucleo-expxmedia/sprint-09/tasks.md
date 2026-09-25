@@ -84,7 +84,7 @@ tasks:
   - id: T-09.04
     titulo: "Skills de post e carrossel com agentes"
     fase: F-09.2
-    status: pendente
+    status: em_andamento
     objetivo: "Portar a inteligencia editorial de carrossel (duas passadas copy e revisao, bloqueantes mecanizaveis, validacao de imagem) como skills criar-post e criar-carrossel e agentes, lendo voz e regras da Alma."
     arquivos:
       cria: [nucleo/skills/criar-post/SKILL.md, nucleo/skills/criar-carrossel/SKILL.md, nucleo/agents/copywriter.md, nucleo/agents/revisor-editorial.md, nucleo/agents/validador-imagem.md, motor/tests/plugin/test_skill_estatica.py]
@@ -99,7 +99,7 @@ tasks:
   - id: T-09.05
     titulo: "Skills de reel narrado e de pagina com roteirista e revisor"
     fase: F-09.2
-    status: pendente
+    status: em_andamento
     objetivo: "Portar roteiro em 6 partes, teste das dez palavras, veracidade e escolha da palavra do CTA como skill criar-reel (Remotion) e skill reel-de-pagina (captura antes do roteiro com site.md como lastro, quando usar abertura), o agente roteirista e o agente revisor-reel so leitura com o roteiro de auditoria da origem."
     arquivos:
       cria: [nucleo/skills/criar-reel/SKILL.md, nucleo/skills/reel-de-pagina/SKILL.md, nucleo/agents/roteirista.md, nucleo/agents/revisor-reel.md, motor/tests/plugin/test_skill_reel.py]
@@ -114,7 +114,7 @@ tasks:
   - id: T-09.06
     titulo: "Skill de reel por referencia com revisor"
     fase: F-09.2
-    status: pendente
+    status: em_andamento
     objetivo: "Portar a skill do recriado sob medida: 8 passos, tabela do que se imita, leitura das folhas em 9 secoes, 3 voltas de previa, checklist de parecenca e revisor que conhece o formato."
     arquivos:
       cria: [nucleo/skills/reel-por-referencia/SKILL.md, nucleo/skills/reel-por-referencia/regras.md, nucleo/agents/revisor-video.md, motor/tests/plugin/test_skill_referencia.py]
@@ -129,7 +129,7 @@ tasks:
   - id: T-09.07
     titulo: "Skills de corte, apresentacao e aula"
     fase: F-09.2
-    status: pendente
+    status: em_andamento
     objetivo: "Escrever as skills cortar-video, criar-apresentacao e criar-aula com a ordem de dependencias de cada pipeline."
     arquivos:
       cria: [nucleo/skills/cortar-video/SKILL.md, nucleo/skills/criar-apresentacao/SKILL.md, nucleo/skills/criar-aula/SKILL.md, motor/tests/plugin/test_skill_corte_aula.py]
@@ -144,7 +144,7 @@ tasks:
   - id: T-09.08
     titulo: "Skill de publicacao"
     fase: F-09.2
-    status: pendente
+    status: em_andamento
     objetivo: "Escrever a skill publicar com dry-run obrigatorio antes, provedor pela verificacao e explicacao das diferencas entre Expx Flow e Graph."
     arquivos:
       cria: [nucleo/skills/publicar/SKILL.md, nucleo/agents/publicador.md, motor/tests/plugin/test_skill_publicar.py]
@@ -284,7 +284,7 @@ teste_funcional: A skill criar-carrossel cita o portão, a leitura da Alma, a bu
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_skill_estatica.py tests/plugin/test_ancoras.py tests/test_marca.py` termina com 0 failed
 depende_de: [T-09.03, T-03.13, T-09.11]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -304,7 +304,7 @@ teste_funcional: As skills e o roteirista contêm todos os itens da fixture cria
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_skill_reel.py tests/plugin/test_ancoras.py tests/test_marca.py` termina com 0 failed
 depende_de: [T-09.03, T-05.12, T-09.11, T-04.13, T-06.09]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -324,7 +324,7 @@ teste_funcional: A skill, as regras e o revisor juntos contêm todos os itens da
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_skill_referencia.py tests/plugin/test_ancoras.py tests/test_marca.py` termina com 0 failed
 depende_de: [T-09.03, T-06.09, T-09.11]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -344,7 +344,7 @@ teste_funcional: As skills cortar-video e criar-aula contêm todos os itens das 
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_skill_corte_aula.py tests/plugin/test_ancoras.py tests/test_marca.py` termina com 0 failed
 depende_de: [T-09.03, T-06.09, T-07.07, T-05.12, T-09.11]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -364,5 +364,5 @@ teste_funcional: A skill instrui rodar dry-run antes de publicar e proíbe reten
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_skill_publicar.py tests/test_marca.py` termina com 0 failed
 depende_de: [T-09.03, T-08.07]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```

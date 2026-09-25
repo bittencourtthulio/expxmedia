@@ -1,0 +1,17 @@
+{
+  "template": "aula-padrao-5b1e7d",
+  "titulo": "Vitrine que vende em três passos",
+  "roteiro": "[[s1]] Uma vitrine bem montada vende antes de qualquer conversa. Hoje você aprende a organizar a sua em três passos. [[s2]] Primeiro, agrupe os produtos pelo momento do dia em que as pessoas compram. [[s3]] Depois, coloque os mais pedidos na altura dos olhos. [[s4]] Por fim, troque o destaque toda semana. Resumindo: grupos, altura e troca.",
+  "cenas": [
+    {"cue": "s1", "modo": "cena", "rotulo": "abertura", "titulo": "Vitrine que vende", "texto": "Três passos para organizar a sua hoje."},
+    {"cue": "s2", "modo": "cena", "rotulo": "passo 1", "titulo": "Agrupe pelo momento", "passo": "01 · grupos", "fato": "manhã\ntarde\nnoite"},
+    {"cue": "s3", "modo": "cena", "rotulo": "passo 2", "titulo": "Na altura dos olhos", "passo": "02 · altura", "fato": "os mais pedidos\nna frente"},
+    {"cue": "s4", "modo": "cena", "rotulo": "resumo", "titulo": "Resumindo.", "itens": ["grupos por momento", "altura dos olhos", "troca semanal"]}
+  ],
+  "formatos": ["16:9", "9:16"],
+  "avatar": null,
+  "tela": null,
+  "apresentacao": null,
+  "serie": "Aula de exemplo",
+  "porta_voz": null
+}

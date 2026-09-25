@@ -4,32 +4,32 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-06
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-06.1
     titulo: "Reel por referencia"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/referencia termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-06.2, F-06.3]
     tasks: [T-06.01, T-06.02, T-06.03]
   - id: F-06.2
     titulo: "Corte de video longo"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/corte termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-06.1, F-06.3]
     tasks: [T-06.04, T-06.05, T-06.06, T-06.07]
   - id: F-06.3
     titulo: "Abertura gerada"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/producao/test_abertura.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-06.1, F-06.2]
     tasks: [T-06.08]
   - id: F-06.4
     titulo: "CLI de referencia e corte"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/test_cli_referencia_corte.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

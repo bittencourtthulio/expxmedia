@@ -9,7 +9,7 @@ tasks:
   - id: T-06.01
     titulo: "Analise do video de referencia"
     fase: F-06.1
-    status: em_andamento
+    status: concluida
     objetivo: "Portar analisar_reel: scdet 10, quadros a cada 2 s ate 24, folhas 6x2 a 1 quadro/s, whisper e formato.json."
     arquivos:
       cria: [motor/src/expxmedia/referencia/analisar.py, motor/tests/referencia/test_analisar.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/referencia/test_analisar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.07, T-04.01]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.02
     titulo: "Pasta do reel sob medida e validacao do cenas.json"
     fase: F-06.1
-    status: em_andamento
+    status: concluida
     objetivo: "Criar a pasta do reel sob medida a partir do kit e validar cenas.json: ancoras em ordem, eventos existentes e trilha diferente das anteriores."
     arquivos:
       cria: [motor/src/expxmedia/referencia/sob_medida.py, motor/tests/referencia/test_sob_medida.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/referencia/test_sob_medida.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.02, T-02.12]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.03
     titulo: "Montar, previa, render e verificacao do sob medida"
     fase: F-06.1
-    status: em_andamento
+    status: concluida
     objetivo: "Encadear montagem, previa com guias, render, normalizacao e verificacao no perfil sob_medida, com o validador de codigo no modo sob_medida (D-36)."
     arquivos:
       cria: [motor/src/expxmedia/producao/reel_referencia.py, motor/tests/referencia/test_reel_referencia.py]
@@ -49,8 +49,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/referencia/test_reel_referencia.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-06.02, T-05.04, T-05.06]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.04
     titulo: "Momentos do video longo"
     fase: F-06.2
@@ -129,7 +129,7 @@ tasks:
   - id: T-06.09
     titulo: "CLI de referencia e corte"
     fase: F-06.4
-    status: pendente
+    status: concluida
     objetivo: "Expor referencia analisar, referencia criar, referencia montar, referencia previa, referencia render, produzir reel-corte e produzir abertura no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/referencia_corte.py, motor/tests/test_cli_referencia_corte.py]
@@ -139,8 +139,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli_referencia_corte.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-06.03, T-06.07, T-06.08]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 06
@@ -164,7 +164,8 @@ teste_funcional: O formato.json traz largura, altura, fps e duração, e a pasta
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_analisar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.07, T-04.01]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/referencia 15 passed, 0 skipped
 ```
 
 ---
@@ -184,7 +185,8 @@ teste_funcional: Um cenas.json com trilha igual à de outro reel da instalação
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_sob_medida.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.02, T-02.12]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/referencia 15 passed, 0 skipped
 ```
 
 ---
@@ -204,7 +206,8 @@ teste_funcional: Um Reel.tsx que importa child_process é recusado antes do rend
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_reel_referencia.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-06.02, T-05.04, T-05.06]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/referencia 15 passed, 0 skipped
 ```
 
 ---
@@ -329,5 +332,6 @@ teste_funcional: referencia montar com um cenas.json de âncora ausente sai com 
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_referencia_corte.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-06.03, T-06.07, T-06.08]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 10 passed, 0 skipped
 ```

@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-07
 titulo: "Aula e avatar"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest tests/aula tests/avatar tests/test_cli_aula.py termina com 0 failed e 0 skipped nesta maquina"
 fases: [F-07.1, F-07.2]
 riscos: ["Regerar a narracao invalida cues, avatar e legenda (base/aula-pipeline.md)", "Documentacao do HeyGen se contradiz em limites (base/api-heygen.md)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 07 — Aula e avatar

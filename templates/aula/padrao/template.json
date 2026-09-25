@@ -1,0 +1,79 @@
+{
+  "expxmedia_template": 1,
+  "template_id": "aula-padrao-5b1e7d",
+  "titulo": "Aula narrada com avatar em janela, tela gravada, cartão do passo e legenda de duas linhas, em 16:9 e 9:16",
+  "tipo": "aula",
+  "motor": "remotion",
+  "formato": "16:9",
+  "canvas": { "w": 1920, "h": 1080 },
+  "status": "validado",
+  "criado_em": "2026-09-25T02:58:32-03:00",
+  "atualizado_em": "2026-09-25T02:58:32-03:00",
+
+  "estilos": ["janelas", "retro", "didatico", "narrado"],
+  "serve_para": ["aula", "tutorial", "passo-a-passo", "demonstracao", "explicacao"],
+
+  "versoes": { "motor": "0.1.0", "remotion": "4.0.528" },
+  "dependencias": { "react": "19.3.0", "remotion": "4.0.528" },
+
+  "requisitos": ["narrar", "renderizar_motion", "legendar"],
+  "exige_porta_voz": true,
+
+  "tokens": ["fundo", "fundo_alt", "texto", "texto_inverso", "apoio", "destaque"],
+  "fontes": ["titulo", "texto"],
+
+  "sequencia": ["cena", "tela", "slide", "cena"],
+  "kinds": {
+    "cena": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "rotulo": { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "etiqueta da cena e rótulo do cabeçalho (abertura, passo 2, resumo)" },
+        "titulo": { "tipo": "texto", "max": 40, "obrigatorio": true, "nota": "a ideia da cena, dita na narração" },
+        "texto":  { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "uma linha de apoio" },
+        "itens":  { "tipo": "lista", "max": 36, "obrigatorio": false, "nota": "até 4 itens que entram um a um (resumo, lista de passos)" },
+        "passo":  { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "título do cartão do passo, só no 16:9 (01 · projeto)" },
+        "fato":   { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "o número ou fato do passo, em até 3 linhas" }
+      }
+    },
+    "tela": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": ["editar_video"],
+      "slots": {
+        "rotulo": { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "rótulo do cabeçalho; a barra da janela usa o rótulo da janela da gravação" },
+        "passo":  { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "título do cartão do passo, só no 16:9" },
+        "fato":   { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "o número que importa na tela, em até 3 linhas" }
+      }
+    },
+    "slide": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "contain",
+      "requisitos": [],
+      "slots": {
+        "rotulo": { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "barra da janela do slide e rótulo do cabeçalho" },
+        "slide":  { "tipo": "numero", "obrigatorio": true, "nota": "número do slide da apresentação que compõe a aula (a partir de 1)" },
+        "passo":  { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "título do cartão do passo, só no 16:9" },
+        "fato":   { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "o fato do slide, em até 3 linhas" }
+      }
+    }
+  },
+
+  "assets": [],
+
+  "validacao": {
+    "contraste_min": null,
+    "fonte_min_px": 24,
+    "resultado": "aprovado",
+    "validado_em": "2026-09-25T02:58:32-03:00",
+    "achados": []
+  },
+
+  "origem": { "tipo": "criado", "id_compartilhado": null, "inspiracao": null },
+
+  "compartilhamento": { "estado": "nao_enviado", "enviado_em": null, "pr_url": null, "erro": null }
+}

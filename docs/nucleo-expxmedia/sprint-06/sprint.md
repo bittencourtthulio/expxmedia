@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-06
 titulo: "Referencia e corte"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest tests/referencia tests/corte tests/producao/test_abertura.py tests/test_cli_referencia_corte.py termina com 0 failed e 0 skipped nesta maquina"
 fases: [F-06.1, F-06.2, F-06.3, F-06.4]
 riscos: ["A sequencia de cenas vem das folhas lidas pelo modelo, nao do scdet (base/inteligencia-reel-recriado.md)", "Documentacao do corte diverge do codigo; o codigo e a verdade (base/corte-e-reenquadramento.md)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 06 — Referencia e corte

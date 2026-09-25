@@ -4,18 +4,18 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-07
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-07.1
     titulo: "Cues, avatar e tela"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/aula/test_cues.py tests/avatar tests/aula/test_editar_tela.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []
     tasks: [T-07.01, T-07.02, T-07.03]
   - id: F-07.2
     titulo: "Composicao e producao"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/aula tests/test_cli_aula.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

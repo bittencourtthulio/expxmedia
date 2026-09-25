@@ -1,0 +1,9 @@
+{
+  "name": "aula-padrao",
+  "private": true,
+  "description": "Template de aula do núcleo: janelas com barra de título, avatar em janela com o nome do porta-voz, tela gravada, cartão do passo e legenda de duas linhas, em 16:9 e 9:16. Layouts, avatar, tela e legenda vêm da composição Aula do kit; o template desenha as cenas. As cores e as fontes vêm da Alma por props; o módulo @expxmedia/template é entregue pelo motor na hora do render.",
+  "dependencies": {
+    "react": "19.3.0",
+    "remotion": "4.0.528"
+  }
+}
