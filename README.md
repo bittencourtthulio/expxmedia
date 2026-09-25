@@ -25,7 +25,7 @@ configuração do `.env` — e cada recurso só é habilitado quando a chave del
 ## Ordem de construção
 
 1. Contratos ✅
-2. Motor de mídia (Python) — as capacidades por trás de um contrato único
+2. Núcleo (Python) — o motor com as capacidades e a produção genérica dos cinco tipos de peça, sem pack nenhum
 3. Central — CLI (TypeScript, a partir do expxdev) e casca do painel
 4. `expx-instagram` — o pack piloto
 5. `expx-galeria` — camada, versão local

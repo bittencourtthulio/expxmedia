@@ -8,6 +8,12 @@ Como no expxdev, cada pack mora no **próprio repositório**, e a central (`expx
 escolhidos, trava versão e hash no lock, e monta **um plugin do Claude Code chamado `expxmedia`**
 com tudo junto. Os comandos ficam com namespace: `/expxmedia:instagram-carrossel`.
 
+**O núcleo produz; o pack especializa.** O núcleo do ExpxMedia já traz o motor e a produção
+genérica dos cinco tipos de peça — com ele sozinho, uma empresa cria post, carrossel (inclusive
+misto), reel, apresentação e aula com a própria marca. O pack acrescenta o que é de um canal: as
+regras e limites do canal, o editorial (séries, ganchos, cadência), o planejamento, as métricas e
+a análise, e a aba do painel. Um pack **nunca reimplementa** uma capacidade do núcleo.
+
 Os packs não se conhecem por código. Eles se encontram nos contratos: um lê a `peca.json` que o
 outro gravou, e nenhum importa módulo de outro.
 
@@ -15,7 +21,7 @@ outro gravou, e nenhum importa módulo de outro.
 
 ## Os packs e camadas previstos
 
-| Nome | Tipo | Origem na extração | Produz |
+| Nome | Tipo | Origem na extração | Especializa |
 |---|---|---|---|
 | `expx-instagram` | pack | `Instagram-Carrosseis` + `Instragram-Videos` | `post_unico`, `carrossel`, `reel` |
 | `expx-youtube` | pack | `youtube-squad` | `apresentacao`, análise do canal |
@@ -61,8 +67,17 @@ Na raiz do repositório do pack.
   "capacidades": {
     "obrigatorias": ["renderizar_html"],
     "opcionais": ["renderizar_motion", "narrar", "legendar", "avatar", "rosto_ia", "video_ia",
-                  "banco_imagens", "imagem_ia", "publicar", "agendar", "automacao_dm",
-                  "metricas_instagram"]
+                  "banco_imagens", "imagem_ia", "publicar", "agendar", "automacao_dm"],
+    "fornece": [
+      {
+        "id": "metricas_instagram",
+        "descricao": "alcance, salvos e retenção por peça publicada no Instagram",
+        "provedores": [
+          { "id": "meta_graph", "env": ["META_GRAPH_TOKEN", "META_IG_USER_ID"], "cli": null, "binarios": [] }
+        ],
+        "como_habilitar": "Coloque META_GRAPH_TOKEN e META_IG_USER_ID no .env. Onde conseguir: developers.facebook.com → Graph API Explorer."
+      }
+    ]
   },
 
   "skills": ["instagram-carrossel", "instagram-post", "instagram-reel", "instagram-analisar"],
@@ -99,7 +114,9 @@ Na raiz do repositório do pack.
 | `tipo` | `pack` · `camada` |
 | `contratos` | a versão de cada contrato que o pack **escreve e lê**. A central recusa instalar pack que exija versão maior que a do motor instalado |
 | `capacidades.obrigatorias` | sem elas o pack não instala — o `doctor` explica o que falta. Deve ser o mínimo: só capacidades sem chave |
-| `capacidades.opcionais` | o pack funciona sem elas, com menos recursos. **São as variáveis destas que entram no `.env.example`** |
+| `capacidades.opcionais` | capacidades do núcleo que o pack aproveita se estiverem habilitadas; o pack funciona sem elas, com menos recursos |
+| `capacidades.fornece` | capacidades **novas**, particulares do canal, que só existem com o pack instalado. Mesma forma do catálogo do núcleo ([`CONTRATO-capacidades.md`](./CONTRATO-capacidades.md)); o id não pode repetir um do núcleo |
+| `produz` | os tipos de peça que o pack especializa para o canal (a produção em si é do núcleo) |
 | `painel.abas` | ver abaixo |
 | `editorial` | arquivos que a pessoa ajusta para o pack (cadência, ganchos, aprendizados). São **copiados para a instalação** na primeira vez e nunca sobrescritos por atualização |
 | `rotinas` | trabalho agendado. A central não instala cron sozinha: `/expxmedia:onboarding` mostra as rotinas e pede confirmação |
@@ -172,7 +189,7 @@ A central, ao instalar ou atualizar um pack:
 2. confere `requisitos_sistema` e `capacidades.obrigatorias`; faltando, instala mesmo assim e o
    `doctor` explica — como no expxdev, um pack que falha não derruba os outros;
 3. copia `editorial` para a instalação **só se ainda não existir**;
-4. regenera o `.env.example` com as variáveis das capacidades opcionais de todos os packs
+4. regenera o `.env.example` com as variáveis do núcleo e das capacidades `fornece` de todos os packs
    instalados — **sem tocar no `.env`**;
 5. monta o plugin, registra os hooks no `settings.json` (com backup) e grava o lock com o hash de
    cada arquivo.

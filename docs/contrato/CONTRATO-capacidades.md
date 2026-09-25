@@ -15,7 +15,18 @@ o provedor. Trocar ElevenLabs por outro serviço é mudar o `.env`, não um pack
 
 ---
 
-## O catálogo
+## Do núcleo ou de pack
+
+As capacidades deste catálogo são **do núcleo**: vêm com o ExpxMedia, sem pack nenhum instalado.
+São as que produzem e publicam peças — o que todo canal precisa.
+
+O que é particular de um canal — ler métricas do Instagram, analytics do YouTube, operar conta de
+anúncios — é **capacidade de pack**. Ela só existe quando o pack está instalado, é declarada no
+`pack.json` dele (`capacidades.fornece`, ver [`CONTRATO-pack.md`](./CONTRATO-pack.md)) e segue
+exatamente as mesmas regras deste contrato: id, provedores, o que a satisfaz, `como_habilitar`,
+variáveis no `.env.example`. Sem o pack, a capacidade não aparece nem como desligada.
+
+## O catálogo do núcleo
 
 | Capacidade | O que faz | Provedores (id) | Satisfeito por |
 |---|---|---|---|
@@ -29,15 +40,20 @@ o provedor. Trocar ElevenLabs por outro serviço é mudar o `.env`, não um pack
 | `imagem_ia` | texto → imagem | `openrouter` | `OPENROUTER_API_KEY` |
 | `rosto_ia` | imagem do porta-voz em cena nova | `higgsfield` | login do CLI `higgsfield` |
 | `video_ia` | texto/imagem → vídeo curto | `higgsfield` | login do CLI `higgsfield` |
-| `banco_imagens` | busca de foto de banco | `pexels` | `PEXELS_API_KEY` |
+| `banco_imagens` | busca de foto **e vídeo** de banco (b-roll) | `pexels` | `PEXELS_API_KEY` |
 | `capturar_pagina` | screenshot e rolagem de página web | `playwright` | binário: Chromium do Playwright |
 | `publicar` | publicar agora | `expxflow` · `meta_graph` · `youtube_api` | ver abaixo |
 | `agendar` | publicar num horário futuro | `expxflow` · `meta_graph` | ver abaixo |
 | `automacao_dm` | comentário com palavra-chave → mensagem direta | `expxflow` | `EXPXFLOW_API_KEY` + `EXPXFLOW_CLIENT_ID` |
-| `metricas_instagram` | alcance, salvos, retenção por peça | `meta_graph` | `META_GRAPH_TOKEN` + `META_IG_USER_ID` |
-| `metricas_youtube` | analytics do canal e dos vídeos | `youtube_api` | `YOUTUBE_CLIENT_SECRET_FILE` + OAuth feito |
-| `anuncios_meta` | ler e operar conta de anúncios | `meta_graph` | `META_GRAPH_TOKEN` + `META_AD_ACCOUNT_ID` |
 | `galeria_compartilhada` | baixar e enviar templates da galeria pública | `github` | login do `gh` + aceite (ver template) |
+
+Exemplos de capacidades **de pack**, que não estão acima de propósito:
+
+| Capacidade | Pack | Satisfeito por |
+|---|---|---|
+| `metricas_instagram` | `expx-instagram` | `META_GRAPH_TOKEN` + `META_IG_USER_ID` |
+| `metricas_youtube` | `expx-youtube` | `YOUTUBE_CLIENT_SECRET_FILE` + OAuth feito |
+| `anuncios_meta` | `expx-meta` | `META_GRAPH_TOKEN` + `META_AD_ACCOUNT_ID` |
 
 `publicar` e `agendar` por provedor:
 
@@ -121,7 +137,7 @@ ELEVENLABS_API_KEY=
 EXPXFLOW_API_KEY=
 EXPXFLOW_CLIENT_ID=
 
-# publicar, agendar, metricas_instagram — Graph API direta da Meta
+# publicar, agendar — Graph API direta da Meta
 META_GRAPH_TOKEN=
 META_IG_USER_ID=
 
@@ -143,9 +159,9 @@ do modelo. Se ela colar mesmo assim, o sistema grava no `.env` e avisa que é bo
 | `OPENROUTER_API_KEY` | `imagem_ia` |
 | `PEXELS_API_KEY` | `banco_imagens` |
 | `EXPXFLOW_API_KEY`, `EXPXFLOW_CLIENT_ID` | `publicar`, `agendar`, `automacao_dm` |
-| `META_GRAPH_TOKEN`, `META_IG_USER_ID`, `META_PAGE_ID` | `publicar`, `agendar`, `metricas_instagram` |
-| `META_AD_ACCOUNT_ID` | `anuncios_meta` |
-| `YOUTUBE_CLIENT_SECRET_FILE` | `publicar` (YouTube), `metricas_youtube` |
+| `META_GRAPH_TOKEN`, `META_IG_USER_ID`, `META_PAGE_ID` | `publicar`, `agendar` (e `metricas_instagram`, do pack) |
+| `META_AD_ACCOUNT_ID` | `anuncios_meta` (do pack `expx-meta`) |
+| `YOUTUBE_CLIENT_SECRET_FILE` | `publicar` (YouTube) (e `metricas_youtube`, do pack) |
 | `PROVEDOR_<CAPACIDADE>` | escolha de provedor padrão |
 
 Os projetos de origem usam nomes minúsculos (`elevenlabs_apikey`, `ExpxFlow_apikey`,
