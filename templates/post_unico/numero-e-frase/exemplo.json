@@ -1,0 +1,20 @@
+{
+  "slides": [
+    {
+      "kind": "numero",
+      "etiqueta": "Checklist",
+      "numero": "12",
+      "texto": "Perguntas para fazer antes de fechar qualquer pedido. Salve e use no próximo atendimento.",
+      "itens": ["Prazo", "Custo", "Escopo", "Entrega", "Garantia", "Suporte", "Pagamento", "Contato"],
+      "assinatura": "perfil da empresa"
+    },
+    {
+      "kind": "frase",
+      "etiqueta": "Método",
+      "abertura": "Pressa não é",
+      "palavra": "Foco.",
+      "texto": "Diga o que é pronto e o que não pode faltar. O resto espera.",
+      "assinatura": "perfil da empresa"
+    }
+  ]
+}

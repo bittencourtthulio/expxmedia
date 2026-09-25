@@ -1,0 +1,12 @@
+<header class="topo">{{#rotulos}}<span>{{.}}</span>{{/rotulos}}</header>
+{{#foto}}
+<svg class="palavra-svg" viewBox="0 0 900 280" aria-hidden="true" data-sobre><text x="0" y="270" textLength="900" lengthAdjust="spacingAndGlyphs">{{palavra}}</text></svg>
+<figure class="conteudo-foto"><img src="{{foto}}" alt=""></figure>
+{{/foto}}
+{{^foto}}
+<svg class="palavra-svg grande" viewBox="0 0 880 520" aria-hidden="true" data-sobre><text x="0" y="470" textLength="880" lengthAdjust="spacingAndGlyphs">{{palavra}}</text></svg>
+<div class="fio"></div>
+{{/foto}}
+<div class="bloco-destaque"><u>{{destaque}}</u></div>
+<div class="area-bloco"><p class="bloco"><u>{{texto}}</u></p></div>
+<footer class="rodape"><span>{{rodape}}</span><span>{{rodape}}</span><span>{{rodape}}</span></footer>

@@ -1,0 +1,87 @@
+{
+  "expxmedia_template": 1,
+  "template_id": "carrossel-editorial-b74228",
+  "titulo": "Editorial com rótulos, palavra gigante e blocos sublinhados",
+  "tipo": "carrossel",
+  "motor": "html",
+  "formato": "4:5",
+  "canvas": { "w": 1080, "h": 1350 },
+  "status": "validado",
+  "criado_em": "2026-09-25T10:00:00-03:00",
+  "atualizado_em": "2026-09-25T10:00:00-03:00",
+
+  "estilos": ["editorial", "tipografico", "bold-colorido"],
+  "serve_para": ["conceito", "citacao", "opiniao", "cta-de-oferta"],
+
+  "versoes": { "motor": "0.1.0", "remotion": null },
+  "dependencias": {},
+
+  "requisitos": ["renderizar_html"],
+  "exige_porta_voz": false,
+
+  "tokens": ["fundo", "texto", "texto_inverso", "destaque", "destaque_2"],
+  "fontes": ["titulo", "texto"],
+
+  "sequencia": ["capa", "conteudo", "cta"],
+  "kinds": {
+    "capa": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "fixo",
+      "requisitos": [],
+      "slots": {
+        "rotulos":       { "tipo": "lista", "n": 3, "max": 12, "obrigatorio": true, "nota": "três rótulos curtos no topo (esquerda, centro, direita), em versalete" },
+        "chapeu":        { "tipo": "texto", "max": 30, "obrigatorio": true,  "nota": "linha fina acima do título, em caixa alta; até 28 cabe em uma linha" },
+        "titulo":        { "tipo": "texto", "max": 22, "obrigatorio": true,  "nota": "o título gigante na cor de destaque, em caixa alta, espremido na largura" },
+        "microcopy_esq": { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "nota miúda à esquerda, 3 a 5 linhas curtas (edição, série)" },
+        "microcopy_dir": { "tipo": "texto", "max": 80, "obrigatorio": false, "nota": "nota miúda à direita, 3 a 5 linhas curtas" },
+        "cursiva":       { "tipo": "texto", "max": 12, "obrigatorio": false, "nota": "palavra cursiva gigante atrás da foto, na segunda cor de destaque" },
+        "foto":          { "tipo": "asset", "asset": "foto", "obrigatorio": false, "nota": "retrato de busto em fundo neutro (retrato do porta-voz ou imagem da peça); vazio: entra uma forma na cor de destaque" },
+        "rodape":        { "tipo": "texto", "max": 18, "obrigatorio": true,  "nota": "assinatura do rodapé, repetida 3x (perfil ou site curto)" }
+      }
+    },
+    "conteudo": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "fixo",
+      "requisitos": [],
+      "slots": {
+        "rotulos":     { "tipo": "lista", "n": 3, "max": 12, "obrigatorio": true },
+        "palavra":     { "tipo": "texto", "max": 12, "obrigatorio": true,  "nota": "palavra gigante em serifa itálica, na segunda cor de destaque" },
+        "foto":        { "tipo": "asset", "asset": "foto", "obrigatorio": false, "nota": "imagem horizontal (recortada em cover); vazio: a palavra cresce e ocupa a área da foto" },
+        "destaque":    { "tipo": "texto", "max": 75, "obrigatorio": true,  "nota": "bloco na cor de destaque com texto claro em caixa alta, sublinhado inteiro" },
+        "texto":       { "tipo": "texto", "max": 95, "obrigatorio": true,  "nota": "bloco em caixa alta, sublinhado inteiro" },
+        "rodape":      { "tipo": "texto", "max": 18, "obrigatorio": true }
+      }
+    },
+    "cta": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "fixo",
+      "requisitos": [],
+      "slots": {
+        "rotulos": { "tipo": "lista", "n": 3, "max": 12, "obrigatorio": true },
+        "col_esq": { "tipo": "texto", "max": 50, "obrigatorio": true, "nota": "coluna da esquerda, claro e sublinhado: a provocação" },
+        "col_dir": { "tipo": "texto", "max": 50, "obrigatorio": true, "nota": "coluna da direita, claro e sublinhado: a virada ou a chamada" },
+        "rodape":  { "tipo": "texto", "max": 18, "obrigatorio": true }
+      }
+    }
+  },
+
+  "assets": [],
+
+  "fit": { "container": ".vis", "encolher": ["p", "h1", "h2", "h3", "li"], "zoom_min": 0.8, "zoom_max": 1.3, "margem": 40 },
+  "tipografia": { "minimo": 28, "piso": 18, "miudo": [".topo span", ".rodape span", ".microcopy"], "decorativo": [] },
+
+  "validacao": {
+    "contraste_min": 3.0,
+    "fonte_min_px": 28,
+    "resultado": "aprovado",
+    "validado_em": "2026-09-25T10:00:00-03:00",
+    "achados": []
+  },
+
+  "origem": { "tipo": "externo", "id_compartilhado": null, "inspiracao": null },
+
+  "compartilhamento": { "estado": "nao_enviado", "enviado_em": null, "pr_url": null, "erro": null }
+}

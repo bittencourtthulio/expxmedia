@@ -4,25 +4,25 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-03
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-03.1
     titulo: "Renderizador HTML"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/render_html termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-03.2]
     tasks: [T-03.01, T-03.02, T-03.03, T-03.04, T-03.05]
   - id: F-03.2
     titulo: "Provedores de imagem"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/imagem termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-03.1]
     tasks: [T-03.06, T-03.07, T-03.08, T-03.14]
   - id: F-03.3
     titulo: "Captura e producao estatica"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/captura tests/producao/test_post.py tests/producao/test_carrossel.py tests/test_templates_embarcados.py tests/test_cli_producao_estatica.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

@@ -69,6 +69,7 @@ class FonteResolvida:
     arquivos: list[Path] = field(default_factory=list)
     css: str = ""
     aviso: str | None = None
+    pedida: str | None = None  # a família que a Alma pediu, quando caiu na reserva embarcada
 
 
 class _Falha(Exception):
@@ -97,7 +98,7 @@ def resolver_fonte(
     familia = fonte.get("familia")
     origem = fonte.get("origem")
     if not isinstance(familia, str) or not familia.strip():
-        return _reserva(papel, f"visual.fontes.{papel} sem família: usando {FAMILIA_RESERVA} embarcada")
+        return _reserva(papel, f"visual.fontes.{papel} sem família: usando {FAMILIA_RESERVA} embarcada", None)
     familia = familia.strip()
     try:
         if origem == "google":
@@ -107,7 +108,7 @@ def resolver_fonte(
         else:
             raise _Falha(f"origem {origem!r} desconhecida")
     except _Falha as falha:
-        return _reserva(papel, f"fonte '{familia}' ({papel}) não resolvida: {falha}; usando {FAMILIA_RESERVA} embarcada")
+        return _reserva(papel, f"fonte '{familia}' ({papel}) não resolvida: {falha}; usando {FAMILIA_RESERVA} embarcada", familia)
     return FonteResolvida(papel=papel, familia=familia, origem=origem, arquivos=caminhos, css=css)
 
 
@@ -248,7 +249,7 @@ def _local(familia: str, arquivo: Any, raiz: Path | str | None) -> tuple[list[Pa
     return [caminho], _font_face(familia, caminho, peso=None)
 
 
-def _reserva(papel: str, aviso: str) -> FonteResolvida:
+def _reserva(papel: str, aviso: str, pedida: str | None) -> FonteResolvida:
     return FonteResolvida(
         papel=papel,
         familia=FAMILIA_RESERVA,
@@ -256,6 +257,7 @@ def _reserva(papel: str, aviso: str) -> FonteResolvida:
         arquivos=[PASTA_INTER / nome for nome in _INTER_PESOS.values()],
         css=css_inter_embarcada(),
         aviso=aviso,
+        pedida=pedida,
     )
 
 

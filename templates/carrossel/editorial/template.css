@@ -1,0 +1,274 @@
+/* Carrossel editorial: o que amarra os slides é a moldura miúda — três rótulos em versalete no
+   topo (y 60) e a assinatura repetida três vezes no rodapé (y 1262). Hierarquia: sans em negrito,
+   caixa alta, com <u> marcando o bloco inteiro; uma palavra gigante espremida na largura por
+   <text> de SVG com textLength (título na capa, serifa itálica no conteúdo).
+   Superfícies: capa e conteúdo no fundo da Alma; cta invertido (texto da Alma como fundo).
+   Escala: 260 (palavra) · 224 (título) · 46 (chapéu e cta) · 36 (bloco) · 32 (destaque) · 19 (miúdo).
+   Toda cor e toda família vêm dos tokens da Alma (--alma-*); as derivadas ficam aqui no :root. */
+
+:root {
+  --fundo: var(--alma-fundo);
+  --tinta: var(--alma-texto);
+  --destaque: var(--alma-destaque);
+  --segunda: var(--alma-destaque_2);
+  --sobre-destaque: var(--alma-texto_inverso);
+  --fundo-escuro: var(--alma-texto);
+  --forma: color-mix(in srgb, var(--alma-destaque) 16%, var(--alma-fundo));
+  --fonte-titulo: var(--alma-fonte-titulo);
+  --fonte-texto: var(--alma-fonte-texto);
+}
+
+/* ---------- base comum ---------- */
+
+.slide {
+  position: relative;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.slide p, .slide h1, .slide figure { margin: 0; padding: 0; }
+.slide em { font-style: normal; }
+
+/* três rótulos no topo, três assinaturas no rodapé: mesma grade, lados espelhados */
+.topo, .rodape {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  font-family: var(--fonte-titulo);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+.topo { top: 60px; }
+.rodape { bottom: 60px; }
+.slide.cta .topo, .slide.cta .rodape { color: var(--sobre-destaque); }
+.topo span:nth-child(1), .rodape span:nth-child(1) { justify-self: start; }
+.topo span:nth-child(2), .rodape span:nth-child(2) { justify-self: center; }
+.topo span:nth-child(3), .rodape span:nth-child(3) { justify-self: end; }
+
+/* corpo de texto padrão: sans em negrito, caixa alta; <u> marca o bloco no fragmento */
+.bloco {
+  font-family: var(--fonte-texto);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.slide u {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+  text-decoration-skip-ink: none;
+}
+
+/* ---------- capa: chapéu fino, título gigante, foto (ou forma), cursiva atrás, notas ---------- */
+
+.chapeu {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 124px;
+  z-index: 4;
+  text-align: center;
+  white-space: nowrap;
+  font-family: var(--fonte-texto);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+.titulo-svg {
+  position: absolute;
+  left: 56px;
+  top: 200px;
+  width: 968px;
+  height: 200px;
+  z-index: 4;
+  overflow: visible;
+}
+.titulo-svg text {
+  font-family: var(--fonte-titulo);
+  font-size: 224px;
+  font-weight: 700;
+  text-transform: uppercase;
+  fill: var(--destaque);
+  letter-spacing: -0.01em;
+}
+.cursiva-svg {
+  position: absolute;
+  left: 58px;
+  top: 540px;
+  width: 900px;
+  height: 320px;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+.cursiva-svg text {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 260px;
+  fill: var(--segunda);
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+}
+.capa .pessoa {
+  position: absolute;
+  left: 220px;
+  top: 460px;
+  width: 640px;
+  height: 760px;
+  z-index: 2;
+  object-fit: cover;
+  object-position: 50% 18%;
+  border-radius: 50% 50% 50% 50% / 38% 38% 62% 62%;
+}
+/* sem foto: a cursiva vira a figura da capa, fechada por um fio na cor de destaque */
+.capa .fios {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 1010px;
+  z-index: 2;
+  height: 12px;
+  background: var(--destaque);
+}
+/* ficha da capa: assinatura miúda, não leitura */
+.microcopy {
+  position: absolute;
+  top: 420px;
+  width: 180px;
+  z-index: 4;
+  font-family: var(--fonte-texto);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--tinta);
+}
+.micro-esq { left: 64px; text-align: left; }
+.micro-dir { right: 64px; text-align: right; }
+
+/* ---------- conteudo: palavra gigante atrás, foto horizontal, bloco de destaque + bloco ---------- */
+
+.palavra-svg {
+  position: absolute;
+  left: 58px;
+  top: 140px;
+  width: 900px;
+  height: 280px;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+.palavra-svg.grande { left: 55px; top: 250px; width: 880px; height: 520px; }
+.palavra-svg text {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 260px;
+  fill: var(--segunda);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.palavra-svg.grande text { font-size: 440px; }
+.conteudo-foto {
+  position: absolute;
+  left: 80px;
+  top: 380px;
+  width: 920px;
+  height: 460px;
+  z-index: 2;
+  overflow: hidden;
+  background: var(--forma);
+}
+.conteudo-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: block;
+}
+.fio {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 820px;
+  height: 6px;
+  z-index: 2;
+  background: var(--tinta);
+}
+.bloco-destaque {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 870px;
+  z-index: 4;
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  padding: 24px 28px;
+  font-family: var(--fonte-texto);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.area-bloco {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 1030px;
+  z-index: 4;
+}
+
+/* ---------- cta: fundo invertido, fio pendente com uma peça, duas colunas curtas ---------- */
+
+.slide.cta { background: var(--fundo-escuro); color: var(--sobre-destaque); }
+.cta-fio {
+  position: absolute;
+  left: 537px;
+  top: 0;
+  width: 6px;
+  height: 590px;
+  z-index: 2;
+  background: var(--destaque);
+}
+.cta-aro {
+  position: absolute;
+  left: 430px;
+  top: 580px;
+  width: 220px;
+  height: 220px;
+  z-index: 2;
+  border-radius: 50%;
+  border: 26px solid var(--destaque);
+  box-sizing: border-box;
+}
+.col-esq, .col-dir {
+  position: absolute;
+  width: 340px;
+  z-index: 4;
+  font-family: var(--fonte-texto);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.col-esq { left: 80px; top: 510px; text-align: left; }
+.col-dir { right: 80px; top: 720px; text-align: right; }

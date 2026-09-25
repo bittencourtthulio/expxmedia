@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-03
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-03.01
     titulo: "Render HTML sem JS e sem rede"
     fase: F-03.1
-    status: pendente
+    status: concluida
     objetivo: "Portar a base do galeria.renderizar: Playwright com JavaScript desligado, rede bloqueada exceto fontes do cache, canvas do template (D-20)."
     arquivos:
       cria: [motor/src/expxmedia/render_html/renderizar.py, motor/tests/render_html/test_renderizar.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/render_html/test_renderizar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-02.10]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.02
     titulo: "Encaixe de texto"
     fase: F-03.1
-    status: pendente
+    status: concluida
     objetivo: "Portar o encaixe com os mesmos numeros: 0,96 por rodada, zoom 0,8 a 1,3, fonte minima 28 px e piso 18 px para miudo, faixa vazia de 22%."
     arquivos:
       cria: [motor/src/expxmedia/render_html/encaixe.py, motor/tests/render_html/test_encaixe.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/render_html/test_encaixe.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.01, T-01.07]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.03
     titulo: "Contraste medido no PNG"
     fase: F-03.1
-    status: pendente
+    status: concluida
     objetivo: "Portar a medicao de contraste no PNG, com e sem a tinta do texto, no pior ponto do fundo, com as excecoes data-sobre e decorativo."
     arquivos:
       cria: [motor/src/expxmedia/render_html/contraste.py, motor/tests/render_html/test_contraste.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/render_html/test_contraste.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.04
     titulo: "Prancha e render.json"
     fase: F-03.1
-    status: pendente
+    status: concluida
     objetivo: "Portar a prancha de slides e o render.json com impressao digital da renderizacao."
     arquivos:
       cria: [motor/src/expxmedia/render_html/prancha.py, motor/tests/render_html/test_prancha.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/render_html/test_prancha.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.05
     titulo: "Paridade HTML com o sistema atual"
     fase: F-03.1
-    status: pendente
+    status: concluida
     objetivo: "Comparar o render do nucleo com o golden do sistema atual para as mesmas entradas (D-16)."
     arquivos:
       cria: [motor/tests/render_html/test_paridade.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/render_html/test_paridade.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.02, T-03.03, T-03.04]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.06
     titulo: "Pexels foto e video"
     fase: F-03.2
-    status: pendente
+    status: concluida
     objetivo: "Unificar foto e video do Pexels na capacidade banco_imagens com PEXELS_API_KEY (D-28)."
     arquivos:
       cria: [motor/src/expxmedia/imagem/pexels.py, motor/tests/imagem/test_pexels.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/imagem/test_pexels.py termina com 0 failed"
     depende_de: [T-02.07, T-01.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.07
     titulo: "OpenRouter imagem"
     fase: F-03.2
-    status: pendente
+    status: concluida
     objetivo: "Gerar imagem pelo OpenRouter com modelo e proporcao configuraveis."
     arquivos:
       cria: [motor/src/expxmedia/imagem/openrouter.py, motor/tests/imagem/test_openrouter.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/imagem/test_openrouter.py termina com 0 failed"
     depende_de: [T-02.07, T-01.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.08
     titulo: "Higgsfield por CLI"
     fase: F-03.2
-    status: pendente
+    status: concluida
     objetivo: "Chamar o CLI higgsfield para rosto_ia e video_ia validando parametros por model get antes (D-27)."
     arquivos:
       cria: [motor/src/expxmedia/imagem/higgsfield.py, motor/tests/imagem/test_higgsfield.py, motor/tests/stubs/higgsfield_falso.py]
@@ -124,12 +124,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/imagem/test_higgsfield.py termina com 0 failed"
     depende_de: [T-02.07]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.09
     titulo: "Captura de pagina"
     fase: F-03.3
-    status: pendente
+    status: concluida
     objetivo: "Capturar pagina com Playwright headless proprio: ocultar consentimento, cookies e overlays, secoes h1–h3 com posicao, site.md com o texto renderizado do DOM (minimo 1200 caracteres), rolagem e costura (D-25)."
     arquivos:
       cria: [motor/src/expxmedia/captura/pagina.py, motor/tests/captura/test_pagina.py]
@@ -139,12 +139,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/captura/test_pagina.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.04, T-03.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.14
     titulo: "Retratos, filtros de banco e cota"
     fase: F-03.2
-    status: pendente
+    status: concluida
     objetivo: "Portar o tratamento de retrato com rembg u2net (nunca u2netp), os filtros de banco (tamanho, pessoa no alt, duplicata), a regra de que o slot pessoa so aceita retrato do porta-voz com substituto desenhado, e a cota diaria por provedor que anota mesmo se falhar."
     arquivos:
       cria: [motor/src/expxmedia/imagem/retratos.py, motor/src/expxmedia/imagem/cota.py, motor/tests/imagem/test_retratos.py]
@@ -154,12 +154,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/imagem/test_retratos.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.06, T-02.10, T-01.08]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.10
     titulo: "Templates embarcados de post e carrossel"
     fase: F-03.3
-    status: pendente
+    status: concluida
     objetivo: "Neutralizar ao menos um layout de post e um de carrossel dos atuais em templates com tokens --alma-* (D-31)."
     arquivos:
       cria: [templates/post_unico/numero-e-frase/template.json, templates/post_unico/numero-e-frase/template.css, templates/post_unico/numero-e-frase/slides/numero.html, templates/post_unico/numero-e-frase/exemplo.json, templates/carrossel/editorial/template.json, templates/carrossel/editorial/template.css, templates/carrossel/editorial/slides/capa.html, templates/carrossel/editorial/slides/conteudo.html, templates/carrossel/editorial/slides/cta.html, templates/carrossel/editorial/exemplo.json, motor/tests/test_templates_embarcados.py]
@@ -169,12 +169,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_templates_embarcados.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.05, T-02.12]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.11
     titulo: "Producao de post unico"
     fase: F-03.3
-    status: pendente
+    status: concluida
     objetivo: "Produzir post unico a partir de slots e template, com peca.json, PNG e eventos."
     arquivos:
       cria: [motor/src/expxmedia/producao/post.py, motor/tests/producao/test_post.py]
@@ -184,12 +184,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_post.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.10, T-02.11]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.12
     titulo: "Producao de carrossel de imagem"
     fase: F-03.3
-    status: pendente
+    status: concluida
     objetivo: "Produzir carrossel com slides, prancha e legenda.txt a partir de template e slots."
     arquivos:
       cria: [motor/src/expxmedia/producao/carrossel.py, motor/tests/producao/test_carrossel.py]
@@ -199,12 +199,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_carrossel.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.10, T-02.11]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-03.13
     titulo: "CLI de producao estatica"
     fase: F-03.3
-    status: pendente
+    status: concluida
     objetivo: "Expor produzir post, produzir carrossel, capturar pagina e imagem (pexels, openrouter, retrato) no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/producao_estatica.py, motor/tests/test_cli_producao_estatica.py]
@@ -214,8 +214,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli_producao_estatica.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.11, T-03.12, T-02.14, T-03.09, T-03.14]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 03
@@ -239,7 +239,8 @@ teste_funcional: Um HTML com script que troca o texto e uma imagem remota sai co
 criterio_aceite: `cd motor && uv run pytest tests/render_html/test_renderizar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-02.10]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/render_html 42 passed, 0 skipped
 ```
 
 ---
@@ -259,7 +260,8 @@ teste_funcional: Um slot com texto três vezes maior que o espaço encolhe até 
 criterio_aceite: `cd motor && uv run pytest tests/render_html/test_encaixe.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.01, T-01.07]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/render_html 42 passed, 0 skipped
 ```
 
 ---
@@ -279,7 +281,8 @@ teste_funcional: Um par texto/fundo de razão 2,8:1 devolve achado e um par de r
 criterio_aceite: `cd motor && uv run pytest tests/render_html/test_contraste.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.01]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/render_html 42 passed, 0 skipped
 ```
 
 ---
@@ -299,7 +302,8 @@ teste_funcional: Renderizar duas vezes as mesmas entradas gera a mesma impressã
 criterio_aceite: `cd motor && uv run pytest tests/render_html/test_prancha.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.01]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/render_html 42 passed, 0 skipped
 ```
 
 ---
@@ -319,7 +323,8 @@ teste_funcional: A comparação de um PNG com ele mesmo deslocado 10 px acusa di
 criterio_aceite: `cd motor && uv run pytest tests/render_html/test_paridade.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.02, T-03.03, T-03.04]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/render_html 42 passed, 0 skipped
 ```
 
 ---
@@ -339,7 +344,8 @@ teste_funcional: Resposta 429 do stub devolve erro limite_excedido sem nova tent
 criterio_aceite: `cd motor && uv run pytest tests/imagem/test_pexels.py` termina com 0 failed
 depende_de: [T-02.07, T-01.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/imagem 33 passed, 0 skipped
 ```
 
 ---
@@ -359,7 +365,8 @@ teste_funcional: Uma resposta com imagem em data URL base64 é gravada como PNG 
 criterio_aceite: `cd motor && uv run pytest tests/imagem/test_openrouter.py` termina com 0 failed
 depende_de: [T-02.07, T-01.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/imagem 33 passed, 0 skipped
 ```
 
 ---
@@ -379,7 +386,8 @@ teste_funcional: Um parâmetro ausente do esquema devolvido por model get é rec
 criterio_aceite: `cd motor && uv run pytest tests/imagem/test_higgsfield.py` termina com 0 failed
 depende_de: [T-02.07]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/imagem 33 passed, 0 skipped
 ```
 
 ---
@@ -399,7 +407,8 @@ teste_funcional: A tira costurada de uma página de 3000 px tem 3000 px de altur
 criterio_aceite: `cd motor && uv run pytest tests/captura/test_pagina.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.04, T-03.01]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 0 failed, 0 skipped (suíte 457 passed)
 ```
 
 ---
@@ -419,7 +428,8 @@ teste_funcional: Um slot pessoa numa Alma sem porta-voz recebe o substituto dese
 criterio_aceite: `cd motor && uv run pytest tests/imagem/test_retratos.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.06, T-02.10, T-01.08]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/imagem 33 passed, 0 skipped
 ```
 
 ---
@@ -439,7 +449,8 @@ teste_funcional: Cada template embarcado passa em template.validar no modo templ
 criterio_aceite: `cd motor && uv run pytest tests/test_templates_embarcados.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.05, T-02.12]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 0 failed, 0 skipped (suíte 457 passed)
 ```
 
 ---
@@ -459,7 +470,8 @@ teste_funcional: Slots acima do max do template geram erro antes do render e nen
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_post.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.10, T-02.11]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 0 failed, 0 skipped (suíte 457 passed)
 ```
 
 ---
@@ -479,7 +491,8 @@ teste_funcional: Um kind inexistente no template gera erro citando o kind e os k
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_carrossel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.10, T-02.11]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 0 failed, 0 skipped (suíte 457 passed)
 ```
 
 ---
@@ -499,5 +512,6 @@ teste_funcional: Entrada JSON inválida sai com código 2 e mensagem que cita o 
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_producao_estatica.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.11, T-03.12, T-02.14, T-03.09, T-03.14]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 0 failed, 0 skipped (suíte 457 passed)
 ```

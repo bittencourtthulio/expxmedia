@@ -50,11 +50,13 @@ def pilha_fonte(familia: str | None) -> str:
     return ", ".join(f"'{_escapar(n)}'" for n in unicos) + ", sans-serif"
 
 
-def tokens(alma: Any) -> dict[str, str]:
+def tokens(alma: Any, familias: dict[str, str | None] | None = None) -> dict[str, str]:
     """Mapa `--alma-*` → valor, a partir da Alma (dict ou Alma carregada).
 
     Levanta ErroTokens listando os papéis de cor ausentes ou nulos: o motor não inventa cor.
     Família de fonte nula cai na Inter embarcada (D-21), que já é a reserva de toda pilha.
+    `familias` ({papel: família}) substitui a família da Alma por papel: é a família de fato
+    resolvida (`alma.fontes`), para a pilha não nomear uma fonte que caiu na reserva (D-21).
     """
     visual = _dados(alma).get("visual") or {}
     cores = visual.get("cores") or {}
@@ -64,14 +66,14 @@ def tokens(alma: Any) -> dict[str, str]:
     saida = {f"--alma-{papel}": cores[papel].strip() for papel in PAPEIS_COR}
     fontes = visual.get("fontes") or {}
     for papel in PAPEIS_FONTE:
-        familia = (fontes.get(papel) or {}).get("familia")
+        familia = (familias or {}).get(papel) if papel in (familias or {}) else (fontes.get(papel) or {}).get("familia")
         saida[f"--alma-fonte-{papel}"] = pilha_fonte(familia if isinstance(familia, str) and familia.strip() else None)
     return saida
 
 
-def tokens_css(alma: Any, seletor: str = ":root") -> str:
-    """Bloco CSS com os tokens da Alma dentro de `seletor` (padrão `:root`)."""
-    linhas = [f"  {nome}: {valor};" for nome, valor in tokens(alma).items()]
+def tokens_css(alma: Any, seletor: str = ":root", familias: dict[str, str | None] | None = None) -> str:
+    """Bloco CSS com os tokens da Alma dentro de `seletor` (padrão `:root`); `familias` como em `tokens`."""
+    linhas = [f"  {nome}: {valor};" for nome, valor in tokens(alma, familias).items()]
     return f"{seletor} {{\n" + "\n".join(linhas) + "\n}\n"
 
 

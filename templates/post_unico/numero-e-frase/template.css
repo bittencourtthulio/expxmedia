@@ -1,0 +1,173 @@
+/* Post único tipográfico: um elemento enorme (número ou palavra) e um apoio pequeno, sem nível
+   intermediário — é isso que faz o post ser lido em miniatura. Etiqueta em pílula no topo,
+   rodapé com o logotipo da Alma à esquerda e a assinatura à direita, malha de pontos quase
+   invisível sobre uma faixa diagonal de luz.
+   Escala: 415 (número) · 340 (palavra) · 112 (abertura) · 50 (coluna da frase) · 32 (leitura) · 24 (miúdo).
+   Toda cor e toda família vêm dos tokens da Alma (--alma-*); as derivadas ficam aqui no :root. */
+
+:root {
+  --claro: var(--alma-fundo);
+  --claro-brilho: color-mix(in srgb, var(--alma-fundo) 55%, white);
+  --claro-sombra: color-mix(in srgb, var(--alma-fundo) 80%, var(--alma-texto));
+  --tinta: var(--alma-texto);
+  --apoio: var(--alma-apoio);
+  --apoio-suave: color-mix(in srgb, var(--alma-apoio) 45%, var(--alma-fundo));
+  --destaque: var(--alma-destaque);
+  --destaque-2: var(--alma-destaque_2);
+  --escuro: var(--alma-texto);
+  --escuro-3: color-mix(in srgb, var(--alma-texto) 88%, var(--alma-fundo));
+  --pontos: color-mix(in srgb, var(--alma-texto) 9%, transparent);
+  --fonte-titulo: var(--alma-fonte-titulo);
+  --fonte-texto: var(--alma-fonte-texto);
+}
+
+/* ---------- base ---------- */
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  padding: 118px 84px 0 112px;
+  font-family: var(--fonte-texto);
+  color: var(--tinta);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(circle, var(--pontos) 1.4px, transparent 2px) 0 0 / 36px 36px,
+    linear-gradient(128deg, var(--claro-sombra) 0%, var(--claro) 20%, var(--claro-brilho) 38%, var(--claro) 60%, var(--claro-brilho) 100%);
+}
+.slide em { font-style: normal; color: var(--destaque); }
+.slide p, .slide h1 { margin: 0; padding: 0; }
+
+/* etiqueta em pílula (topo) */
+.topo { flex: none; height: 54px; display: flex; }
+.etiqueta {
+  height: 54px;
+  padding: 0 24px;
+  border-radius: 27px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  background: var(--tinta);
+  color: var(--claro-brilho);
+}
+
+/* rodapé: logotipo à esquerda, assinatura à direita */
+.rodape {
+  flex: none;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--apoio);
+  position: relative;
+  z-index: 2;
+}
+.logo { display: flex; align-items: center; height: 44px; }
+.marca { display: block; height: 44px; width: auto; max-width: 300px; object-fit: contain; }
+.assinatura { font-size: 24px; font-weight: 500; letter-spacing: -0.01em; }
+
+/* ---------- numero ---------- */
+
+.numero-grande {
+  margin-top: 104px;
+  font-family: var(--fonte-titulo);
+  font-size: 415px;
+  font-weight: 300;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+  color: var(--destaque);
+  white-space: nowrap;
+}
+.slide.numero .texto {
+  margin-top: 28px;
+  max-width: 770px;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+.chips {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px 20px;
+  padding-bottom: 4px;
+}
+.chip {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--apoio);
+  white-space: nowrap;
+}
+
+/* ---------- frase ---------- */
+
+.abertura {
+  margin-top: 72px !important;
+  font-family: var(--fonte-titulo);
+  font-size: 112px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--apoio);
+  white-space: nowrap;
+}
+.palavra {
+  font-family: var(--fonte-titulo);
+  font-size: 340px;
+  font-weight: 200;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+  color: var(--escuro-3);
+  white-space: nowrap;
+}
+.slide.frase .texto {
+  margin-top: 58px;
+  width: 340px;
+  font-size: 50px;
+  line-height: 64px;
+  letter-spacing: -0.025em;
+  position: relative;
+  z-index: 2;
+}
+.slide.frase .espaco { flex: 1; }
+.bloco {
+  position: absolute;
+  left: 469px;
+  top: 844px;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 67px;
+  background: var(--escuro);
+}
+.alvo {
+  position: absolute;
+  left: 452px;
+  top: 713px;
+  width: 268px;
+  height: 268px;
+  border-radius: 50%;
+  background: var(--claro-brilho);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alvo i {
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  border: 10px solid var(--apoio);
+  background: var(--claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alvo b {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 7px solid var(--tinta);
+  background: var(--destaque-2);
+}
+.slide.frase .assinatura { color: var(--apoio-suave); }

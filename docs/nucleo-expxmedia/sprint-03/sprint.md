@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-03
 titulo: "Imagem estatica"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest termina com 0 failed e o teste de paridade HTML passa"
 fases: [F-03.1, F-03.2, F-03.3]
 riscos: ["Contraste precisa ser medido no PNG, nao no CSS (base/renderizar-html.md)", "color(srgb 0..1) nao e reescalado no codigo atual (base/00-LACUNAS.md)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 03 — Imagem estatica

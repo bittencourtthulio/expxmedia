@@ -1,0 +1,29 @@
+{
+  "slides": [
+    {
+      "kind": "capa",
+      "rotulos": ["Série", "Método", "Prática"],
+      "chapeu": "Feito com cuidado dura mais",
+      "titulo": "SEM ATALHO",
+      "microcopy_esq": "Edição 01\nSérie sobre o que\nfaz diferença",
+      "microcopy_dir": "Parte 1 de 3\nLeia até o fim\ne salve.",
+      "cursiva": "Processo",
+      "rodape": "perfil da empresa"
+    },
+    {
+      "kind": "conteudo",
+      "rotulos": ["Série", "Método", "Prática"],
+      "palavra": "Detalhe",
+      "destaque": "Pressa copia o formato. Cuidado cria o resultado.",
+      "texto": "O problema não é a ferramenta. É abrir mão do próprio critério para seguir o genérico.",
+      "rodape": "perfil da empresa"
+    },
+    {
+      "kind": "cta",
+      "rotulos": ["Série", "Método", "Prática"],
+      "col_esq": "Fazer rápido não é fazer bem.",
+      "col_dir": "Salve para a próxima vez.",
+      "rodape": "perfil da empresa"
+    }
+  ]
+}

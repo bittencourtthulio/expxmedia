@@ -90,6 +90,7 @@ def test_sem_google_fonts_usa_inter_embarcada_com_aviso(instalacao, servidor_stu
     assert fonte.origem == "embarcada"
     assert fonte.familia == "Inter"
     assert "Fraunces" in fonte.aviso
+    assert fonte.pedida == "Fraunces"  # a família pedida viaja junto, para o aviso fonte_substituida
     assert {a.name for a in fonte.arquivos} == {"inter-latin-400-normal.woff2", "inter-latin-700-normal.woff2"}
     assert all(a.is_file() for a in fonte.arquivos)
     assert "font-family: 'Inter'" in fonte.css and "font-weight: 700" in fonte.css
@@ -128,6 +129,10 @@ def test_tokens_css_da_alma_ficticia(instalacao):
     assert valores["--alma-fonte-titulo"] == "'Fraunces', 'Inter', sans-serif"
     assert valores["--alma-fonte-texto"] == "'Nunito Sans', 'Inter', sans-serif"
     assert css.lstrip().startswith(":root {")
+    # a família resolvida substitui a da Alma na pilha (fonte que caiu na reserva não é nomeada, D-21)
+    trocado = dict(re.findall(r"(--alma-[a-z0-9_-]+):\s*([^;]+);", tokens.tokens_css(alma, familias={"titulo": "Inter"})))
+    assert trocado["--alma-fonte-titulo"] == "'Inter', sans-serif"
+    assert trocado["--alma-fonte-texto"] == "'Nunito Sans', 'Inter', sans-serif"
 
 
 def test_tokens_css_recusa_papel_nulo(instalacao):

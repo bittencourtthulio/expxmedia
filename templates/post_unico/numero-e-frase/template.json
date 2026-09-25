@@ -1,0 +1,75 @@
+{
+  "expxmedia_template": 1,
+  "template_id": "post_unico-numero-e-frase-86c9ac",
+  "titulo": "Número gigante ou frase com palavra gigante",
+  "tipo": "post_unico",
+  "motor": "html",
+  "formato": "4:5",
+  "canvas": { "w": 1080, "h": 1350 },
+  "status": "validado",
+  "criado_em": "2026-09-25T10:00:00-03:00",
+  "atualizado_em": "2026-09-25T10:00:00-03:00",
+
+  "estilos": ["tipografico", "dados", "claro", "minimalista"],
+  "serve_para": ["numero-e-dado", "citacao", "conceito", "opiniao"],
+
+  "versoes": { "motor": "0.1.0", "remotion": null },
+  "dependencias": {},
+
+  "requisitos": ["renderizar_html"],
+  "exige_porta_voz": false,
+
+  "tokens": ["fundo", "texto", "apoio", "destaque", "destaque_2"],
+  "fontes": ["titulo", "texto"],
+
+  "sequencia": ["numero", "frase"],
+  "kinds": {
+    "numero": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "fixo",
+      "requisitos": [],
+      "slots": {
+        "etiqueta":   { "tipo": "texto", "max": 24,  "obrigatorio": false, "nota": "pílula do topo: o assunto em uma ou duas palavras" },
+        "numero":     { "tipo": "texto", "max": 4,   "obrigatorio": true,  "nota": "com sinal ou unidade curta: 12, 5M+, 8h. Sem letra com descendente (g, j, p, q, y): ela desce sobre o texto" },
+        "texto":      { "tipo": "texto", "max": 120, "obrigatorio": true,  "nota": "o que o número conta, até 3 linhas" },
+        "itens":      { "tipo": "lista", "n": [4, 8], "max": 12, "obrigatorio": false, "nota": "nomes curtos em cinza na base, 4 por linha" },
+        "logo":       { "tipo": "asset", "asset": "logo", "obrigatorio": false, "nota": "vazio: entra o logotipo principal da Alma" },
+        "assinatura": { "tipo": "texto", "max": 40,  "obrigatorio": false, "nota": "perfil ou site, no rodapé à direita" }
+      }
+    },
+    "frase": {
+      "midia": "imagem",
+      "duracao_s": null,
+      "fit": "fixo",
+      "requisitos": [],
+      "slots": {
+        "etiqueta":   { "tipo": "texto", "max": 24, "obrigatorio": false, "nota": "pílula do topo" },
+        "abertura":   { "tipo": "texto", "max": 16, "obrigatorio": true,  "nota": "começo da frase, em cinza, uma linha" },
+        "palavra":    { "tipo": "texto", "max": 5,  "obrigatorio": true,  "nota": "a palavra gigante que fecha a frase, com o ponto contando: 4 letras e ponto (Base., Foco.); com 6 caracteres sai do slide" },
+        "texto":      { "tipo": "texto", "max": 90, "obrigatorio": true,  "nota": "coluna estreita à esquerda, até 7 linhas" },
+        "logo":       { "tipo": "asset", "asset": "logo", "obrigatorio": false, "nota": "vazio: entra o logotipo principal da Alma" },
+        "assinatura": { "tipo": "texto", "max": 40, "obrigatorio": false, "nota": "perfil ou site, no rodapé à direita, sobre o bloco escuro" }
+      }
+    }
+  },
+
+  "assets": [
+    { "id": "logo", "arquivo": "assets/logo.svg", "classe": "marca", "substituir_por": "alma.visual.logo.principal" }
+  ],
+
+  "fit": { "container": ".vis", "encolher": [".texto"], "zoom_min": 0.8, "zoom_max": 1.3, "margem": 60 },
+  "tipografia": { "minimo": 28, "piso": 18, "miudo": [".etiqueta", ".assinatura"], "decorativo": [] },
+
+  "validacao": {
+    "contraste_min": 3.0,
+    "fonte_min_px": 28,
+    "resultado": "aprovado",
+    "validado_em": "2026-09-25T10:00:00-03:00",
+    "achados": []
+  },
+
+  "origem": { "tipo": "externo", "id_compartilhado": null, "inspiracao": null },
+
+  "compartilhamento": { "estado": "nao_enviado", "enviado_em": null, "pr_url": null, "erro": null }
+}
