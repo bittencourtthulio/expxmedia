@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-label="Ciclo de vida da peça: ideia, roteiro, produzida, aprovada, agendada, publicada e medida, com o ramo descartada antes de publicada">
+  <title>Ciclo de vida da peça: ideia, roteiro, produzida, aprovada, agendada, publicada e medida, com o ramo descartada antes de publicada</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .hl{opacity:0;animation:hl 7s ease-in-out infinite}
+      @keyframes hl{0%{opacity:0}3%{opacity:1}14%{opacity:1}17%{opacity:0}100%{opacity:0}}
+      .flow{animation:flow 1.8s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-16}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#161b22" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="320" rx="14" fill="#0d1117"/>
+  <rect width="1000" height="320" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#9198a1" letter-spacing="0.6">CICLO DE VIDA DE UMA PEÇA</text>
+  <text x="970" y="34" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">peca.json → status</text>
+  <rect x="39.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:0s" x="39.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="98.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">ideia</text>
+  <text x="98.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">pauta registrada</text>
+  <path d="M159.0 86.0 L163.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M163.0 81.0 L171.0 86.0 L163.0 91.0 Z" fill="#6e7681"/>
+  <rect x="173.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:1s" x="173.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="232.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">roteiro</text>
+  <text x="232.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">texto pronto</text>
+  <path d="M293.0 86.0 L297.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M297.0 81.0 L305.0 86.0 L297.0 91.0 Z" fill="#6e7681"/>
+  <rect x="307.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:2s" x="307.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="366.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">produzida</text>
+  <text x="366.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">arquivos verificados</text>
+  <path d="M427.0 86.0 L431.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M431.0 81.0 L439.0 86.0 L431.0 91.0 Z" fill="#6e7681"/>
+  <rect x="441.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:3s" x="441.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="500.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">aprovada</text>
+  <text x="500.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">pessoa ou regra do plano</text>
+  <path d="M561.0 86.0 L565.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M565.0 81.0 L573.0 86.0 L565.0 91.0 Z" fill="#6e7681"/>
+  <rect x="575.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:4s" x="575.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="634.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">agendada</text>
+  <text x="634.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">publicação marcada</text>
+  <path d="M695.0 86.0 L699.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M699.0 81.0 L707.0 86.0 L699.0 91.0 Z" fill="#6e7681"/>
+  <rect x="709.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#3fb950"/>
+  <rect class="hl" style="animation-delay:5s" x="709.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="768.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">publicada</text>
+  <text x="768.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">no ar</text>
+  <path d="M829.0 86.0 L833.0 86.0" stroke="#6e7681" stroke-width="1.4" fill="none"/><path d="M833.0 81.0 L841.0 86.0 L833.0 91.0 Z" fill="#6e7681"/>
+  <rect x="843.0" y="66" width="118" height="40" rx="20" fill="#161b22" stroke="#3fb950"/>
+  <rect class="hl" style="animation-delay:6s" x="843.0" y="66" width="118" height="40" rx="20" fill="#a371f7" fill-opacity="0.16" stroke="url(#ga)" stroke-width="2.2"/>
+  <text x="902.0" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-weight="600">medida</text>
+  <text x="902.0" y="128" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">métricas coletadas</text>
+  <path class="flow" d="M98.0 138 L98.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M232.0 138 L232.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M366.0 138 L366.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M500.0 138 L500.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M634.0 138 L634.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M98.0 170 L634.0 170" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path class="flow" d="M366.0 170 L366.0 212" stroke="#6e7681" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+  <path d="M361.0 210 L366.0 218 L371.0 210 Z" fill="#6e7681"/>
+  <rect x="296.0" y="220" width="140" height="38" rx="19" fill="#161b22" stroke="#9198a1" stroke-dasharray="5 4"/>
+  <text x="366.0" y="244" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#9198a1" text-anchor="middle" font-weight="600">descartada</text>
+  <text x="452.0" y="236" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1">de qualquer estado antes de publicada</text>
+  <text x="452.0" y="253" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">motivo_descarte preenchido</text>
+  <text x="768.0" y="150" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">via Expx Flow ou agendador local</text>
+  <text x="500" y="298" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="middle">o estado só avança com o arquivo: peça que não renderizou continua roteiro</text>
+</svg>

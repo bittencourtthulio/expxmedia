@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-label="Primeiro uso: instala o plugin, passa pelo portão da Alma (site ou entrevista até o confirmo tudo), configura o ambiente (.env, só habilita o que tem chave) e produz peças">
+  <title>Primeiro uso: instala o plugin, passa pelo portão da Alma (site ou entrevista até o confirmo tudo), configura o ambiente (.env, só habilita o que tem chave) e produz peças</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .dot{animation:dot 8s cubic-bezier(.5,0,.5,1) infinite}
+      @keyframes dot{0%{transform:translateX(0);opacity:0}4%{opacity:1}15%{transform:translateX(0)}25%{transform:translateX(245px)}40%{transform:translateX(245px)}50%{transform:translateX(490px)}65%{transform:translateX(490px)}75%{transform:translateX(735px)}90%{transform:translateX(735px);opacity:1}97%{transform:translateX(735px);opacity:0}100%{transform:translateX(0);opacity:0}}
+      .hl{opacity:0;animation:hl 8s ease-in-out infinite}
+      @keyframes hl{0%{opacity:0}4%{opacity:1}24%{opacity:1}30%{opacity:0}100%{opacity:0}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#f3f4f6" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="330" rx="14" fill="#ffffff"/>
+  <rect width="1000" height="330" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#59636e" letter-spacing="0.6">PRIMEIRO USO</text>
+  <text x="970" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e" text-anchor="end">o portão confere antes de cada pedido e no início de cada skill</text>
+  <rect x="30" y="54" width="205" height="186" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <rect class="hl" style="animation-delay:0s" x="30" y="54" width="205" height="186" rx="10" fill="none" stroke="url(#ga)" stroke-width="2.2"/>
+  <circle cx="54" cy="80" r="11" fill="none" stroke="#8250df" stroke-width="1.5"/>
+  <text x="54" y="84.5" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#8250df" text-anchor="middle" font-weight="700">1</text>
+  <text x="74" y="85" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#1f2328" font-weight="600">instala o plugin</text>
+  <path d="M241 147.0 L261 147.0" stroke="#818b98" stroke-width="1.6" fill="none"/><path d="M261 142.0 L269 147.0 L261 152.0 Z" fill="#818b98"/>
+  <rect x="275" y="54" width="205" height="186" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <rect class="hl" style="animation-delay:2s" x="275" y="54" width="205" height="186" rx="10" fill="none" stroke="url(#ga)" stroke-width="2.2"/>
+  <circle cx="299" cy="80" r="11" fill="none" stroke="#8250df" stroke-width="1.5"/>
+  <text x="299" y="84.5" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#8250df" text-anchor="middle" font-weight="700">2</text>
+  <text x="319" y="85" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#1f2328" font-weight="600">portão da Alma</text>
+  <path d="M486 147.0 L506 147.0" stroke="#818b98" stroke-width="1.6" fill="none"/><path d="M506 142.0 L514 147.0 L506 152.0 Z" fill="#818b98"/>
+  <rect x="520" y="54" width="205" height="186" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <rect class="hl" style="animation-delay:4s" x="520" y="54" width="205" height="186" rx="10" fill="none" stroke="url(#ga)" stroke-width="2.2"/>
+  <circle cx="544" cy="80" r="11" fill="none" stroke="#8250df" stroke-width="1.5"/>
+  <text x="544" y="84.5" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#8250df" text-anchor="middle" font-weight="700">3</text>
+  <text x="564" y="85" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#1f2328" font-weight="600">ambiente</text>
+  <path d="M731 147.0 L751 147.0" stroke="#818b98" stroke-width="1.6" fill="none"/><path d="M751 142.0 L759 147.0 L751 152.0 Z" fill="#818b98"/>
+  <rect x="765" y="54" width="205" height="186" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <rect class="hl" style="animation-delay:6s" x="765" y="54" width="205" height="186" rx="10" fill="none" stroke="url(#ga)" stroke-width="2.2"/>
+  <circle cx="789" cy="80" r="11" fill="none" stroke="#8250df" stroke-width="1.5"/>
+  <text x="789" y="84.5" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#8250df" text-anchor="middle" font-weight="700">4</text>
+  <text x="809" y="85" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#1f2328" font-weight="600">produz peças</text>
+  <rect x="42" y="102" width="181" height="28" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="132.5" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#1f2328" text-anchor="middle">claude --plugin-dir nucleo</text>
+  <text x="46" y="154" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">o motor se prepara uma vez:</text>
+  <text x="46" y="170" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#59636e">preparar_ambiente.py</text>
+  <text x="46" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#8250df">11 skills · 7 agentes</text>
+  <text x="46" y="220" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">hooks de portão e de segredo</text>
+  <rect x="289" y="100" width="70" height="24" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="324" y="116" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#1f2328" text-anchor="middle">site</text>
+  <rect x="381" y="100" width="85" height="24" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="423.5" y="116" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#1f2328" text-anchor="middle">entrevista</text>
+  <text x="370" y="116" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10" fill="#59636e" text-anchor="middle">ou</text>
+  <path d="M324 124 L324 134 L377 134 M423.5 124 L423.5 134 L377 134" stroke="#818b98" stroke-width="1.3" fill="none"/>
+  <path d="M377 134 L377 138" stroke="#818b98" stroke-width="1.3" fill="none"/><path d="M372 138 L377 146 L382 138 Z" fill="#818b98"/>
+  <rect x="309" y="148" width="137" height="28" rx="14" fill="none" stroke="#bf3989" stroke-width="1.6"/>
+  <text x="377.5" y="166.5" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="600">“confirmo tudo”</text>
+  <text x="291" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#8250df">/expxmedia:alma</text>
+  <text x="291" y="220" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">só então grava alma/alma.json</text>
+  <rect x="534" y="102" width="177" height="28" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="544" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#59636e">.env</text>
+  <text x="578" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#9a6700">PEXELS_API_KEY=</text>
+  <circle cx="541" cy="150" r="4" fill="#1a7f37"/>
+  <text x="551" y="154" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#1f2328">6 funcionam sem chave</text>
+  <circle cx="541" cy="170" r="4" fill="none" stroke="#9a6700" stroke-width="1.6"/>
+  <text x="551" y="174" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#1f2328">10 ligam com a chave</text>
+  <text x="536" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#8250df">/expxmedia:ambiente</text>
+  <text x="536" y="220" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">só habilita o que tem chave</text>
+  <g transform="translate(790.0 130) scale(0.66) translate(-790.0 -130)"><g fill="none" stroke="#8250df" stroke-width="1.6" stroke-linejoin="round">
+      <rect x="776.0" y="112.5" width="28" height="35" rx="3"/>
+      <polyline points="780.0,142 787.0,133 792.0,138 796.0,134 800.0,142"/>
+    </g><circle cx="785.0" cy="123" r="3.2" fill="#bf3989"/></g>
+  <g transform="translate(828.75 130) scale(0.66) translate(-828.75 -130)"><g fill="none" stroke="#8250df" stroke-width="1.6">
+      <rect x="824.75" y="111" width="21" height="28" rx="2.5" opacity="0.35"/>
+      <rect x="819.75" y="114" width="21" height="28" rx="2.5" opacity="0.6"/>
+      <rect x="814.75" y="117" width="21" height="28" rx="2.5" fill="#f6f8fa"/>
+      <line x1="818.75" y1="124" x2="830.75" y2="124" stroke="#bf3989" stroke-width="2"/>
+      <line x1="818.75" y1="130" x2="828.75" y2="130" opacity="0.6"/>
+    </g>
+    <circle cx="820.75" cy="151" r="1.8" fill="#bf3989"/><circle cx="826.75" cy="151" r="1.8" fill="#8250df" opacity="0.5"/><circle cx="832.75" cy="151" r="1.8" fill="#8250df" opacity="0.5"/></g>
+  <g transform="translate(867.5 130) scale(0.66) translate(-867.5 -130)"><g fill="none" stroke="#8250df" stroke-width="1.6">
+      <rect x="855.5" y="109" width="24" height="42" rx="4"/>
+      <line x1="860.5" y1="145" x2="874.5" y2="145" opacity="0.45"/>
+      <line x1="860.5" y1="145" x2="866.5" y2="145" stroke="#bf3989"/>
+    </g><path d="M863.5 122 L874.5 129 L863.5 136 Z" fill="#bf3989"/></g>
+  <g transform="translate(906.25 130) scale(0.66) translate(-906.25 -130)"><g fill="none" stroke="#8250df" stroke-width="1.6" stroke-linecap="round">
+      <rect x="885.25" y="114" width="42" height="25" rx="2"/>
+      <line x1="891.25" y1="121" x2="908.25" y2="121" stroke="#bf3989" stroke-width="2.2"/>
+      <line x1="891.25" y1="127" x2="918.25" y2="127" opacity="0.55"/>
+      <line x1="891.25" y1="132" x2="912.25" y2="132" opacity="0.55"/>
+      <line x1="906.25" y1="139" x2="906.25" y2="147"/>
+      <line x1="898.25" y1="147" x2="914.25" y2="147"/>
+    </g></g>
+  <g transform="translate(945.0 130) scale(0.66) translate(-945.0 -130)"><g fill="none" stroke="#8250df" stroke-width="1.6" stroke-linecap="round">
+      <rect x="924.0" y="114" width="42" height="26" rx="2"/>
+      <line x1="929.0" y1="121" x2="945.0" y2="121" opacity="0.6"/>
+      <line x1="929.0" y1="126" x2="941.0" y2="126" opacity="0.6"/>
+      <line x1="933.0" y1="147" x2="957.0" y2="147" stroke="#59636e" stroke-width="2"/>
+    </g><rect x="949.0" y="129" width="13" height="8.5" rx="1.5" fill="#bf3989"/>
+    <circle cx="955.5" cy="131.6" r="1.6" fill="#f6f8fa"/></g>
+  <text x="781" y="178" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">post · carrossel · reel</text>
+  <text x="781" y="193" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">apresentação · aula</text>
+  <text x="781" y="220" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#1f2328" font-weight="600">é só pedir a peça</text>
+  <line x1="132.5" y1="272" x2="867.5" y2="272" stroke="#d0d7de" stroke-width="2"/>
+  <circle cx="132.5" cy="272" r="5" fill="#ffffff" stroke="#818b98" stroke-width="1.5"/>
+  <circle cx="377.5" cy="272" r="5" fill="#ffffff" stroke="#818b98" stroke-width="1.5"/>
+  <circle cx="622.5" cy="272" r="5" fill="#ffffff" stroke="#818b98" stroke-width="1.5"/>
+  <circle cx="867.5" cy="272" r="5" fill="#ffffff" stroke="#818b98" stroke-width="1.5"/>
+  <g class="dot"><circle cx="132.5" cy="272" r="10" fill="#bf3989" opacity="0.2"/><circle cx="132.5" cy="272" r="5.5" fill="#bf3989"/></g>
+  <text x="500" y="308" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e" text-anchor="middle">a ordem é fixa: sem Alma confirmada nada é produzido; sem .env, o portão leva ao ambiente</text>
+</svg>

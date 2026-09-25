@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="510" viewBox="0 0 1000 510" role="img" aria-label="Qualidade medida: 1131 testes passando, 0 pulados, 0% de diferença de pixel, trilha byte a byte, 11 checagens, 43 comandos e testes por área">
+  <title>Qualidade medida: 1131 testes passando, 0 pulados, 0% de diferença de pixel, trilha byte a byte, 11 checagens, 43 comandos e testes por área</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .bar{animation:bar 1s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+      .val{animation:val .5s ease-out both}
+      @keyframes val{from{opacity:0}to{opacity:1}}
+      .on{animation:on 4s ease-in-out infinite}
+      @keyframes on{0%,100%{opacity:1}50%{opacity:.4}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#161b22" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="510" rx="14" fill="#0d1117"/>
+  <rect width="1000" height="510" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#9198a1" letter-spacing="0.6">QUALIDADE MEDIDA</text>
+  <text x="970" y="34" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">uv run pytest · 1131 passed · 0 failed · 0 skipped</text>
+  <rect x="30.0" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="44.0" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="28" fill="#3fb950" font-weight="700">1131</text>
+  <text x="44.0" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">testes passando</text>
+  <text x="44.0" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">na suíte inteira</text>
+  <rect x="188.4" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="202.4" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="28" fill="#3fb950" font-weight="700">0</text>
+  <text x="202.4" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">pulados</text>
+  <text x="202.4" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">e 0 falhas</text>
+  <rect x="346.8" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="360.8" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="28" fill="#a371f7" font-weight="700">0%</text>
+  <text x="360.8" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">diferença de pixel</text>
+  <text x="360.8" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">no render HTML</text>
+  <rect x="505.2" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="519.2" y="86" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#a371f7" font-weight="700">byte a byte</text>
+  <text x="519.2" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">montagem e trilha</text>
+  <text x="519.2" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">iguais ao anterior</text>
+  <rect x="663.6" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="677.6" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="28" fill="#f778ba" font-weight="700">11</text>
+  <text x="677.6" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">checagens</text>
+  <text x="677.6" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">de entrega</text>
+  <rect x="822.0" y="52" width="148" height="88" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="836.0" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="28" fill="#4493f8" font-weight="700">43</text>
+  <text x="836.0" y="111" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#e6edf3">subcomandos</text>
+  <text x="836.0" y="126" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">no CLI do motor</text>
+  <circle class="on" cx="162" cy="68" r="4" fill="#3fb950"/>
+  <text x="30" y="176" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#e6edf3" font-weight="600">testes por área</text>
+  <text x="970" y="176" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="end">as 20 maiores áreas somam 857 dos 1131</text>
+  <text x="126" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">plugin</text>
+  <rect x="136" y="197" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.20s" x="136" y="197" width="290.0" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:0.80s"><text x="432.0" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">184</text></g>
+  <text x="126" y="234" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">produção</text>
+  <rect x="136" y="223" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.27s" x="136" y="223" width="145.0" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:0.87s"><text x="287.0" y="234" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">92</text></g>
+  <text x="126" y="260" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">template</text>
+  <rect x="136" y="249" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.34s" x="136" y="249" width="100.9" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:0.94s"><text x="242.9" y="260" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">64</text></g>
+  <text x="126" y="286" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">vídeo</text>
+  <rect x="136" y="275" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.41s" x="136" y="275" width="85.1" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.01s"><text x="227.1" y="286" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">54</text></g>
+  <text x="126" y="312" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">ambiente</text>
+  <rect x="136" y="301" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.48s" x="136" y="301" width="77.2" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.08s"><text x="219.2" y="312" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">49</text></g>
+  <text x="126" y="338" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">publicar</text>
+  <rect x="136" y="327" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.55s" x="136" y="327" width="74.1" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.15s"><text x="216.1" y="338" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">47</text></g>
+  <text x="126" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">render_html</text>
+  <rect x="136" y="353" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.62s" x="136" y="353" width="67.8" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.22s"><text x="209.8" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">43</text></g>
+  <text x="126" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">núcleo</text>
+  <rect x="136" y="379" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.69s" x="136" y="379" width="64.6" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.29s"><text x="206.6" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">41</text></g>
+  <text x="126" y="416" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">alma</text>
+  <rect x="136" y="405" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.76s" x="136" y="405" width="55.2" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.36s"><text x="197.2" y="416" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">35</text></g>
+  <text x="126" y="442" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">imagem</text>
+  <rect x="136" y="431" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.83s" x="136" y="431" width="52.0" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.43s"><text x="194.0" y="442" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">33</text></g>
+  <text x="616" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">aula</text>
+  <rect x="626" y="197" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.90s" x="626" y="197" width="50.4" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.50s"><text x="682.4" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">32</text></g>
+  <text x="616" y="234" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">motion</text>
+  <rect x="626" y="223" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:0.97s" x="626" y="223" width="47.3" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.57s"><text x="679.3" y="234" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">30</text></g>
+  <text x="616" y="260" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">agendador</text>
+  <rect x="626" y="249" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.04s" x="626" y="249" width="41.0" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.64s"><text x="673.0" y="260" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">26</text></g>
+  <text x="616" y="286" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">narrar</text>
+  <rect x="626" y="275" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.11s" x="626" y="275" width="37.8" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.71s"><text x="669.8" y="286" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">24</text></g>
+  <text x="616" y="312" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">e2e</text>
+  <rect x="626" y="301" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.18s" x="626" y="301" width="37.8" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.78s"><text x="669.8" y="312" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">24</text></g>
+  <text x="616" y="338" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">legendar</text>
+  <rect x="626" y="327" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.25s" x="626" y="327" width="29.9" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.85s"><text x="661.9" y="338" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">19</text></g>
+  <text x="616" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">corte</text>
+  <rect x="626" y="353" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.32s" x="626" y="353" width="29.9" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.92s"><text x="661.9" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">19</text></g>
+  <text x="616" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">referência</text>
+  <rect x="626" y="379" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.39s" x="626" y="379" width="23.6" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:1.99s"><text x="655.6" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">15</text></g>
+  <text x="616" y="416" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">transcrever</text>
+  <rect x="626" y="405" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.46s" x="626" y="405" width="22.1" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:2.06s"><text x="654.1" y="416" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">14</text></g>
+  <text x="616" y="442" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="end">avatar</text>
+  <rect x="626" y="431" width="290" height="14" rx="3" fill="#161b22"/>
+  <rect class="bar fl0" style="animation-delay:1.53s" x="626" y="431" width="18.9" height="14" rx="3" fill="url(#ga)"/>
+  <g class="val" style="animation-delay:2.13s"><text x="650.9" y="442" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#e6edf3">12</text></g>
+  <line x1="30" y1="468" x2="970" y2="468" stroke="#30363d"/>
+  <text x="500" y="492" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9198a1" text-anchor="middle">11 skills · 7 agentes · 7 contratos (convenções + 6) · 100 tasks em 10 sprints · 5 tipos de peça + carrossel misto</text>
+</svg>

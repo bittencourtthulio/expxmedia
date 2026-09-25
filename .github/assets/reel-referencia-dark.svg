@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-label="Pipeline do reel por referência em 10 passos, de analisar a revisar: cada reel é código novo, nunca template genérico">
+  <title>Pipeline do reel por referência em 10 passos, de analisar a revisar: cada reel é código novo, nunca template genérico</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .hl{opacity:0;animation:hl 8s ease-in-out infinite}
+      @keyframes hl{0%{opacity:0}2%{opacity:1}10%{opacity:1}13%{opacity:0}100%{opacity:0}}
+      .flow{animation:flow 1.6s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-20}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#161b22" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="380" rx="14" fill="#0d1117"/>
+  <rect width="1000" height="380" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#9198a1" letter-spacing="0.6">REEL POR REFERÊNCIA · 10 PASSOS</text>
+  <text x="970" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="end">imita a forma, redesenha tudo</text>
+  <rect x="35" y="54" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:0.0s" x="35" y="54" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="49" y="81" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">01</text>
+  <text x="73" y="81" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">analisar</text>
+  <text x="49" y="103" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">vídeo → quadros e fala</text>
+  <text x="49" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">formato.json</text>
+  <rect x="225" y="54" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:0.8s" x="225" y="54" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="239" y="81" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">02</text>
+  <text x="263" y="81" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">ler as folhas</text>
+  <text x="239" y="103" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">todas, em ordem, 1 q/s</text>
+  <text x="239" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">folha_NN.jpg</text>
+  <rect x="415" y="54" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:1.6s" x="415" y="54" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="429" y="81" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">03</text>
+  <text x="453" y="81" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">leitura.md</text>
+  <text x="429" y="103" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">9 seções, sem pular</text>
+  <text x="429" y="120" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">exigida pela montagem</text>
+  <rect x="605" y="54" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:2.4s" x="605" y="54" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="619" y="81" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">04</text>
+  <text x="643" y="81" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">roteiro</text>
+  <text x="619" y="103" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">130 a 180 palavras</text>
+  <text x="619" y="120" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">voz e público da Alma</text>
+  <rect x="795" y="54" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:3.2s" x="795" y="54" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="809" y="81" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">05</text>
+  <text x="833" y="81" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">narrar 1x</text>
+  <text x="809" y="103" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">uma chamada só</text>
+  <text x="809" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">alinhamento.json</text>
+  <rect x="795" y="190" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:4.0s" x="795" y="190" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="809" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">06</text>
+  <text x="833" y="217" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">código sob medida</text>
+  <text x="809" y="239" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">composição própria</text>
+  <text x="809" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">cenas.json + Reel.tsx</text>
+  <rect x="605" y="190" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:4.8s" x="605" y="190" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="619" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">07</text>
+  <text x="643" y="217" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">prévia ×3</text>
+  <text x="619" y="239" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">prévia × folhas</text>
+  <text x="619" y="256" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">no máximo 3 voltas</text>
+  <rect x="415" y="190" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:5.6s" x="415" y="190" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="429" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">08</text>
+  <text x="453" y="217" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">render</text>
+  <text x="429" y="239" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">MP4 9:16 com trilha</text>
+  <text x="429" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">motion render</text>
+  <rect x="225" y="190" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:6.4s" x="225" y="190" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="239" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">09</text>
+  <text x="263" y="217" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">verificar</text>
+  <text x="239" y="239" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">checagens de entrega</text>
+  <text x="239" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">perfil sob_medida</text>
+  <rect x="35" y="190" width="170" height="80" rx="9" fill="#161b22" stroke="#30363d"/>
+  <rect class="hl" style="animation-delay:7.2s" x="35" y="190" width="170" height="80" rx="9" fill="#f778ba" fill-opacity="0.08" stroke="#f778ba" stroke-width="2"/>
+  <text x="49" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a371f7" font-weight="700">10</text>
+  <text x="73" y="217" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">revisar</text>
+  <text x="49" y="239" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">agente revisor-video</text>
+  <text x="49" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#a371f7">APROVADO / REPROVADO</text>
+  <path d="M207 94.0 L215 94.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M215 89.0 L223 94.0 L215 99.0 Z" fill="#6e7681"/>
+  <path d="M397 94.0 L405 94.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M405 89.0 L413 94.0 L405 99.0 Z" fill="#6e7681"/>
+  <path d="M587 94.0 L595 94.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M595 89.0 L603 94.0 L595 99.0 Z" fill="#6e7681"/>
+  <path d="M777 94.0 L785 94.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M785 89.0 L793 94.0 L785 99.0 Z" fill="#6e7681"/>
+  <path d="M880.0 136 L880.0 180" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M875.0 180 L880.0 188 L885.0 180 Z" fill="#6e7681"/>
+  <path d="M793 230.0 L785 230.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M785 225.0 L777 230.0 L785 235.0 Z" fill="#6e7681"/>
+  <path d="M603 230.0 L595 230.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M595 225.0 L587 230.0 L595 235.0 Z" fill="#6e7681"/>
+  <path d="M413 230.0 L405 230.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M405 225.0 L397 230.0 L405 235.0 Z" fill="#6e7681"/>
+  <path d="M223 230.0 L215 230.0" stroke="#6e7681" stroke-width="1.6" fill="none"/><path d="M215 225.0 L207 230.0 L215 235.0 Z" fill="#6e7681"/>
+  <rect x="623" y="150" width="164" height="22" rx="11" fill="none" stroke="#9198a1" stroke-dasharray="4 3"/>
+  <text x="705" y="165" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">+ avatar, se há apresentador</text>
+  <path class="flow" d="M787 161 L872.0 161" stroke="#9198a1" stroke-width="1.2" stroke-dasharray="4 4" fill="none"/>
+  <line x1="200" y1="306" x2="800" y2="306" stroke="#30363d"/>
+  <text x="500" y="336" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="17" fill="#f778ba" text-anchor="middle" font-weight="700">cada reel é código novo — nunca template genérico</text>
+  <text x="500" y="358" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="middle">a referência é dado de terceiros: nada do original entra — quadro, áudio, frase, logo ou rosto</text>
+</svg>

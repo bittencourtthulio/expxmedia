@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="506" viewBox="0 0 1000 506" role="img" aria-label="As 16 capacidades do núcleo: 6 funcionam sem chave e 10 ligam com a chave do .env">
+  <title>As 16 capacidades do núcleo: 6 funcionam sem chave e 10 ligam com a chave do .env</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .row{animation:row .6s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes row{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+      .bar{animation:bar .7s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+      .on{animation:on 4s ease-in-out infinite}
+      @keyframes on{0%,100%{opacity:1}50%{opacity:.45}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#f3f4f6" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="506" rx="14" fill="#ffffff"/>
+  <rect width="1000" height="506" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#59636e" letter-spacing="0.6">AS 16 CAPACIDADES DO NÚCLEO</text>
+  <text x="970" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e" text-anchor="end">recurso sem chave não existe: não aparece, não é sugerido, não quebra</text>
+  <circle cx="36" cy="67" r="5.5" fill="#1a7f37"/>
+  <text x="50" y="72" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="15" fill="#1f2328" font-weight="600">funciona sem chave</text>
+  <text x="480" y="72" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#1a7f37" text-anchor="end" font-weight="700">6</text>
+  <text x="30" y="92" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">só pede binário instalado: Chromium, Node, ffmpeg, whisper</text>
+  <circle cx="526" cy="67" r="5" fill="none" stroke="#9a6700" stroke-width="2"/>
+  <text x="540" y="72" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="15" fill="#1f2328" font-weight="600">liga com a chave do .env</text>
+  <text x="970" y="72" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#9a6700" text-anchor="end" font-weight="700">10</text>
+  <text x="520" y="92" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">a pessoa cola a chave no arquivo, nunca na conversa</text>
+  <g class="row" style="animation-delay:0.15s">
+    <rect class="bar fl0" style="animation-delay:0.15s" x="30" y="106" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="115" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="130" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">renderizar_html</text>
+    <text x="466" y="130" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">HTML/CSS → PNG · Playwright</text>
+  </g>
+  <g class="row" style="animation-delay:0.25s">
+    <rect class="bar fl0" style="animation-delay:0.25s" x="30" y="150" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="159" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="174" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">renderizar_motion</text>
+    <text x="466" y="174" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">cenas → MP4 · Remotion</text>
+  </g>
+  <g class="row" style="animation-delay:0.35s">
+    <rect class="bar fl0" style="animation-delay:0.35s" x="30" y="194" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="203" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="218" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">editar_video</text>
+    <text x="466" y="218" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">cortar, juntar, reenquadrar · ffmpeg</text>
+  </g>
+  <g class="row" style="animation-delay:0.45s">
+    <rect class="bar fl0" style="animation-delay:0.45s" x="30" y="238" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="247" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="262" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">transcrever</text>
+    <text x="466" y="262" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">fala → texto com tempo por palavra</text>
+  </g>
+  <g class="row" style="animation-delay:0.55s">
+    <rect class="bar fl0" style="animation-delay:0.55s" x="30" y="282" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="291" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="306" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">legendar</text>
+    <text x="466" y="306" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">legenda queimada e SRT</text>
+  </g>
+  <g class="row" style="animation-delay:0.65s">
+    <rect class="bar fl0" style="animation-delay:0.65s" x="30" y="326" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="38" y="335" width="3" height="20" rx="1.5" fill="#1a7f37"/>
+    <text x="52" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#1f2328">capturar_pagina</text>
+    <text x="466" y="350" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#59636e" text-anchor="end">screenshot e rolagem de página</text>
+  </g>
+  <g class="row" style="animation-delay:.8s"><rect x="30" y="374" width="450" height="74" rx="8" fill="none" stroke="#1a7f37" stroke-width="1.2" stroke-dasharray="4 4"/><text x="46" y="398" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#1f2328" font-weight="600">no primeiro dia, sem chave nenhuma:</text><text x="46" y="417" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e">post único, carrossel, apresentação e reel sem narração</text><text x="46" y="435" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e">legendar liga a partir de transcrever ou de narrar</text></g>
+  <g class="row" style="animation-delay:0.35s">
+    <rect class="bar fl0" style="animation-delay:0.35s" x="520" y="106" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="115" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="123" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">narrar</text>
+    <text x="542" y="137" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">voz do porta-voz</text>
+    <rect x="817" y="114" width="143" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="888.5" y="129" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">ELEVENLABS_API_KEY</text>
+  </g>
+  <g class="row" style="animation-delay:0.45s">
+    <rect class="bar fl0" style="animation-delay:0.45s" x="520" y="150" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="159" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="167" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">avatar</text>
+    <text x="542" y="181" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">porta-voz falando em vídeo</text>
+    <rect x="845" y="158" width="115" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="902.5" y="173" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">HEYGEN_API_KEY</text>
+  </g>
+  <g class="row" style="animation-delay:0.55s">
+    <rect class="bar fl0" style="animation-delay:0.55s" x="520" y="194" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="203" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="211" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">imagem_ia</text>
+    <text x="542" y="225" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">texto → imagem</text>
+    <rect x="817" y="202" width="143" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="888.5" y="217" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">OPENROUTER_API_KEY</text>
+  </g>
+  <g class="row" style="animation-delay:0.65s">
+    <rect class="bar fl0" style="animation-delay:0.65s" x="520" y="238" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="247" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="255" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">rosto_ia · video_ia</text>
+    <text x="542" y="269" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">porta-voz em cena nova · vídeo curto</text>
+    <rect x="831" y="246" width="129" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="895.5" y="261" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">login higgsfield</text>
+  </g>
+  <g class="row" style="animation-delay:0.75s">
+    <rect class="bar fl0" style="animation-delay:0.75s" x="520" y="282" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="291" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="299" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">banco_imagens</text>
+    <text x="542" y="313" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">foto e vídeo de banco (b-roll)</text>
+    <rect x="845" y="290" width="115" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="902.5" y="305" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">PEXELS_API_KEY</text>
+  </g>
+  <g class="row" style="animation-delay:0.85s">
+    <rect class="bar fl0" style="animation-delay:0.85s" x="520" y="326" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="335" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="343" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">publicar · agendar</text>
+    <text x="542" y="357" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">agora ou no horário marcado</text>
+    <rect x="803" y="334" width="157" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="881.5" y="349" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">EXPXFLOW_* ou META_*</text>
+  </g>
+  <g class="row" style="animation-delay:0.95s">
+    <rect class="bar fl0" style="animation-delay:0.95s" x="520" y="370" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="379" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="387" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">automacao_dm</text>
+    <text x="542" y="401" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">comentário com palavra → DM</text>
+    <rect x="872" y="378" width="88" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="916.0" y="393" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">EXPXFLOW_*</text>
+  </g>
+  <g class="row" style="animation-delay:1.05s">
+    <rect class="bar fl0" style="animation-delay:1.05s" x="520" y="414" width="450" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="528" y="423" width="3" height="20" rx="1.5" fill="#9a6700"/>
+    <text x="542" y="431" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#1f2328">galeria_compartilhada</text>
+    <text x="542" y="445" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#59636e">templates da galeria pública</text>
+    <rect x="824" y="422" width="136" height="22" rx="5" fill="#9a6700" fill-opacity="0.1" stroke="#9a6700" stroke-opacity="0.7"/>
+    <text x="892.0" y="437" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#9a6700" text-anchor="middle">login gh + aceite</text>
+  </g>
+  <text x="500" y="486" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#59636e" text-anchor="middle">verificação local e barata: presença da variável, do login e do binário · o doctor --online testa a chave de verdade</text>
+</svg>

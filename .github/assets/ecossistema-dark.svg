@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-label="Ecossistema: o núcleo expxmedia no centro, os packs expx-instagram, expx-youtube, expx-meta e expx-cursos ao redor (em breve) e a camada expx-galeria — o núcleo produz, o pack especializa">
+  <title>Ecossistema: o núcleo expxmedia no centro, os packs expx-instagram, expx-youtube, expx-meta e expx-cursos ao redor (em breve) e a camada expx-galeria — o núcleo produz, o pack especializa</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .flow{animation:flow 1.6s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-20}}
+      .up{animation:flow 1.6s linear infinite reverse}
+      .pulse{animation:pulse 4s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#161b22" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="460" rx="14" fill="#0d1117"/>
+  <rect width="1000" height="460" rx="14" fill="url(#p)"/>
+<text x="30" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#9198a1" letter-spacing="0.6">O ECOSSISTEMA</text>
+  <text x="970" y="34" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="end">cada pack mora no próprio repositório</text>
+  <rect class="pulse" x="340" y="87" width="320" height="206" rx="15" fill="none" stroke="#a371f7" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="345" y="92" width="310" height="196" rx="11" fill="#161b22" stroke="url(#ga)" stroke-width="2"/>
+  <text x="363" y="122" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#a371f7" font-weight="700">núcleo expxmedia</text>
+  <rect x="585" y="106" width="54" height="22" rx="11" fill="none" stroke="#3fb950"/>
+  <text x="612" y="121" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#3fb950" text-anchor="middle">pronto</text>
+  <rect x="361" y="142" width="135" height="46" rx="7" fill="#0d1117" stroke="#30363d"/>
+  <text x="373" y="162" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#e6edf3" font-weight="600">Alma</text>
+  <text x="373" y="178" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1">identidade da empresa</text>
+  <rect x="504" y="142" width="135" height="46" rx="7" fill="#0d1117" stroke="#30363d"/>
+  <text x="516" y="162" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#e6edf3" font-weight="600">motor</text>
+  <text x="516" y="178" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1">de capacidades</text>
+  <rect x="361" y="198" width="135" height="46" rx="7" fill="#0d1117" stroke="#30363d"/>
+  <text x="373" y="218" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#e6edf3" font-weight="600">5 tipos de peça</text>
+  <text x="373" y="234" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1">+ carrossel misto</text>
+  <rect x="504" y="198" width="135" height="46" rx="7" fill="#0d1117" stroke="#30363d"/>
+  <text x="516" y="218" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#e6edf3" font-weight="600">plugin</text>
+  <text x="516" y="234" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1">11 skills · 7 agentes</text>
+  <text x="500.0" y="274" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">16 capacidades · 43 subcomandos · 7 contratos</text>
+  <rect x="40" y="72" width="230" height="76" rx="9" fill="#161b22" stroke="#9198a1" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="56" y="102" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#e6edf3" font-weight="700">expx-instagram</text>
+  <text x="56" y="124" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">post · carrossel · reel</text>
+  <rect x="196" y="85" width="60" height="20" rx="10" fill="none" stroke="#d29922"/>
+  <text x="226" y="99" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#d29922" text-anchor="middle">em breve</text>
+  <path class="flow" d="M345 110.0 L276 110.0" stroke="#a371f7" stroke-width="1.8" stroke-dasharray="6 4" fill="none"/>
+  <path d="M278 105.0 L270 110.0 L278 115.0 Z" fill="#a371f7"/>
+  <rect x="730" y="72" width="230" height="76" rx="9" fill="#161b22" stroke="#9198a1" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="746" y="102" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#e6edf3" font-weight="700">expx-youtube</text>
+  <text x="746" y="124" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">apresentação · análise do canal</text>
+  <rect x="886" y="85" width="60" height="20" rx="10" fill="none" stroke="#d29922"/>
+  <text x="916" y="99" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#d29922" text-anchor="middle">em breve</text>
+  <path class="flow" d="M655 110.0 L724 110.0" stroke="#a371f7" stroke-width="1.8" stroke-dasharray="6 4" fill="none"/>
+  <path d="M722 105.0 L730 110.0 L722 115.0 Z" fill="#a371f7"/>
+  <rect x="40" y="228" width="230" height="76" rx="9" fill="#161b22" stroke="#9198a1" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="56" y="258" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#e6edf3" font-weight="700">expx-meta</text>
+  <text x="56" y="280" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">campanhas com as peças</text>
+  <rect x="196" y="241" width="60" height="20" rx="10" fill="none" stroke="#d29922"/>
+  <text x="226" y="255" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#d29922" text-anchor="middle">em breve</text>
+  <path class="flow" d="M345 266.0 L276 266.0" stroke="#a371f7" stroke-width="1.8" stroke-dasharray="6 4" fill="none"/>
+  <path d="M278 261.0 L270 266.0 L278 271.0 Z" fill="#a371f7"/>
+  <rect x="730" y="228" width="230" height="76" rx="9" fill="#161b22" stroke="#9198a1" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="746" y="258" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#e6edf3" font-weight="700">expx-cursos</text>
+  <text x="746" y="280" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">aula · apresentação</text>
+  <rect x="886" y="241" width="60" height="20" rx="10" fill="none" stroke="#d29922"/>
+  <text x="916" y="255" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#d29922" text-anchor="middle">em breve</text>
+  <path class="flow" d="M655 266.0 L724 266.0" stroke="#a371f7" stroke-width="1.8" stroke-dasharray="6 4" fill="none"/>
+  <path d="M722 261.0 L730 266.0 L722 271.0 Z" fill="#a371f7"/>
+  <text x="305" y="104" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">especializa</text>
+  <text x="695" y="104" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#9198a1" text-anchor="middle">especializa</text>
+  <rect x="40" y="340" width="920" height="58" rx="9" fill="#161b22" stroke="#f778ba" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="56" y="365" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#f778ba" font-weight="700">expx-galeria</text>
+  <text x="174" y="365" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">camada</text>
+  <text x="56" y="384" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" fill="#9198a1">sozinha não produz nada: dá templates aos packs e ao núcleo</text>
+  <rect x="886" y="359" width="60" height="20" rx="10" fill="none" stroke="#d29922"/>
+  <text x="916" y="373" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="10.5" fill="#d29922" text-anchor="middle">em breve</text>
+  <path class="up" d="M155 340 L155 311" stroke="#f778ba" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.9"/>
+  <path d="M150.5 312 L155 304 L159.5 312 Z" fill="#f778ba"/>
+  <path class="up" d="M500 340 L500 295" stroke="#f778ba" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.9"/>
+  <path d="M495.5 296 L500 288 L504.5 296 Z" fill="#f778ba"/>
+  <path class="up" d="M845 340 L845 311" stroke="#f778ba" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.9"/>
+  <path d="M840.5 312 L845 304 L849.5 312 Z" fill="#f778ba"/>
+  <text x="500" y="436" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="14" fill="#9198a1">o núcleo <tspan fill="#a371f7" font-weight="600">produz</tspan> · o pack <tspan fill="#f778ba" font-weight="600">especializa</tspan></text>
+</svg>

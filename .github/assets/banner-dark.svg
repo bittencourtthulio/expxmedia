@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280" role="img" aria-label="expxmedia — a central de mídia da sua empresa: Alma, motor e packs para Claude Code">
+  <title>expxmedia — a central de mídia da sua empresa: Alma, motor e packs para Claude Code</title>
+  <style>
+    .fb{transform-box:fill-box;transform-origin:center}
+    .fl0{transform-box:fill-box;transform-origin:0 50%}
+    .hl{opacity:0}
+    @media (prefers-reduced-motion: no-preference) {
+      .in{animation:in .8s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+      .fl{animation:fl 6s ease-in-out infinite}
+      @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+      .rec{animation:rec 2.4s ease-in-out infinite}
+      @keyframes rec{0%,100%{opacity:1}50%{opacity:.35}}
+      .ring{animation:ring 2.4s ease-out infinite}
+      @keyframes ring{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}
+    }
+  </style>
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a371f7"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0v26" fill="none" stroke="#161b22" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1000" height="280" rx="14" fill="#0d1117"/>
+  <rect width="1000" height="280" rx="14" fill="url(#p)"/>
+<rect x="0" y="0" width="6" height="280" rx="3" fill="url(#gv)"/>
+  <text x="56" y="102" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="60" fill="#e6edf3" font-weight="700">expxmedia</text>
+  <rect x="400" y="64" width="128" height="30" rx="15" fill="none" stroke="#a371f7" stroke-width="1.5"/>
+  <text x="464" y="84" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" fill="#a371f7" text-anchor="middle">método Expx</text>
+  <text x="57" y="140" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="17" fill="#9198a1">A central de mídia da sua empresa: <tspan fill="#e6edf3">Alma, motor e packs</tspan> para Claude Code</text>
+  <text x="960" y="162" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#9198a1" text-anchor="end">5 tipos de peça · + carrossel misto</text>
+  <circle class="ring fb" cx="906" cy="52" r="5" fill="none" stroke="#f778ba" stroke-width="1.5"/>
+  <circle class="rec" cx="906" cy="52" r="5" fill="#f778ba"/>
+  <text x="918" y="56.5" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#9198a1">rec</text>
+    <g class="in" style="animation-delay:0.25s"><g class="fl" style="animation-delay:0.0s">
+    <rect x="56" y="176" width="172" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <g fill="none" stroke="#a371f7" stroke-width="1.6" stroke-linejoin="round">
+      <rect x="78" y="195.5" width="28" height="35" rx="3"/>
+      <polyline points="82,225 89,216 94,221 98,217 102,225"/>
+    </g><circle cx="87" cy="206" r="3.2" fill="#f778ba"/>
+    <text x="124" y="210" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">post único</text>
+    <text x="124" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">1 PNG · 4:5</text>
+  </g></g>
+    <g class="in" style="animation-delay:0.43s"><g class="fl" style="animation-delay:-1.2s">
+    <rect x="239" y="176" width="172" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <g fill="none" stroke="#a371f7" stroke-width="1.6">
+      <rect x="271" y="194" width="21" height="28" rx="2.5" opacity="0.35"/>
+      <rect x="266" y="197" width="21" height="28" rx="2.5" opacity="0.6"/>
+      <rect x="261" y="200" width="21" height="28" rx="2.5" fill="#161b22"/>
+      <line x1="265" y1="207" x2="277" y2="207" stroke="#f778ba" stroke-width="2"/>
+      <line x1="265" y1="213" x2="275" y2="213" opacity="0.6"/>
+    </g>
+    <circle cx="267" cy="234" r="1.8" fill="#f778ba"/><circle cx="273" cy="234" r="1.8" fill="#a371f7" opacity="0.5"/><circle cx="279" cy="234" r="1.8" fill="#a371f7" opacity="0.5"/>
+    <text x="307" y="210" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">carrossel</text>
+    <text x="307" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">PNG ou MP4</text>
+  </g></g>
+    <g class="in" style="animation-delay:0.61s"><g class="fl" style="animation-delay:-2.4s">
+    <rect x="422" y="176" width="172" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <g fill="none" stroke="#a371f7" stroke-width="1.6">
+      <rect x="446" y="192" width="24" height="42" rx="4"/>
+      <line x1="451" y1="228" x2="465" y2="228" opacity="0.45"/>
+      <line x1="451" y1="228" x2="457" y2="228" stroke="#f778ba"/>
+    </g><path d="M454 205 L465 212 L454 219 Z" fill="#f778ba"/>
+    <text x="490" y="210" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">reel</text>
+    <text x="490" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">9:16 · MP4</text>
+  </g></g>
+    <g class="in" style="animation-delay:0.79s"><g class="fl" style="animation-delay:-3.6s">
+    <rect x="605" y="176" width="172" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <g fill="none" stroke="#a371f7" stroke-width="1.6" stroke-linecap="round">
+      <rect x="620" y="197" width="42" height="25" rx="2"/>
+      <line x1="626" y1="204" x2="643" y2="204" stroke="#f778ba" stroke-width="2.2"/>
+      <line x1="626" y1="210" x2="653" y2="210" opacity="0.55"/>
+      <line x1="626" y1="215" x2="647" y2="215" opacity="0.55"/>
+      <line x1="641" y1="222" x2="641" y2="230"/>
+      <line x1="633" y1="230" x2="649" y2="230"/>
+    </g>
+    <text x="673" y="210" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">apresentação</text>
+    <text x="673" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">16:9 · HTML</text>
+  </g></g>
+    <g class="in" style="animation-delay:0.97s"><g class="fl" style="animation-delay:-4.8s">
+    <rect x="788" y="176" width="172" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <g fill="none" stroke="#a371f7" stroke-width="1.6" stroke-linecap="round">
+      <rect x="803" y="197" width="42" height="26" rx="2"/>
+      <line x1="808" y1="204" x2="824" y2="204" opacity="0.6"/>
+      <line x1="808" y1="209" x2="820" y2="209" opacity="0.6"/>
+      <line x1="812" y1="230" x2="836" y2="230" stroke="#9198a1" stroke-width="2"/>
+    </g><rect x="828" y="212" width="13" height="8.5" rx="1.5" fill="#f778ba"/>
+    <circle cx="834.5" cy="214.6" r="1.6" fill="#161b22"/>
+    <text x="856" y="210" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6edf3" font-weight="600">aula</text>
+    <text x="856" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#9198a1">16:9 + 9:16</text>
+  </g></g>
+</svg>

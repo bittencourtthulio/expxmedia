@@ -1,0 +1,121 @@
+{
+  "gerado_por": "motor/scripts/gerar_vitrine.py",
+  "empresa": "Padaria Trigo Dourado (Alma fictícia de motor/tests/fixtures/alma-ficticia)",
+  "provedores": "EXPXMEDIA_PROVEDORES_TESTE=1, sem chave e sem rede",
+  "arquivos": [
+    {
+      "arquivo": "carrossel-prancha.png",
+      "tipo": "carrossel",
+      "template": "carrossel-editorial-b74228",
+      "comando": "uv run expxmedia-motor produzir carrossel --entrada entradas/carrossel.json --raiz <instalação>",
+      "descricao": "prancha de conferência com os slides do carrossel",
+      "largura": 1600,
+      "altura": 506,
+      "quadros": 1,
+      "bytes": 103950
+    },
+    {
+      "arquivo": "carrossel-slides.gif",
+      "tipo": "carrossel",
+      "template": "carrossel-editorial-b74228",
+      "comando": "uv run expxmedia-motor produzir carrossel --entrada entradas/carrossel.json --raiz <instalação>",
+      "descricao": "os slides do carrossel em sequência, 1,2 s cada",
+      "largura": 540,
+      "altura": 675,
+      "quadros": 60,
+      "bytes": 169717
+    },
+    {
+      "arquivo": "post-unico.png",
+      "tipo": "post_unico",
+      "template": "post_unico-numero-e-frase-86c9ac",
+      "comando": "uv run expxmedia-motor produzir post --entrada entradas/post.json --raiz <instalação>",
+      "descricao": "post único",
+      "largura": 540,
+      "altura": 675,
+      "quadros": 1,
+      "bytes": 70958
+    },
+    {
+      "arquivo": "carrossel-misto.gif",
+      "tipo": "carrossel",
+      "template": "carrossel-editorial-b74228",
+      "comando": "uv run expxmedia-motor produzir carrossel --entrada entradas/carrossel-misto.json --raiz <instalação>",
+      "descricao": "slide de vídeo do carrossel misto (Remotion)",
+      "largura": 432,
+      "altura": 540,
+      "quadros": 60,
+      "bytes": 689668
+    },
+    {
+      "arquivo": "reel.gif",
+      "tipo": "reel",
+      "template": "reel-narrado-cartao-870a5c",
+      "comando": "uv run expxmedia-motor produzir reel --entrada entradas/reel.json --raiz <instalação>",
+      "descricao": "trecho de 10 s do reel narrado (contraste e frase) com a legenda por blocos",
+      "largura": 300,
+      "altura": 533,
+      "quadros": 120,
+      "bytes": 871770
+    },
+    {
+      "arquivo": "apresentacao.gif",
+      "tipo": "apresentacao",
+      "template": "apresentacao-padrao-4c7e2a",
+      "comando": "uv run expxmedia-motor produzir apresentacao --entrada entradas/apresentacao.json --mp4 --raiz <instalação>",
+      "descricao": "quatro slides da apresentação, 1,5 s cada",
+      "largura": 720,
+      "altura": 405,
+      "quadros": 75,
+      "bytes": 274113
+    },
+    {
+      "arquivo": "apresentacao-palco.png",
+      "tipo": "apresentacao",
+      "template": "apresentacao-padrao-4c7e2a",
+      "comando": "uv run expxmedia-motor produzir apresentacao --entrada entradas/apresentacao.json --mp4 --raiz <instalação>",
+      "descricao": "apresentacao.html aberto no navegador (1280x720)",
+      "largura": 720,
+      "altura": 405,
+      "quadros": 1,
+      "bytes": 117109
+    },
+    {
+      "arquivo": "aula-16x9.png",
+      "tipo": "aula",
+      "template": "aula-padrao-5b1e7d",
+      "comando": "uv run expxmedia-motor produzir aula --entrada entradas/aula.json --raiz <instalação>",
+      "descricao": "um quadro da aula em 16:9",
+      "largura": 960,
+      "altura": 540,
+      "quadros": 1,
+      "bytes": 62063
+    },
+    {
+      "arquivo": "aula-9x16.png",
+      "tipo": "aula",
+      "template": "aula-padrao-5b1e7d",
+      "comando": "uv run expxmedia-motor produzir aula --entrada entradas/aula.json --raiz <instalação>",
+      "descricao": "um quadro da aula em 9:16",
+      "largura": 432,
+      "altura": 768,
+      "quadros": 1,
+      "bytes": 80545
+    },
+    {
+      "arquivo": "reel-referencia.gif",
+      "tipo": "reel",
+      "template": "sob medida (reel por referência)",
+      "comando": "uv run expxmedia-motor referencia render --pasta <peça>",
+      "descricao": "8,5 s iniciais do reel por referência produzido na validação: o gancho, a cena do bilhete contra a fila e a assinatura do pão da semana, com a legenda por palavra e o selo do porta-voz. Trecho escolhido para não mostrar o avatar do provedor de teste.",
+      "largura": 300,
+      "altura": 533,
+      "quadros": 96,
+      "bytes": 550650,
+      "trecho_s": [
+        0,
+        8.5
+      ]
+    }
+  ]
+}
