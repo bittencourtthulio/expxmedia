@@ -4,25 +4,25 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-08
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-08.1
     titulo: "Publicacao"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/publicar termina com 0 failed"
     paralelizavel: false
     paralela_com: []
     tasks: [T-08.01, T-08.02, T-08.03, T-08.04]
   - id: F-08.2
     titulo: "Agendador local"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/agendador termina com 0 failed"
     paralelizavel: false
     paralela_com: []
     tasks: [T-08.05, T-08.06]
   - id: F-08.3
     titulo: "CLI de publicacao"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/test_cli_publicar.py termina com 0 failed"
     paralelizavel: false
     paralela_com: []

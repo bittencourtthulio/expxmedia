@@ -9,7 +9,7 @@ tasks:
   - id: T-05.01
     titulo: "Kit base do Remotion"
     fase: F-05.1
-    status: em_andamento
+    status: concluida
     objetivo: "Portar anim.ts, area segura e centralizacao, com FPS numa constante unica, useAlma por props e SeloPerfil a partir do porta-voz e do canal da Alma."
     arquivos:
       cria: [motor/kit-remotion/src/kit/constantes.ts, motor/kit-remotion/src/kit/anim.ts, motor/kit-remotion/src/kit/alma.tsx, motor/kit-remotion/src/kit/SeloPerfil.tsx, motor/kit-remotion/src/kit/fontes.ts, motor/kit-remotion/src/composicoes/TesteSelo/index.tsx, motor/tests/motion/test_kit.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/motion/test_kit.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.05]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.02
     titulo: "Montagem e trilha generalizadas"
     fase: F-05.1
-    status: em_andamento
+    status: concluida
     objetivo: "Portar montar-reel.mjs e audio.mjs com caminhos por argumento, mesmo PRNG e semente, sem reescrever registro global (D-19)."
     arquivos:
       cria: [motor/kit-remotion/scripts/montar.mjs, motor/kit-remotion/scripts/audio.mjs, motor/tests/motion/test_montar.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/motion/test_montar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.01, T-01.07]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.03
     titulo: "Runner Remotion multi-versao"
     fase: F-05.1
-    status: em_andamento
+    status: concluida
     objetivo: "Renderizar com o kit na 4.0.528 e, para outras versoes, um projeto por versao em cache fora da instalacao; cada render faz bundle so da composicao pedida por um entry point proprio, com o browser compartilhado preparado na T-01.08, props JSON e timeout 1800 s; nenhum teste instala nada (D-17, D-46)."
     arquivos:
       cria: [motor/src/expxmedia/motion/remotion.py, motor/tests/motion/test_runner.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/motion/test_runner.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.04
     titulo: "Previa com guias"
     fase: F-05.1
-    status: em_andamento
+    status: concluida
     objetivo: "Gerar still a 60% de cada cena com as guias 220 e 1500 px."
     arquivos:
       cria: [motor/src/expxmedia/motion/previa.py, motor/tests/motion/test_previa.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/motion/test_previa.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.03]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.05
     titulo: "Template de reel embarcado"
     fase: F-05.2
-    status: pendente
+    status: em_andamento
     objetivo: "Criar um template de reel narrado em codigo Remotion sobre o kit, com cores e fontes da Alma (D-05, D-31)."
     arquivos:
       cria: [templates/reel/narrado-cartao/template.json, templates/reel/narrado-cartao/package.json, templates/reel/narrado-cartao/src/Composicao.tsx, templates/reel/narrado-cartao/src/cenas.tsx, templates/reel/narrado-cartao/cenas.json, templates/reel/narrado-cartao/exemplo.json, motor/tests/test_template_reel.py]
@@ -84,7 +84,7 @@ tasks:
   - id: T-05.06
     titulo: "Producao de reel narrado"
     fase: F-05.2
-    status: pendente
+    status: em_andamento
     objetivo: "Produzir reel narrado em Remotion: gate de 130 a 180 palavras, narracao uma vez, montagem, render, normalizacao da mistura, verificacao no perfil reel (30 a 70 s) e peca.json (D-41)."
     arquivos:
       cria: [motor/src/expxmedia/producao/reel.py, motor/tests/producao/test_reel.py]
@@ -99,7 +99,7 @@ tasks:
   - id: T-05.07
     titulo: "Slide de video no carrossel"
     fase: F-05.3
-    status: pendente
+    status: em_andamento
     objetivo: "Permitir kind com midia video no carrossel, renderizado em Remotion no formato do carrossel a partir de uma composicao do kit, registrado na peca (D-06)."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/SlideVideo/index.tsx, motor/tests/producao/test_carrossel_misto.py]
@@ -114,7 +114,7 @@ tasks:
   - id: T-05.08
     titulo: "Deck da apresentacao"
     fase: F-05.4
-    status: pendente
+    status: em_andamento
     objetivo: "Portar o schema do deck.json e sua validacao sem CTA fixo."
     arquivos:
       cria: [motor/src/expxmedia/producao/apresentacao/deck.py, motor/tests/producao/apresentacao/test_deck.py]
@@ -129,7 +129,7 @@ tasks:
   - id: T-05.09
     titulo: "Palco HTML navegavel"
     fase: F-05.4
-    status: pendente
+    status: em_andamento
     objetivo: "Gerar apresentacao.html autocontida e navegavel por teclado, com tokens e fontes da Alma."
     arquivos:
       cria: [motor/src/expxmedia/producao/apresentacao/palco.py, motor/src/expxmedia/recursos/palco.html, motor/tests/producao/apresentacao/test_palco.py]
@@ -144,7 +144,7 @@ tasks:
   - id: T-05.10
     titulo: "Cenas e render da apresentacao"
     fase: F-05.4
-    status: pendente
+    status: em_andamento
     objetivo: "Portar as cenas da apresentacao para o kit e renderizar MP4 e PNG por slide."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/Apresentacao/index.tsx, motor/kit-remotion/src/composicoes/Apresentacao/cenas.tsx, motor/src/expxmedia/producao/apresentacao/render.py, motor/tests/producao/apresentacao/test_render.py]
@@ -159,7 +159,7 @@ tasks:
   - id: T-05.11
     titulo: "Template e producao de apresentacao"
     fase: F-05.4
-    status: pendente
+    status: em_andamento
     objetivo: "Criar o template de apresentacao embarcado e a producao que gera HTML, e opcionalmente MP4, com peca.json."
     arquivos:
       cria: [templates/apresentacao/padrao/template.json, templates/apresentacao/padrao/template.css, templates/apresentacao/padrao/exemplo.json, motor/src/expxmedia/producao/apresentacao/producao.py, motor/tests/producao/apresentacao/test_producao.py]
@@ -209,7 +209,8 @@ teste_funcional: A busca pelo literal 30 como fps nos arquivos do kit encontra s
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_kit.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.05]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/motion 30 passed, 0 skipped
 ```
 
 ---
@@ -229,7 +230,8 @@ teste_funcional: Uma âncora ausente da narração faz a montagem sair com erro 
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_montar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.01, T-01.07]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/motion 30 passed, 0 skipped
 ```
 
 ---
@@ -249,7 +251,8 @@ teste_funcional: Pedir a versão 4.0.522 resolve um diretório de cache diferent
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_runner.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.01]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/motion 30 passed, 0 skipped
 ```
 
 ---
@@ -269,7 +272,8 @@ teste_funcional: Cada imagem de prévia tem pixels da cor das guias nas linhas y
 criterio_aceite: `cd motor && uv run pytest tests/motion/test_previa.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: tests/motion 30 passed, 0 skipped
 ```
 
 ---
@@ -289,7 +293,7 @@ teste_funcional: O template passa em template.validar no modo template sem nenhu
 criterio_aceite: `cd motor && uv run pytest tests/test_template_reel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.02, T-05.03, T-02.12]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -309,7 +313,7 @@ teste_funcional: Um roteiro de 100 palavras é recusado antes de narrar e nenhum
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_reel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.05, T-04.05, T-04.06, T-04.02]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -329,7 +333,7 @@ teste_funcional: A peça registra slides[0].midia video com duracao_s preenchida
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_carrossel_misto.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03, T-03.12]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -349,7 +353,7 @@ teste_funcional: Um slide com tipo desconhecido devolve achado citando os tipos 
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_deck.py` termina com 0 failed
 depende_de: [T-01.07, T-02.11]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -369,7 +373,7 @@ teste_funcional: O HTML gerado não referencia nenhuma URL externa e contém as 
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_palco.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.08, T-02.10]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -389,7 +393,7 @@ teste_funcional: Cada tipo de slide do schema tem componente registrado nas cena
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_render.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.08, T-05.03]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -409,7 +413,7 @@ teste_funcional: Com --mp4, a peça lista também o MP4 com papel final e os PNG
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_producao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.09, T-05.10]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
