@@ -1,0 +1,436 @@
+{
+ "trilha": {
+  "bpm": 100,
+  "acordes": [
+   [
+    110,
+    [
+     440,
+     523.25,
+     659.25
+    ]
+   ],
+   [
+    87.31,
+    [
+     349.23,
+     440,
+     523.25
+    ]
+   ],
+   [
+    130.81,
+    [
+     392,
+     523.25,
+     659.25
+    ]
+   ],
+   [
+    98,
+    [
+     392,
+     493.88,
+     587.33
+    ]
+   ]
+  ],
+  "instrumentos": {
+   "kick": 0.35,
+   "caixa": 0.1,
+   "chimbal": 0.035,
+   "pluck": 0.022,
+   "pad": 0.028,
+   "baixo": 0.2
+  },
+  "arpejo": [
+   0,
+   1,
+   2,
+   1,
+   2,
+   0,
+   1,
+   2
+  ],
+  "ganho": 0.55,
+  "semente": 7
+ },
+ "troca": [
+  {
+   "f": -3,
+   "tipo": "whoosh",
+   "desde": 1,
+   "vol": 0.7
+  },
+  {
+   "f": 5,
+   "tipo": "pop",
+   "desde": 0,
+   "vol": 0.5
+  },
+  {
+   "f": 14,
+   "tipo": "check",
+   "desde": 1
+  }
+ ],
+ "legenda": {
+  "palavras_por_bloco": 3
+ },
+ "cauda_s": 1.4,
+ "cenas": [
+  {
+   "id": "corrida",
+   "ancora": "Existe um tipo",
+   "tag": [
+    "IA QUE DECIDE",
+    "NÃO IA QUE CONVERSA"
+   ],
+   "ev": {
+    "ultrapassa": 0.42,
+    "chegada": 0.72
+   },
+   "sons": [
+    [
+     "0",
+     "passos",
+     0.7
+    ],
+    [
+     "ultrapassa",
+     "whoosh"
+    ],
+    [
+     "chegada",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "id": "loop",
+   "ancora": "Hoje o normal",
+   "tag": [
+    "O JEITO DE HOJE",
+    "PERGUNTA · ESPERA · CONFERE"
+   ],
+   "ev": {
+    "digita": 0.04,
+    "l0": 0.26,
+    "l1": 0.34,
+    "l2": 0.42,
+    "l3": 0.5,
+    "l4": 0.58,
+    "lupa": 0.64,
+    "erro": 0.8
+   },
+   "sons": [
+    [
+     "digita",
+     "digita",
+     0.2
+    ],
+    [
+     "l0",
+     "tick"
+    ],
+    [
+     "l1",
+     "tick"
+    ],
+    [
+     "l2",
+     "tick"
+    ],
+    [
+     "l3",
+     "tick"
+    ],
+    [
+     "l4",
+     "tick"
+    ],
+    [
+     "lupa",
+     "whoosh"
+    ],
+    [
+     "erro",
+     "erro"
+    ]
+   ]
+  },
+  {
+   "id": "milhao",
+   "ancora": "Mas agora imagina",
+   "tag": [
+    "AGORA MULTIPLICA",
+    "UM MILHÃO DE VEZES POR DIA"
+   ],
+   "ev": {
+    "conta": 0.08,
+    "fim": 0.8
+   },
+   "sons": [
+    [
+     "conta",
+     "subida",
+     0.72
+    ],
+    [
+     "fim",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "id": "casos",
+   "ancora": "Triar chamado",
+   "tag": [
+    "NO SISTEMA DO CLIENTE",
+    "SUPORTE · PAGAMENTO SUSPEITO"
+   ],
+   "ev": {
+    "b1": 0.06,
+    "c1": 0.2,
+    "b2": 0.3,
+    "c2": 0.44,
+    "cartao": 0.5,
+    "flag": 0.66,
+    "trava": 0.8
+   },
+   "sons": [
+    [
+     "b1",
+     "pop"
+    ],
+    [
+     "c1",
+     "tick"
+    ],
+    [
+     "b2",
+     "pop"
+    ],
+    [
+     "c2",
+     "tick"
+    ],
+    [
+     "cartao",
+     "whoosh"
+    ],
+    [
+     "flag",
+     "erro"
+    ],
+    [
+     "trava",
+     "clack"
+    ]
+   ]
+  },
+  {
+   "id": "decisao",
+   "ancora": "Esse outro tipo",
+   "tag": [
+    "OUTRO DESENHO",
+    "DECIDE, NÃO CONVERSA"
+   ],
+   "ev": {
+    "x": 0.28,
+    "sai": 0.46,
+    "escudo": 0.58
+   },
+   "sons": [
+    [
+     "x",
+     "erro"
+    ],
+    [
+     "sai",
+     "whoosh"
+    ],
+    [
+     "escudo",
+     "carimbo"
+    ]
+   ]
+  },
+  {
+   "id": "confianca",
+   "ancora": "Em vez de",
+   "tag": [
+    "UMA DECISÃO",
+    "MAIS A CONFIANÇA"
+   ],
+   "ev": {
+    "aprovar": 0.06,
+    "gauge": 0.2,
+    "fim": 0.72
+   },
+   "sons": [
+    [
+     "aprovar",
+     "pop"
+    ],
+    [
+     "gauge",
+     "subida",
+     0.52
+    ],
+    [
+     "fim",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "id": "rota",
+   "ancora": "Aí o sistema",
+   "tag": [
+    "CASO CLARO: AUTOMÁTICO",
+    "CASO INCERTO: UMA PESSOA"
+   ],
+   "ev": {
+    "i0": 0.03,
+    "i1": 0.19,
+    "i2": 0.35,
+    "i3": 0.51,
+    "i4": 0.67,
+    "viagem": 0.18
+   },
+   "sons": [
+    [
+     "i0+viagem",
+     "plim"
+    ],
+    [
+     "i1+viagem",
+     "plim"
+    ],
+    [
+     "i2+viagem",
+     "hum"
+    ],
+    [
+     "i3+viagem",
+     "plim"
+    ],
+    [
+     "i4+viagem",
+     "hum"
+    ]
+   ]
+  },
+  {
+   "id": "custo",
+   "ancora": "Menos texto gerado",
+   "tag": [
+    "MENOS TEXTO GERADO",
+    "MENOS TEMPO · MENOS CUSTO"
+   ],
+   "ev": {
+    "k0": 0.12,
+    "k1": 0.24,
+    "k2": 0.36,
+    "m0": 0.48,
+    "m1": 0.58,
+    "m2": 0.68,
+    "m3": 0.78
+   },
+   "sons": [
+    [
+     "k0",
+     "snip"
+    ],
+    [
+     "k1",
+     "snip"
+    ],
+    [
+     "k2",
+     "snip"
+    ],
+    [
+     "m0",
+     "moeda"
+    ],
+    [
+     "m1",
+     "moeda"
+    ],
+    [
+     "m2",
+     "moeda"
+    ],
+    [
+     "m3",
+     "moeda"
+    ]
+   ]
+  },
+  {
+   "id": "feature",
+   "ancora": "Para uma software",
+   "tag": [
+    "NA SUA SOFTWARE HOUSE",
+    "VIRA FEATURE PAGA"
+   ],
+   "ev": {
+    "p0": 0.04,
+    "p1": 0.36,
+    "p2": 0.66,
+    "ok": 0.1
+   },
+   "sons": [
+    [
+     "p0",
+     "pop"
+    ],
+    [
+     "p0+ok",
+     "ding"
+    ],
+    [
+     "p1",
+     "pop"
+    ],
+    [
+     "p1+ok",
+     "ding"
+    ],
+    [
+     "p2",
+     "pop"
+    ],
+    [
+     "p2+ok",
+     "moeda"
+    ]
+   ]
+  },
+  {
+   "id": "cta",
+   "ancora": "Salva este vídeo",
+   "tag": [
+    "GUARDA PARA DEPOIS",
+    "E MOSTRA PARA O SEU TIME"
+   ],
+   "ev": {
+    "marca": 0.06,
+    "chime": 0.28
+   },
+   "sons": [
+    [
+     "marca",
+     "pop"
+    ],
+    [
+     "chime",
+     "chime"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,879 @@
+{
+ "expxmedia_golden": 1,
+ "gerador": "motor/scripts/gerar_golden.py",
+ "gerado_em": "2026-09-24",
+ "ambiente": {
+  "python": "3.11.14",
+  "node": "v20.20.1",
+  "ffmpeg": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+  "playwright": "1.63.0"
+ },
+ "caminhos": {
+  "entradas_e_codigo": "relativos à pasta projects/ que contém os projetos de origem",
+  "arquivos": "relativos a motor/tests/golden/"
+ },
+ "goldens": {
+  "G1": {
+   "id": "G1",
+   "descricao": "Render HTML→PNG do layout 0001-pos-paineis-de-pagamento com o exemplo.json dele pelo galeria.renderizar de origem (prévia: 4 slides, render.json com as medidas do encaixe), a Alma golden com o tema 'referencia' nos papéis de cor e as fontes do Google Fonts baixadas no render.",
+   "comando": [
+    {
+     "cwd": "Instagram-Carrosseis",
+     "args": [
+      "python",
+      "-c",
+      "import galeria; galeria.renderizar('galeria/layouts/0001-pos-paineis-de-pagamento', saida='saida', salvar_html=True)"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "Instagram-Carrosseis/galeria/__init__.py",
+     "sha256": "e8ea2f219f933b671f8140e33bd200a46b30ae328721eb0147277be98b6d48d8"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/_galeria.py",
+     "sha256": "09eac84ddd144aef5d5a1cc8a83aa9612cfff7fd077d7a0d3b85ac54ca625af5"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/processar.py",
+     "sha256": "b66b83bea32d4532ecf7b0fe8ea9087c5af1859ad138847955469af1349a7bb5"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/tratamento.py",
+     "sha256": "6cc2dd5b32c19e5d107aa609a4e0098a74679d9f8d6a5fe26832b3aa2987152b"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/renomeados.json",
+     "sha256": "2db29bb85a081a5cf3dbaf1bf7bea783a8dc83495f673cca89fc81f7c6936bf2"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/layout.json",
+     "sha256": "2c065ce15638b8bc91eb0d3d9dabece74a5495cbdea4b53bda2db491ed350a99"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/layout.css",
+     "sha256": "17808a308e3845774431f89b345f5c57c04b6cf63418fab8eeae3d382f19a853"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/exemplo.json",
+     "sha256": "80be228378db00c7ffab2d399e179e86f49cdd9fd669c5228736acfffe5120e8"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/slides/frase.html",
+     "sha256": "73b2c393fcc56d9d0cd2c844c03f03287ebbea85d27545b4231753308bb68f69"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/slides/interface.html",
+     "sha256": "641cea5c99376aa0ce249772f6d99844410ced9710d1aa8dccec719f0bce0447"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/slides/manchete.html",
+     "sha256": "2986f3671937103d32b69f990b0abbddca59de7430487d3924daab8fb6a26f7a"
+    },
+    {
+     "caminho": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/slides/numero.html",
+     "sha256": "944566df2cfb970848a9b87ad55b9d28e45dadcc3ddc39b7048864bf624ae2c3"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G1/alma-golden.json",
+     "sha256": "a7ab20cf008aa3912998e5785c144b8fb3a28c7b7f6a5ab0ba615de624ced54f"
+    },
+    {
+     "caminho": "G1/fontes/NGSwv5HMAFg6IuGlBNMjxLsH8ahuQ2e8.woff2",
+     "sha256": "83d548cd73ef2e039167db3adb5ea9d7a7870466ffc8a162c9820bc348938aaf"
+    },
+    {
+     "caminho": "G1/fontes/fontes.css",
+     "sha256": "2b9ce2d659f0ee06ccef4b640712c21a4fab3ca9bd92e12205fd85dffaa8ce1a"
+    },
+    {
+     "caminho": "G1/render.json",
+     "sha256": "f2541947ef0e6cf15b70cbe6197e7e11c0237cf5bf03b3ad250a022f7c27118e"
+    },
+    {
+     "caminho": "G1/slide_1.png",
+     "sha256": "d84b0ab6dcbd6146177b91f8ac70c474f47192bfd5cf1a3acc5cc2c9bcec56e5"
+    },
+    {
+     "caminho": "G1/slide_2.png",
+     "sha256": "eb144b465b494fa73c4ab4b1056fb09735d7bfc5c7962dfd37647ed7c7cbead4"
+    },
+    {
+     "caminho": "G1/slide_3.png",
+     "sha256": "645e74739b83629102a25d51903c8041d9b237716bf079841268226a5ed5538f"
+    },
+    {
+     "caminho": "G1/slide_4.png",
+     "sha256": "40798cdd51c61ff93521889d387706b3cb9a8301ec795ad8974b659d8d1d2696"
+    }
+   ],
+   "observacoes": [
+    "render.json e slide_N.png são a prévia do layout (copy = exemplo.json); a prancha não é guardada porque recorta a referência de terceiros",
+    "a Alma golden tem identidade neutra de teste; só o visual reproduz a origem"
+   ],
+   "bloqueio": null,
+   "igual_a_origem": {
+    "slide_1.png": false,
+    "slide_2.png": false,
+    "slide_3.png": true,
+    "slide_4.png": true
+   },
+   "mapeamento_cores": {
+    "origem": "Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento/layout.css (bloco .slide.referencia)",
+    "papeis": {
+     "fundo": "--claro",
+     "fundo_alt": "--escuro",
+     "texto": "--tinta",
+     "texto_inverso": "--tinta-inversa",
+     "apoio": "--apoio",
+     "destaque": "--destaque",
+     "destaque_2": "--destaque-2",
+     "positivo": "--positivo"
+    },
+    "sem_papel": {
+     "--claro-brilho": "#ffffff",
+     "--claro-sombra": "#b8b8b8",
+     "--escuro-2": "#1d1d20",
+     "--escuro-3": "#2c2c31",
+     "--apoio-suave": "#b3b3b6"
+    },
+    "negativo": "o tema não tem cor de dado ruim; #e5484d preenche o papel e não aparece no layout"
+   },
+   "fontes": {
+    "arquivos": [
+     "G1/fontes/NGSwv5HMAFg6IuGlBNMjxLsH8ahuQ2e8.woff2"
+    ],
+    "css": "G1/fontes/fontes.css",
+    "pedidas": [
+     "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap"
+    ]
+   },
+   "origem_intacta": {
+    "arquivos": 20,
+    "iguais": true
+   }
+  },
+  "G2": {
+   "id": "G2",
+   "descricao": "Linha do tempo e trilha do reel recriado sob medida recriado-ia-decide, pelo montar-reel.mjs de origem: timeline.json (cenas, eventos, blocos de legenda) e trilha.wav (música + efeitos).",
+   "comando": [
+    {
+     "cwd": "Instragram-Videos/remotion",
+     "args": [
+      "node",
+      "scripts/montar-reel.mjs",
+      "recriado-ia-decide"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "Instragram-Videos/remotion/scripts/montar-reel.mjs",
+     "sha256": "87297662e0911a8824cc3023c6dbc92ad04fdd78172935adbe8f39fdfde8560c"
+    },
+    {
+     "caminho": "Instragram-Videos/remotion/scripts/audio.mjs",
+     "sha256": "ff3060f306f3b3b203fd6915ad2c726c99a8e1b2c13f7663b511cfe44584a6db"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "Instragram-Videos/remotion/src/reels/recriado-20260924-221743/cenas.json",
+     "sha256": "2c009f18e261f81a68be7a6c4734c04ab56b3a3d73065d40fff6c2e8c8ffb6d3"
+    },
+    {
+     "caminho": "Instragram-Videos/remotion/src/reels/recriado-20260924-221931/cenas.json",
+     "sha256": "8e529c8b110e188a5d1e9d9d8eabbfb09364d5bfa35b276cf3ed74ba8c9c583d"
+    },
+    {
+     "caminho": "Instragram-Videos/remotion/src/reels/recriado-ia-decide/Reel.tsx",
+     "sha256": "7b6a98a77eb6addac5fa037882cd641a58d1b7d7bea4c1817d933ca1ede9f991"
+    },
+    {
+     "caminho": "Instragram-Videos/remotion/src/reels/recriado-ia-decide/cenas.json",
+     "sha256": "a2b7170fa4e99aa8f12fb194a8b4b6a2c2786c0fd93e24ec82e7edb0267a1958"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/recriado-ia-decide/alignment.json",
+     "sha256": "538f12347542aae7389d060a521f516c64b645f1404949c5ffd392f97cf7ff7e"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/recriado-ia-decide/narracao.mp3",
+     "sha256": "bed5c752ad56e11babb62b9fbba637e04fe68d67e7075223a50481efeccef402"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G2/entradas/alignment.json",
+     "sha256": "538f12347542aae7389d060a521f516c64b645f1404949c5ffd392f97cf7ff7e"
+    },
+    {
+     "caminho": "G2/entradas/cenas.json",
+     "sha256": "a2b7170fa4e99aa8f12fb194a8b4b6a2c2786c0fd93e24ec82e7edb0267a1958"
+    },
+    {
+     "caminho": "G2/entradas/narracao.mp3",
+     "sha256": "bed5c752ad56e11babb62b9fbba637e04fe68d67e7075223a50481efeccef402"
+    },
+    {
+     "caminho": "G2/timeline.json",
+     "sha256": "cec735a15063369c300ec57c4457be4066545c9261d75efd7080b458307cbdc3"
+    },
+    {
+     "caminho": "G2/trilha.wav",
+     "sha256": "7030d6fe03498cb4ba462201cf797f9d196dfbb48b5b7119dd1d383f06a71218"
+    }
+   ],
+   "observacoes": [
+    "montar-reel.mjs só usa módulos node: e audio.mjs; node_modules não é necessário na cópia"
+   ],
+   "bloqueio": null,
+   "igual_a_origem": {
+    "timeline.json": true,
+    "trilha.wav": true
+   },
+   "origem_intacta": {
+    "arquivos": 17,
+    "iguais": true
+   }
+  },
+  "G3": {
+   "id": "G3",
+   "descricao": "Legendas do reel de página firecrawl-firecrawl pelo captions.py de origem: um PNG por bloco (caps/NNN.png, blank.png e o card final end.png), caps.txt (concat do ffmpeg) e legendas.json.",
+   "comando": [
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "python",
+      "pipeline/captions.py",
+      "videos/firecrawl-firecrawl"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "Instragram-Videos/pipeline/captions.py",
+     "sha256": "413d1685c340595b1e86cade91bbe87f6fe193b3b53dbd40d0a7d2bf7b5f550c"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/lib.py",
+     "sha256": "3034c21c27910b4dd8f1645e34fbd596c9dd2d91791573164df8f9aaea7f2f9f"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/pronuncia.py",
+     "sha256": "630c83a4d759922436d209071d128211f87cd67a1cc03dec2a9f579bbeb27866"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/alignment.json",
+     "sha256": "cf209b44867f4766c5be14e16315daa7f69ed64d3bf90823e1b26a4cdd1ca904"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/roteiro.txt",
+     "sha256": "5af3882f26c9617986bc4f296bbd91a48dce8a93debd21ecb7d7c57019dba633"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/cta.txt",
+     "sha256": "50724ccf966f2cdb7cb92ffe204355cbb4deba81ccad2a86ffe5eb71a54d3944"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G3/caps.txt",
+     "sha256": "774e98364efc59d3a7cb33b4abfc77887e4210f6c80b529955968ded45d7b3a0"
+    },
+    {
+     "caminho": "G3/caps/000.png",
+     "sha256": "a7707b6813c0ad98e5c4e09926ab8e6ae5e1bc0b24d41e54705dea65300a1670"
+    },
+    {
+     "caminho": "G3/caps/001.png",
+     "sha256": "12f952b9dd32e844ee5c5150e1aa58f8b65ea9cc4eb9f1cef27708cc3258332c"
+    },
+    {
+     "caminho": "G3/caps/002.png",
+     "sha256": "5826272290f7a363e9afa40bf990b7a69d93faae164a1514a80f927209ab102e"
+    },
+    {
+     "caminho": "G3/caps/003.png",
+     "sha256": "a67d7708e9e92b138cee42175e971c6422e3f686f539da2a743f1beb64acdd4d"
+    },
+    {
+     "caminho": "G3/caps/004.png",
+     "sha256": "f37a88052a48819a7c8b37212258fa3a4577e4de1f65e28b8ca945d201ce5b99"
+    },
+    {
+     "caminho": "G3/caps/005.png",
+     "sha256": "a44327536cce64cc11942b47be3ba3fe934a12998d6711338b43c35471170bb4"
+    },
+    {
+     "caminho": "G3/caps/006.png",
+     "sha256": "37da20509dce91b0e17b36c682e6d17229735eb30d1e9d8878953bcb4cc9ab99"
+    },
+    {
+     "caminho": "G3/caps/007.png",
+     "sha256": "89484ead48f6e34f40bbe13895fd3337b5ff72423873659d68537655aff2356d"
+    },
+    {
+     "caminho": "G3/caps/008.png",
+     "sha256": "a21a7c5af9fba9b7e08a127fe1b9d1eebde236dda070f85ed0947d1a5a603d99"
+    },
+    {
+     "caminho": "G3/caps/009.png",
+     "sha256": "320d0f612e897c30621dea393ad60dcfadc4ebf148010bbf6f13535ec47cdf42"
+    },
+    {
+     "caminho": "G3/caps/010.png",
+     "sha256": "2b0ce208d3d639f2f69ba285ef8bbf49ed715d7cacd4575f7835a919a37bc7da"
+    },
+    {
+     "caminho": "G3/caps/011.png",
+     "sha256": "9b782b2d8efc9cc6f2666b020f8c42352dbb36db780a7224567aee51abd8ed8b"
+    },
+    {
+     "caminho": "G3/caps/012.png",
+     "sha256": "acb8de8fecf1f8586869a7dea554c712be649180b42b59e82d10642add194487"
+    },
+    {
+     "caminho": "G3/caps/013.png",
+     "sha256": "69e266c237547f11ad480540ec30f2e25b8313d9a51fa51c3d4f4740539da02f"
+    },
+    {
+     "caminho": "G3/caps/014.png",
+     "sha256": "e0a2bfa7f16f9a0c5723cf9bf400f5502a2a09236df883d905c466432a6186b1"
+    },
+    {
+     "caminho": "G3/caps/015.png",
+     "sha256": "1d46e76543a0465b50e9401cef9cc81e2c27c0996e9bb8ec7c7e384e8d4d9955"
+    },
+    {
+     "caminho": "G3/caps/016.png",
+     "sha256": "397f1d4844a41864c5cd6d8f54aa91049dabe8b80556699905cb0afaca3592f3"
+    },
+    {
+     "caminho": "G3/caps/017.png",
+     "sha256": "f36d9bb303371d4ac2ce8c31d785bbe6b0cc471e8967f3cd17343a9805e7b32e"
+    },
+    {
+     "caminho": "G3/caps/018.png",
+     "sha256": "512f96270f5c1172a7492c59eb318ea86bc1de1962c63ed43022176f2370d088"
+    },
+    {
+     "caminho": "G3/caps/019.png",
+     "sha256": "fead6f96177cbd5f8353d0d2f8a714b909a191544d7e5c66181515fb0b5964a6"
+    },
+    {
+     "caminho": "G3/caps/020.png",
+     "sha256": "d2395c8170cd93879f5d7ee676c3bd8545bc39ee6e7c5ce0b52de129f1356378"
+    },
+    {
+     "caminho": "G3/caps/021.png",
+     "sha256": "c22dc93705302203e6d5400276a63bca67b50203a37d1f81374fdcf23d42199e"
+    },
+    {
+     "caminho": "G3/caps/022.png",
+     "sha256": "455b4361100de3863e70da07a053e0117b36a56d2055645b32a1a4d869ec2563"
+    },
+    {
+     "caminho": "G3/caps/023.png",
+     "sha256": "ea75e9382173c9fd32556ff94cf9639cca98bf9575747787addb9ea77a5363a6"
+    },
+    {
+     "caminho": "G3/caps/024.png",
+     "sha256": "64877240c226f9f4d75617bfc1a830e7572ad0cd3b8dfbf993def1c1fe6c964c"
+    },
+    {
+     "caminho": "G3/caps/025.png",
+     "sha256": "5c95e7ea2b56ef0c4722d50e22a6bd64193e772c939d237aa784d682f5e91adf"
+    },
+    {
+     "caminho": "G3/caps/026.png",
+     "sha256": "e94b3b93b90604c6e5ffaf3d728779720a6f99c0eb5dc73c6788cca62ee73bc5"
+    },
+    {
+     "caminho": "G3/caps/027.png",
+     "sha256": "9d5146d7d2b03ec333eb4bb367d0d403a6c93a2f2cc1459492ee07378d40ccf7"
+    },
+    {
+     "caminho": "G3/caps/028.png",
+     "sha256": "f05b728c731673012f66d8454e4dbcf743d20b494e4e5a94b5185304ad8985e5"
+    },
+    {
+     "caminho": "G3/caps/029.png",
+     "sha256": "3dfa68bd7a2a018c4171c06afb2d9098c036678caf516e60f682c2998d42ce67"
+    },
+    {
+     "caminho": "G3/caps/030.png",
+     "sha256": "98874bd5986faf2b7061cf26d4b34939859f2e54e7e990cf00171a84ca5e1391"
+    },
+    {
+     "caminho": "G3/caps/031.png",
+     "sha256": "d7fbdf2beb40f1ca7e01954b05f65c958bd201fd3734ba7077965de0d8682d59"
+    },
+    {
+     "caminho": "G3/caps/032.png",
+     "sha256": "f390c9a968fcbc69ef84b4ad8afe7e83ec1fcafee1217dab489cd937fd2fcb9f"
+    },
+    {
+     "caminho": "G3/caps/033.png",
+     "sha256": "bb278bb2536333d53a8ccc5d493047d15487e37b1a78192e4cb2881acd59679a"
+    },
+    {
+     "caminho": "G3/caps/034.png",
+     "sha256": "2c65ac2bd8865f2605c68f673b948b503b695976dc02951b82430bb50944630a"
+    },
+    {
+     "caminho": "G3/caps/035.png",
+     "sha256": "ececbc3bb7d2e4a3862a95eaf28c862bcf140cd2eba132c6971a2b0663f4a7d3"
+    },
+    {
+     "caminho": "G3/caps/036.png",
+     "sha256": "6912ba6e4092514bd456a70193ca053350ca9837ec1832f56faa2ed91b700e46"
+    },
+    {
+     "caminho": "G3/caps/blank.png",
+     "sha256": "dfaa38c4add9e9925953fb1ff0fff83d47de3164ddfb9c9b995acd7e9c75300d"
+    },
+    {
+     "caminho": "G3/caps/end.png",
+     "sha256": "0c2cda82e8edb04b6f812bd342a36242a58b20f32a9172d332ab90d17cf7968e"
+    },
+    {
+     "caminho": "G3/entradas/alignment.json",
+     "sha256": "cf209b44867f4766c5be14e16315daa7f69ed64d3bf90823e1b26a4cdd1ca904"
+    },
+    {
+     "caminho": "G3/entradas/cta.txt",
+     "sha256": "50724ccf966f2cdb7cb92ffe204355cbb4deba81ccad2a86ffe5eb71a54d3944"
+    },
+    {
+     "caminho": "G3/entradas/roteiro.txt",
+     "sha256": "5af3882f26c9617986bc4f296bbd91a48dce8a93debd21ecb7d7c57019dba633"
+    },
+    {
+     "caminho": "G3/legendas.json",
+     "sha256": "a531030ba8f44ec0291913a5f5d9227735388d1bc1c4e578f21f12f3193f51fe"
+    }
+   ],
+   "observacoes": [
+    "a fonte é a do sistema na origem (captions.py:30); a alma-golden-reel do G4 aponta para ela (D-47)"
+   ],
+   "bloqueio": null,
+   "igual_a_origem": {
+    "legendas.json": true,
+    "caps.txt": true,
+    "caps/end.png": false
+   },
+   "origem_intacta": {
+    "arquivos": 9,
+    "iguais": true
+   }
+  },
+  "G4": {
+   "id": "G4",
+   "descricao": "Montagem do reel de página firecrawl-firecrawl pelo compose.py de origem (rolagem, cartão de impacto, selo de CTA, legendas do G3, narração e loudnorm): o MP4 final, o resumo do ffprobe e a alma-golden-reel com as cores de captions.py/compose.py e a fonte local da origem (D-47).",
+   "comando": [
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "python",
+      "pipeline/compose.py",
+      "videos/firecrawl-firecrawl"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "Instragram-Videos/pipeline/compose.py",
+     "sha256": "03c48a79d89d38a1637acc63aff0f15f04e325ef623b0b8f51ae9c1769f1e86a"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/captions.py",
+     "sha256": "413d1685c340595b1e86cade91bbe87f6fe193b3b53dbd40d0a7d2bf7b5f550c"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/lib.py",
+     "sha256": "3034c21c27910b4dd8f1645e34fbd596c9dd2d91791573164df8f9aaea7f2f9f"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/pronuncia.py",
+     "sha256": "630c83a4d759922436d209071d128211f87cd67a1cc03dec2a9f579bbeb27866"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/strip.png",
+     "sha256": "f6c508b7bb36daaee6198706347c36d67095f19c3c36476b2199db871e27f41e"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/captura.json",
+     "sha256": "a955b6d5f942384d00066c22ad12cc15014be08b51c82c8b992d1ef45a29cd87"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/narracao.mp3",
+     "sha256": "2e41ed54bb1a1c51a5e3b18af3d32f79bd7f29159353098146624c6c711246f6"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/firecrawl-firecrawl/repo.json",
+     "sha256": "0733be5bfc86d74699cdfb969d52919eac6e0df034042452da33882fa741532d"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G4/alma-golden-reel.json",
+     "sha256": "770564688886bb92888a6a4b11fec97b0ce2892a5523b48ac16b99f0b8d14fe0"
+    },
+    {
+     "caminho": "G4/entradas/captura.json",
+     "sha256": "a955b6d5f942384d00066c22ad12cc15014be08b51c82c8b992d1ef45a29cd87"
+    },
+    {
+     "caminho": "G4/entradas/impacto.txt",
+     "sha256": "2c56a90b579b6e9ece83d5c12f2397dcb5e12cc5949b6e6afa12ff0e516e110b"
+    },
+    {
+     "caminho": "G4/entradas/narracao.mp3",
+     "sha256": "2e41ed54bb1a1c51a5e3b18af3d32f79bd7f29159353098146624c6c711246f6"
+    },
+    {
+     "caminho": "G4/entradas/strip.png",
+     "sha256": "f6c508b7bb36daaee6198706347c36d67095f19c3c36476b2199db871e27f41e"
+    },
+    {
+     "caminho": "G4/ffprobe.json",
+     "sha256": "88ebc894db58cb78624103bdd7e30df72b3a88285865c9fdd3bd85ecd1cb9f45"
+    },
+    {
+     "caminho": "G4/firecrawl-firecrawl.mp4",
+     "sha256": "443e97b1ba1787cf5be16c7c8270ae80fc3bfce57bb6c708d564d34a5ad0098e"
+    },
+    {
+     "caminho": "G4/visual.json",
+     "sha256": "ccabf1abc1450e9b046df2eb0c063b3ecb6989fbfbeb0da7eba3b6312d3d6718"
+    }
+   ],
+   "observacoes": [
+    "impacto.txt não existe na origem (o vídeo é anterior ao visual v2); o gerador cria 'SITE VIRA / DADO DE IA' para exercitar o cartão",
+    "a fonte da alma-golden-reel é a fonte do sistema usada na origem, só para os testes; o arquivo não é copiado (D-47)",
+    "o G4 usa as legendas do G3 geradas na mesma cópia"
+   ],
+   "bloqueio": null,
+   "mapeamento_cores": {
+    "origem": [
+     "Instragram-Videos/pipeline/captions.py",
+     "Instragram-Videos/pipeline/compose.py",
+     "Instragram-Videos/pipeline/stitch.py"
+    ],
+    "alfa": {
+     "caixa_legenda": 205,
+     "selo": 225,
+     "veu_impacto": 120
+    },
+    "sem_uso_na_origem": [
+     "apoio",
+     "negativo"
+    ]
+   },
+   "origem_intacta": {
+    "arquivos": 8,
+    "iguais": true
+   }
+  },
+  "G5": {
+   "id": "G5",
+   "descricao": "Legendas de aula (42 caracteres × 2 linhas) e SRT do radar-ia-09-jev-calibracao pelo gerar_legendas.py de origem, com o texto do roteiro nos tempos do whisper, e o cues.json dos marcadores.",
+   "comando": [
+    {
+     "cwd": "cursos-ia/radar-ia-09-jev-calibracao",
+     "args": [
+      "python",
+      "gerar_legendas.py"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "cursos-ia/radar-ia-09-jev-calibracao/gerar_legendas.py",
+     "sha256": "775bc2073df4341a81d048b36353f597c37f4880f4b62fcfc2c3f8fd42e75ed1"
+    },
+    {
+     "caminho": "cursos-ia/radar-ia-09-jev-calibracao/gerar_voz.py",
+     "sha256": "31c651ae5fe103036c33a2042bf71f37eb61147b2e6aabdf452b70e99ba20239"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "cursos-ia/radar-ia-09-jev-calibracao/roteiro.txt",
+     "sha256": "b2a1de184caa0dc3009682ba0fdefa26a6570e145cd2cf0adcf5ef8ded671a3a"
+    },
+    {
+     "caminho": "cursos-ia/radar-ia-09-jev-calibracao/raw/whisper/narracao.json",
+     "sha256": "63f8d43ee303046e22c31bb2ea9d0d1c721ae040a2591cdf1f0e27a96ae0ab39"
+    },
+    {
+     "caminho": "cursos-ia/radar-ia-09-jev-calibracao/src/cues.json",
+     "sha256": "af0e0bd741aa9e2810c3d9a0025e153cec8fec62699da8c207e8df8e0ee27d17"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G5/cues.json",
+     "sha256": "af0e0bd741aa9e2810c3d9a0025e153cec8fec62699da8c207e8df8e0ee27d17"
+    },
+    {
+     "caminho": "G5/entradas/narracao.whisper.json",
+     "sha256": "63f8d43ee303046e22c31bb2ea9d0d1c721ae040a2591cdf1f0e27a96ae0ab39"
+    },
+    {
+     "caminho": "G5/entradas/roteiro.txt",
+     "sha256": "b2a1de184caa0dc3009682ba0fdefa26a6570e145cd2cf0adcf5ef8ded671a3a"
+    },
+    {
+     "caminho": "G5/legendas.json",
+     "sha256": "6edcf5b8b77d3cdb4d18c5336b9f065bf6133efbffe3b4dc9ea811b2f51d822e"
+    },
+    {
+     "caminho": "G5/radar-ia-09-jev-calibracao.srt",
+     "sha256": "16e84fe4f39e3d855b14922c27bcef2d9b932cfe1e78f10de501ad957c1542ff"
+    }
+   ],
+   "observacoes": [
+    "o gerar_voz.py entra só como código de referência dos cues; não é executado (lê .env e chama API paga)"
+   ],
+   "bloqueio": null,
+   "igual_a_origem": {
+    "legendas.json": true,
+    "radar-ia-09-jev-calibracao.srt": true
+   },
+   "cues": {
+    "regerado": false,
+    "motivo": "gerar_voz.py não salva o alinhamento da ElevenLabs; cues.json é o que a origem gravou"
+   },
+   "origem_intacta": {
+    "arquivos": 7,
+    "iguais": true
+   }
+  },
+  "G6": {
+   "id": "G6",
+   "descricao": "deck.json de uma apresentação do youtube-squad, para converter ao schema do núcleo.",
+   "comando": [
+    {
+     "cwd": "youtube-squad",
+     "args": [
+      "cp",
+      "apresentacoes/decks/2026-09-24-claude-code-ficou-caro-quanto-custa-de-verdade-e/deck.json",
+      "G6/deck.json"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "youtube-squad/tests/decks.py",
+     "sha256": "52a9120a01ceb5ff9b1eb8496cb35250cc2e8d99ca6c6c19a71759c6aad7351e"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "youtube-squad/apresentacoes/decks/2026-09-24-claude-code-ficou-caro-quanto-custa-de-verdade-e/deck.json",
+     "sha256": "e9f3d0b614358162b3feaeb96ee6339557416d5b81aac4d9e0fcd9dd2fe863b2"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G6/deck.json",
+     "sha256": "e9f3d0b614358162b3feaeb96ee6339557416d5b81aac4d9e0fcd9dd2fe863b2"
+    }
+   ],
+   "observacoes": [
+    "cópia do deck.json; o schema da origem está em youtube-squad/tests/decks.py"
+   ],
+   "bloqueio": null,
+   "origem_intacta": {
+    "arquivos": 2,
+    "iguais": true
+   }
+  },
+  "G7": {
+   "id": "G7",
+   "descricao": "Corte de YouTube yt-04hAay1cjyU-t0239: transcrição da aula (entrada do momentos.py), os candidatos que o momentos.py ranqueia (o trecho escolhido é o primeiro), a transcrição do corte, o alinhamento que o transcrever.py --alinhar deriva dela e o alinhamento recasado com as grafias corrigidas do roteiro.txt da origem.",
+   "comando": [
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "python",
+      "pipeline/momentos.py",
+      "fontes/04hAay1cjyU"
+     ]
+    },
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "python",
+      "pipeline/transcrever.py",
+      "videos/yt-04hAay1cjyU-t0239",
+      "--alinhar"
+     ]
+    },
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "python",
+      "pipeline/transcrever.py",
+      "videos/yt-04hAay1cjyU-t0239",
+      "--recasar"
+     ]
+    }
+   ],
+   "codigo": [
+    {
+     "caminho": "Instragram-Videos/pipeline/momentos.py",
+     "sha256": "b73ed4003a5cc6fb373c8bcb52f94846555aa655a62887453906bd97a313cf07"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/transcrever.py",
+     "sha256": "aa166c07780cc0a333b1ecc9edcf70d4f98259699081e3bb50db22bb19c76064"
+    },
+    {
+     "caminho": "Instragram-Videos/pipeline/lib.py",
+     "sha256": "3034c21c27910b4dd8f1645e34fbd596c9dd2d91791573164df8f9aaea7f2f9f"
+    }
+   ],
+   "entradas": [
+    {
+     "caminho": "Instragram-Videos/fontes/04hAay1cjyU/transcricao.json",
+     "sha256": "152c34c5f8c7b33cd240e28e8be2a92e67346bd56e381a9630b9bc3e67219054"
+    },
+    {
+     "caminho": "Instragram-Videos/fontes/04hAay1cjyU/fonte.json",
+     "sha256": "bd84e9e42028696884a0c8c0529ff1bcf982b27596cfcaacd46c62646edc0a5b"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/yt-04hAay1cjyU-t0239/transcricao_corte.json",
+     "sha256": "ce5ea29789657b22c4366e1c21e40bbcb761d03fa8661d6df5dae0dcb22cd378"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/yt-04hAay1cjyU-t0239/corte9x16.mp4",
+     "sha256": "6f1664dbe02bd865e186e0a50fc8556852e9fdc38b81c2aee6452fd8ac55c7fe"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/yt-04hAay1cjyU-t0239/roteiro.txt",
+     "sha256": "086b9a74bc089401f41a129d02a0bcac46aad3f33d569f8ab768d21a8b3a2108"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G7/alignment.recasado.json",
+     "sha256": "1fd131af1bbbcf146aa36dfec4314fa24afbc69b29fa754f7d8294771164da42"
+    },
+    {
+     "caminho": "G7/alignment.whisper.json",
+     "sha256": "992844886506db70d587eff252cc3e2a48e5842d5bbabab16c339039fd4ab8bc"
+    },
+    {
+     "caminho": "G7/candidatos.json",
+     "sha256": "2cddf2ff24867d7f10f1ecb97c3bf1cc17ac6406a3fa0b6a4294e8160afcdbc9"
+    },
+    {
+     "caminho": "G7/entradas/fonte.json",
+     "sha256": "bd84e9e42028696884a0c8c0529ff1bcf982b27596cfcaacd46c62646edc0a5b"
+    },
+    {
+     "caminho": "G7/roteiro.txt",
+     "sha256": "086b9a74bc089401f41a129d02a0bcac46aad3f33d569f8ab768d21a8b3a2108"
+    },
+    {
+     "caminho": "G7/roteiro.whisper.txt",
+     "sha256": "6736288ce5266dcb36b65d804d5c46e134e13f769d80e6e4cf9f8ca6b739fe92"
+    },
+    {
+     "caminho": "G7/transcricao.json",
+     "sha256": "152c34c5f8c7b33cd240e28e8be2a92e67346bd56e381a9630b9bc3e67219054"
+    },
+    {
+     "caminho": "G7/transcricao_corte.json",
+     "sha256": "ce5ea29789657b22c4366e1c21e40bbcb761d03fa8661d6df5dae0dcb22cd378"
+    }
+   ],
+   "observacoes": [
+    "candidatos.json: a origem gravou 6 candidatos (rodada com --n menor); o padrão de hoje é 8 e os 6 primeiros são iguais aos da origem",
+    "alignment.recasado.json: a origem foi recasada antes da correção da inserção de largura zero (transcrever.py:70-78); 3 tempos de fim diferem em 0,02 s e o golden segue o código atual",
+    "o whisper do --alinhar é substituído por um módulo que devolve a transcricao_corte.json gravada pela origem; o código de conversão palavra→caractere e o --recasar são os da origem",
+    "o corte9x16.mp4 só entra na cópia (o --alinhar mede a duração); não é guardado no golden"
+   ],
+   "bloqueio": null,
+   "igual_a_origem": {
+    "candidatos.json": false,
+    "alignment.recasado.json": false
+   },
+   "trecho_escolhido": {
+    "inicio": 517.05,
+    "fim": 587.27,
+    "pontos": 5.64
+   },
+   "origem_intacta": {
+    "arquivos": 10,
+    "iguais": true
+   }
+  },
+  "G8": {
+   "id": "G8",
+   "descricao": "Narração falada do reel recriado-ia-decide (mp3 da origem) e o alinhamento por caractere gravado pelo tts.py, para testar a transcrição offline.",
+   "comando": [
+    {
+     "cwd": "Instragram-Videos",
+     "args": [
+      "cp",
+      "videos/recriado-ia-decide/narracao.mp3",
+      "videos/recriado-ia-decide/alignment.json",
+      "videos/recriado-ia-decide/roteiro.txt",
+      "G8/"
+     ]
+    }
+   ],
+   "codigo": [],
+   "entradas": [
+    {
+     "caminho": "Instragram-Videos/videos/recriado-ia-decide/narracao.mp3",
+     "sha256": "bed5c752ad56e11babb62b9fbba637e04fe68d67e7075223a50481efeccef402"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/recriado-ia-decide/alignment.json",
+     "sha256": "538f12347542aae7389d060a521f516c64b645f1404949c5ffd392f97cf7ff7e"
+    },
+    {
+     "caminho": "Instragram-Videos/videos/recriado-ia-decide/roteiro.txt",
+     "sha256": "a8c121acd7cd6cdb1acf26b0aae7d9c8f86758439ab08165bd6de1a5e9f1070f"
+    }
+   ],
+   "arquivos": [
+    {
+     "caminho": "G8/alignment.json",
+     "sha256": "538f12347542aae7389d060a521f516c64b645f1404949c5ffd392f97cf7ff7e"
+    },
+    {
+     "caminho": "G8/narracao.mp3",
+     "sha256": "bed5c752ad56e11babb62b9fbba637e04fe68d67e7075223a50481efeccef402"
+    },
+    {
+     "caminho": "G8/roteiro.txt",
+     "sha256": "a8c121acd7cd6cdb1acf26b0aae7d9c8f86758439ab08165bd6de1a5e9f1070f"
+    }
+   ],
+   "observacoes": [
+    "cópia de arquivos já gravados pela origem; a narração veio da ElevenLabs e não é regerada (D-15)"
+   ],
+   "bloqueio": null,
+   "origem_intacta": {
+    "arquivos": 3,
+    "iguais": true
+   }
+  }
+ }
+}

@@ -9,7 +9,7 @@ tasks:
   - id: T-01.01
     titulo: "Pacote Python e pyproject com todas as dependencias"
     fase: F-01.1
-    status: pendente
+    status: concluida
     objetivo: "Criar o pacote expxmedia com uv, src layout, Python 3.11+, pytest, o script expxmedia-motor e TODAS as dependencias do plano declaradas de uma vez: playwright, pillow, numpy, opencv-python-headless, filelock, jsonschema, requests, faster-whisper, rembg, onnxruntime, scikit-image (dev) e openai-whisper como extra opcional, o esqueleto de subpacotes com __init__.py e addopts --import-mode=importlib (D-14, D-42)."
     arquivos:
       cria: [motor/pyproject.toml, motor/uv.lock, motor/src/expxmedia/__init__.py, motor/src/expxmedia/nucleo/__init__.py, motor/src/expxmedia/ambiente/__init__.py, motor/src/expxmedia/alma/__init__.py, motor/src/expxmedia/peca/__init__.py, motor/src/expxmedia/template/__init__.py, motor/src/expxmedia/render_html/__init__.py, motor/src/expxmedia/imagem/__init__.py, motor/src/expxmedia/captura/__init__.py, motor/src/expxmedia/producao/__init__.py, motor/src/expxmedia/producao/apresentacao/__init__.py, motor/src/expxmedia/video/__init__.py, motor/src/expxmedia/narrar/__init__.py, motor/src/expxmedia/transcrever/__init__.py, motor/src/expxmedia/legendar/__init__.py, motor/src/expxmedia/motion/__init__.py, motor/src/expxmedia/referencia/__init__.py, motor/src/expxmedia/corte/__init__.py, motor/src/expxmedia/aula/__init__.py, motor/src/expxmedia/avatar/__init__.py, motor/src/expxmedia/publicar/__init__.py, motor/src/expxmedia/agendador/__init__.py, motor/src/expxmedia/revisar/__init__.py, motor/src/expxmedia/cli_comandos/__init__.py, motor/tests/stubs/__init__.py, motor/tests/test_pacote.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_pacote.py termina com 0 failed"
     depende_de: []
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.02
     titulo: "Conftest com rede bloqueada e marcador integracao_local"
     fase: F-01.1
-    status: pendente
+    status: concluida
     objetivo: "Bloquear rede externa na suite e pular testes locais quando o binario faltar (D-14)."
     arquivos:
       cria: [motor/tests/conftest.py, motor/tests/test_harness.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_harness.py termina com 0 failed"
     depende_de: [T-01.01]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.03
     titulo: "Fixture de instalacao com Alma ficticia"
     fase: F-01.1
-    status: pendente
+    status: concluida
     objetivo: "Criar uma empresa ficticia completa, a fixture que monta uma instalacao em pasta temporaria e a fixture de rosto gerada de skimage.data.astronaut (dominio publico) (D-02, D-43)."
     arquivos:
       cria: [motor/tests/fixtures/alma-ficticia/alma/alma.json, motor/tests/fixtures/alma-ficticia/alma/voz.md, motor/tests/fixtures/alma-ficticia/alma/assets/logo.svg, motor/tests/fixtures/alma-ficticia/alma/assets/retratos/porta-voz-teste/01.png, motor/tests/fixtures/rosto/astronauta.png, motor/tests/fixtures/instalacao.py, motor/tests/test_instalacao.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_instalacao.py termina com 0 failed"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.04
     titulo: "Stub HTTP local"
     fase: F-01.1
-    status: pendente
+    status: concluida
     objetivo: "Criar um servidor HTTP local que registra rotas e grava as requisicoes, para testar provedores sem rede."
     arquivos:
       cria: [motor/tests/stubs/servidor.py, motor/tests/test_stub.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_stub.py termina com 0 failed"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.05
     titulo: "Kit Remotion com versoes travadas e registro gerado"
     fase: F-01.2
-    status: pendente
+    status: concluida
     objetivo: "Criar o kit TypeScript com versoes exatas de remotion, @remotion/bundler, @remotion/renderer, @remotion/cli, @remotion/fonts, @remotion/captions e @remotion/layout-utils em 4.0.528, react e react-dom 19.3.0, typescript 5.8.3, @types/react e @fontsource/inter, gerando o package-lock.json com npm install (rede, uma vez), uma composicao de teste e o Root que importa um registro gerado atomicamente a partir das pastas src/composicoes/*, para que nenhuma task futura edite o Root (D-17, D-46)."
     arquivos:
       cria: [motor/kit-remotion/package.json, motor/kit-remotion/package-lock.json, motor/kit-remotion/tsconfig.json, motor/kit-remotion/src/index.ts, motor/kit-remotion/src/Root.tsx, motor/kit-remotion/scripts/registrar.mjs, motor/kit-remotion/src/composicoes/Vazio/index.tsx, motor/tests/test_kit_remotion.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_kit_remotion.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.02]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.06
     titulo: "Varredura de marca"
     fase: F-01.2
-    status: pendente
+    status: concluida
     objetivo: "Garantir por teste que nenhum codigo do nucleo carrega marca (M13, D-02)."
     arquivos:
       cria: [motor/tests/test_marca.py, motor/tests/marca_proibida.txt]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_marca.py termina com 0 failed"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.08
     titulo: "Preparacao do ambiente local"
     fase: F-01.2
-    status: pendente
+    status: concluida
     objetivo: "Criar o script de preparacao, rodado uma vez pela task (fora da suite): uv sync, playwright install chromium, npm ci do kit, npx remotion browser ensure com o browser compartilhado pelo runner, copia da Inter (OFL) de @fontsource/inter para recursos/fontes/Inter, download de faster-whisper small e medium e do u2net se ausentes; o teste so confere presenca de binarios, caches (faster-whisper small e medium, u2net, chrome-headless-shell, Chromium) e arquivos (D-42)."
     arquivos:
       cria: [motor/scripts/preparar_ambiente.py, motor/src/expxmedia/recursos/fontes/Inter/OFL.txt, motor/src/expxmedia/recursos/fontes/Inter/inter-latin-400-normal.woff2, motor/src/expxmedia/recursos/fontes/Inter/inter-latin-700-normal.woff2, motor/tests/test_ambiente_local.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_ambiente_local.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.05]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-01.07
     titulo: "Goldens do sistema atual"
     fase: F-01.2
-    status: pendente
+    status: concluida
     objetivo: "Gravar em copia temporaria as saidas de referencia: G1 render e render.json do layout Instagram-Carrosseis/galeria/layouts/0001-pos-paineis-de-pagamento com seu exemplo.json, a alma-golden.json com as cores do tema e as fontes baixadas; G2 timeline.json e trilha.wav de Instragram-Videos/remotion/src/reels/recriado-ia-decide com videos/recriado-ia-decide; G3 caps, end.png e legendas.json de Instragram-Videos/videos/firecrawl-firecrawl; G4 MP4 e resumo ffprobe do compose do mesmo video, com uma alma-golden-reel.json que reproduz as cores de captions.py/compose.py e aponta a fonte local do sistema usada na origem so para os testes (D-47); G5 legendas.json, SRT e cues.json de cursos-ia/radar-ia-09-jev-calibracao; G6 deck.json de youtube-squad/apresentacoes/decks/2026-09-24-claude-code-ficou-caro-quanto-custa-de-verdade-e; G7 transcricao, transcricao recasada e trecho escolhido por momentos.py em Instragram-Videos/videos/yt-04hAay1cjyU-t0239; G8 a narracao falada de videos/recriado-ia-decide (D-16, D-37)."
     arquivos:
       cria: [motor/scripts/gerar_golden.py, motor/tests/golden/manifesto.json, motor/tests/golden/README.md, motor/tests/test_golden_presentes.py]
@@ -124,8 +124,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_golden_presentes.py termina com 0 failed"
     depende_de: [T-01.03, T-01.08]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
 ---
 
 # Tasks — Sprint 01
@@ -149,7 +149,8 @@ teste_funcional: Importar expxmedia devolve __version__ igual a 0.1.0 e cada dep
 criterio_aceite: `cd motor && uv run pytest tests/test_pacote.py` termina com 0 failed
 depende_de: []
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 37 passed, 0 failed
 ```
 
 ---
@@ -169,7 +170,8 @@ teste_funcional: A fixture requer_binario com um nome inexistente marca o teste 
 criterio_aceite: `cd motor && uv run pytest tests/test_harness.py` termina com 0 failed
 depende_de: [T-01.01]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 11 passed, 0 failed (suíte 48 passed)
 ```
 
 ---
@@ -189,7 +191,8 @@ teste_funcional: O alma.json fictício contém todas as seções do CONTRATO-alm
 criterio_aceite: `cd motor && uv run pytest tests/test_instalacao.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 12 passed, 0 failed (suíte 67 passed)
 ```
 
 ---
@@ -209,7 +212,8 @@ teste_funcional: Uma rota POST registrada com resposta JSON devolve esse JSON e 
 criterio_aceite: `cd motor && uv run pytest tests/test_stub.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 7 passed, 0 failed
 ```
 
 ---
@@ -229,7 +233,8 @@ teste_funcional: O package.json declara os pacotes listados sem ^ nem ~ e cada u
 criterio_aceite: `cd motor && uv run pytest tests/test_kit_remotion.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.02]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 18 passed, 0 failed, 0 skipped
 ```
 
 ---
@@ -249,7 +254,8 @@ teste_funcional: Um arquivo temporário contendo o nome do dono dos projetos de 
 criterio_aceite: `cd motor && uv run pytest tests/test_marca.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 6 passed, 0 failed
 ```
 
 ---
@@ -269,7 +275,8 @@ teste_funcional: O teste de ambiente falha citando o nome do item quando um bin�
 criterio_aceite: `cd motor && uv run pytest tests/test_ambiente_local.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.05]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 17 passed, 0 failed, 0 skipped
 ```
 
 ---
@@ -289,5 +296,6 @@ teste_funcional: O manifesto lista G1 a G8 com sha256, comando de origem e entra
 criterio_aceite: `cd motor && uv run pytest tests/test_golden_presentes.py` termina com 0 failed
 depende_de: [T-01.03, T-01.08]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 12 passed, 0 failed (suíte 120 passed)
 ```

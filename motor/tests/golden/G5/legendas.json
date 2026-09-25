@@ -1,0 +1,703 @@
+[
+ {
+  "start": 0.0,
+  "end": 3.63,
+  "lines": [
+   "Nas duas últimas aulas,",
+   "toda a nossa cascata"
+  ]
+ },
+ {
+  "start": 3.68,
+  "end": 7.99,
+  "lines": [
+   "dependeu de um número: a confiança do Jev."
+  ]
+ },
+ {
+  "start": 8.22,
+  "end": 11.87,
+  "lines": [
+   "Acima de noventa por cento,",
+   "o sistema age sozinho."
+  ]
+ },
+ {
+  "start": 11.94,
+  "end": 14.21,
+  "lines": [
+   "Abaixo de cinquenta, vai para uma pessoa."
+  ]
+ },
+ {
+  "start": 14.28,
+  "end": 17.87,
+  "lines": [
+   "Mas esse número só vale alguma",
+   "coisa se ele for honesto."
+  ]
+ },
+ {
+  "start": 17.92,
+  "end": 21.41,
+  "lines": [
+   "Quando o Jev diz noventa",
+   "por cento, ele precisa"
+  ]
+ },
+ {
+  "start": 21.46,
+  "end": 24.71,
+  "lines": [
+   "acertar mais ou menos",
+   "noventa por cento das vezes."
+  ]
+ },
+ {
+  "start": 24.76,
+  "end": 29.383,
+  "lines": [
+   "Pense na previsão do tempo: se em todos",
+   "os dias em que ela diz setenta por"
+  ]
+ },
+ {
+  "start": 29.433,
+  "end": 34.79,
+  "lines": [
+   "cento de chance de chuva, chove em sete",
+   "de cada dez, a previsão é calibrada."
+  ]
+ },
+ {
+  "start": 34.84,
+  "end": 38.71,
+  "lines": [
+   "A TypeSafe diz que",
+   "treinou o Jev exatamente"
+  ]
+ },
+ {
+  "start": 38.76,
+  "end": 42.03,
+  "lines": [
+   "para isso, com um método",
+   "que ela chama de RLCD."
+  ]
+ },
+ {
+  "start": 42.08,
+  "end": 45.49,
+  "lines": [
+   "Hoje a gente testa essa promessa",
+   "com os nossos próprios dados."
+  ]
+ },
+ {
+  "start": 45.68,
+  "end": 49.93,
+  "lines": [
+   "Eu volto ao mesmo projeto das",
+   "aulas anteriores, aula jev triagem."
+  ]
+ },
+ {
+  "start": 49.98,
+  "end": 53.19,
+  "lines": [
+   "A chave do OpenRouter já está",
+   "no ponto env, como sempre:"
+  ]
+ },
+ {
+  "start": 53.24,
+  "end": 56.25,
+  "lines": [
+   "uma chave nova, só para esta",
+   "aula, que eu apago no final."
+  ]
+ },
+ {
+  "start": 56.42,
+  "end": 58.07,
+  "lines": [
+   "Primeiro, eu preciso de um gabarito."
+  ]
+ },
+ {
+  "start": 58.12,
+  "end": 59.81,
+  "lines": [
+   "Eu crio o arquivo tickets ponto json,"
+  ]
+ },
+ {
+  "start": 59.86,
+  "end": 62.03,
+  "lines": [
+   "com quarenta mensagens",
+   "de clientes em português."
+  ]
+ },
+ {
+  "start": 62.08,
+  "end": 64.29,
+  "lines": [
+   "Cada uma já vem com o",
+   "setor correto marcado"
+  ]
+ },
+ {
+  "start": 64.34,
+  "end": 66.39,
+  "lines": [
+   "por mim: financeiro, técnico ou vendas."
+  ]
+ },
+ {
+  "start": 66.44,
+  "end": 70.59,
+  "lines": [
+   "A maior parte é fácil, como uma cobrança",
+   "duplicada ou um pedido de preço."
+  ]
+ },
+ {
+  "start": 70.64,
+  "end": 74.87,
+  "lines": [
+   "Mas no final da lista eu coloquei",
+   "casos ambíguos de propósito,"
+  ]
+ },
+ {
+  "start": 74.92,
+  "end": 77.75,
+  "lines": [
+   "como um upgrade de plano que",
+   "deu erro na hora de pagar."
+  ]
+ },
+ {
+  "start": 77.8,
+  "end": 79.07,
+  "lines": [
+   "É financeiro ou é técnico?"
+  ]
+ },
+ {
+  "start": 79.12,
+  "end": 83.15,
+  "lines": [
+   "É nesse tipo de mensagem que",
+   "a confiança precisa cair."
+  ]
+ },
+ {
+  "start": 83.2,
+  "end": 88.15,
+  "lines": [
+   "Agora o avaliar ponto js, que roda",
+   "direto no terminal, sem servidor."
+  ]
+ },
+ {
+  "start": 88.2,
+  "end": 91.23,
+  "lines": [
+   "Ele começa carregando os",
+   "tickets e definindo a mesma"
+  ]
+ },
+ {
+  "start": 91.28,
+  "end": 94.35,
+  "lines": [
+   "pergunta de setor da aula",
+   "sete, com as mesmas regras."
+  ]
+ },
+ {
+  "start": 94.4,
+  "end": 97.57,
+  "lines": [
+   "A função classificar manda um",
+   "ticket para a Decisions API,"
+  ]
+ },
+ {
+  "start": 97.62,
+  "end": 100.83,
+  "lines": [
+   "igualzinho ao que a gente já fez,",
+   "e devolve três coisas: o setor"
+  ]
+ },
+ {
+  "start": 100.88,
+  "end": 105.23,
+  "lines": [
+   "que o Jev escolheu, a confiança",
+   "dele, e o setor certo do gabarito."
+  ]
+ },
+ {
+  "start": 105.28,
+  "end": 108.41,
+  "lines": [
+   "Depois eu defino as faixas de",
+   "confiança: de noventa a cem,"
+  ]
+ },
+ {
+  "start": 108.46,
+  "end": 112.57,
+  "lines": [
+   "de setenta a noventa, de cinquenta",
+   "a setenta, e abaixo de cinquenta."
+  ]
+ },
+ {
+  "start": 112.7,
+  "end": 115.39,
+  "lines": [
+   "E duas funções pequenas: uma",
+   "para mostrar porcentagem,"
+  ]
+ },
+ {
+  "start": 115.44,
+  "end": 118.55,
+  "lines": [
+   "outra para desenhar uma barra",
+   "de texto, com até vinte blocos."
+  ]
+ },
+ {
+  "start": 118.68,
+  "end": 120.91,
+  "lines": [
+   "A função main é o teste de verdade."
+  ]
+ },
+ {
+  "start": 120.96,
+  "end": 123.49,
+  "lines": [
+   "Ela manda os quarenta tickets em paralelo."
+  ]
+ },
+ {
+  "start": 123.54,
+  "end": 127.43,
+  "lines": [
+   "Depois, para cada faixa, separa os",
+   "tickets que caíram nela e compara duas"
+  ]
+ },
+ {
+  "start": 127.48,
+  "end": 133.27,
+  "lines": [
+   "coisas: a confiança média que o Jev",
+   "disse, e quantos ele acertou de fato."
+  ]
+ },
+ {
+  "start": 133.48,
+  "end": 137.89,
+  "lines": [
+   "Se as duas barras tiverem o mesmo",
+   "tamanho, o modelo está calibrado."
+  ]
+ },
+ {
+  "start": 137.94,
+  "end": 141.55,
+  "lines": [
+   "Se a barra do que ele disse for",
+   "bem maior que a do que ele acertou,"
+  ]
+ },
+ {
+  "start": 141.6,
+  "end": 145.79,
+  "lines": [
+   "ele está confiante demais, e aí o",
+   "limite do automático precisa subir."
+  ]
+ },
+ {
+  "start": 145.84,
+  "end": 149.93,
+  "lines": [
+   "No fim, ela lista cada erro, com a",
+   "confiança que o Jev tinha quando errou."
+  ]
+ },
+ {
+  "start": 149.98,
+  "end": 154.19,
+  "lines": [
+   "Hora de rodar. Node, com o",
+   "env file, e avaliar ponto js."
+  ]
+ },
+ {
+  "start": 154.24,
+  "end": 156.67,
+  "lines": [
+   "Os quarenta tickets voltam",
+   "em cerca de três segundos."
+  ]
+ },
+ {
+  "start": 156.72,
+  "end": 159.71,
+  "lines": [
+   "E o teste inteiro custa",
+   "menos de um décimo de centavo"
+  ]
+ },
+ {
+  "start": 159.76,
+  "end": 162.09,
+  "lines": [
+   "de dólar, então dá para",
+   "repetir quantas vezes quiser."
+  ]
+ },
+ {
+  "start": 162.14,
+  "end": 163.73,
+  "lines": [
+   "Olha a faixa de cima."
+  ]
+ },
+ {
+  "start": 163.82,
+  "end": 167.39,
+  "lines": [
+   "Trinta e seis dos quarenta tickets",
+   "caíram entre noventa e cem por cento."
+  ]
+ },
+ {
+  "start": 167.44,
+  "end": 170.59,
+  "lines": [
+   "O Jev disse, em média,",
+   "noventa e nove por cento."
+  ]
+ },
+ {
+  "start": 170.64,
+  "end": 172.25,
+  "lines": [
+   "E acertou noventa e sete."
+  ]
+ },
+ {
+  "start": 172.52,
+  "end": 176.31,
+  "lines": [
+   "As duas barras quase do mesmo tamanho:",
+   "nessa faixa, a promessa se sustenta."
+  ]
+ },
+ {
+  "start": 176.36,
+  "end": 180.33,
+  "lines": [
+   "Nas faixas de baixo, a amostra é",
+   "pequena, então vale olhar com cuidado."
+  ]
+ },
+ {
+  "start": 180.38,
+  "end": 183.37,
+  "lines": [
+   "Um ticket com oitenta e",
+   "nove por cento, e acertou."
+  ]
+ },
+ {
+  "start": 183.42,
+  "end": 185.87,
+  "lines": [
+   "Dois tickets perto de cinquenta",
+   "por cento, e acertou um."
+  ]
+ },
+ {
+  "start": 185.92,
+  "end": 189.71,
+  "lines": [
+   "E o único abaixo de cinquenta,",
+   "com vinte e sete por cento, errou."
+  ]
+ },
+ {
+  "start": 189.76,
+  "end": 193.63,
+  "lines": [
+   "Ou seja: quando o Jev fica",
+   "em dúvida, ele erra mesmo."
+  ]
+ },
+ {
+  "start": 193.78,
+  "end": 198.99,
+  "lines": [
+   "E é exatamente por isso que esses tickets",
+   "vão para uma pessoa na nossa cascata."
+  ]
+ },
+ {
+  "start": 199.06,
+  "end": 202.07,
+  "lines": [
+   "Agora os erros. Os dois",
+   "primeiros são os casos ambíguos,"
+  ]
+ },
+ {
+  "start": 202.12,
+  "end": 204.91,
+  "lines": [
+   "e o Jev estava com pouca",
+   "confiança nos dois."
+  ]
+ },
+ {
+  "start": 205.18,
+  "end": 208.17,
+  "lines": [
+   "Esse é o comportamento que a",
+   "gente quer: errar avisando."
+  ]
+ },
+ {
+  "start": 208.22,
+  "end": 211.39,
+  "lines": [
+   "Um modelo de linguagem",
+   "comum costuma responder com"
+  ]
+ },
+ {
+  "start": 211.44,
+  "end": 214.01,
+  "lines": [
+   "a mesma segurança quando",
+   "acerta e quando erra."
+  ]
+ },
+ {
+  "start": 214.06,
+  "end": 215.77,
+  "lines": [
+   "Aqui, a dúvida aparece no número."
+  ]
+ },
+ {
+  "start": 215.82,
+  "end": 219.75,
+  "lines": [
+   "O terceiro é diferente: noventa",
+   "e seis por cento, e errou."
+  ]
+ },
+ {
+  "start": 219.8,
+  "end": 221.85,
+  "lines": [
+   "Quero migrar os dados de outro sistema."
+  ]
+ },
+ {
+  "start": 222.08,
+  "end": 224.45,
+  "lines": [
+   "Eu marquei vendas, o Jev escolheu técnico."
+  ]
+ },
+ {
+  "start": 224.5,
+  "end": 226.37,
+  "lines": [
+   "Sinceramente, dá para defender os dois."
+  ]
+ },
+ {
+  "start": 226.42,
+  "end": 229.33,
+  "lines": [
+   "Esse é o ponto: muitas vezes, o",
+   "erro com confiança alta mostra"
+  ]
+ },
+ {
+  "start": 229.38,
+  "end": 233.87,
+  "lines": [
+   "que a regra do setor está mal",
+   "escrita, e não que o modelo errou."
+  ]
+ },
+ {
+  "start": 233.92,
+  "end": 237.93,
+  "lines": [
+   "A correção é deixar o critério mais",
+   "explícito, como a gente viu na aula três."
+  ]
+ },
+ {
+  "start": 237.98,
+  "end": 239.61,
+  "lines": [
+   "E o que isso muda na prática?"
+  ]
+ },
+ {
+  "start": 239.66,
+  "end": 242.59,
+  "lines": [
+   "Com quarenta tickets, a faixa",
+   "de cima está bem calibrada,"
+  ]
+ },
+ {
+  "start": 242.7,
+  "end": 245.91,
+  "lines": [
+   "então o limite de noventa por cento",
+   "para o automático faz sentido."
+  ]
+ },
+ {
+  "start": 245.96,
+  "end": 249.23,
+  "lines": [
+   "Para as faixas de baixo,",
+   "quarenta tickets é pouco."
+  ]
+ },
+ {
+  "start": 249.28,
+  "end": 252.05,
+  "lines": [
+   "No seu sistema, rode esse mesmo",
+   "script com algumas centenas"
+  ]
+ },
+ {
+  "start": 252.1,
+  "end": 254.83,
+  "lines": [
+   "de tickets reais, já",
+   "resolvidos pela sua equipe,"
+  ]
+ },
+ {
+  "start": 254.88,
+  "end": 258.35,
+  "lines": [
+   "e ajuste os limites com base",
+   "no resultado, não no chute."
+  ]
+ },
+ {
+  "start": 258.54,
+  "end": 260.89,
+  "lines": [
+   "E um cuidado: repare",
+   "que no código eu uso o"
+  ]
+ },
+ {
+  "start": 260.94,
+  "end": 263.69,
+  "lines": [
+   "modelo jev um ponto",
+   "treze, uma versão fixa."
+  ]
+ },
+ {
+  "start": 263.74,
+  "end": 266.87,
+  "lines": [
+   "Se você usar a versão latest,",
+   "o modelo pode mudar por baixo."
+  ]
+ },
+ {
+  "start": 266.92,
+  "end": 270.77,
+  "lines": [
+   "Então, sempre que trocar",
+   "de versão, rode a avaliação"
+  ]
+ },
+ {
+  "start": 270.82,
+  "end": 273.59,
+  "lines": [
+   "de novo antes de confiar",
+   "nos mesmos limites."
+  ]
+ },
+ {
+  "start": 273.64,
+  "end": 277.05,
+  "lines": [
+   "Recapitulando: um gabarito, um",
+   "script de setenta e cinco linhas,"
+  ]
+ },
+ {
+  "start": 277.1,
+  "end": 280.51,
+  "lines": [
+   "e a resposta para a pergunta",
+   "mais importante da cascata:"
+  ]
+ },
+ {
+  "start": 280.56,
+  "end": 282.69,
+  "lines": [
+   "dá para confiar no número do Jev?"
+  ]
+ },
+ {
+  "start": 282.74,
+  "end": 284.71,
+  "lines": [
+   "Nos nossos dados, na faixa alta, sim."
+  ]
+ },
+ {
+  "start": 284.76,
+  "end": 291.27,
+  "lines": [
+   "E o que sobra de erro aponta onde",
+   "a sua regra precisa melhorar."
+  ]
+ },
+ {
+  "start": 291.32,
+  "end": 293.65,
+  "lines": [
+   "Os fontes da aula estão na pasta do curso."
+  ]
+ },
+ {
+  "start": 293.72,
+  "end": 294.72,
+  "lines": [
+   "Até a próxima."
+  ]
+ }
+]

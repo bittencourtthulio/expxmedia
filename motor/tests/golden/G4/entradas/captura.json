@@ -1,0 +1,50 @@
+{
+  "altura_css": 10241,
+  "altura_pagina_css": 20177,
+  "cortada": true,
+  "css_w": 700,
+  "band": 1100,
+  "scale": 2,
+  "chunks": 10,
+  "secoes": [
+    {
+      "t": "🔥 Firecrawl",
+      "y": 1393
+    },
+    {
+      "t": "Why Firecrawl?",
+      "y": 1666
+    },
+    {
+      "t": "Feature Overview",
+      "y": 2160
+    },
+    {
+      "t": "Quick Start",
+      "y": 2721
+    },
+    {
+      "t": "Power Your Agent",
+      "y": 4534
+    },
+    {
+      "t": "More Endpoints",
+      "y": 5484
+    },
+    {
+      "t": "SDKs",
+      "y": 10241
+    }
+  ],
+  "topo": "Skip to content | firecrawl | firecrawl | Repository navigation | Code | Issues | 83 |  (83) | Pull reques",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "ocultos": {
+    "overlays": 4,
+    "nav_direita": 1,
+    "nav_busca": 4
+  },
+  "breadcrumb": "firecrawl firecrawl",
+  "strip_w": 1080,
+  "strip_h": 15800,
+  "px_por_css": 1.5428180841714676
+}

@@ -1,0 +1,11 @@
+Aquele trabalho de copiar dado de site na mão para alimentar a inteligência artificial do seu cliente pode virar uma chamada de API hoje.
+
+O Firecrawl é uma API open source que pega qualquer endereço da web e devolve markdown limpo, JSON estruturado ou screenshot, pronto para o modelo consumir.
+
+A prova está no próprio repositório: cobertura de noventa e seis por cento da web, incluindo página pesada de JavaScript, latência P noventa e cinco de três vírgula quatro segundos, e mais de cento e oitenta mil estrelas no GitHub.
+
+Você instala o SDK em Python, Node, Go, Java, Ruby, dotnet ou PHP. Tem linha de comando, tem servidor MCP para plugar no seu agente, e o código é aberto sob licença AGPL, então dá para subir na sua própria infraestrutura.
+
+Se a sua software house entrega agente ou automação que depende de dado atualizado da internet, esse é o pedaço que você para de manter na mão.
+
+Comenta FIRECRAWL que eu te mando o link.

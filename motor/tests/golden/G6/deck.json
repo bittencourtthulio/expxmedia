@@ -1,0 +1,160 @@
+{
+ "slug": "2026-09-24-claude-code-ficou-caro-quanto-custa-de-verdade-e",
+ "titulo": "Claude Code ficou caro? Quanto custa de verdade e quando o grátis vence",
+ "pauta_id": "7ba9aa182e3b",
+ "criado_em": "2026-09-24",
+ "gerado_por": "apresentador",
+ "pauta": {
+  "origem": "fila",
+  "tema": "Custo do Claude Code",
+  "angulo": "A diferença entre a assinatura de entrada e o plano que sustenta trabalho real de software house, e o ponto exato em que OpenCode ou Codex vencem no lugar; para dev e dono de software house escolhendo onde gastar."
+ },
+ "marca": {
+  "nome": "Claude",
+  "cor": "#D97757",
+  "cor_2": null,
+  "logo": "logo.png",
+  "site": "https://claude.com",
+  "origem": "tabela"
+ },
+ "slides": [
+  {
+   "tipo": "titulo",
+   "kicker": "Custo real",
+   "titulo": "Claude Code ficou <b>caro</b>?",
+   "subtitulo": "Quanto custa de verdade e quando o grátis vence no dia a dia"
+  },
+  {
+   "tipo": "declaracao",
+   "texto": "Assinatura de entrada é demo; trabalho real pede o plano de <b>cem</b> dólares",
+   "autor": "Thulio"
+  },
+  {
+   "tipo": "comparacao",
+   "titulo": "Entrada contra trabalho real",
+   "esquerda": {
+    "titulo": "Plano de entrada",
+    "itens": [
+     "Serve para experimentar",
+     "Acaba em poucos dias",
+     "Não sustenta o time"
+    ]
+   },
+   "direita": {
+    "titulo": "Plano de trabalho",
+    "itens": [
+     "Cem dólares ou mais",
+     "Aguenta o dia todo",
+     "É o que o time usa"
+    ]
+   }
+  },
+  {
+   "tipo": "grade",
+   "titulo": "Quando o grátis vence",
+   "itens": [
+    {
+     "titulo": "Modelo local",
+     "texto": "OpenCode pluga Qwen ou DeepSeek na sua máquina"
+    },
+    {
+     "titulo": "Protótipo solto",
+     "texto": "Uma tarefa avulsa não paga assinatura"
+    },
+    {
+     "titulo": "Código sensível",
+     "texto": "O que não pode sair da casa fica na casa"
+    },
+    {
+     "titulo": "Volume baixo",
+     "texto": "Poucos prompts por semana não justificam o plano"
+    }
+   ]
+  },
+  {
+   "tipo": "etapas",
+   "titulo": "Como escolher sem errar",
+   "itens": [
+    {
+     "titulo": "Meça o mês",
+     "texto": "Horas que o agente trabalhou de verdade"
+    },
+    {
+     "titulo": "Some a conta",
+     "texto": "Plano mais token mais hora do time"
+    },
+    {
+     "titulo": "Teste o grátis",
+     "texto": "Rode a mesma tarefa no OpenCode local"
+    },
+    {
+     "titulo": "Decida",
+     "texto": "Fica o que sair mais barato por entrega"
+    }
+   ]
+  },
+  {
+   "tipo": "estatisticas",
+   "titulo": "Os números da conta",
+   "numeros": [
+    {
+     "valor": 20,
+     "sufixo": " USD",
+     "rotulo": "Pro por mês",
+     "fonte": "anthropic.com/pricing, 2026-09-24"
+    },
+    {
+     "valor": 100,
+     "sufixo": " USD",
+     "rotulo": "Max começa em",
+     "fonte": "anthropic.com/pricing, 2026-09-24"
+    },
+    {
+     "valor": 0,
+     "sufixo": " USD",
+     "rotulo": "OpenCode local",
+     "fonte": "opencode.ai, 2026-09-24"
+    }
+   ]
+  },
+  {
+   "tipo": "fluxo",
+   "titulo": "Onde o dinheiro anda",
+   "nos": [
+    {
+     "titulo": "Você programa",
+     "texto": "Harness no dia a dia"
+    },
+    {
+     "titulo": "Agente gera",
+     "texto": "Código, teste e revisão"
+    },
+    {
+     "titulo": "Conta chega",
+     "texto": "Assinatura e uso por token"
+    },
+    {
+     "titulo": "Você mede",
+     "texto": "Custo por entrega fechada"
+    },
+    {
+     "titulo": "Troca se preciso",
+     "texto": "Modelo local corta a fatura"
+    }
+   ]
+  },
+  {
+   "tipo": "screenshot",
+   "titulo": "Preços na tela",
+   "imagem": "print.png",
+   "legenda": "A tabela de preços do Claude no site"
+  },
+  {
+   "tipo": "cta",
+   "titulo": "Quer o método inteiro?",
+   "texto": "O ecossistema da software house exponencial está no ExpxPlay, grátis",
+   "url": "expxplay.com.br",
+   "imagem": "expxplay.png"
+  }
+ ]
+}

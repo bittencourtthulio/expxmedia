@@ -1,0 +1,102 @@
+{
+ "expxmedia_alma": 1,
+ "metodo": "entrevista",
+ "fontes": [],
+ "criada_em": "2026-09-24T00:00:00-03:00",
+ "confirmada_em": "2026-09-24T00:00:00-03:00",
+ "atualizado_em": "2026-09-24T00:00:00-03:00",
+ "empresa": {
+  "nome": "Golden Reel",
+  "nome_curto": "Golden Reel",
+  "descricao_curta": "Alma de teste dos goldens G3 e G4: cores e fonte do reel de página atual.",
+  "segmento": "teste",
+  "site": null,
+  "pais": "BR",
+  "idioma": "pt-BR",
+  "fuso": "America/Sao_Paulo"
+ },
+ "publico": {
+  "principal": "suíte de testes de paridade do núcleo",
+  "dores": [
+   "regressão visual"
+  ],
+  "desejos": [
+   "mesma saída do sistema atual"
+  ]
+ },
+ "ofertas": [
+  {
+   "id": "paridade",
+   "nome": "Paridade",
+   "tipo": "outro",
+   "descricao": "Alma de teste que reproduz a aparência do sistema atual.",
+   "url": null,
+   "principal": true
+  }
+ ],
+ "voz": {
+  "tom": [
+   "direto"
+  ],
+  "tratamento": "voce",
+  "formalidade": "media",
+  "palavras_preferidas": [],
+  "palavras_proibidas": [],
+  "regras": [],
+  "exemplos_bons": [],
+  "exemplos_ruins": []
+ },
+ "visual": {
+  "cores": {
+   "fundo": "#000000",
+   "fundo_alt": "#212830",
+   "texto": "#000000",
+   "texto_inverso": "#FFFFFF",
+   "apoio": "#8B949E",
+   "destaque": "#3FB950",
+   "destaque_2": "#FFD400",
+   "positivo": "#3FB950",
+   "negativo": "#F85149"
+  },
+  "fontes": {
+   "titulo": {
+    "familia": "Arial Black",
+    "origem": "local",
+    "arquivo": "/System/Library/Fonts/Supplemental/Arial Black.ttf"
+   },
+   "texto": {
+    "familia": "Arial Black",
+    "origem": "local",
+    "arquivo": "/System/Library/Fonts/Supplemental/Arial Black.ttf"
+   }
+  },
+  "logo": {
+   "principal": null,
+   "negativo": null,
+   "simbolo": null
+  },
+  "estilo": [
+   "escuro",
+   "legenda-em-caixa"
+  ]
+ },
+ "cta": {
+  "padrao": "Salve para rever",
+  "destino": null,
+  "variacoes": []
+ },
+ "canais": [],
+ "porta_vozes": [],
+ "restricoes": {
+  "temas_proibidos": [],
+  "promessas_proibidas": [],
+  "observacoes_legais": []
+ },
+ "origens": {
+  "visual.cores": "humano",
+  "visual.fontes": "humano"
+ },
+ "pendencias": [
+  "visual.logo.principal"
+ ]
+}

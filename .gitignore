@@ -14,3 +14,10 @@ estado/chat.jsonl
 node_modules/
 __pycache__/
 .venv/
+
+# Motor (T-01.01)
+motor/.venv/
+**/__pycache__/
+motor/kit-remotion/node_modules/
+.pytest_cache/
+docs/nucleo-expxmedia/validacao/reel-por-referencia/**/*.mp4

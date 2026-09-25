@@ -1,0 +1,13 @@
+Existe um tipo de inteligência artificial que não escreve textão nenhum. E ela pode sair muito mais barata que o chat que você usa hoje.
+
+Hoje o normal é assim: você pergunta, espera a resposta e confere o que ela errou. Funciona. Mas agora imagina isso um milhão de vezes por dia, dentro do sistema do seu cliente. Triar chamado de suporte. Barrar pagamento suspeito.
+
+Esse outro tipo de IA não conversa. Ela decide. Em vez de uma resposta longa, devolve uma decisão e o quanto ela tem certeza dela.
+
+Aí o sistema faz a divisão. Caso claro, a máquina resolve sozinha. Caso duvidoso, vai para uma pessoa revisar.
+
+Menos texto gerado é menos tempo e menos custo por decisão. E o seu cliente espera menos.
+
+Para uma software house, isso não é curiosidade. É feature nova no sistema que você já vende, e dá para cobrar a mais por ela.
+
+Salva este vídeo e mostra para o seu time.

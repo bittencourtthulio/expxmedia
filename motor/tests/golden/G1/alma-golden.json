@@ -1,0 +1,101 @@
+{
+ "expxmedia_alma": 1,
+ "metodo": "entrevista",
+ "fontes": [],
+ "criada_em": "2026-09-24T00:00:00-03:00",
+ "confirmada_em": "2026-09-24T00:00:00-03:00",
+ "atualizado_em": "2026-09-24T00:00:00-03:00",
+ "empresa": {
+  "nome": "Golden G1",
+  "nome_curto": "Golden G1",
+  "descricao_curta": "Alma de teste do golden G1: o tema 'referencia' do layout de posts de interface.",
+  "segmento": "teste",
+  "site": null,
+  "pais": "BR",
+  "idioma": "pt-BR",
+  "fuso": "America/Sao_Paulo"
+ },
+ "publico": {
+  "principal": "suíte de testes de paridade do núcleo",
+  "dores": [
+   "regressão visual"
+  ],
+  "desejos": [
+   "mesma saída do sistema atual"
+  ]
+ },
+ "ofertas": [
+  {
+   "id": "paridade",
+   "nome": "Paridade",
+   "tipo": "outro",
+   "descricao": "Alma de teste que reproduz a aparência do sistema atual.",
+   "url": null,
+   "principal": true
+  }
+ ],
+ "voz": {
+  "tom": [
+   "direto"
+  ],
+  "tratamento": "voce",
+  "formalidade": "media",
+  "palavras_preferidas": [],
+  "palavras_proibidas": [],
+  "regras": [],
+  "exemplos_bons": [],
+  "exemplos_ruins": []
+ },
+ "visual": {
+  "cores": {
+   "fundo": "#f1f1f1",
+   "fundo_alt": "#0b0b0d",
+   "texto": "#121212",
+   "texto_inverso": "#f4f4f4",
+   "apoio": "#77777c",
+   "destaque": "#5a5ef2",
+   "destaque_2": "#8e5cf6",
+   "positivo": "#4ee08a",
+   "negativo": "#e5484d"
+  },
+  "fontes": {
+   "titulo": {
+    "familia": "Inter Tight",
+    "origem": "google"
+   },
+   "texto": {
+    "familia": "Inter Tight",
+    "origem": "google"
+   }
+  },
+  "logo": {
+   "principal": null,
+   "negativo": null,
+   "simbolo": null
+  },
+  "estilo": [
+   "tipografico",
+   "tech-interface",
+   "escuro"
+  ]
+ },
+ "cta": {
+  "padrao": "Salve para rever",
+  "destino": null,
+  "variacoes": []
+ },
+ "canais": [],
+ "porta_vozes": [],
+ "restricoes": {
+  "temas_proibidos": [],
+  "promessas_proibidas": [],
+  "observacoes_legais": []
+ },
+ "origens": {
+  "visual.cores": "humano",
+  "visual.fontes": "humano"
+ },
+ "pendencias": [
+  "visual.logo.principal"
+ ]
+}

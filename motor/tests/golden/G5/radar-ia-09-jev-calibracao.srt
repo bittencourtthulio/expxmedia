@@ -1,0 +1,430 @@
+1
+00:00:00,000 --> 00:00:03,630
+Nas duas últimas aulas,
+toda a nossa cascata
+
+2
+00:00:03,680 --> 00:00:07,990
+dependeu de um número: a confiança do Jev.
+
+3
+00:00:08,220 --> 00:00:11,870
+Acima de noventa por cento,
+o sistema age sozinho.
+
+4
+00:00:11,940 --> 00:00:14,210
+Abaixo de cinquenta, vai para uma pessoa.
+
+5
+00:00:14,280 --> 00:00:17,870
+Mas esse número só vale alguma
+coisa se ele for honesto.
+
+6
+00:00:17,920 --> 00:00:21,410
+Quando o Jev diz noventa
+por cento, ele precisa
+
+7
+00:00:21,460 --> 00:00:24,710
+acertar mais ou menos
+noventa por cento das vezes.
+
+8
+00:00:24,760 --> 00:00:29,383
+Pense na previsão do tempo: se em todos
+os dias em que ela diz setenta por
+
+9
+00:00:29,433 --> 00:00:34,790
+cento de chance de chuva, chove em sete
+de cada dez, a previsão é calibrada.
+
+10
+00:00:34,840 --> 00:00:38,710
+A TypeSafe diz que
+treinou o Jev exatamente
+
+11
+00:00:38,760 --> 00:00:42,030
+para isso, com um método
+que ela chama de RLCD.
+
+12
+00:00:42,080 --> 00:00:45,490
+Hoje a gente testa essa promessa
+com os nossos próprios dados.
+
+13
+00:00:45,680 --> 00:00:49,930
+Eu volto ao mesmo projeto das
+aulas anteriores, aula jev triagem.
+
+14
+00:00:49,980 --> 00:00:53,190
+A chave do OpenRouter já está
+no ponto env, como sempre:
+
+15
+00:00:53,240 --> 00:00:56,250
+uma chave nova, só para esta
+aula, que eu apago no final.
+
+16
+00:00:56,420 --> 00:00:58,070
+Primeiro, eu preciso de um gabarito.
+
+17
+00:00:58,120 --> 00:00:59,810
+Eu crio o arquivo tickets ponto json,
+
+18
+00:00:59,860 --> 00:01:02,030
+com quarenta mensagens
+de clientes em português.
+
+19
+00:01:02,080 --> 00:01:04,290
+Cada uma já vem com o
+setor correto marcado
+
+20
+00:01:04,340 --> 00:01:06,390
+por mim: financeiro, técnico ou vendas.
+
+21
+00:01:06,440 --> 00:01:10,590
+A maior parte é fácil, como uma cobrança
+duplicada ou um pedido de preço.
+
+22
+00:01:10,640 --> 00:01:14,870
+Mas no final da lista eu coloquei
+casos ambíguos de propósito,
+
+23
+00:01:14,920 --> 00:01:17,750
+como um upgrade de plano que
+deu erro na hora de pagar.
+
+24
+00:01:17,800 --> 00:01:19,070
+É financeiro ou é técnico?
+
+25
+00:01:19,120 --> 00:01:23,150
+É nesse tipo de mensagem que
+a confiança precisa cair.
+
+26
+00:01:23,200 --> 00:01:28,150
+Agora o avaliar ponto js, que roda
+direto no terminal, sem servidor.
+
+27
+00:01:28,200 --> 00:01:31,230
+Ele começa carregando os
+tickets e definindo a mesma
+
+28
+00:01:31,280 --> 00:01:34,350
+pergunta de setor da aula
+sete, com as mesmas regras.
+
+29
+00:01:34,400 --> 00:01:37,570
+A função classificar manda um
+ticket para a Decisions API,
+
+30
+00:01:37,620 --> 00:01:40,830
+igualzinho ao que a gente já fez,
+e devolve três coisas: o setor
+
+31
+00:01:40,880 --> 00:01:45,230
+que o Jev escolheu, a confiança
+dele, e o setor certo do gabarito.
+
+32
+00:01:45,280 --> 00:01:48,410
+Depois eu defino as faixas de
+confiança: de noventa a cem,
+
+33
+00:01:48,460 --> 00:01:52,570
+de setenta a noventa, de cinquenta
+a setenta, e abaixo de cinquenta.
+
+34
+00:01:52,700 --> 00:01:55,390
+E duas funções pequenas: uma
+para mostrar porcentagem,
+
+35
+00:01:55,440 --> 00:01:58,550
+outra para desenhar uma barra
+de texto, com até vinte blocos.
+
+36
+00:01:58,680 --> 00:02:00,910
+A função main é o teste de verdade.
+
+37
+00:02:00,960 --> 00:02:03,490
+Ela manda os quarenta tickets em paralelo.
+
+38
+00:02:03,540 --> 00:02:07,430
+Depois, para cada faixa, separa os
+tickets que caíram nela e compara duas
+
+39
+00:02:07,480 --> 00:02:13,270
+coisas: a confiança média que o Jev
+disse, e quantos ele acertou de fato.
+
+40
+00:02:13,480 --> 00:02:17,890
+Se as duas barras tiverem o mesmo
+tamanho, o modelo está calibrado.
+
+41
+00:02:17,940 --> 00:02:21,550
+Se a barra do que ele disse for
+bem maior que a do que ele acertou,
+
+42
+00:02:21,600 --> 00:02:25,790
+ele está confiante demais, e aí o
+limite do automático precisa subir.
+
+43
+00:02:25,840 --> 00:02:29,930
+No fim, ela lista cada erro, com a
+confiança que o Jev tinha quando errou.
+
+44
+00:02:29,980 --> 00:02:34,190
+Hora de rodar. Node, com o
+env file, e avaliar ponto js.
+
+45
+00:02:34,240 --> 00:02:36,670
+Os quarenta tickets voltam
+em cerca de três segundos.
+
+46
+00:02:36,720 --> 00:02:39,710
+E o teste inteiro custa
+menos de um décimo de centavo
+
+47
+00:02:39,760 --> 00:02:42,090
+de dólar, então dá para
+repetir quantas vezes quiser.
+
+48
+00:02:42,140 --> 00:02:43,730
+Olha a faixa de cima.
+
+49
+00:02:43,820 --> 00:02:47,390
+Trinta e seis dos quarenta tickets
+caíram entre noventa e cem por cento.
+
+50
+00:02:47,440 --> 00:02:50,590
+O Jev disse, em média,
+noventa e nove por cento.
+
+51
+00:02:50,640 --> 00:02:52,250
+E acertou noventa e sete.
+
+52
+00:02:52,520 --> 00:02:56,310
+As duas barras quase do mesmo tamanho:
+nessa faixa, a promessa se sustenta.
+
+53
+00:02:56,360 --> 00:03:00,330
+Nas faixas de baixo, a amostra é
+pequena, então vale olhar com cuidado.
+
+54
+00:03:00,380 --> 00:03:03,370
+Um ticket com oitenta e
+nove por cento, e acertou.
+
+55
+00:03:03,420 --> 00:03:05,870
+Dois tickets perto de cinquenta
+por cento, e acertou um.
+
+56
+00:03:05,920 --> 00:03:09,710
+E o único abaixo de cinquenta,
+com vinte e sete por cento, errou.
+
+57
+00:03:09,760 --> 00:03:13,630
+Ou seja: quando o Jev fica
+em dúvida, ele erra mesmo.
+
+58
+00:03:13,780 --> 00:03:18,990
+E é exatamente por isso que esses tickets
+vão para uma pessoa na nossa cascata.
+
+59
+00:03:19,060 --> 00:03:22,070
+Agora os erros. Os dois
+primeiros são os casos ambíguos,
+
+60
+00:03:22,120 --> 00:03:24,910
+e o Jev estava com pouca
+confiança nos dois.
+
+61
+00:03:25,180 --> 00:03:28,170
+Esse é o comportamento que a
+gente quer: errar avisando.
+
+62
+00:03:28,220 --> 00:03:31,390
+Um modelo de linguagem
+comum costuma responder com
+
+63
+00:03:31,440 --> 00:03:34,010
+a mesma segurança quando
+acerta e quando erra.
+
+64
+00:03:34,060 --> 00:03:35,770
+Aqui, a dúvida aparece no número.
+
+65
+00:03:35,820 --> 00:03:39,750
+O terceiro é diferente: noventa
+e seis por cento, e errou.
+
+66
+00:03:39,800 --> 00:03:41,850
+Quero migrar os dados de outro sistema.
+
+67
+00:03:42,080 --> 00:03:44,450
+Eu marquei vendas, o Jev escolheu técnico.
+
+68
+00:03:44,500 --> 00:03:46,370
+Sinceramente, dá para defender os dois.
+
+69
+00:03:46,420 --> 00:03:49,330
+Esse é o ponto: muitas vezes, o
+erro com confiança alta mostra
+
+70
+00:03:49,380 --> 00:03:53,870
+que a regra do setor está mal
+escrita, e não que o modelo errou.
+
+71
+00:03:53,920 --> 00:03:57,930
+A correção é deixar o critério mais
+explícito, como a gente viu na aula três.
+
+72
+00:03:57,980 --> 00:03:59,610
+E o que isso muda na prática?
+
+73
+00:03:59,660 --> 00:04:02,590
+Com quarenta tickets, a faixa
+de cima está bem calibrada,
+
+74
+00:04:02,700 --> 00:04:05,910
+então o limite de noventa por cento
+para o automático faz sentido.
+
+75
+00:04:05,960 --> 00:04:09,230
+Para as faixas de baixo,
+quarenta tickets é pouco.
+
+76
+00:04:09,280 --> 00:04:12,050
+No seu sistema, rode esse mesmo
+script com algumas centenas
+
+77
+00:04:12,100 --> 00:04:14,830
+de tickets reais, já
+resolvidos pela sua equipe,
+
+78
+00:04:14,880 --> 00:04:18,350
+e ajuste os limites com base
+no resultado, não no chute.
+
+79
+00:04:18,540 --> 00:04:20,890
+E um cuidado: repare
+que no código eu uso o
+
+80
+00:04:20,940 --> 00:04:23,690
+modelo jev um ponto
+treze, uma versão fixa.
+
+81
+00:04:23,740 --> 00:04:26,870
+Se você usar a versão latest,
+o modelo pode mudar por baixo.
+
+82
+00:04:26,920 --> 00:04:30,770
+Então, sempre que trocar
+de versão, rode a avaliação
+
+83
+00:04:30,820 --> 00:04:33,590
+de novo antes de confiar
+nos mesmos limites.
+
+84
+00:04:33,640 --> 00:04:37,050
+Recapitulando: um gabarito, um
+script de setenta e cinco linhas,
+
+85
+00:04:37,100 --> 00:04:40,510
+e a resposta para a pergunta
+mais importante da cascata:
+
+86
+00:04:40,560 --> 00:04:42,690
+dá para confiar no número do Jev?
+
+87
+00:04:42,740 --> 00:04:44,710
+Nos nossos dados, na faixa alta, sim.
+
+88
+00:04:44,760 --> 00:04:51,270
+E o que sobra de erro aponta onde
+a sua regra precisa melhorar.
+
+89
+00:04:51,320 --> 00:04:53,650
+Os fontes da aula estão na pasta do curso.
+
+90
+00:04:53,720 --> 00:04:54,720
+Até a próxima.

@@ -1,0 +1,43 @@
+[project]
+name = "expxmedia"
+version = "0.1.0"
+description = "Motor do núcleo do ExpxMedia: capacidades de produção de peças."
+requires-python = ">=3.11"
+# D-42: todas as dependências do plano declaradas de uma vez.
+dependencies = [
+    "playwright",
+    "pillow",
+    "numpy",
+    "opencv-python-headless>=4.8,<5",
+    "filelock",
+    "jsonschema",
+    "requests",
+    "faster-whisper",
+    "rembg",
+    "onnxruntime",
+]
+
+[project.optional-dependencies]
+# D-24: openai-whisper é reserva do faster-whisper.
+whisper-reserva = ["openai-whisper"]
+
+[project.scripts]
+expxmedia-motor = "expxmedia.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "scikit-image",
+]
+
+[build-system]
+requires = ["uv_build>=0.10,<0.11"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "--import-mode=importlib"
+markers = [
+    "integracao_local: exige binário local (ffmpeg, say, claude, whisper...); pula com o nome do binário quando ele falta",
+]

@@ -1,0 +1,46 @@
+{
+ "ok": true,
+ "layout": "0001-pos-paineis-de-pagamento",
+ "saida": "saida",
+ "impressao": "c7220d99e996d892",
+ "em": "2026-09-24",
+ "slides": [
+  {
+   "slide": 1,
+   "kind": "interface",
+   "encaixe": "free=19 shrink=0 zoom=1",
+   "problemas": [],
+   "avisos": [
+    "blocos de texto em 5 colunas soltas: alinhe as margens"
+   ],
+   "fontes_com_erro": []
+  },
+  {
+   "slide": 2,
+   "kind": "numero",
+   "encaixe": "fixo",
+   "problemas": [],
+   "avisos": [],
+   "fontes_com_erro": []
+  },
+  {
+   "slide": 3,
+   "kind": "frase",
+   "encaixe": "fixo",
+   "problemas": [],
+   "avisos": [],
+   "fontes_com_erro": []
+  },
+  {
+   "slide": 4,
+   "kind": "manchete",
+   "encaixe": "free=27 shrink=0 zoom=1",
+   "problemas": [],
+   "avisos": [
+    "blocos de texto em 8 colunas soltas: alinhe as margens"
+   ],
+   "fontes_com_erro": []
+  }
+ ],
+ "prancha": "saida/prancha.png"
+}

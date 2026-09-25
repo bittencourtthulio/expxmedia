@@ -1,0 +1,46 @@
+# Termos de marca proibidos no núcleo (regra M13, D-02).
+# Formato: uma regex por linha, avaliada sem diferenciar maiúsculas; linha iniciada por '#'
+# é comentário. Todo termo é precedido pelo comentário com a sua origem.
+# Permitidos de propósito (não entram aqui): "expxmedia" (nome do produto),
+# "Expx Flow"/"expxflow" (nome de provedor) e o prefixo de variável "EXPXMEDIA_".
+#
+# Nome do dono dos projetos de origem (autoria, caminhos /Users/..., prompts de agente).
+thulio
+# Sobrenome do dono dos projetos de origem.
+bittencourt
+# Empresa do dono, citada em CTAs e rodapés das origens.
+software[\s_-]*house[\s_-]*exponencial
+# Mesma empresa, grafia colada usada em handles e domínios.
+softwarehouse
+# Plataforma/domínio de CTA fixo nas origens (M13 cita "expxplay.com.br").
+expxplay
+# Produto educacional do dono (Instagram-Carrosseis, cursos-ia), com e sem acento.
+academia[\s_-]*do[\s_-]*c[oó]digo
+# Comunidade do dono citada em copies e squads.
+sala[\s_-]*dos[\s_-]*mestres
+# @arroba do perfil de Instagram das origens.
+@expxinsta
+# Conta de anúncio Meta real (act_ seguido do número da conta), ExpxMeta.
+act_\d{6,}
+# Projeto Supabase real (ref do projeto) usado nas origens.
+ejwpfztkspbvmuwwiwmk
+# Cor de marca laranja do tema das origens (#E4602A), em qualquer notação hex.
+(?<![0-9a-f])e4602a(?![0-9a-f])
+# Cor de marca verde do tema das origens (#22C55E); M13 cita no tema de Remotion.
+(?<![0-9a-f])22c55e(?![0-9a-f])
+# Cor de fundo escuro do tema das origens (#0B0B0F).
+(?<![0-9a-f])0b0b0f(?![0-9a-f])
+# Cor de fundo claro do tema das origens (#F5F2EC).
+(?<![0-9a-f])f5f2ec(?![0-9a-f])
+# Cor de fundo creme do tema das origens (#EFE8DA).
+(?<![0-9a-f])efe8da(?![0-9a-f])
+# Fonte de sistema do macOS referenciada por caminho nas origens (captions.py/compose.py).
+/System/Library/Fonts
+# Fonte de sistema usada nos títulos das origens.
+arial[\s_-]*black
+# Fonte de sistema usada nas origens.
+rockwell
+# Handle/assinatura do dono em vídeos das origens.
+thulio\.mov
+# Série de conteúdo do dono (cursos-ia/radar-ia-*).
+radar[\s_-]*ia\b

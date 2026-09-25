@@ -1,0 +1,27 @@
+{
+  "name": "kit-remotion",
+  "private": true,
+  "description": "Kit Remotion do núcleo. Cada composição é uma pasta em src/composicoes/<Nome>/index.tsx; scripts/registrar.mjs gera o registro que o Root importa.",
+  "scripts": {
+    "postinstall": "node scripts/registrar.mjs",
+    "registrar": "node scripts/registrar.mjs",
+    "compositions": "node scripts/registrar.mjs && remotion compositions src/index.ts",
+    "typecheck": "node scripts/registrar.mjs && tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@remotion/bundler": "4.0.528",
+    "@remotion/captions": "4.0.528",
+    "@remotion/cli": "4.0.528",
+    "@remotion/fonts": "4.0.528",
+    "@remotion/layout-utils": "4.0.528",
+    "@remotion/renderer": "4.0.528",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.528"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "5.8.3"
+  }
+}
