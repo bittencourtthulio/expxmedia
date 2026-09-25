@@ -1,0 +1,16 @@
+# Segredos (M14)
+.env
+.env.*
+!.env.example
+
+# Estado local da instalação
+.expxmedia/marketplace/
+.expxmedia/galeria-cache/
+galeria/compartilhada/
+estado/chat.jsonl
+
+# Sistema
+.DS_Store
+node_modules/
+__pycache__/
+.venv/
