@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-09
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-09.01
     titulo: "Manifesto do plugin e hooks de portao e segredo"
     fase: F-09.1
-    status: pendente
+    status: em_andamento
     objetivo: "Criar o plugin expxmedia com hooks: portao no UserPromptSubmit que injeta a instrucao de Alma/ambiente e segredo que bloqueia .env e tokens (D-33)."
     arquivos:
       cria: [nucleo/.claude-plugin/plugin.json, nucleo/hooks/hooks.json, nucleo/hooks/expxmedia-portao.sh, nucleo/hooks/expxmedia-segredo.sh, motor/tests/plugin/test_hooks.py]
@@ -24,7 +24,7 @@ tasks:
   - id: T-09.10
     titulo: "Revisao mecanica de copy"
     fase: F-09.1
-    status: pendente
+    status: em_andamento
     objetivo: "Criar o subcomando revisar copy com os bloqueantes mecanizaveis parametrizados pela Alma: travessao quando a regra da Alma proibe, tratamento diferente de voz.tratamento, palavras_proibidas, palavra-chave do CTA diferente da publicacao e abertura repetida em 14 dias contra as pecas da instalacao."
     arquivos:
       cria: [motor/src/expxmedia/revisar/copy.py, motor/src/expxmedia/cli_comandos/revisar.py, motor/tests/test_revisar_copy.py]
@@ -39,7 +39,7 @@ tasks:
   - id: T-09.11
     titulo: "Ancoras de inteligencia"
     fase: F-09.1
-    status: pendente
+    status: em_andamento
     objetivo: "Extrair das regras e skills de origem listas-ancora por skill (bloqueantes, duas passadas, 6 partes do roteiro, teste das dez palavras, 9 secoes da leitura, checklist de parecenca, red flags, perguntas do corte) em fixtures sem marca, com o teste que exige cada item na skill ou no agente correspondente."
     arquivos:
       cria: [motor/tests/fixtures/inteligencia/criar-carrossel.json, motor/tests/fixtures/inteligencia/criar-reel.json, motor/tests/fixtures/inteligencia/reel-por-referencia.json, motor/tests/fixtures/inteligencia/cortar-video.json, motor/tests/fixtures/inteligencia/criar-aula.json, motor/tests/fixtures/inteligencia/revisor-reel.json, motor/tests/plugin/test_ancoras.py]
@@ -54,7 +54,7 @@ tasks:
   - id: T-09.02
     titulo: "Extracao de site para a Alma"
     fase: F-09.1
-    status: pendente
+    status: em_andamento
     objetivo: "Extrair do site nome, descricao, meta, cores do CSS e do logo, logo e textos das paginas de sobre e produtos, sem inventar campo."
     arquivos:
       cria: [motor/src/expxmedia/alma/site.py, motor/tests/alma/test_site.py, motor/tests/fixtures/site-ficticio/index.html]
@@ -69,7 +69,7 @@ tasks:
   - id: T-09.03
     titulo: "Skills de Alma e ambiente"
     fase: F-09.1
-    status: pendente
+    status: em_andamento
     objetivo: "Escrever as skills e comandos /expxmedia:alma (site, entrevista, confirmo tudo) e /expxmedia:ambiente (orientacao por capacidade, chave no arquivo)."
     arquivos:
       cria: [nucleo/skills/alma/SKILL.md, nucleo/skills/ambiente/SKILL.md, nucleo/commands/alma.md, nucleo/commands/ambiente.md, motor/tests/plugin/test_estrutura.py]
@@ -179,7 +179,7 @@ teste_funcional: O hook de portão numa instalação sem alma.json imprime addit
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_hooks.py` termina com 0 failed
 depende_de: [T-02.10]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -199,7 +199,7 @@ teste_funcional: Um texto com tu numa Alma de tratamento voce e uma palavra proi
 criterio_aceite: `cd motor && uv run pytest tests/test_revisar_copy.py` termina com 0 failed
 depende_de: [T-02.14, T-02.11]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -219,7 +219,7 @@ teste_funcional: Com uma skill de teste que omite um item de âncora, o verifica
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_ancoras.py` termina com 0 failed
 depende_de: [T-01.06]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -239,7 +239,7 @@ teste_funcional: Campos sem evidência no site saem null e entram em pendencias 
 criterio_aceite: `cd motor && uv run pytest tests/alma/test_site.py` termina com 0 failed
 depende_de: [T-02.09, T-01.04]
 paralelizavel: true
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -259,7 +259,7 @@ teste_funcional: Cada SKILL.md tem frontmatter com name e description e o nome b
 criterio_aceite: `cd motor && uv run pytest tests/plugin/test_estrutura.py` termina com 0 failed
 depende_de: [T-09.01, T-09.02, T-02.14, T-09.10]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---

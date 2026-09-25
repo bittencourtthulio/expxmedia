@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-04
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-04.01
     titulo: "Utilitarios ffmpeg"
     fase: F-04.1
-    status: pendente
+    status: concluida
     objetivo: "Portar sondagem, loudnorm em duas passadas com passada extra se pico > -1 dBFS, PNG para JPEG e concatenacao."
     arquivos:
       cria: [motor/src/expxmedia/video/ffmpeg.py, motor/tests/video/test_ffmpeg.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/video/test_ffmpeg.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.02
     titulo: "Verificacao de entrega"
     fase: F-04.1
-    status: pendente
+    status: concluida
     objetivo: "Portar as 11 checagens do verify.py (dimensao, fps, duracao, codecs, LUFS, pico, area segura, legibilidade ≤ 35% abaixo de 0,7 s, sincronia alinhamento × roteiro, cauda no card de CTA com diferenca de pixel ≤ 12/255, CTA presente) como perfis reel (30 a 70 s, reel narrado em Remotion), reel_pagina (50 a 70 s), corte (50 a 185 s com aviso acima de 75 s, cauda de no maximo 0,80 s depois da ultima legenda, sem CTA — checagem 10b), sob_medida e aula (1920x1080 e 1080x1920, 30 fps, h264/aac, -14 ±1 LUFS, pico ≤ -1 dBFS, SRT presente e sincronizado), sem marca (D-41, D-49)."
     arquivos:
       cria: [motor/src/expxmedia/video/verificar.py, motor/tests/video/test_verificar.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/video/test_verificar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.01]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.03
     titulo: "Interface de narracao e provedor de teste"
     fase: F-04.2
-    status: pendente
+    status: concluida
     objetivo: "Definir a interface narrar com alinhamento por caractere e o provedor de teste que gera sinal audivel sintetico (um tom curto por palavra) a um ritmo configuravel, com alinhamento coerente (D-34, D-39)."
     arquivos:
       cria: [motor/src/expxmedia/narrar/base.py, motor/src/expxmedia/narrar/teste.py, motor/tests/narrar/test_teste.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/narrar/test_teste.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-02.07, T-04.01]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.04
     titulo: "ElevenLabs with-timestamps"
     fase: F-04.2
-    status: pendente
+    status: concluida
     objetivo: "Portar a chamada with-timestamps com parametros do porta-voz por tipo de peca e padroes iguais aos atuais: reel 0.45/0.8/0.25/speed 1.2 e aula similarity 0.85, style 0.15, speed 0.94, timeout 300 s (D-22, D-40)."
     arquivos:
       cria: [motor/src/expxmedia/narrar/elevenlabs.py, motor/tests/narrar/test_elevenlabs.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/narrar/test_elevenlabs.py termina com 0 failed"
     depende_de: [T-04.03, T-01.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.05
     titulo: "Pronuncia e alinhamento no espaco do roteiro"
     fase: F-04.2
-    status: pendente
+    status: concluida
     objetivo: "Aplicar o lexico do porta-voz na fala e devolver o alinhamento no espaco do roteiro, abortando se a API normalizar o texto."
     arquivos:
       cria: [motor/src/expxmedia/narrar/pronuncia.py, motor/tests/narrar/test_pronuncia.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/narrar/test_pronuncia.py termina com 0 failed"
     depende_de: [T-04.04]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.06
     titulo: "Ritmo minimo com atempo"
     fase: F-04.2
-    status: pendente
+    status: concluida
     objetivo: "Portar a correcao de ritmo que so acelera ate o minimo de palavras por segundo e reescala o alinhamento; aplicada so a reel, nunca a aula (D-40)."
     arquivos:
       cria: [motor/src/expxmedia/narrar/ritmo.py, motor/tests/narrar/test_ritmo.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/narrar/test_ritmo.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.03]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.07
     titulo: "Transcricao com whisper"
     fase: F-04.3
-    status: pendente
+    status: concluida
     objetivo: "Transcrever com faster-whisper offline (HF_HUB_OFFLINE=1, cache local), modelo_varredura small e modelo_alinhamento medium com beam 5 como na origem, e openai-whisper de reserva (simulado no teste), idioma da Alma, saida no formato de alinhamento (D-24)."
     arquivos:
       cria: [motor/src/expxmedia/transcrever/whisper.py, motor/tests/transcrever/test_whisper.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/transcrever/test_whisper.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.07, T-01.08]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.08
     titulo: "Legenda do reel em PNG com card final"
     fase: F-04.3
-    status: pendente
+    status: concluida
     objetivo: "Portar captions.py: blocos por ritmo, PNGs com a escada 78→54 e base da caixa em 1499, palavra do CTA destacada, termos multi-palavra protegidos pelo lexico do porta-voz, card final end.png (escada 88→48, 2,2 s), legendas.json, caps.txt, e os erros de CTA ausente no roteiro e de CTA inferido por caixa alta; fonte e cores da Alma."
     arquivos:
       cria: [motor/src/expxmedia/legendar/reel.py, motor/tests/legendar/test_reel.py]
@@ -124,12 +124,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/legendar/test_reel.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-01.07, T-02.10]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.09
     titulo: "Legenda de aula 42x2 e SRT"
     fase: F-04.3
-    status: pendente
+    status: concluida
     objetivo: "Portar o alinhamento texto do roteiro com tempos do whisper em 42 caracteres por 2 linhas equilibradas, sem palavra orfa, e o SRT (D-23)."
     arquivos:
       cria: [motor/src/expxmedia/legendar/aula.py, motor/src/expxmedia/legendar/srt.py, motor/tests/legendar/test_aula.py]
@@ -139,12 +139,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/legendar/test_aula.py termina com 0 failed"
     depende_de: [T-01.07]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.10
     titulo: "Legenda queimada por PNG"
     fase: F-04.3
-    status: pendente
+    status: concluida
     objetivo: "Queimar os PNGs de legenda em video por overlay temporizado, sem libass."
     arquivos:
       cria: [motor/src/expxmedia/legendar/queimar.py, motor/tests/legendar/test_queimar.py]
@@ -154,12 +154,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/legendar/test_queimar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.08]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.14
     titulo: "Recasamento da transcricao"
     fase: F-04.3
-    status: pendente
+    status: concluida
     objetivo: "Portar o recasar: aplicar ao texto transcrito as grafias corrigidas por difflib com insercao de largura zero, preservando os tempos, sem descartar correcao em silencio."
     arquivos:
       cria: [motor/src/expxmedia/transcrever/recasar.py, motor/tests/transcrever/test_recasar.py]
@@ -169,12 +169,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/transcrever/test_recasar.py termina com 0 failed"
     depende_de: [T-04.07]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.11
     titulo: "Montagem do reel de pagina"
     fase: F-04.4
-    status: pendente
+    status: concluida
     objetivo: "Portar compose.py e stitch.py: rolagem com fronteira de secao entre 90 e 230 px/s (ideal 160) e espera de 3,5 s, cartao de impacto (2,5 s, ate 3 linhas, escada 150→72, desvio do rosto com aviso), selo de CTA a partir de 5 s, duracao cortada no fim do ultimo cartao alinhada a grade de quadros, adelay com all=1, tira com teto de 16384 px, e visual.json e montado_em gravados depois do MP4; cores e fontes da Alma e geometria da interface como parametro do formato."
     arquivos:
       cria: [motor/src/expxmedia/video/montar_pagina.py, motor/tests/video/test_montar_pagina.py]
@@ -184,12 +184,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/video/test_montar_pagina.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.10, T-04.02, T-01.07]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.12
     titulo: "Producao do reel de pagina e gate do roteiro"
     fase: F-04.4
-    status: pendente
+    status: concluida
     objetivo: "Produzir reel a partir de pagina: capturar, validar o roteiro pelo gate do roteirista (130 a 180 palavras, sem travessao, markdown ou numero decimal em algarismo, cta.txt contido no roteiro), narrar uma vez, legendar, montar, normalizar a mistura, verificar no perfil reel_pagina com as 11 checagens e registrar a peca."
     arquivos:
       cria: [motor/src/expxmedia/revisar/roteiro.py, motor/src/expxmedia/producao/reel_pagina.py, motor/tests/producao/test_reel_pagina.py]
@@ -199,12 +199,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_reel_pagina.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.11, T-04.05, T-04.06, T-03.09, T-02.11]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-04.13
     titulo: "CLI de audio, texto e reel de pagina"
     fase: F-04.4
-    status: pendente
+    status: concluida
     objetivo: "Expor narrar, transcrever, legendar reel, legendar aula, verificar --perfil e produzir reel-pagina no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/audio_texto.py, motor/tests/test_cli_audio_texto.py]
@@ -214,8 +214,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli_audio_texto.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.12, T-04.09, T-04.07, T-02.14]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 04
@@ -239,7 +239,8 @@ teste_funcional: O comando da primeira passada contém loudnorm=I=-14:TP=-1.5 e 
 criterio_aceite: `cd motor && uv run pytest tests/video/test_ffmpeg.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 9 passed, 0 skipped
 ```
 
 ---
@@ -259,7 +260,8 @@ teste_funcional: Um teste parametrizado com um artefato defeituoso por checagem 
 criterio_aceite: `cd motor && uv run pytest tests/video/test_verificar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.01]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 39 passed, 0 skipped
 ```
 
 ---
@@ -279,7 +281,8 @@ teste_funcional: Narrar 20 palavras a 3,5 palavras por segundo pelo provedor tes
 criterio_aceite: `cd motor && uv run pytest tests/narrar/test_teste.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-02.07, T-04.01]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/narrar 24 passed, 0 skipped
 ```
 
 ---
@@ -299,7 +302,8 @@ teste_funcional: Sem parâmetros no porta-voz, o corpo de um reel usa stability 
 criterio_aceite: `cd motor && uv run pytest tests/narrar/test_elevenlabs.py` termina com 0 failed
 depende_de: [T-04.03, T-01.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/narrar 24 passed, 0 skipped
 ```
 
 ---
@@ -319,7 +323,8 @@ teste_funcional: Uma resposta do stub com texto diferente do enviado grava align
 criterio_aceite: `cd motor && uv run pytest tests/narrar/test_pronuncia.py` termina com 0 failed
 depende_de: [T-04.04]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/narrar 24 passed, 0 skipped
 ```
 
 ---
@@ -339,7 +344,8 @@ teste_funcional: Um áudio já acima do mínimo, ou de uma peça do tipo aula, n
 criterio_aceite: `cd motor && uv run pytest tests/narrar/test_ritmo.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.03]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: tests/narrar 24 passed, 0 skipped
 ```
 
 ---
@@ -359,7 +365,8 @@ teste_funcional: Com faster-whisper tornado não importável e um módulo whispe
 criterio_aceite: `cd motor && uv run pytest tests/transcrever/test_whisper.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.07, T-01.08]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: transcrever+legendar 0 failed, 0 skipped
 ```
 
 ---
@@ -379,7 +386,8 @@ teste_funcional: Um roteiro sem a palavra do CTA levanta o erro de CTA ausente, 
 criterio_aceite: `cd motor && uv run pytest tests/legendar/test_reel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-01.07, T-02.10]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: transcrever+legendar 0 failed, 0 skipped
 ```
 
 ---
@@ -399,7 +407,8 @@ teste_funcional: Nenhuma linha passa de 42 caracteres e o SRT gerado tem índice
 criterio_aceite: `cd motor && uv run pytest tests/legendar/test_aula.py` termina com 0 failed
 depende_de: [T-01.07]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: transcrever+legendar 0 failed, 0 skipped
 ```
 
 ---
@@ -419,7 +428,8 @@ teste_funcional: O filtro montado para dois PNGs contém um overlay com enable=b
 criterio_aceite: `cd motor && uv run pytest tests/legendar/test_queimar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.08]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: transcrever+legendar 0 failed, 0 skipped
 ```
 
 ---
@@ -439,7 +449,8 @@ teste_funcional: Uma correção que insere palavra sem tempo recebe tempo de lar
 criterio_aceite: `cd motor && uv run pytest tests/transcrever/test_recasar.py` termina com 0 failed
 depende_de: [T-04.07]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: transcrever+legendar 0 failed, 0 skipped
 ```
 
 ---
@@ -459,7 +470,8 @@ teste_funcional: Uma tira de 20000 px é recusada com o erro do teto e o visual.
 criterio_aceite: `cd motor && uv run pytest tests/video/test_montar_pagina.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.10, T-04.02, T-01.07]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 6 passed, 0 skipped
 ```
 
 ---
@@ -479,7 +491,8 @@ teste_funcional: Um roteiro com travessão ou sem o texto do cta.txt é recusado
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_reel_pagina.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.11, T-04.05, T-04.06, T-03.09, T-02.11]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 6 passed, 0 skipped
 ```
 
 ---
@@ -499,5 +512,6 @@ teste_funcional: verificar --perfil aula num MP4 1080x1080 sai com código difer
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_audio_texto.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.12, T-04.09, T-04.07, T-02.14]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 8 passed (sprint 04: 125 passed)
 ```

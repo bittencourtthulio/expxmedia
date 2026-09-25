@@ -4,32 +4,32 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-04
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-04.1
     titulo: "ffmpeg e verificacao"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/video termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []
     tasks: [T-04.01, T-04.02]
   - id: F-04.2
     titulo: "Narracao"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/narrar termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-04.3]
     tasks: [T-04.03, T-04.04, T-04.05, T-04.06]
   - id: F-04.3
     titulo: "Transcricao e legenda"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/transcrever tests/legendar termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: true
     paralela_com: [F-04.2]
     tasks: [T-04.07, T-04.08, T-04.09, T-04.10, T-04.14]
   - id: F-04.4
     titulo: "Reel de pagina capturada"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/video/test_montar_pagina.py tests/producao/test_reel_pagina.py tests/test_cli_audio_texto.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

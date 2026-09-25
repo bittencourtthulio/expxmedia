@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-04
 titulo: "Audio, texto e video basico"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest tests/video tests/narrar tests/transcrever tests/legendar tests/producao/test_reel_pagina.py tests/test_cli_audio_texto.py termina com 0 failed e 0 skipped nesta maquina"
 fases: [F-04.1, F-04.2, F-04.3, F-04.4]
 riscos: ["ffmpeg local sem libass; legendas queimadas por PNG (base/legendar.md)", "Alinhamento no espaco do roteiro aborta se a API normalizar o texto (base/narrar-elevenlabs.md)", "loudnorm precisa medir a mistura final, nao a narracao isolada (base/montagem-reel-ffmpeg.md)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 04 — Audio, texto e video basico
