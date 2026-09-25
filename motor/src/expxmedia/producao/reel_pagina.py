@@ -22,7 +22,10 @@ O caminho, na ordem (origem: Instragram-Videos/.claude/skills/gerar-reel-repo/SK
 
 1. confere a entrada (erro cita o campo; nada é criado) e cria a peça em `roteiro`;
 2. **captura** a página (`captura.pagina`, Playwright) em `midia/`: tira, faixas, `site.md` (fonte) e
-   `captura.json`;
+   `captura.json`. Com `captura` (pasta já capturada), copia de lá; se a pasta tiver a abertura que
+   `produzir abertura` gerou (`abertura.mp4` + `abertura.json`), ela vem junto e a montagem a põe como
+   FUNDO dos segundos iniciais (narração desde 0, duração inalterada; origem:
+   Instragram-Videos/pipeline/compose.py:38-40), e a peça registra a capacidade `video_ia`;
 3. **gate do roteirista** (`revisar.roteiro`): reprovado, nada é narrado — `geracao_falhou` no rastro e a
    peça fica em `roteiro`;
 4. **narra uma vez** (`narrar`, o provedor que o `.env` escolher): `midia/narracao.mp3` e
@@ -73,6 +76,9 @@ TIPO, FORMATO, PERFIL = "reel", "9:16", "reel_pagina"
 CAMPOS = ("url", "captura", "titulo", "roteiro", "cta", "impacto", "card_final", "selo", "legenda", "porta_voz",
           "conteudo", "ocultar", "serie", "pack", "oferta", "slug")
 PROVEDOR_LEGENDA, PROVEDOR_VIDEO, PROVEDOR_CAPTURA = "local", "ffmpeg", "playwright"
+PROVEDOR_ABERTURA = "higgsfield"
+# o que `producao.abertura.gerar` deixa na pasta e a montagem usa (o clipe, o marcador e o prompt)
+ARQUIVOS_ABERTURA = ("abertura.mp4", "abertura.json", "abertura.txt")
 
 
 class ErroProducaoReel(RuntimeError):
@@ -213,6 +219,7 @@ def produzir(
         p.mkdir(exist_ok=True)
     inicio = time.monotonic()
     provedores: dict[str, str] = {}
+    com_abertura = False
     etapa = ["captura"]
 
     def falhou(detalhe: str) -> None:
@@ -229,6 +236,11 @@ def produzir(
             for nome in ("tira.png", "captura.json", "site.md"):
                 shutil.copyfile(captura_existente / nome, midia / nome)
             cap = arquivos.ler_json(midia / "captura.json")
+            if (captura_existente / "abertura.mp4").is_file() and (captura_existente / "abertura.json").is_file():
+                for nome in ARQUIVOS_ABERTURA:
+                    if (captura_existente / nome).is_file():
+                        shutil.copyfile(captura_existente / nome, midia / nome)
+                com_abertura = True
         provedores["capturar_pagina"] = PROVEDOR_CAPTURA
 
         # 2. gate do roteirista, antes de narrar
@@ -268,6 +280,10 @@ def produzir(
                                     captura=midia / "captura.json", impacto=e["impacto"], selo=e["selo"],
                                     sem_selo=e["selo"] is None, raiz=raiz)
         avisos += [a for a in avisos_mont if a not in avisos] + mont["avisos"]
+        if com_abertura and mont["abertura"] is None:
+            raise ErroProducaoReel("a captura trouxe a abertura, mas a montagem não a pôs no vídeo")
+        if com_abertura:
+            provedores["video_ia"] = PROVEDOR_ABERTURA
         provedores["editar_video"] = PROVEDOR_VIDEO
 
         # 6. verificação de entrega
@@ -296,6 +312,9 @@ def produzir(
         (arq_roteiro, "roteiro", None),
         (midia / "site.md", "fonte", None),
     ]
+    if com_abertura:
+        # o contrato não tem papel próprio de abertura: é material-fonte da montagem, como o site.md
+        registrar += [(midia / "abertura.mp4", "fonte", None), (midia / "abertura.json", "fonte", None)]
     legenda_post = None
     if e["legenda"]:
         legenda_post = texto / "legenda.txt"
@@ -329,7 +348,7 @@ def produzir(
         "narracao": {"provedor": narr["provedor"], "duracao_s": narr["duracao_s"], "palavras": narr["palavras"]},
         "legenda": {"blocos": leg["blocos"], "palavras_por_bloco": leg["palavras_por_bloco"], "cta": leg["cta"]},
         "montagem": {"rolagem": mont["rolagem"], "cartao": mont["cartao"], "selo": mont["selo"],
-                     "loudness": mont["loudness"]},
+                     "abertura": mont["abertura"], "loudness": mont["loudness"]},
         "verificacao": resultado,
         "segundos": segundos,
         "avisos": avisos,

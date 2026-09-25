@@ -1,7 +1,7 @@
 """Subcomandos de publicação e do agendador local do `expxmedia-motor` (D-07, D-08, D-11, D-29, D-30).
 
-    publicar --peca ID [--canal C]... [--confirmar] [--forcar]
-    agendar --peca ID --para MOMENTO_ISO [--canal C]... [--confirmar] [--forcar]
+    publicar --peca ID [--canal C]... [--dm ARQ.json] [--confirmar] [--forcar]
+    agendar --peca ID --para MOMENTO_ISO [--canal C]... [--dm ARQ.json] [--confirmar] [--forcar]
     agendador rodar [--raiz RAIZ]
     agendador instalar [--aplicar] [--sistema S] [--executavel CAMINHO]
 
@@ -11,6 +11,12 @@ monta o envio, e nada é enviado nem gravado na peça. Com `--confirmar`, envia 
 
 O provedor sai de `ambiente.verificar`; `PROVEDOR_PUBLICAR`/`PROVEDOR_AGENDAR` apontando para
 provedor não satisfeito sai com código 3 e o `como_habilitar`, sem trocar de provedor (D-07).
+
+`--dm` leva a automação de DM ("comente PALAVRA", capacidade `automacao_dm`) no mesmo envio. O
+arquivo é o bloco `automation` do Expx Flow (`expxflow.CAMPOS_AUTOMACAO`: `keywords` (lista),
+`mensagem`, `link`, `link_label`, `match_mode`, `public_reply_*`), relativo à pasta atual. Só o
+`expxflow` faz DM: provedor escolhido `meta_graph`, ou `automacao_dm` sem provedor, sai com código 3
+e o `como_habilitar`; bloco inválido sai 2 com os `achados` do adaptador.
 
 `agendador rodar` é uma rodada de `agendador.servico` — o que o LaunchAgent, a unidade systemd, a
 tarefa do Windows ou o cron chamam a cada minuto. `agendador instalar` sem `--aplicar` só mostra o
@@ -23,6 +29,8 @@ provedor pode ter criado o post; falha ao instalar o agendador sai 1.
 from __future__ import annotations
 
 import argparse
+import json
+from pathlib import Path
 from typing import Any
 
 from expxmedia import cli
@@ -66,6 +74,8 @@ def _argumentos_envio(p: argparse.ArgumentParser) -> None:
     p.add_argument("--peca", required=True, help="id da peça")
     p.add_argument("--canal", dest="canais", action="append", default=None, choices=sorted(modelo.CANAIS),
                    help=f"repita para mais de um canal (padrão: {CANAL_PADRAO})")
+    p.add_argument("--dm", default=None,
+                   help="JSON com o bloco de automação de DM do Expx Flow (keywords, mensagem, link...)")
     p.add_argument("--confirmar", action="store_true", help="envia de verdade; sem ele é dry-run")
     p.add_argument("--forcar", action="store_true",
                    help="ignora a trava de envio duplicado (só depois de conferir no provedor)")
@@ -74,17 +84,39 @@ def _argumentos_envio(p: argparse.ArgumentParser) -> None:
 # ---------------------------------------------------------------- publicar / agendar
 
 
+def _ler_dm(caminho: str | None) -> dict[str, Any] | None:
+    if caminho is None:
+        return None
+    arquivo = Path(caminho)
+    if not arquivo.is_file():
+        raise cli.ErroEntrada(f"campo 'dm': arquivo não encontrado: {caminho}")
+    try:
+        dados = json.loads(arquivo.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError as erro:
+        raise cli.ErroEntrada(f"campo 'dm': JSON inválido na linha {erro.lineno}, coluna {erro.colno}: {erro.msg}") from None
+    except UnicodeDecodeError:
+        raise cli.ErroEntrada("campo 'dm': o arquivo não é UTF-8") from None
+    if not isinstance(dados, dict):
+        raise cli.ErroEntrada("campo 'dm': o arquivo precisa ser um objeto JSON (o bloco de automação)")
+    return dados
+
+
 def publicar(args: argparse.Namespace) -> dict[str, Any]:
     capacidade = args.capacidade
+    automacao = _ler_dm(args.dm)
     try:
         return base.publicar(
             args.raiz, args.peca,
             canais=args.canais or [CANAL_PADRAO],
             agendada_para=getattr(args, "para", None),
+            automacao=automacao,
             dry_run=not args.confirmar,
             forcar=args.forcar,
         )
     except ErroCapacidade as erro:
+        # a base confere a capacidade do envio antes da automacao_dm: a mensagem diz qual faltou
+        if automacao is not None and str(erro).startswith("automacao_dm"):
+            capacidade = "automacao_dm"
         raise cli.CapacidadeNaoHabilitada(capacidade, str(erro)) from None
     except base.ErroEnvio as erro:
         raise cli.Falha(cli.ERRO, _falha(erro, capacidade, incerto=erro.incerto,

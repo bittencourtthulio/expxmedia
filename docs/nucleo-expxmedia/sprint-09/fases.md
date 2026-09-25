@@ -4,18 +4,18 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-09
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-09.1
     titulo: "Manifesto, hooks, Alma, ambiente e revisao de copy"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/plugin/test_hooks.py tests/alma/test_site.py tests/test_revisar_copy.py tests/plugin/test_ancoras.py tests/plugin/test_estrutura.py termina com 0 failed"
     paralelizavel: false
     paralela_com: []
     tasks: [T-09.01, T-09.10, T-09.11, T-09.02, T-09.03]
   - id: F-09.2
     titulo: "Skills de producao e agentes"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/plugin termina com 0 failed"
     paralelizavel: false
     paralela_com: []

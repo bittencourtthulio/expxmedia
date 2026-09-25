@@ -4,12 +4,15 @@
     produzir carrossel  --entrada slots.json [--embarcados PASTA]
     capturar pagina     --url URL --saida PASTA [--largura-css N] [--esquema dark|light] [--ocultar SELETOR]...
     imagem pexels       --termo "..." [--midia foto|video] [--orientacao ...] [--quantos N] [--baixar DESTINO]
+                        [--sem-filtro] [--lado-minimo PX] [--conhecido ID]...
     imagem openrouter   --prompt "..." --saida ARQ.png [--proporcao 4:5] [--modelo M] [--base ARQ]
     imagem retrato      [--porta-voz ID] [--recortar-em ARQ.png] [--indice N]
     imagem rosto        --porta-voz ID --prompt "..." --saida ARQ.png
 
 Caminhos de saída são relativos à raiz da instalação (M9); `--entrada` é relativo à pasta atual e
-a pasta dele é a base dos caminhos de imagem dos slots. A geração paga (OpenRouter, Higgsfield)
+a pasta dele é a base dos caminhos de imagem dos slots. `imagem pexels` aplica por padrão os filtros
+de banco (`retratos.filtrar_banco`: duplicata, lado curto mínimo e pessoa no `alt`) antes de devolver
+ou baixar; `--sem-filtro` desliga, e o JSON diz quantos caíram e por quê. A geração paga (OpenRouter, Higgsfield)
 passa pela cota diária da instalação (`imagem.cota.Cota(raiz).consumir`).
 
 Saídas: entrada, slots ou JSON inválidos saem com 2 e a mensagem cita o campo; capacidade não
@@ -55,7 +58,13 @@ def registrar(subparsers: argparse._SubParsersAction) -> None:
     p.add_argument("--midia", default="foto", choices=["foto", "video"])
     p.add_argument("--orientacao", default="portrait", choices=["portrait", "landscape", "square"])
     p.add_argument("--quantos", type=int, default=pexels.POR_PAGINA_PADRAO)
-    p.add_argument("--baixar", default=None, help="baixa o primeiro resultado neste caminho, relativo à raiz")
+    p.add_argument("--baixar", default=None, help="baixa o primeiro resultado aprovado neste caminho, relativo à raiz")
+    p.add_argument("--sem-filtro", dest="sem_filtro", action="store_true",
+                   help="não aplica os filtros de banco (duplicata, tamanho, pessoa no alt)")
+    p.add_argument("--lado-minimo", dest="lado_minimo", type=int, default=None,
+                   help=f"lado curto mínimo em px (padrão: {retratos.LADO_MINIMO_BANCO} para foto; vídeo não filtra tamanho)")
+    p.add_argument("--conhecido", dest="conhecidos", action="append", default=[],
+                   help="id do banco já usado numa peça recente: descartado como duplicata (repita)")
     p.set_defaults(func=imagem_pexels)
 
     p = imagem.add_parser("openrouter", help="gera imagem pelo OpenRouter (imagem_ia), dentro da cota")
@@ -146,16 +155,26 @@ def imagem_pexels(args: argparse.Namespace) -> dict[str, Any]:
     try:
         itens = pexels.buscar(args.raiz, args.termo, midia=args.midia, orientacao=args.orientacao,
                               por_pagina=args.quantos, url_base=pexels.URL_BASE)
+        descartados: list[dict[str, Any]] = []
+        if not args.sem_filtro:
+            # o vídeo já sai do Pexels com o arquivo de altura >= 720 (pexels.melhor_arquivo); o mínimo
+            # de 1200 px é da foto de banco (origem: Instagram-Carrosseis/galeria/_galeria.py:449)
+            lado = args.lado_minimo if args.lado_minimo is not None else (
+                retratos.LADO_MINIMO_BANCO if args.midia == "foto" else 0)
+            filtrado = retratos.filtrar_banco(itens, conhecidos=args.conhecidos, lado_minimo=lado)
+            itens, descartados = filtrado["aprovados"], filtrado["descartados"]
+        filtro = {"filtro": not args.sem_filtro, "descartados_por_filtro": len(descartados), "descartados": descartados}
         baixado = None
         if args.baixar:
             if not itens:
-                raise cli.Falha(cli.ERRO, {"ok": False, "erro": "sem_resultado", "mensagem": f"nada no Pexels para {args.termo!r}"})
+                raise cli.Falha(cli.ERRO, {"ok": False, "erro": "sem_resultado",
+                                           "mensagem": f"nada aprovado no Pexels para {args.termo!r}", **filtro})
             baixado = pexels.baixar(args.raiz, itens[0], args.baixar)
     except ValueError as erro:
         raise cli.ErroEntrada(str(erro)) from None
     except pexels.ErroPexels as erro:
         raise _falha_provedor("pexels", erro) from None
-    return {"itens": itens, "baixado": baixado}
+    return {"itens": itens, "baixado": baixado, **filtro}
 
 
 def imagem_openrouter(args: argparse.Namespace) -> dict[str, Any]:

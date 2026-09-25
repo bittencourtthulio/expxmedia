@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-09
 titulo: "Plugin do nucleo"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest (suite inteira) termina com 0 failed e 0 skipped nesta maquina e a varredura de marca passa sobre nucleo/"
 fases: [F-09.1, F-09.2]
 riscos: ["A inteligencia do recriado mora no processo do modelo; prompts precisam ser portados sem perda (base/inteligencia-reel-recriado.md)", "Revisor precisa conhecer o formato sob medida (base/inteligencia-reel-recriado.md risco 3)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 09 — Plugin do nucleo

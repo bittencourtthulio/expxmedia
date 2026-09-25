@@ -13,16 +13,22 @@ O texto do selo e do card final é copy da peça (parâmetro do teste), nunca do
 from __future__ import annotations
 
 import json
+import os
+import shutil
+import subprocess
 
+import numpy as np
 import pytest
+from PIL import Image
 
 from expxmedia.narrar import base as narrar_base
 from expxmedia.nucleo import rastro, tempo
 from expxmedia.peca import modelo
-from expxmedia.producao import reel_pagina
+from expxmedia.producao import abertura, reel_pagina
 from expxmedia.revisar import roteiro as gate
-from expxmedia.video import verificar
+from expxmedia.video import ffmpeg, verificar
 from fixtures.fontes_ficticias import semear_cache
+from stubs import higgsfield_falso
 from stubs.servidor import ServidorStub
 
 PARAGRAFO = ("Este parágrafo existe para dar corpo de texto à página de teste, com frases comuns e sem nenhuma "
@@ -76,6 +82,41 @@ def ambiente(instalacao, tmp_path, monkeypatch, requer_binario):
     with ServidorStub() as stub:
         stub.rota("GET", "/pagina", corpo=_html(), cabecalhos={"Content-Type": "text/html; charset=utf-8"})
         yield instalacao, stub.url_de("/pagina"), cache
+
+
+@pytest.fixture
+def ambiente_abertura(ambiente, tmp_path, monkeypatch):
+    """O `ambiente` com o Higgsfield falso no PATH, servindo o clipe gerado por um segundo stub local."""
+    raiz, url, cache = ambiente
+    bin_ = tmp_path / "bin"
+    higgsfield_falso.instalar(bin_)
+    log = tmp_path / "higgsfield.log"
+    monkeypatch.setenv("PATH", str(bin_) + os.pathsep + os.environ.get("PATH", ""))
+    monkeypatch.setenv("HIGGSFIELD_FALSO_LOG", str(log))
+    with ServidorStub() as stub:
+        monkeypatch.setenv("HIGGSFIELD_FALSO_URL", stub.url)
+        yield raiz, url, cache, stub, log
+
+
+def _clipe_que_vira_a_tira(tira, tmp) -> bytes:
+    """720x1280, 4 s: um plano liso até 2 s, vira o topo da tira entre 2 e 3 s e segura até 4 s."""
+    Image.new("RGB", (720, 1280), (30, 60, 90)).save(tmp / "q_ini.png")
+    Image.open(tira).convert("RGB").crop((0, 0, 1080, 1920)).resize((720, 1280)).save(tmp / "q_fim.png")
+    saida = tmp / "clipe_gerado.mp4"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", "30", "-t", "3",
+                    "-i", str(tmp / "q_ini.png"), "-loop", "1", "-framerate", "30", "-t", "2",
+                    "-i", str(tmp / "q_fim.png"), "-filter_complex",
+                    "[0:v][1:v]xfade=transition=fade:duration=1:offset=2,format=yuv420p[v]",
+                    "-map", "[v]", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "14", str(saida)],
+                   check=True, capture_output=True)
+    return saida.read_bytes()
+
+
+def _inicio_do_audio(video) -> float:
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(video), "-ac", "1", "-ar", "8000", "-f", "s16le", "-"],
+                       capture_output=True, check=True)
+    x = np.abs(np.frombuffer(r.stdout, dtype="<i2").astype(float))
+    return float(np.argmax(x > 0.05 * x.max()) / 8000)
 
 
 def _entrada(url: str, **muda) -> dict:
@@ -139,6 +180,65 @@ def test_produz_reel_de_pagina_aprovado_nas_11_checagens(ambiente, monkeypatch):
     assert json.loads((midia / "visual.json").read_text(encoding="utf-8"))["selo_cta"] == CTA
     eventos, _ = rastro.ler(raiz, tempo.agora(raiz).strftime("%Y-%m"))
     assert any(e["evento"] == "geracao_concluida" and e["peca_id"] == r["peca_id"] for e in eventos)
+
+
+@pytest.mark.integracao_local
+def test_abertura_produzida_na_captura_vai_ao_reel_sem_mudar_a_duracao(ambiente_abertura, tmp_path):
+    raiz, url, cache, stub, log = ambiente_abertura
+    r_sem = reel_pagina.produzir(raiz, _entrada(url), cache_fontes=cache)
+    midia_sem = modelo.pasta(raiz, r_sem["peca_id"]) / "midia"
+
+    # a skill: captura em rascunhos, `produzir abertura` na pasta da captura, depois `produzir reel-pagina`
+    captura = raiz / "rascunhos" / "pao" / "captura"
+    captura.mkdir(parents=True)
+    for nome in ("tira.png", "captura.json", "site.md"):
+        shutil.copyfile(midia_sem / nome, captura / nome)
+    stub.rota("GET", "/resultado.mp4", corpo=_clipe_que_vira_a_tira(captura / "tira.png", tmp_path))
+    marcador = abertura.gerar(raiz, captura, prompt="a loaf of bread rising in a warm oven", tipo="objeto")
+    assert marcador["montado_em"] is None and marcador["janela"]["encaixe_s"] is not None
+    assert [c for c in higgsfield_falso.chamadas(log) if c[:2] == ["generate", "create"]]
+    custo = abertura.TIPOS["objeto"]["creditos_por_abertura"]
+    assert abertura.creditos_gastos_hoje(raiz) == custo  # a abertura em rascunhos já conta para o teto do dia
+
+    entrada = _entrada(url)
+    entrada.pop("url")
+    r_com = reel_pagina.produzir(raiz, {**entrada, "captura": "rascunhos/pao/captura"}, cache_fontes=cache)
+    assert r_com["status"] == "produzida" and r_com["verificacao"]["aprovado"], r_com["verificacao"]["achados"]
+    pasta = modelo.pasta(raiz, r_com["peca_id"])
+    midia, final = pasta / "midia", pasta / "saida" / "final.mp4"
+
+    # a abertura chegou à montagem: troca o fundo do começo, não é emendada na frente
+    assert (midia / "abertura.mp4").is_file()
+    assert r_com["montagem"]["abertura"] == pytest.approx(abertura.DURACAO_NA_TELA, abs=0.05)
+    assert r_sem["montagem"]["abertura"] is None
+    visual = json.loads((midia / "visual.json").read_text(encoding="utf-8"))
+    assert visual["abertura_gerada"] == pytest.approx(abertura.DURACAO_NA_TELA, abs=0.05)
+    # mesma duração do reel sem abertura, narração desde t=0
+    assert r_com["duracao"] == r_sem["duracao"]
+    d_com = ffmpeg.sondar(final)["duracao"]
+    d_sem = ffmpeg.sondar(modelo.pasta(raiz, r_sem["peca_id"]) / "saida" / "final.mp4")["duracao"]
+    assert abs(d_com - d_sem) < 1 / 30 + 1e-3
+    # a narração entra no mesmo instante do reel sem abertura e do próprio áudio narrado (o que o provedor
+    # de teste tem de silêncio inicial é dele): a abertura não empurrou o áudio
+    final_sem = modelo.pasta(raiz, r_sem["peca_id"]) / "saida" / "final.mp4"
+    offset = json.loads((midia / "legendas.json").read_text(encoding="utf-8"))["offset_audio"]
+    inicio_narracao = _inicio_do_audio(midia / "narracao.mp3") + offset
+    assert abs(_inicio_do_audio(final) - _inicio_do_audio(final_sem)) < 0.05
+    assert abs(_inicio_do_audio(final) - inicio_narracao) < 0.05
+    # montado_em só na cópia que foi ao ar, gravado depois do MP4
+    marca = json.loads((midia / "abertura.json").read_text(encoding="utf-8"))
+    assert marca["montado_em"] is not None and marca["job"] == marcador["job"]
+    assert (midia / "abertura.json").stat().st_mtime_ns >= final.stat().st_mtime_ns
+
+    # a peça registra a abertura e a capacidade video_ia
+    peca = modelo.carregar(raiz, r_com["peca_id"])
+    assert "video_ia" in peca["producao"]["capacidades"]
+    assert peca["producao"]["provedores"]["video_ia"] == "higgsfield"
+    assert "video_ia" not in modelo.carregar(raiz, r_sem["peca_id"])["producao"]["capacidades"]
+    papeis = {a["caminho"]: a["papel"] for a in peca["arquivos"]}
+    assert papeis["midia/abertura.mp4"] == "fonte" and papeis["midia/abertura.json"] == "fonte"
+    # a cópia na peça não conta os créditos de novo: é o mesmo job
+    assert abertura.creditos_gastos_hoje(raiz) == custo
 
 
 # ------------------------------------------------------------------ funcional

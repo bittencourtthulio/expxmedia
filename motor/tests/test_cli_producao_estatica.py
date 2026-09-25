@@ -174,6 +174,60 @@ def test_imagem_pexels_e_retrato(instalacao, capsys, monkeypatch):
     assert dados["caminho"] == "alma/assets/retratos/porta-voz-teste/01.png"
 
 
+def _foto(id_, largura, altura, alt):
+    return {"id": id_, "width": largura, "height": altura, "url": f"https://www.pexels.com/photo/{id_}/",
+            "photographer": "Autora", "photographer_url": "https://www.pexels.com/@a", "alt": alt,
+            "src": {"original": "http://x/o.jpg", "large2x": "http://x/l.jpg", "portrait": "http://x/p.jpg"}}
+
+
+FOTOS_MISTAS = [
+    _foto(7, 3000, 4000, "bread on a table"),
+    _foto(8, 800, 1000, "flour close-up"),            # lado curto 800 < 1200
+    _foto(9, 3000, 4000, "woman kneading dough"),     # pessoa no alt
+    _foto(7, 3000, 4000, "bread on a table"),         # duplicata na mesma lista
+    _foto(10, 1200, 1500, "oven door"),               # exatamente no mínimo: fica
+    _foto(11, 2000, 3000, "wooden counter"),          # já saiu numa peça (--conhecido)
+]
+
+
+def _pexels(capsys, instalacao, monkeypatch, fotos, *extra):
+    (instalacao / ".env").write_text("PEXELS_API_KEY=chave-falsa\n", encoding="utf-8")
+    with ServidorStub() as stub:
+        stub.rota("GET", "/v1/search", json={"photos": fotos})
+        monkeypatch.setattr(pexels, "URL_BASE", stub.url)
+        return _rodar(capsys, "imagem", "pexels", "--termo", "bread", *extra, "--raiz", instalacao)
+
+
+def test_imagem_pexels_aplica_os_filtros_de_banco_por_padrao(instalacao, capsys, monkeypatch):
+    codigo, dados = _pexels(capsys, instalacao, monkeypatch, FOTOS_MISTAS, "--conhecido", "11")
+    assert codigo == 0, dados
+    assert [i["id"] for i in dados["itens"]] == [7, 10]
+    assert dados["filtro"] is True and dados["descartados_por_filtro"] == 4
+    assert sorted((d["id"], d["motivo"]) for d in dados["descartados"]) == [
+        (7, "duplicata"), (8, "tamanho"), (9, "pessoa_no_alt"), (11, "duplicata")]
+
+
+def test_imagem_pexels_lado_minimo_ajustavel(instalacao, capsys, monkeypatch):
+    codigo, dados = _pexels(capsys, instalacao, monkeypatch, FOTOS_MISTAS, "--lado-minimo", "1500")
+    assert codigo == 0, dados
+    assert [i["id"] for i in dados["itens"]] == [7, 11]  # 10 (1200 px) cai com mínimo 1500
+
+
+def test_imagem_pexels_sem_filtro_devolve_tudo(instalacao, capsys, monkeypatch):
+    codigo, dados = _pexels(capsys, instalacao, monkeypatch, FOTOS_MISTAS, "--sem-filtro")
+    assert codigo == 0, dados
+    assert [i["id"] for i in dados["itens"]] == [7, 8, 9, 7, 10, 11]
+    assert dados["filtro"] is False and dados["descartados_por_filtro"] == 0 and dados["descartados"] == []
+
+
+def test_imagem_pexels_baixar_sem_aprovado_sai_1(instalacao, capsys, monkeypatch):
+    codigo, dados = _pexels(capsys, instalacao, monkeypatch, [_foto(9, 3000, 4000, "man with bread")],
+                            "--baixar", "pecas/x/foto.jpg")
+    assert codigo == cli.ERRO and dados["erro"] == "sem_resultado"
+    assert dados["descartados_por_filtro"] == 1
+    assert not (instalacao / "pecas" / "x").exists()
+
+
 # ---------------------------------------------------------------- funcional
 
 

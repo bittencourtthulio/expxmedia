@@ -207,6 +207,94 @@ def test_provedor_503_sai_1_incerto_com_uma_unica_chamada(instalacao, servidor_s
     assert modelo.carregar(instalacao, peca_id)["publicacoes"][0]["estado"] == "falhou"
 
 
+DM = {"keywords": ["receita", "receitas"], "mensagem": "Aqui está a receita.", "link": "https://exemplo.invalid/r",
+      "link_label": "Ver receita", "match_mode": "any"}
+
+
+def _dm(tmp_path, dados=DM):
+    arquivo = tmp_path / "dm.json"
+    arquivo.write_text(dados if isinstance(dados, str) else json.dumps(dados, ensure_ascii=False), encoding="utf-8")
+    return arquivo
+
+
+def test_agendar_com_dm_leva_o_bloco_automation_ao_expxflow(instalacao, servidor_stub, capsys, tmp_path):
+    _env(instalacao, servidor_stub.url)
+    peca_id = _post(instalacao)
+
+    codigo, saida = _rodar(capsys, "agendar", "--peca", peca_id, "--para", _futuro(), "--dm", _dm(tmp_path),
+                           "--raiz", instalacao)
+
+    assert codigo == 0, saida
+    assert saida["payload"]["corpo"]["automation"] == DM
+    assert servidor_stub.requisicoes == []
+
+
+def test_publicar_com_dm_confirmado_grava_a_palavra_da_automacao(instalacao, servidor_stub, capsys, tmp_path):
+    _env(instalacao, servidor_stub.url)
+    servidor_stub.rota("POST", "/media-upload-api", status=201, json={
+        "success": True, "data": {"image_url": servidor_stub.url + "/hospedado/final.png"}})
+    servidor_stub.rota("POST", "/post-api", status=201, json={"success": True, "data": {
+        "scheduled_post_id": "s_dm", "published_now": True, "trigger_id": "t_1"}})
+    peca_id = _post(instalacao)
+
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--dm", _dm(tmp_path), "--confirmar",
+                           "--raiz", instalacao)
+
+    assert codigo == 0, saida
+    [post] = servidor_stub.requisicoes_de("POST", "/post-api")
+    assert post.json["automation"]["keywords"] == ["receita", "receitas"]
+    pub = modelo.carregar(instalacao, peca_id)["publicacoes"][0]
+    assert json.dumps(pub, ensure_ascii=False).count("t_1") == 1 and "receita" in json.dumps(pub, ensure_ascii=False)
+
+
+def test_dm_com_provedor_meta_graph_sai_3_com_como_habilitar(instalacao, servidor_stub, capsys, tmp_path):
+    # Expx Flow configurado, mas a publicação está fixada no meta_graph: a DM não tem quem a faça
+    _env(instalacao, servidor_stub.url,
+         "PROVEDOR_PUBLICAR=meta_graph\nMETA_GRAPH_TOKEN=token-falso\nMETA_IG_USER_ID=123\n")
+    peca_id = _post(instalacao)
+
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--dm", _dm(tmp_path), "--raiz", instalacao)
+
+    assert codigo == cli.CAPACIDADE_NAO_HABILITADA
+    assert saida["erro"] == "automacao_indisponivel"
+    assert "expxflow" in saida["como_habilitar"] and "meta_graph" in saida["como_habilitar"]
+    assert servidor_stub.requisicoes == []
+
+
+def test_dm_sem_expxflow_configurado_sai_3_citando_automacao_dm(instalacao, capsys, tmp_path):
+    (instalacao / ".env").write_text("META_GRAPH_TOKEN=token-falso\nMETA_IG_USER_ID=123\n", encoding="utf-8")
+    peca_id = _post(instalacao)
+
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--dm", _dm(tmp_path), "--raiz", instalacao)
+
+    assert codigo == cli.CAPACIDADE_NAO_HABILITADA, saida
+    assert saida["capacidade"] == "automacao_dm"
+    assert "EXPXFLOW_API_KEY" in saida["como_habilitar"]
+
+
+@pytest.mark.parametrize("conteudo, trecho", [
+    ('{"keywords": [', "campo 'dm': JSON inválido"),
+    ('["receita"]', "campo 'dm': o arquivo precisa ser um objeto"),
+    (None, "campo 'dm': arquivo não encontrado"),
+])
+def test_dm_arquivo_invalido_sai_2(instalacao, servidor_stub, capsys, tmp_path, conteudo, trecho):
+    _env(instalacao, servidor_stub.url)
+    peca_id = _post(instalacao)
+    arquivo = _dm(tmp_path, conteudo) if conteudo is not None else tmp_path / "nao.json"
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--dm", arquivo, "--raiz", instalacao)
+    assert codigo == cli.ENTRADA_INVALIDA and trecho in saida["mensagem"], saida
+    assert servidor_stub.requisicoes == []
+
+
+def test_dm_sem_palavra_sai_2_pela_validacao_do_adaptador(instalacao, servidor_stub, capsys, tmp_path):
+    _env(instalacao, servidor_stub.url)
+    peca_id = _post(instalacao)
+    codigo, saida = _rodar(capsys, "publicar", "--peca", peca_id, "--dm", _dm(tmp_path, {"mensagem": "oi"}),
+                           "--raiz", instalacao)
+    assert codigo == cli.ENTRADA_INVALIDA and saida["erro"] == "validacao"
+    assert any(a["codigo"] == "automacao" for a in saida["achados"])
+
+
 def _agendada_meta(raiz, horario):
     peca_id = _post(raiz)
     modelo.registrar_publicacao(raiz, peca_id, {

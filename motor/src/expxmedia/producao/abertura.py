@@ -248,14 +248,23 @@ def faixa_do_rosto(clipe: Path) -> dict[str, int] | None:
 
 def creditos_gastos_hoje(raiz: Path) -> int:
     """Soma dos créditos das aberturas geradas hoje, lida dos próprios marcadores da instalação.
+
+    Conta as peças e os rascunhos (a abertura do reel de página nasce na pasta da captura, em
+    `rascunhos/`, e é copiada para a peça): o mesmo job conta uma vez só.
     origem: Instragram-Videos/pipeline/abertura.py:66-77"""
-    hoje, total = tempo.hoje(raiz), 0
-    for m in (Path(raiz) / "pecas").rglob("abertura.json"):
-        try:
-            d = json.loads(m.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            continue
-        if str(d.get("gerado_em") or "")[:10] == hoje:
+    hoje, total, vistos = tempo.hoje(raiz), 0, set()
+    for pasta in ("pecas", "rascunhos"):
+        for m in sorted((Path(raiz) / pasta).rglob("abertura.json")):
+            try:
+                d = json.loads(m.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if not isinstance(d, dict) or str(d.get("gerado_em") or "")[:10] != hoje:
+                continue
+            chave = d.get("job") or str(m)
+            if chave in vistos:
+                continue
+            vistos.add(chave)
             total += int(d.get("creditos") or 0)
     return total
 
