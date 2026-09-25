@@ -166,7 +166,6 @@ chave da API que usa esse id é, e vive no `.env` (M14).
       "nome": "Ana Souza",
       "papel": "sócia fundadora",
       "principal": true,
-      "consentimento_imagem_voz": true,
       "voz": { "provedor": "elevenlabs", "voz_id": "abc123" },
       "avatar": { "provedor": "heygen", "avatar_id": null },
       "rosto_ia": { "provedor": "higgsfield", "id": null },
@@ -231,9 +230,8 @@ As pessoas que aparecem e falam pela empresa. Uma empresa sem ninguém que apare
 lista vazia, e todo template que exige rosto ou voz fica fora do alcance (é um requisito de
 capacidade, ver [`CONTRATO-capacidades.md`](./CONTRATO-capacidades.md)).
 
-`consentimento_imagem_voz` é obrigatório e começa `false`. Nenhuma capacidade que usa voz
-clonada, avatar ou rosto gerado roda para um porta-voz com `false`. Os ids de voz, avatar e
-rosto são referências ao provedor, não segredo.
+Os ids de voz, avatar e rosto são referências ao provedor, não segredo. Quem configura é a
+empresa: se o id está preenchido e a chave do provedor está no `.env`, a capacidade funciona.
 
 ## Regras
 

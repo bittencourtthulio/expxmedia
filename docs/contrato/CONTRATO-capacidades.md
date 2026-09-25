@@ -44,8 +44,31 @@ o provedor. Trocar ElevenLabs por outro serviço é mudar o `.env`, não um pack
 | Provedor | Satisfeito por | Observação |
 |---|---|---|
 | `expxflow` | `EXPXFLOW_API_KEY` + `EXPXFLOW_CLIENT_ID` | agenda no servidor; hospeda a mídia |
-| `meta_graph` | `META_GRAPH_TOKEN` + `META_IG_USER_ID` (+ `META_PAGE_ID` para Facebook) | a API do Instagram não agenda: o `agendar` via `meta_graph` é um agendador local, e **a máquina precisa estar ligada no horário**. A mídia precisa de URL pública no momento da publicação |
+| `meta_graph` | `META_GRAPH_TOKEN` + `META_IG_USER_ID` (+ `META_PAGE_ID` para Facebook); para `agendar`, também o **agendador local** instalado | a API do Instagram não agenda: quem agenda é o agendador local (abaixo), e **a máquina precisa estar ligada no horário** |
 | `youtube_api` | `YOUTUBE_CLIENT_SECRET_FILE` + OAuth com escopo de upload | só `publicar` (com `publishAt`, que o próprio YouTube agenda) |
+
+### O agendador local
+
+Quando `agendar` vai usar `meta_graph`, o `/expxmedia:ambiente` (e o `doctor`) detecta o sistema
+operacional e instala o **agendador local**: um programa Python do motor que fica rodando na
+máquina e publica cada peça no horário marcado.
+
+| Sistema | Como fica residente |
+|---|---|
+| macOS | LaunchAgent do usuário (`~/Library/LaunchAgents/`) |
+| Windows | Tarefa do Agendador de Tarefas, ao fazer logon |
+| Linux | serviço de usuário do systemd; na falta dele, cron |
+
+O agendador:
+
+- lê as publicações `agendada` com `provedor: meta_graph` nos `peca.json` da instalação;
+- no horário, torna a mídia acessível por URL pública pelo tempo da publicação (túnel temporário,
+  como o `tunel.py` dos vídeos faz hoje) e chama a Graph API;
+- grava o resultado na peça e no rastro (`publicacao_concluida` / `publicacao_falhou`);
+- ao voltar de um período desligado, **não publica atrasado em silêncio**: marca como `falhou`
+  com o motivo e a peça volta para a pessoa decidir.
+
+Enquanto o agendador não estiver instalado, `agendar` via `meta_graph` não está habilitada.
 
 Capacidades **derivadas** declaram de quem dependem: `legendar` está habilitada se `narrar` **ou**
 `transcrever` estiver. O motor resolve a dependência; o pack pede só `legendar`.
@@ -161,7 +184,7 @@ A verificação é **local e barata**: confere presença da variável, do login 
 --online`), porque validar chave consome cota e pode demorar.
 
 Capacidade que depende de porta-voz (`narrar`, `avatar`, `rosto_ia`) só está habilitada **para um
-porta-voz** que tenha o id correspondente e `consentimento_imagem_voz: true` na Alma. A consulta
+porta-voz** que tenha o id correspondente preenchido na Alma. A consulta
 recebe o porta-voz quando a peça tem um.
 
 ## Quem usa a verificação, e como
