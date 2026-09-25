@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-02
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-02.01
     titulo: "Ids e tempo com fuso"
     fase: F-02.1
-    status: pendente
+    status: concluida
     objetivo: "Gerar ids de peca e template, deduplicando contra as pecas existentes e os ids ja gerados no processo, e momentos ISO com o fuso da Alma (M5, M11)."
     arquivos:
       cria: [motor/src/expxmedia/nucleo/ids.py, motor/src/expxmedia/nucleo/tempo.py, motor/tests/nucleo/test_ids_tempo.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/nucleo/test_ids_tempo.py termina com 0 failed"
     depende_de: [T-01.03]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.02
     titulo: "Escrita atomica e JSONL com trava"
     fase: F-02.1
-    status: pendente
+    status: concluida
     objetivo: "Portar a escrita atomica e o acrescimo com trava entre processos usando filelock (M15)."
     arquivos:
       cria: [motor/src/expxmedia/nucleo/arquivos.py, motor/tests/nucleo/test_arquivos.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/nucleo/test_arquivos.py termina com 0 failed"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.03
     titulo: "Rastro de eventos"
     fase: F-02.1
-    status: pendente
+    status: concluida
     objetivo: "Gravar eventos com as doze chaves na ordem do CONTRATO-estado-eventos e extras declaradas depois."
     arquivos:
       cria: [motor/src/expxmedia/nucleo/rastro.py, motor/tests/nucleo/test_rastro.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/nucleo/test_rastro.py termina com 0 failed"
     depende_de: [T-02.01, T-02.02]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.04
     titulo: "Raiz da instalacao e caminhos relativos"
     fase: F-02.1
-    status: pendente
+    status: concluida
     objetivo: "Localizar a raiz da instalacao e converter caminhos para relativos (M9)."
     arquivos:
       cria: [motor/src/expxmedia/nucleo/raiz.py, motor/tests/nucleo/test_raiz.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/nucleo/test_raiz.py termina com 0 failed"
     depende_de: [T-01.03]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.05
     titulo: "Leitor do .env"
     fase: F-02.2
-    status: pendente
+    status: concluida
     objetivo: "Ler o .env da instalacao sem nunca expor valores em mensagens (M14)."
     arquivos:
       cria: [motor/src/expxmedia/ambiente/env.py, motor/tests/ambiente/test_env.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/ambiente/test_env.py termina com 0 failed"
     depende_de: [T-02.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.06
     titulo: "Catalogo de capacidades do nucleo"
     fase: F-02.2
-    status: pendente
+    status: concluida
     objetivo: "Declarar as capacidades do nucleo, provedores e o que satisfaz cada um, incluindo derivadas e fornecidas por pack."
     arquivos:
       cria: [motor/src/expxmedia/ambiente/catalogo.py, motor/tests/ambiente/test_catalogo.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/ambiente/test_catalogo.py termina com 0 failed"
     depende_de: [T-02.05]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.07
     titulo: "Verificacao, como_habilitar e provedor padrao"
     fase: F-02.2
-    status: pendente
+    status: concluida
     objetivo: "Responder se uma capacidade esta habilitada, por qual provedor e o que falta, respeitando PROVEDOR_* sem troca silenciosa (D-07)."
     arquivos:
       cria: [motor/src/expxmedia/ambiente/verificar.py, motor/tests/ambiente/test_verificar.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/ambiente/test_verificar.py termina com 0 failed"
     depende_de: [T-02.06]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.08
     titulo: "Gerar .env.example do nucleo"
     fase: F-02.2
-    status: pendente
+    status: concluida
     objetivo: "Gerar o .env.example com um bloco comentado por capacidade e onde conseguir cada chave."
     arquivos:
       cria: [motor/src/expxmedia/ambiente/envexample.py, motor/tests/ambiente/test_envexample.py]
@@ -124,12 +124,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/ambiente/test_envexample.py termina com 0 failed"
     depende_de: [T-02.06]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.09
     titulo: "Schema da Alma e ajuste do contrato"
     fase: F-02.3
-    status: pendente
+    status: concluida
     objetivo: "Validar alma.json por JSON Schema e acrescentar ao contrato os parametros de voz por tipo de peca (reel e aula) e o lexico de pronuncia do porta-voz (D-22, D-40)."
     arquivos:
       cria: [motor/src/expxmedia/alma/schema.py, motor/src/expxmedia/alma/alma.schema.json, motor/tests/alma/test_schema.py]
@@ -139,12 +139,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/alma/test_schema.py termina com 0 failed"
     depende_de: [T-01.03]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.10
     titulo: "Carga da Alma, portao, tokens e fontes"
     fase: F-02.3
-    status: pendente
+    status: concluida
     objetivo: "Carregar a Alma, dizer se o portao esta aberto, gerar os tokens CSS --alma-* e resolver fontes com cache local e Inter embarcada (D-21)."
     arquivos:
       cria: [motor/src/expxmedia/alma/carregar.py, motor/src/expxmedia/alma/tokens.py, motor/src/expxmedia/alma/fontes.py, motor/tests/alma/test_carregar.py]
@@ -154,12 +154,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/alma/test_carregar.py termina com 0 failed"
     depende_de: [T-02.09, T-01.04, T-01.08]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.11
     titulo: "Modelo de peca"
     fase: F-02.3
-    status: pendente
+    status: concluida
     objetivo: "Criar e atualizar peca.json com todas as chaves, ciclo de vida valido e evento por transicao (CONTRATO-peca)."
     arquivos:
       cria: [motor/src/expxmedia/peca/modelo.py, motor/tests/peca/test_modelo.py]
@@ -169,12 +169,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/peca/test_modelo.py termina com 0 failed"
     depende_de: [T-02.03, T-02.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.12
     titulo: "Template: schema e validacao"
     fase: F-02.3
-    status: pendente
+    status: concluida
     objetivo: "Validar template.json e os arquivos do template: cor literal fora de :root, URL externa, imports e APIs proibidas no TSX (CONTRATO-template, D-36)."
     arquivos:
       cria: [motor/src/expxmedia/template/schema.py, motor/src/expxmedia/template/template.schema.json, motor/src/expxmedia/template/validar.py, motor/tests/template/test_validar.py]
@@ -184,12 +184,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/template/test_validar.py termina com 0 failed"
     depende_de: [T-01.02]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-24
+    suite: verde
   - id: T-02.13
     titulo: "Galeria local"
     fase: F-02.4
-    status: pendente
+    status: concluida
     objetivo: "Buscar templates por tipo e formato descartando os que tem requisito nao habilitado ou exigem porta-voz inexistente."
     arquivos:
       cria: [motor/src/expxmedia/template/galeria_local.py, motor/tests/template/test_galeria_local.py]
@@ -199,12 +199,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/template/test_galeria_local.py termina com 0 failed"
     depende_de: [T-02.07, T-02.12]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-02.14
     titulo: "CLI expxmedia-motor base com registro por modulo"
     fase: F-02.4
-    status: pendente
+    status: concluida
     objetivo: "Criar o CLI que descobre subcomandos nos modulos de cli_comandos/ (cada modulo registra os seus, entao nenhuma task futura edita cli.py) e o modulo base com capacidades, alma validar, peca criar, peca status e galeria buscar, saida JSON (D-11)."
     arquivos:
       cria: [motor/src/expxmedia/cli.py, motor/src/expxmedia/cli_comandos/base.py, motor/tests/test_cli.py]
@@ -214,8 +214,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli.py termina com 0 failed"
     depende_de: [T-02.08, T-02.10, T-02.11, T-02.13]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 02
@@ -239,7 +239,8 @@ teste_funcional: novo_peca_id para 2026-09-24 casa com ^P-20260924-[0-9A-F]{4}$ 
 criterio_aceite: `cd motor && uv run pytest tests/nucleo/test_ids_tempo.py` termina com 0 failed
 depende_de: [T-01.03]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 12 passed
 ```
 
 ---
@@ -259,7 +260,8 @@ teste_funcional: gravar_json com objeto não serializável levanta erro e deixa 
 criterio_aceite: `cd motor && uv run pytest tests/nucleo/test_arquivos.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 7 passed
 ```
 
 ---
@@ -279,7 +281,8 @@ teste_funcional: Registrar evento com chave extra não declarada levanta erro e 
 criterio_aceite: `cd motor && uv run pytest tests/nucleo/test_rastro.py` termina com 0 failed
 depende_de: [T-02.01, T-02.02]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 15 passed (suíte 161 passed)
 ```
 
 ---
@@ -299,7 +302,8 @@ teste_funcional: relativo converte um caminho absoluto dentro da raiz em caminho
 criterio_aceite: `cd motor && uv run pytest tests/nucleo/test_raiz.py` termina com 0 failed
 depende_de: [T-01.03]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 7 passed
 ```
 
 ---
@@ -319,7 +323,8 @@ teste_funcional: Um .env com comentário, aspas e linha vazia é lido como dicio
 criterio_aceite: `cd motor && uv run pytest tests/ambiente/test_env.py` termina com 0 failed
 depende_de: [T-02.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: tests/ambiente 49 passed
 ```
 
 ---
@@ -339,7 +344,8 @@ teste_funcional: O catálogo contém exatamente as capacidades do núcleo listad
 criterio_aceite: `cd motor && uv run pytest tests/ambiente/test_catalogo.py` termina com 0 failed
 depende_de: [T-02.05]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: tests/ambiente 49 passed
 ```
 
 ---
@@ -359,7 +365,8 @@ teste_funcional: Sem ELEVENLABS_API_KEY, verificar('narrar') devolve habilitada 
 criterio_aceite: `cd motor && uv run pytest tests/ambiente/test_verificar.py` termina com 0 failed
 depende_de: [T-02.06]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: tests/ambiente 49 passed
 ```
 
 ---
@@ -379,7 +386,8 @@ teste_funcional: O exemplo gerado contém ELEVENLABS_API_KEY vazio sob um coment
 criterio_aceite: `cd motor && uv run pytest tests/ambiente/test_envexample.py` termina com 0 failed
 depende_de: [T-02.06]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: tests/ambiente 49 passed
 ```
 
 ---
@@ -399,7 +407,8 @@ teste_funcional: Uma Alma sem visual.cores.destaque devolve violação chave_omi
 criterio_aceite: `cd motor && uv run pytest tests/alma/test_schema.py` termina com 0 failed
 depende_de: [T-01.03]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 17 passed
 ```
 
 ---
@@ -419,7 +428,8 @@ teste_funcional: tokens_css da Alma fictícia devolve as nove variáveis --alma-
 criterio_aceite: `cd motor && uv run pytest tests/alma/test_carregar.py` termina com 0 failed
 depende_de: [T-02.09, T-01.04, T-01.08]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 12 passed
 ```
 
 ---
@@ -439,7 +449,8 @@ teste_funcional: Tentar mudar de publicada para roteiro levanta erro e criar pe�
 criterio_aceite: `cd motor && uv run pytest tests/peca/test_modelo.py` termina com 0 failed
 depende_de: [T-02.03, T-02.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 21 passed
 ```
 
 ---
@@ -459,7 +470,8 @@ teste_funcional: Um CSS com #ff0000 fora de :root gera achado em modo template e
 criterio_aceite: `cd motor && uv run pytest tests/template/test_validar.py` termina com 0 failed
 depende_de: [T-01.02]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-24 · suíte: 54 passed (suíte 315 passed)
 ```
 
 ---
@@ -479,7 +491,8 @@ teste_funcional: Sem chave, buscar tipo reel formato 9:16 não devolve o templat
 criterio_aceite: `cd motor && uv run pytest tests/template/test_galeria_local.py` termina com 0 failed
 depende_de: [T-02.07, T-02.12]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 10 passed
 ```
 
 ---
@@ -499,5 +512,6 @@ teste_funcional: peca criar --tipo post_unico --formato 4:5 devolve JSON com pec
 criterio_aceite: `cd motor && uv run pytest tests/test_cli.py` termina com 0 failed
 depende_de: [T-02.08, T-02.10, T-02.11, T-02.13]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 14 passed (suíte 339 passed)
 ```

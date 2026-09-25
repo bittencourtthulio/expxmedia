@@ -5,11 +5,11 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-02
 titulo: "Fundacao dos contratos"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest termina com 0 failed e uv run expxmedia-motor capacidades roda na fixture"
 fases: [F-02.1, F-02.2, F-02.3, F-02.4]
 riscos: ["fcntl nao existe no Windows; usar filelock (base/infra-estado-e-plano.md)", "Google Fonts exige rede; testes usam stub (D-21)"]
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 ---
 
 # Sprint 02 — Fundacao dos contratos

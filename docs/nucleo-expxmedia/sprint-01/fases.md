@@ -8,14 +8,14 @@ atualizado_em: 2026-09-24
 fases:
   - id: F-01.1
     titulo: "Projeto Python e harness"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/test_pacote.py tests/test_harness.py tests/test_instalacao.py tests/test_stub.py termina com 0 failed"
     paralelizavel: false
     paralela_com: []
     tasks: [T-01.01, T-01.02, T-01.03, T-01.04]
   - id: F-01.2
     titulo: "Ambiente, kit Remotion, varredura de marca e goldens"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/test_ambiente_local.py tests/test_kit_remotion.py tests/test_marca.py tests/test_golden_presentes.py termina com 0 failed e 0 skipped nesta maquina"
     paralelizavel: false
     paralela_com: []

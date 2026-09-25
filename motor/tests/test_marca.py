@@ -61,6 +61,9 @@ def _arquivos(raiz):
         yield arquivo
 
 
+_RE_ORIGEM = re.compile(r"origem:", re.IGNORECASE)
+
+
 def varrer(raizes, termos=None):
     """Devolve [(arquivo, linha, termo)] de cada ocorrência de termo proibido nas raízes.
 
@@ -76,6 +79,10 @@ def varrer(raizes, termos=None):
             if texto is None:
                 continue
             for numero, conteudo in enumerate(texto.splitlines(), start=1):
+                # Procedência exigida pelo método (D-50): o que vem depois de
+                # "origem:" cita arquivo:linha dos projetos de origem e não é
+                # marca embutida no comportamento.
+                conteudo = _RE_ORIGEM.split(conteudo, maxsplit=1)[0]
                 for termo, regex in termos:
                     if regex.search(conteudo):
                         achados.append((arquivo, numero, termo))
@@ -160,3 +167,10 @@ def test_varrer_nao_aponta_produto_nem_provedor(tmp_path):
         encoding="utf-8",
     )
     assert varrer([tmp_path]) == []
+
+
+def test_procedencia_origem_nao_e_marca(tmp_path):
+    arq = tmp_path / "modulo.py"
+    arq.write_text("LIMIAR = 3  # origem: cursos-ia/radar-ia-09/gerar_voz.py:35\nNOME = 'Radar IA'\n", encoding="utf-8")
+    achados = varrer([tmp_path])
+    assert [n for _, n, _ in achados] == [2]

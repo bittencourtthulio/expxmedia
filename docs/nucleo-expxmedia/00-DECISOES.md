@@ -299,6 +299,12 @@ decisoes:
     motivo: Reauditoria 3; a origem calibrou cada formato separadamente
     status: fechada
     bloqueante: false
+  - id: D-50
+    decisao: A varredura de marca ignora o trecho depois de origem nos comentarios de procedencia arquivo linha exigidos pelo metodo; EXPXFLOW_BASE_URL e variavel obrigatoria do Expx Flow sem URL padrao no codigo
+    alternativa_descartada: Proibir procedencia ou deixar URL do Expx Flow no codigo
+    motivo: Decisao do orquestrador na F6; conflito entre regra de procedencia e varredura, e a varredura proibe o endereco do projeto
+    status: fechada
+    bloqueante: false
   - id: PENDENTE-01
     decisao: Licenca do Remotion para empresas clientes que renderizam
     alternativa_descartada: null
@@ -369,6 +375,7 @@ D-46 | (autônoma, retorno da F5) Root do kit importa registro gerado de src/com
 D-47 | (autônoma, reauditoria 2) Goldens G3/G4 usam alma-golden-reel com a fonte local da origem só nos testes, sem copiar a fonte | paridade impossível ou fonte de sistema no código | D-21 segue valendo para o código
 D-48 | (autônoma, reauditoria 2) Score de pauta antes do render da apresentação fica para a curadoria do pack | portar no núcleo | depende da estratégia de canal (D-13)
 D-49 | (autônoma, reauditoria 3) Faixas por perfil iguais às da origem: reel de página 50–70 s, corte 50–185 s com aviso acima de 75 s, reel narrado Remotion e recriado 30–70 s | faixa única de 30–70 s | a origem calibrou cada formato (base/verificar-reel-gates.md)
+D-50 | (orquestrador, F6) A varredura de marca ignora o trecho após `origem:` nos comentários de procedência; EXPXFLOW_BASE_URL é variável obrigatória do Expx Flow, sem URL padrão no código | proibir procedência ou manter a URL no código | conflito entre procedência exigida e varredura; a varredura proíbe o endereço do projeto
 ```
 
 ## Pendências

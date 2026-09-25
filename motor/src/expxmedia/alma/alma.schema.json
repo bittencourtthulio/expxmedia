@@ -1,0 +1,848 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "expxmedia-alma-1",
+  "title": "Contrato expxmedia-alma v1 (docs/contrato/CONTRATO-alma.md)",
+  "type": "object",
+  "required": [
+    "expxmedia_alma",
+    "metodo",
+    "fontes",
+    "criada_em",
+    "confirmada_em",
+    "atualizado_em",
+    "empresa",
+    "publico",
+    "ofertas",
+    "voz",
+    "visual",
+    "cta",
+    "canais",
+    "porta_vozes",
+    "restricoes",
+    "origens",
+    "pendencias"
+  ],
+  "properties": {
+    "expxmedia_alma": {
+      "type": "integer",
+      "const": 1
+    },
+    "metodo": {
+      "type": "string",
+      "enum": [
+        "site",
+        "entrevista",
+        "misto"
+      ]
+    },
+    "fontes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "criada_em": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+    },
+    "confirmada_em": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+    },
+    "atualizado_em": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+    },
+    "empresa": {
+      "type": "object",
+      "required": [
+        "nome",
+        "nome_curto",
+        "descricao_curta",
+        "segmento",
+        "site",
+        "pais",
+        "idioma",
+        "fuso"
+      ],
+      "properties": {
+        "nome": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nome_curto": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "descricao_curta": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "segmento": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "site": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pais": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "idioma": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fuso": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "publico": {
+      "type": "object",
+      "required": [
+        "principal",
+        "dores",
+        "desejos"
+      ],
+      "properties": {
+        "principal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dores": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "desejos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ofertas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nome",
+          "tipo",
+          "descricao",
+          "url",
+          "principal"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "nome": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "produto",
+              "servico",
+              "curso",
+              "evento",
+              "assinatura",
+              "outro"
+            ]
+          },
+          "descricao": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "principal": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "voz": {
+      "type": "object",
+      "required": [
+        "tom",
+        "tratamento",
+        "formalidade",
+        "palavras_preferidas",
+        "palavras_proibidas",
+        "regras",
+        "exemplos_bons",
+        "exemplos_ruins"
+      ],
+      "properties": {
+        "tom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tratamento": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "voce",
+            "tu",
+            "nos",
+            "impessoal",
+            null
+          ]
+        },
+        "formalidade": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "baixa",
+            "media",
+            "alta",
+            null
+          ]
+        },
+        "palavras_preferidas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "palavras_proibidas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "regras": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exemplos_bons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exemplos_ruins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": [
+        "cores",
+        "fontes",
+        "logo",
+        "estilo"
+      ],
+      "properties": {
+        "cores": {
+          "type": "object",
+          "required": [
+            "fundo",
+            "fundo_alt",
+            "texto",
+            "texto_inverso",
+            "apoio",
+            "destaque",
+            "destaque_2",
+            "positivo",
+            "negativo"
+          ],
+          "properties": {
+            "fundo": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "fundo_alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "texto": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "texto_inverso": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "apoio": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "destaque": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "destaque_2": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "positivo": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            },
+            "negativo": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+            }
+          }
+        },
+        "fontes": {
+          "type": "object",
+          "required": [
+            "titulo",
+            "texto"
+          ],
+          "properties": {
+            "titulo": {
+              "type": "object",
+              "required": [
+                "familia",
+                "origem"
+              ],
+              "properties": {
+                "familia": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "origem": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "google",
+                    "local",
+                    null
+                  ]
+                },
+                "arquivo": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "texto": {
+              "type": "object",
+              "required": [
+                "familia",
+                "origem"
+              ],
+              "properties": {
+                "familia": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "origem": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "google",
+                    "local",
+                    null
+                  ]
+                },
+                "arquivo": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "logo": {
+          "type": "object",
+          "required": [
+            "principal",
+            "negativo",
+            "simbolo"
+          ],
+          "properties": {
+            "principal": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "negativo": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "simbolo": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "estilo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "required": [
+        "padrao",
+        "destino",
+        "variacoes"
+      ],
+      "properties": {
+        "padrao": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "destino": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "variacoes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "canais": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "canal",
+          "identificador",
+          "url"
+        ],
+        "properties": {
+          "canal": {
+            "type": "string",
+            "enum": [
+              "instagram",
+              "facebook",
+              "youtube",
+              "tiktok",
+              "linkedin",
+              "x",
+              "site",
+              "outro"
+            ]
+          },
+          "identificador": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "porta_vozes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nome",
+          "papel",
+          "principal",
+          "voz",
+          "avatar",
+          "rosto_ia",
+          "retratos"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "nome": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "papel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "principal": {
+            "type": "boolean"
+          },
+          "voz": {
+            "type": "object",
+            "required": [
+              "provedor",
+              "voz_id",
+              "modelo",
+              "parametros",
+              "pronuncia"
+            ],
+            "properties": {
+              "provedor": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "voz_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "modelo": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "parametros": {
+                "type": "object",
+                "required": [
+                  "reel",
+                  "aula",
+                  "padrao"
+                ],
+                "properties": {
+                  "reel": {
+                    "type": "object",
+                    "required": [
+                      "stability",
+                      "similarity_boost",
+                      "style",
+                      "use_speaker_boost",
+                      "speed",
+                      "ritmo_min_pps"
+                    ],
+                    "properties": {
+                      "stability": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "similarity_boost": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "style": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "use_speaker_boost": {
+                        "type": "boolean"
+                      },
+                      "speed": {
+                        "type": "number",
+                        "minimum": 0.7,
+                        "maximum": 1.2
+                      },
+                      "ritmo_min_pps": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      }
+                    }
+                  },
+                  "aula": {
+                    "type": "object",
+                    "required": [
+                      "stability",
+                      "similarity_boost",
+                      "style",
+                      "use_speaker_boost",
+                      "speed",
+                      "timeout_s"
+                    ],
+                    "properties": {
+                      "stability": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "similarity_boost": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "style": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "use_speaker_boost": {
+                        "type": "boolean"
+                      },
+                      "speed": {
+                        "type": "number",
+                        "minimum": 0.7,
+                        "maximum": 1.2
+                      },
+                      "timeout_s": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      }
+                    }
+                  },
+                  "padrao": {
+                    "type": "object",
+                    "required": [
+                      "stability",
+                      "similarity_boost",
+                      "style",
+                      "use_speaker_boost",
+                      "speed"
+                    ],
+                    "properties": {
+                      "stability": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "similarity_boost": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "style": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "use_speaker_boost": {
+                        "type": "boolean"
+                      },
+                      "speed": {
+                        "type": "number",
+                        "minimum": 0.7,
+                        "maximum": 1.2
+                      }
+                    }
+                  }
+                }
+              },
+              "pronuncia": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "termo",
+                    "fala"
+                  ],
+                  "properties": {
+                    "termo": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "fala": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "avatar": {
+            "type": "object",
+            "required": [
+              "provedor",
+              "avatar_id"
+            ],
+            "properties": {
+              "provedor": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "avatar_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "rosto_ia": {
+            "type": "object",
+            "required": [
+              "provedor",
+              "id"
+            ],
+            "properties": {
+              "provedor": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "retratos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "restricoes": {
+      "type": "object",
+      "required": [
+        "temas_proibidos",
+        "promessas_proibidas",
+        "observacoes_legais"
+      ],
+      "properties": {
+        "temas_proibidos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "promessas_proibidas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observacoes_legais": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "origens": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "site",
+          "entrevista",
+          "inferido",
+          "humano"
+        ]
+      }
+    },
+    "pendencias": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

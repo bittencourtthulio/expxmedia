@@ -5,7 +5,7 @@ kind: sprint
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-01
 titulo: "Capacidade de testar"
-status: nao_iniciado
+status: concluido
 criterio_saida: "cd motor && uv run pytest termina com 0 failed e os goldens estao gravados com manifesto"
 fases: [F-01.1, F-01.2]
 riscos: ["Goldens dependem de rodar codigo dos projetos de origem em copia temporaria (D-37)", "Rede necessaria uma vez: uv sync, npm ci do kit, chrome-headless-shell do Remotion, playwright install chromium, Google Fonts do golden; sem rede vira bloqueio (D-42)"]

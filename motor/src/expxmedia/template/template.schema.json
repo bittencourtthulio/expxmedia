@@ -1,0 +1,458 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "expxmedia-template-1",
+  "title": "Contrato expxmedia-template v1 (docs/contrato/CONTRATO-template.md)",
+  "type": "object",
+  "required": [
+    "expxmedia_template",
+    "template_id",
+    "titulo",
+    "tipo",
+    "motor",
+    "formato",
+    "canvas",
+    "status",
+    "criado_em",
+    "atualizado_em",
+    "estilos",
+    "serve_para",
+    "versoes",
+    "dependencias",
+    "requisitos",
+    "exige_porta_voz",
+    "tokens",
+    "fontes",
+    "sequencia",
+    "kinds",
+    "assets",
+    "validacao",
+    "origem",
+    "compartilhamento"
+  ],
+  "properties": {
+    "expxmedia_template": {
+      "type": "integer",
+      "const": 1
+    },
+    "template_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+-[a-z0-9]+(?:-[a-z0-9]+)*-[0-9a-f]{6}$"
+    },
+    "titulo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "post_unico",
+        "carrossel",
+        "reel",
+        "apresentacao",
+        "aula"
+      ]
+    },
+    "motor": {
+      "type": "string",
+      "enum": [
+        "html",
+        "remotion",
+        "html_remotion"
+      ]
+    },
+    "formato": {
+      "type": "string",
+      "enum": [
+        "4:5",
+        "1:1",
+        "9:16",
+        "16:9"
+      ]
+    },
+    "canvas": {
+      "type": "object",
+      "required": [
+        "w",
+        "h"
+      ],
+      "properties": {
+        "w": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "h": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "rascunho",
+        "validado",
+        "reprovado",
+        "fora"
+      ]
+    },
+    "criado_em": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+    },
+    "atualizado_em": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+    },
+    "estilos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serve_para": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "versoes": {
+      "type": "object",
+      "required": [
+        "motor",
+        "remotion"
+      ],
+      "properties": {
+        "motor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "remotion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "dependencias": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "requisitos": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+      }
+    },
+    "exige_porta_voz": {
+      "type": "boolean"
+    },
+    "tokens": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "fundo",
+          "fundo_alt",
+          "texto",
+          "texto_inverso",
+          "apoio",
+          "destaque",
+          "destaque_2",
+          "positivo",
+          "negativo"
+        ]
+      }
+    },
+    "fontes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "titulo",
+          "texto"
+        ]
+      }
+    },
+    "sequencia": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kinds": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "midia",
+          "duracao_s",
+          "fit",
+          "requisitos",
+          "slots"
+        ],
+        "properties": {
+          "midia": {
+            "type": "string",
+            "enum": [
+              "imagem",
+              "video"
+            ]
+          },
+          "duracao_s": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          },
+          "fit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requisitos": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+            }
+          },
+          "slots": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "tipo",
+                "obrigatorio"
+              ],
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "enum": [
+                    "texto",
+                    "lista",
+                    "asset",
+                    "numero"
+                  ]
+                },
+                "obrigatorio": {
+                  "type": "boolean"
+                },
+                "max": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "nota": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "asset": {
+                  "type": "string"
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "tipo": {
+                        "const": "texto"
+                      }
+                    },
+                    "required": [
+                      "tipo"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "max"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "tipo": {
+                        "const": "asset"
+                      }
+                    },
+                    "required": [
+                      "tipo"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "asset"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "arquivo",
+          "classe",
+          "substituir_por"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "arquivo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classe": {
+            "type": "string",
+            "enum": [
+              "marca",
+              "pessoa",
+              "neutro"
+            ]
+          },
+          "substituir_por": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "validacao": {
+      "type": "object",
+      "required": [
+        "contraste_min",
+        "fonte_min_px",
+        "resultado",
+        "validado_em",
+        "achados"
+      ],
+      "properties": {
+        "contraste_min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "fonte_min_px": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "resultado": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "aprovado",
+            "reprovado",
+            null
+          ]
+        },
+        "validado_em": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+        },
+        "achados": {
+          "type": "array"
+        }
+      }
+    },
+    "origem": {
+      "type": "object",
+      "required": [
+        "tipo",
+        "id_compartilhado",
+        "inspiracao"
+      ],
+      "properties": {
+        "tipo": {
+          "type": "string",
+          "enum": [
+            "criado",
+            "derivado",
+            "baixado",
+            "externo"
+          ]
+        },
+        "id_compartilhado": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inspiracao": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "compartilhamento": {
+      "type": "object",
+      "required": [
+        "estado",
+        "enviado_em",
+        "pr_url",
+        "erro"
+      ],
+      "properties": {
+        "estado": {
+          "type": "string",
+          "enum": [
+            "nao_enviado",
+            "enviado",
+            "aceito",
+            "recusado",
+            "erro"
+          ]
+        },
+        "enviado_em": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?[+-]\\d{2}:\\d{2}$"
+        },
+        "pr_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "erro": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

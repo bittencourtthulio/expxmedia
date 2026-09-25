@@ -4,32 +4,32 @@ expx_tool: sprintx
 kind: fases
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-02
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 fases:
   - id: F-02.1
     titulo: "Arquivos, ids e rastro"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/nucleo termina com 0 failed"
     paralelizavel: false
     paralela_com: []
     tasks: [T-02.01, T-02.02, T-02.03, T-02.04]
   - id: F-02.2
     titulo: "Ambiente e capacidades"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/ambiente termina com 0 failed"
     paralelizavel: true
     paralela_com: [F-02.3]
     tasks: [T-02.05, T-02.06, T-02.07, T-02.08]
   - id: F-02.3
     titulo: "Alma, peca e template"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/alma tests/peca tests/template/test_validar.py termina com 0 failed"
     paralelizavel: true
     paralela_com: [F-02.2]
     tasks: [T-02.09, T-02.10, T-02.11, T-02.12]
   - id: F-02.4
     titulo: "Galeria local e CLI base"
-    status: nao_iniciado
+    status: concluido
     criterio_saida: "cd motor && uv run pytest tests/template/test_galeria_local.py tests/test_cli.py termina com 0 failed"
     paralelizavel: false
     paralela_com: []

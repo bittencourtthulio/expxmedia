@@ -166,7 +166,20 @@ chave da API que usa esse id é, e vive no `.env` (M14).
       "nome": "Ana Souza",
       "papel": "sócia fundadora",
       "principal": true,
-      "voz": { "provedor": "elevenlabs", "voz_id": "abc123" },
+      "voz": {
+        "provedor": "elevenlabs",
+        "voz_id": "abc123",
+        "modelo": "eleven_multilingual_v2",
+        "parametros": {
+          "reel":   { "stability": 0.45, "similarity_boost": 0.8,  "style": 0.25, "use_speaker_boost": true, "speed": 1.2,  "ritmo_min_pps": 3.47 },
+          "aula":   { "stability": 0.5,  "similarity_boost": 0.85, "style": 0.15, "use_speaker_boost": true, "speed": 0.94, "timeout_s": 300 },
+          "padrao": { "stability": 0.45, "similarity_boost": 0.8,  "style": 0.25, "use_speaker_boost": true, "speed": 1.2 }
+        },
+        "pronuncia": [
+          { "termo": "software house", "fala": "sóftwer ráuse" },
+          { "termo": "hooks", "fala": "rúks" }
+        ]
+      },
       "avatar": { "provedor": "heygen", "avatar_id": null },
       "rosto_ia": { "provedor": "higgsfield", "id": null },
       "retratos": ["alma/assets/retratos/ana-souza/01.jpg"]
@@ -232,6 +245,56 @@ capacidade, ver [`CONTRATO-capacidades.md`](./CONTRATO-capacidades.md)).
 
 Os ids de voz, avatar e rosto são referências ao provedor, não segredo. Quem configura é a
 empresa: se o id está preenchido e a chave do provedor está no `.env`, a capacidade funciona.
+
+### `porta_vozes[].voz`
+
+A voz de um porta-voz é mais que o id: é a calibragem que faz a voz clonada soar como a pessoa.
+Todas as chaves abaixo são obrigatórias (M7); o `/expxmedia:alma` grava os padrões da tabela ao
+criar o porta-voz, e a empresa ajusta ao ouvido de quem é dono da voz. O leitor nunca completa
+parâmetro faltante com o padrão: chave ausente é violação `chave_omitida`.
+
+| Campo | O que é |
+|---|---|
+| `provedor` | provedor da voz (`elevenlabs`); `null` se o porta-voz só aparece, sem falar |
+| `voz_id` | id da voz no provedor (não é segredo; a chave da API é, e fica no `.env`) |
+| `modelo` | modelo de fala do provedor. Padrão `eleven_multilingual_v2` |
+| `parametros` | calibragem por tipo de peça: `reel`, `aula` e `padrao` (os demais tipos) |
+| `pronuncia` | léxico de pronúncia: lista de `{ "termo", "fala" }` |
+
+**`parametros`** — cada tipo de peça tem calibragem própria (D-22, D-40). O ritmo mínimo existe
+só no reel; a aula tem tempo limite próprio porque a narração inteira sai numa chamada só.
+
+| Chave | `reel` | `aula` | `padrao` | Faixa | O que é |
+|---|---|---|---|---|---|
+| `stability` | 0.45 | 0.5 | 0.45 | 0–1 | estabilidade da voz |
+| `similarity_boost` | 0.8 | 0.85 | 0.8 | 0–1 | fidelidade à voz clonada |
+| `style` | 0.25 | 0.15 | 0.25 | 0–1 | exagero de estilo |
+| `use_speaker_boost` | `true` | `true` | `true` | booleano | reforço de semelhança do provedor |
+| `speed` | 1.2 | 0.94 | 1.2 | 0.7–1.2 | velocidade pedida ao provedor; 1.2 é o teto aceito pela API |
+| `ritmo_min_pps` | 3.47 | — | — | > 0 | piso de ritmo em palavras por segundo; abaixo dele a narração é acelerada sem mudar o tom. **Piso, nunca alvo**: leitura mais rápida não é freada |
+| `timeout_s` | — | 300 | — | > 0 | tempo limite da chamada de fala, em segundos |
+
+Origem dos padrões: reel e `padrao` vêm da narração dos reels (`voice_settings` 0.45/0.8/0.25,
+`speed` 1.2; o piso 3,47 pal/s é derivado de 3,18 pal/s aprovados a `speed` 1.1, reescalados para
+1.2 — `base/narrar-elevenlabs.md`); aula vem da narração das aulas (0.5/0.85/0.15, `speed` 0.94,
+tempo limite 300 s — `base/aula-pipeline.md`). Foram calibrados para outra voz: servem de ponto de
+partida, não de verdade para toda voz.
+
+**`pronuncia`** — termos que o modelo de fala lê errado e a grafia que induz o som certo. O texto
+enviado ao provedor usa a `fala`; legenda e alinhamento continuam no texto original do roteiro.
+
+- `termo` pode ter **várias palavras** (`"software house"`); o casamento ignora maiúsculas, respeita
+  fronteira de palavra nas duas pontas e tenta os termos mais longos primeiro, para
+  `"software house"` casar antes de `"house"`.
+- Plural é termo próprio (`"harnesses"` não casa em `"harness"`).
+- A caixa do roteiro é preservada na fala (`RUNX` → `RUN ÉKS`), porque a caixa alta é ênfase.
+- Termo fora do léxico vai cru. Acrescentar termo é decisão de quem é dono da voz, depois de ouvir.
+
+### `visual.fontes.*.arquivo`
+
+Opcional, só para `origem: local`: caminho do arquivo da fonte, relativo à raiz da instalação (M9).
+Fonte `google` é baixada pelo motor para um cache local; sem fonte resolvida, o motor usa a Inter
+que vem embarcada nele. Fonte de sistema nunca é usada (D-21).
 
 ## Regras
 

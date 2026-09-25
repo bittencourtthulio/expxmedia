@@ -94,7 +94,21 @@
       "nome": "Rosa Farinha",
       "papel": "padeira e sócia",
       "principal": true,
-      "voz": { "provedor": "elevenlabs", "voz_id": "voz-ficticia-0001" },
+      "voz": {
+        "provedor": "elevenlabs",
+        "voz_id": "voz-ficticia-0001",
+        "modelo": "eleven_multilingual_v2",
+        "parametros": {
+          "reel": { "stability": 0.4, "similarity_boost": 0.75, "style": 0.3, "use_speaker_boost": true, "speed": 1.15, "ritmo_min_pps": 3.2 },
+          "aula": { "stability": 0.55, "similarity_boost": 0.9, "style": 0.1, "use_speaker_boost": true, "speed": 0.95, "timeout_s": 240 },
+          "padrao": { "stability": 0.5, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": false, "speed": 1.0 }
+        },
+        "pronuncia": [
+          { "termo": "petit gâteau", "fala": "petí gatô" },
+          { "termo": "croissant", "fala": "croassã" },
+          { "termo": "levain", "fala": "levã" }
+        ]
+      },
       "avatar": { "provedor": "heygen", "avatar_id": null },
       "rosto_ia": { "provedor": "higgsfield", "id": null },
       "retratos": ["alma/assets/retratos/porta-voz-teste/01.png"]

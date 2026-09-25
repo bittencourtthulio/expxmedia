@@ -59,7 +59,7 @@ Exemplos de capacidades **de pack**, que não estão acima de propósito:
 
 | Provedor | Satisfeito por | Observação |
 |---|---|---|
-| `expxflow` | `EXPXFLOW_API_KEY` + `EXPXFLOW_CLIENT_ID` | agenda no servidor; hospeda a mídia |
+| `expxflow` | `EXPXFLOW_API_KEY` + `EXPXFLOW_CLIENT_ID` + `EXPXFLOW_BASE_URL` | agenda no servidor; hospeda a mídia |
 | `meta_graph` | `META_GRAPH_TOKEN` + `META_IG_USER_ID` (+ `META_PAGE_ID` para Facebook); para `agendar`, também o **agendador local** instalado | a API do Instagram não agenda: quem agenda é o agendador local (abaixo), e **a máquina precisa estar ligada no horário** |
 | `youtube_api` | `YOUTUBE_CLIENT_SECRET_FILE` + OAuth com escopo de upload | só `publicar` (com `publishAt`, que o próprio YouTube agenda) |
 
@@ -136,6 +136,7 @@ ELEVENLABS_API_KEY=
 # publicar, agendar, automacao_dm — publicação no Instagram e Facebook pelo Expx Flow
 EXPXFLOW_API_KEY=
 EXPXFLOW_CLIENT_ID=
+EXPXFLOW_BASE_URL=
 
 # publicar, agendar — Graph API direta da Meta
 META_GRAPH_TOKEN=
@@ -158,7 +159,7 @@ do modelo. Se ela colar mesmo assim, o sistema grava no `.env` e avisa que é bo
 | `HEYGEN_API_KEY` | `avatar` |
 | `OPENROUTER_API_KEY` | `imagem_ia` |
 | `PEXELS_API_KEY` | `banco_imagens` |
-| `EXPXFLOW_API_KEY`, `EXPXFLOW_CLIENT_ID` | `publicar`, `agendar`, `automacao_dm` |
+| `EXPXFLOW_API_KEY`, `EXPXFLOW_CLIENT_ID`, `EXPXFLOW_BASE_URL` | `publicar`, `agendar`, `automacao_dm` |
 | `META_GRAPH_TOKEN`, `META_IG_USER_ID`, `META_PAGE_ID` | `publicar`, `agendar` (e `metricas_instagram`, do pack) |
 | `META_AD_ACCOUNT_ID` | `anuncios_meta` (do pack `expx-meta`) |
 | `YOUTUBE_CLIENT_SECRET_FILE` | `publicar` (YouTube) (e `metricas_youtube`, do pack) |
