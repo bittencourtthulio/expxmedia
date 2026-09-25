@@ -1,0 +1,81 @@
+{
+  "titulo": "Como organizar a semana sem apagar incêndio",
+  "tema": null,
+  "slides": [
+    {
+      "tipo": "titulo",
+      "kicker": "Rotina da equipe",
+      "titulo": "A semana que não vira <b>incêndio</b>",
+      "subtitulo": "Um jeito simples de planejar, acompanhar e fechar o que importa"
+    },
+    {
+      "tipo": "declaracao",
+      "texto": "Urgência é o nome que damos ao que não foi <b>planejado</b> a tempo",
+      "autor": null
+    },
+    {
+      "tipo": "comparacao",
+      "titulo": "Semana no improviso contra semana planejada",
+      "esquerda": {
+        "titulo": "No improviso",
+        "itens": ["Tarefa chega pelo corredor", "Prioridade muda a cada hora", "Sexta termina com pendência"]
+      },
+      "direita": {
+        "titulo": "Planejada",
+        "itens": ["Tarefa entra por um lugar só", "Prioridade decidida na segunda", "Sexta fecha o que abriu"]
+      }
+    },
+    {
+      "tipo": "grade",
+      "titulo": "O que muda na prática",
+      "itens": [
+        { "titulo": "Menos interrupção", "texto": "Pedido novo espera a próxima conversa marcada" },
+        { "titulo": "Prazo visível", "texto": "Todo mundo sabe o que vence nesta semana" },
+        { "titulo": "Menos retrabalho", "texto": "Cada tarefa sai com o critério de pronto combinado" },
+        { "titulo": "Sexta mais leve", "texto": "O fechamento vira conferência, não maratona" }
+      ]
+    },
+    {
+      "tipo": "etapas",
+      "titulo": "O ciclo em quatro passos",
+      "itens": [
+        { "titulo": "Liste", "texto": "Tudo que chegou, num lugar só" },
+        { "titulo": "Escolha", "texto": "Três prioridades para a semana" },
+        { "titulo": "Acompanhe", "texto": "Dez minutos por dia, de pé" },
+        { "titulo": "Feche", "texto": "Sexta revisa o que saiu e o que ficou" }
+      ]
+    },
+    {
+      "tipo": "estatisticas",
+      "titulo": "O custo da interrupção",
+      "numeros": [
+        { "valor": 23, "sufixo": " min", "rotulo": "para retomar o foco", "fonte": "estudo de exemplo sobre interrupções, 2026" },
+        { "valor": 3, "sufixo": "", "rotulo": "prioridades por semana", "fonte": "regra adotada neste exemplo" }
+      ]
+    },
+    {
+      "tipo": "fluxo",
+      "titulo": "Por onde a tarefa passa",
+      "nos": [
+        { "titulo": "Pedido chega", "texto": "Canal único da equipe" },
+        { "titulo": "Triagem", "texto": "Entra na semana ou espera" },
+        { "titulo": "Execução", "texto": "Com critério de pronto" },
+        { "titulo": "Revisão", "texto": "Alguém confere antes" },
+        { "titulo": "Entrega", "texto": "Registrada no fechamento" }
+      ]
+    },
+    {
+      "tipo": "screenshot",
+      "titulo": "O quadro da semana",
+      "legenda": "Uma coluna por etapa e um cartão por tarefa",
+      "imagem": null
+    },
+    {
+      "tipo": "cta",
+      "titulo": null,
+      "texto": "Leve o modelo para a próxima reunião de segunda",
+      "url": null,
+      "imagem": null
+    }
+  ]
+}

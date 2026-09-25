@@ -1,0 +1,32 @@
+/* Apresentação padrão: o palco do motor (recursos/palco.html) já desenha a moldura e as nove cenas
+   do deck. Este CSS é a camada do template: decide qual papel de cor da Alma vai em cada superfície e
+   quanto de cada mistura, sem nenhuma cor própria (tokens --alma-*; derivadas só aqui no :root).
+   Superfícies: fundo da Alma no quadro, fundo_alt nos cartões, apoio no texto miúdo; o destaque marca a
+   palavra em <b>, as setas e os números; o CTA fica sempre no destaque da Alma, nunca na cor do tema. */
+
+:root {
+  --cor-fundo: var(--alma-fundo);
+  --cor-fundo-alt: var(--alma-fundo_alt);
+  --cor-superficie: var(--alma-fundo_alt);
+  --cor-superficie-2: color-mix(in srgb, var(--alma-fundo_alt) 90%, var(--alma-texto));
+  --cor-fundo-suave: color-mix(in srgb, var(--alma-fundo) 94%, var(--alma-texto));
+  --cor-texto: var(--alma-texto);
+  --cor-apoio: var(--alma-apoio);
+  --cor-linha: color-mix(in srgb, var(--alma-texto) 12%, transparent);
+  --cor-casa: var(--alma-destaque);
+  --cor-sobre-destaque: var(--alma-texto_inverso);
+  --fonte-titulo: var(--alma-fonte-titulo);
+  --fonte-texto: var(--alma-fonte-texto);
+}
+
+/* títulos de seção e de cartão na fonte de título da Alma; o miúdo na de texto */
+.slide h2.secao,
+.slide .cartao h3,
+.slide .coluna h3 {
+  font-family: var(--fonte-titulo);
+}
+.slide .cabecalho,
+.slide .fonte,
+.slide .legenda {
+  font-family: var(--fonte-texto);
+}

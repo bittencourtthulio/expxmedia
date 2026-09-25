@@ -1,0 +1,9 @@
+{
+  "name": "reel-narrado-cartao",
+  "private": true,
+  "description": "Template de reel narrado do núcleo: cartão ilustrado com etiqueta, barra de progresso e legenda por blocos. As cores, as fontes e o selo vêm da Alma por props; o módulo @expxmedia/template é entregue pelo motor na hora do render.",
+  "dependencies": {
+    "react": "19.3.0",
+    "remotion": "4.0.528"
+  }
+}

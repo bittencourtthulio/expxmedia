@@ -1,0 +1,48 @@
+{
+  "trilha": {
+    "bpm": 96,
+    "acordes": [
+      [130.81, [523.25, 659.25, 783.99]],
+      [110, [440, 523.25, 659.25]],
+      [87.31, [349.23, 440, 523.25]],
+      [98, [392, 493.88, 587.33]]
+    ],
+    "instrumentos": { "kick": 0.3, "palma": 0.08, "chimbal": 0.03, "sino": 0.02, "pad": 0.028, "baixo": 0.18 },
+    "arpejo": [0, 1, 2, 1, 2, 0, 1, 2],
+    "ganho": 0.55,
+    "semente": 7
+  },
+  "troca": [
+    { "f": -3, "tipo": "whoosh", "desde": 1, "vol": 0.7 },
+    { "f": 5, "tipo": "pop", "desde": 0, "vol": 0.5 }
+  ],
+  "legenda": { "palavras_por_bloco": null },
+  "cauda_s": 1.4,
+  "kinds": {
+    "abertura": {
+      "ev": { "titulo": 0.1, "apoio": 0.45 },
+      "sons": [["titulo", "pop"], ["apoio", "whoosh"]]
+    },
+    "numero": {
+      "ev": { "conta": 0.08, "fim": 0.6 },
+      "sons": [["conta", "subida", 0.5], ["fim", "ding"]]
+    },
+    "lista": {
+      "ev": { "titulo": 0.04, "i0": 0.18, "i1": 0.34, "i2": 0.5, "i3": 0.66 },
+      "sons": [["i0", "tick"], ["i1", "tick"], ["i2", "tick"], ["i3", "tick"]]
+    },
+    "contraste": {
+      "ev": { "a": 0.06, "b": 0.45 },
+      "sons": [["a", "pop"], ["b", "whoosh"], ["b", "check"]]
+    },
+    "frase": {
+      "ev": { "entra": 0.05, "marca": 0.42 },
+      "sons": [["marca", "plim"]]
+    },
+    "cta": {
+      "ev": { "marca": 0.06, "chime": 0.28 },
+      "sons": [["marca", "pop"], ["chime", "chime"]]
+    }
+  },
+  "cenas": []
+}

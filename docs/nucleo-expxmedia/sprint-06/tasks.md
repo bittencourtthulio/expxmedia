@@ -9,7 +9,7 @@ tasks:
   - id: T-06.01
     titulo: "Analise do video de referencia"
     fase: F-06.1
-    status: pendente
+    status: em_andamento
     objetivo: "Portar analisar_reel: scdet 10, quadros a cada 2 s ate 24, folhas 6x2 a 1 quadro/s, whisper e formato.json."
     arquivos:
       cria: [motor/src/expxmedia/referencia/analisar.py, motor/tests/referencia/test_analisar.py]
@@ -24,7 +24,7 @@ tasks:
   - id: T-06.02
     titulo: "Pasta do reel sob medida e validacao do cenas.json"
     fase: F-06.1
-    status: pendente
+    status: em_andamento
     objetivo: "Criar a pasta do reel sob medida a partir do kit e validar cenas.json: ancoras em ordem, eventos existentes e trilha diferente das anteriores."
     arquivos:
       cria: [motor/src/expxmedia/referencia/sob_medida.py, motor/tests/referencia/test_sob_medida.py]
@@ -39,7 +39,7 @@ tasks:
   - id: T-06.03
     titulo: "Montar, previa, render e verificacao do sob medida"
     fase: F-06.1
-    status: pendente
+    status: em_andamento
     objetivo: "Encadear montagem, previa com guias, render, normalizacao e verificacao no perfil sob_medida, com o validador de codigo no modo sob_medida (D-36)."
     arquivos:
       cria: [motor/src/expxmedia/producao/reel_referencia.py, motor/tests/referencia/test_reel_referencia.py]
@@ -54,7 +54,7 @@ tasks:
   - id: T-06.04
     titulo: "Momentos do video longo"
     fase: F-06.2
-    status: em_andamento
+    status: concluida
     objetivo: "Portar a escolha de trecho com listas de palavras e pesos em configuracao por idioma, padrao igual ao atual."
     arquivos:
       cria: [motor/src/expxmedia/corte/momentos.py, motor/src/expxmedia/recursos/momentos/pt.json, motor/tests/corte/test_momentos.py]
@@ -64,12 +64,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/corte/test_momentos.py termina com 0 failed"
     depende_de: [T-04.07]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.05
     titulo: "Corte com reenquadramento"
     fase: F-06.2
-    status: em_andamento
+    status: concluida
     objetivo: "Portar o recorte 9:16 que segue o rosto (Haar 1.15, 6, 24x24; mediana 7, EMA 0,25, zona morta 12%, RDP 14 px, teto de 24 pontos), a deteccao de screencast (0,26 mais posicao) com fronteira tela/painel por gradiente e o fundo desfocado, usando a fixture de rosto de T-01.03 (D-43)."
     arquivos:
       cria: [motor/src/expxmedia/corte/cortar.py, motor/tests/corte/test_cortar.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/corte/test_cortar.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.06
     titulo: "B-roll"
     fase: F-06.2
-    status: em_andamento
+    status: concluida
     objetivo: "Buscar b-roll pelo modulo Pexels com validacao de relevancia e duracao antes de usar."
     arquivos:
       cria: [motor/src/expxmedia/corte/broll.py, motor/tests/corte/test_broll.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/corte/test_broll.py termina com 0 failed"
     depende_de: [T-03.06]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.07
     titulo: "Producao de reel de corte"
     fase: F-06.2
-    status: em_andamento
+    status: concluida
     objetivo: "Produzir reel a partir de video longo: transcrever, escolher trecho, cortar, gancho textual do compose_cut, legendar, normalizar, verificar e peca.json; video de teste de 90 s com fala sintetizada pelo say do macOS sobre a fixture de rosto (D-43)."
     arquivos:
       cria: [motor/src/expxmedia/producao/reel_corte.py, motor/tests/corte/test_reel_corte.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/corte/test_reel_corte.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-06.04, T-06.05, T-06.06, T-04.10, T-04.02]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.08
     titulo: "Abertura gerada"
     fase: F-06.3
-    status: em_andamento
+    status: concluida
     objetivo: "Portar a abertura com video_ia como fundo sobreposto ao inicio do reel (nunca emendada na frente): janela ate o instante em que o clipe vira a pagina, cartao desviando do rosto detectado com Haar 1.1, 5, 60x60 amostrado a cada fps/4 (abertura.py:311-357), narracao comecando em 0 e montado_em gravado depois do MP4; usa a fixture de rosto de T-01.03."
     arquivos:
       cria: [motor/src/expxmedia/producao/abertura.py, motor/tests/producao/test_abertura.py]
@@ -124,8 +124,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_abertura.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-03.08, T-04.11]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-06.09
     titulo: "CLI de referencia e corte"
     fase: F-06.4
@@ -164,7 +164,7 @@ teste_funcional: O formato.json traz largura, altura, fps e duração, e a pasta
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_analisar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.07, T-04.01]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -184,7 +184,7 @@ teste_funcional: Um cenas.json com trilha igual à de outro reel da instalação
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_sob_medida.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.02, T-02.12]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -204,7 +204,7 @@ teste_funcional: Um Reel.tsx que importa child_process é recusado antes do rend
 criterio_aceite: `cd motor && uv run pytest tests/referencia/test_reel_referencia.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-06.02, T-05.04, T-05.06]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -224,7 +224,8 @@ teste_funcional: A janela escolhida tem no máximo 72 s e começa e termina em f
 criterio_aceite: `cd motor && uv run pytest tests/corte/test_momentos.py` termina com 0 failed
 depende_de: [T-04.07]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: corte+abertura 0 failed, 0 skipped
 ```
 
 ---
@@ -244,7 +245,8 @@ teste_funcional: Sem rosto o corte usa fundo desfocado e registra o modo; ruído
 criterio_aceite: `cd motor && uv run pytest tests/corte/test_cortar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.01]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: corte+abertura 0 failed, 0 skipped
 ```
 
 ---
@@ -264,7 +266,8 @@ teste_funcional: Resultados abaixo da duração mínima são descartados e sem r
 criterio_aceite: `cd motor && uv run pytest tests/corte/test_broll.py` termina com 0 failed
 depende_de: [T-03.06]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: corte+abertura 0 failed, 0 skipped
 ```
 
 ---
@@ -284,7 +287,8 @@ teste_funcional: A peça registra arquivos com papel final, srt e fonte, e o eve
 criterio_aceite: `cd motor && uv run pytest tests/corte/test_reel_corte.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-06.04, T-06.05, T-06.06, T-04.10, T-04.02]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: corte+abertura 0 failed, 0 skipped
 ```
 
 ---
@@ -304,7 +308,8 @@ teste_funcional: Um rosto detectado na metade superior move o cartão para a met
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_abertura.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-03.08, T-04.11]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: corte+abertura 0 failed, 0 skipped
 ```
 
 ---

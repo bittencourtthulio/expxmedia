@@ -1,0 +1,44 @@
+{
+  "expxmedia_momentos": 1,
+  "idioma": "pt",
+  "_origem": "origem: Instragram-Videos/pipeline/momentos.py:23-69, :58, :81, :116-120, :147-183; Instragram-Videos/pipeline/lib.py:135",
+  "_leia": "Listas de palavras e pesos da escolha de trecho do corte, em português. A nota é DESEMPATE, não veredito. Os pesos foram medidos numa conta e num idioma: calibre por instalação se mexer, e meça de novo.",
+  "janela_min_s": 52.0,
+  "janela_max_s": 72.0,
+  "candidatos_n": 8,
+  "pausa_frase_s": 0.6,
+  "fim_frase": [
+    ".",
+    "?",
+    "!"
+  ],
+  "palavras_3s": 12,
+  "silencio_referencia": 0.25,
+  "silencio_nota": 0.2,
+  "curto_folga_s": 4.0,
+  "falsa_largada_palavras": 5,
+  "falsa_largada_letras_min": 3,
+  "listas": {
+    "anafora": "^(então|entao|aí|ai|daí|dai|e|mas|porque|por isso|isso|isto|esse|essa|esses|essas|nesse|nessa|dele|dela|disso|assim|portanto|logo|ou seja|aliás|inclusive|também|tambem|aqui|ali|lá|la|ele|ela|eles|elas)\\b",
+    "muleta": "^(bom|bem|olha só|olha so|tá|ta|né|ne|ok|certo|beleza|pessoal|galera|gente|cara|tipo|ahn|hum)\\b[,.]?",
+    "hesitacao": "\\b(né|ne|tá|ta|e tal|sabe|tipo assim|assim ó|assim o|enfim|digamos|vamos dizer)\\b",
+    "vago": "\\b(mudança|mudanca|mercado|ciclo|processo|sistema|plataforma|infraestrutura|infra|solução|solucao|estratégia|estrategia|modelo de negócio|modelo de negocio|cenário|cenario|tendência|tendencia|realidade|contexto|uma coisa|alguma coisa|esse tipo de coisa)\\b",
+    "fora_do_reel": "\\b(vídeo anterior|video anterior|vídeo passado|video passado|último vídeo|ultimo video|aula passada|aula anterior|como eu (falei|disse|mostrei|comentei)|que eu (falei|mostrei)|eu já (falei|mostrei)|eu ja (falei|mostrei)|voltando|continuando|lembra que)\\b",
+    "gancho": "^(se você|se voce|quando você|quando voce|imagina|imagine|pensa|pense|olha|sabe qual|sabe por|você sabia|voce sabia|a maior|o maior|o problema|a verdade|existe um|existem|tem um|todo mundo|ninguém|ninguem|nunca|hoje|qual|por que|porque que|como é que|o que acontece|deixa eu)\\b",
+    "numero": "\\b\\d|\\bpor cento\\b|\\bmil\\b|\\bmilhão|\\bmilhões|\\bvezes\\b"
+  },
+  "pesos": {
+    "anafora": -3.0,
+    "muleta": -2.0,
+    "fora_do_reel": -3.0,
+    "falsa_largada": -1.0,
+    "gancho": 2.0,
+    "numero_abertura": 3.0,
+    "numero_trecho": 1.0,
+    "hesitacao": -1.5,
+    "vago": -1.5,
+    "densidade": 2.0,
+    "ja_usado": -5.0,
+    "curto": -0.5
+  }
+}

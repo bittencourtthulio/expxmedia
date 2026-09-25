@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import type { Composicao } from "../registro.generated";
+import { FPS } from "../../kit/constantes";
 
 // Composição mínima de teste do kit: fundo neutro, duração vinda das props.
 export type PropsVazio = { duracaoFrames: number };
@@ -10,7 +11,7 @@ const Vazio: React.FC<PropsVazio> = () => <AbsoluteFill style={{ backgroundColor
 export const composicao: Composicao<PropsVazio> = {
   id: "Vazio",
   component: Vazio,
-  fps: 30,
+  fps: FPS,
   width: 1080,
   height: 1920,
   durationInFrames: 90,

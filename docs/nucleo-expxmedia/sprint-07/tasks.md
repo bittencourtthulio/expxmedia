@@ -4,12 +4,12 @@ expx_tool: sprintx
 kind: tasks
 trabalho_id: nucleo-expxmedia
 sprint_id: sprint-07
-atualizado_em: 2026-09-24
+atualizado_em: 2026-09-25
 tasks:
   - id: T-07.01
     titulo: "Cues do roteiro de aula"
     fase: F-07.1
-    status: pendente
+    status: concluida
     objetivo: "Portar marcadores [[sN]] para cues.json a partir do alinhamento, com hash da narracao para invalidar dependentes."
     arquivos:
       cria: [motor/src/expxmedia/aula/cues.py, motor/tests/aula/test_cues.py]
@@ -19,12 +19,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/aula/test_cues.py termina com 0 failed"
     depende_de: [T-04.03]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.02
     titulo: "Avatar HeyGen v3 e provedor de teste"
     fase: F-07.1
-    status: pendente
+    status: concluida
     objetivo: "Gerar avatar a partir do audio pela API v3 (upload, audio_asset_id, polling, download) e provedor de teste (D-26, D-34)."
     arquivos:
       cria: [motor/src/expxmedia/avatar/heygen.py, motor/src/expxmedia/avatar/teste.py, motor/tests/avatar/test_heygen.py]
@@ -34,12 +34,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/avatar/test_heygen.py termina com 0 failed"
     depende_de: [T-02.07, T-01.04]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.03
     titulo: "Edicao da gravacao de tela por cues"
     fase: F-07.1
-    status: pendente
+    status: concluida
     objetivo: "Portar editar_demo: cortar a gravacao por cue, acelerar ou congelar para caber na fala e enquadrar 9:16 (D-32)."
     arquivos:
       cria: [motor/src/expxmedia/aula/editar_tela.py, motor/tests/aula/test_editar_tela.py]
@@ -49,12 +49,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/aula/test_editar_tela.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-04.01]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-07.04
     titulo: "Composicao de aula L16 e L9"
     fase: F-07.2
-    status: pendente
+    status: em_andamento
     objetivo: "Portar a composicao de aula com layouts 16:9 e 9:16, area segura, PiP do avatar e legenda, com marca da Alma."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/Aula/index.tsx, motor/kit-remotion/src/composicoes/Aula/layouts.ts, motor/tests/aula/test_composicao.py]
@@ -69,7 +69,7 @@ tasks:
   - id: T-07.05
     titulo: "Producao de aula"
     fase: F-07.2
-    status: pendente
+    status: em_andamento
     objetivo: "Produzir aula: narrar com parametros de aula e sem ritmo minimo, cues, legendas 42x2, avatar opcional a partir do audio, tela opcional, render nos formatos pedidos, SRT e peca.json com compoe (D-40)."
     arquivos:
       cria: [motor/src/expxmedia/producao/aula.py, motor/tests/aula/test_producao.py]
@@ -84,7 +84,7 @@ tasks:
   - id: T-07.06
     titulo: "Template de aula e compilacao"
     fase: F-07.2
-    status: pendente
+    status: em_andamento
     objetivo: "Criar o template de aula embarcado e a compilacao de episodios com SRT unico."
     arquivos:
       cria: [templates/aula/padrao/template.json, templates/aula/padrao/package.json, templates/aula/padrao/src/Composicao.tsx, templates/aula/padrao/exemplo.json, motor/src/expxmedia/aula/compilar.py, motor/tests/aula/test_compilar.py]
@@ -99,7 +99,7 @@ tasks:
   - id: T-07.07
     titulo: "CLI de aula e avatar"
     fase: F-07.2
-    status: pendente
+    status: em_andamento
     objetivo: "Expor produzir aula, aula compilar, aula editar-tela e avatar gerar no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/aula.py, motor/tests/test_cli_aula.py]
@@ -134,7 +134,8 @@ teste_funcional: Mudar a narração muda o hash gravado e marca avatar e legenda
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_cues.py` termina com 0 failed
 depende_de: [T-04.03]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: F-07.1 32 passed, 0 skipped
 ```
 
 ---
@@ -154,7 +155,8 @@ teste_funcional: Status failed no polling devolve erro com a mensagem do provedo
 criterio_aceite: `cd motor && uv run pytest tests/avatar/test_heygen.py` termina com 0 failed
 depende_de: [T-02.07, T-01.04]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: F-07.1 32 passed, 0 skipped
 ```
 
 ---
@@ -174,7 +176,8 @@ teste_funcional: Um trecho mais curto que a fala congela o último quadro até c
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_editar_tela.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-04.01]
 paralelizavel: true
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: F-07.1 32 passed, 0 skipped
 ```
 
 ---
@@ -194,7 +197,7 @@ teste_funcional: O rótulo da janela do avatar vem do nome do porta-voz da Alma 
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_composicao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03, T-07.01]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -214,7 +217,7 @@ teste_funcional: Uma aula que usa uma apresentação registra o peca_id dela em 
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_producao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.04, T-07.02, T-07.03, T-04.09, T-05.11]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -234,7 +237,7 @@ teste_funcional: O template de aula passa em template.validar no modo template s
 criterio_aceite: `cd motor && uv run pytest tests/aula/test_compilar.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.05]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```
 
 ---
@@ -254,5 +257,5 @@ teste_funcional: avatar gerar sem HEYGEN_API_KEY e sem provedor de teste sai com
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_aula.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-07.06]
 paralelizavel: false
-status: pendente
+status: em_andamento
 ```

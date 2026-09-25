@@ -1,0 +1,54 @@
+{
+  "template": "reel-narrado-cartao-870a5c",
+  "titulo": "Quinze minutos no domingo para planejar a semana",
+  "roteiro": "Você começa a semana correndo e termina sem saber onde o tempo foi parar. Não falta vontade. Falta um jeito simples de olhar a semana antes dela começar. Quem gasta quinze minutos planejando no domingo economiza quase três horas de correria até sexta. O método tem três passos curtos. Primeiro você anota tudo que precisa sair. Depois escolhe as três tarefas que mudam o resultado. No fim marca um horário para cada uma delas na agenda. Sem esse olhar a semana decide por você e tudo parece urgente. Com ele você abre o computador na segunda e já sabe por onde começar. Planejar não é prever tudo. É decidir antes o que merece a sua melhor hora do dia. Quer o modelo que eu uso toda semana? Comenta ROTINA aqui embaixo que eu te mando. E salva este vídeo para fazer no domingo.",
+  "cta": "ROTINA",
+  "cenas": [
+    {
+      "kind": "abertura",
+      "ancora": "Você começa a semana",
+      "etiqueta": ["A SEMANA", "SEM PLANO"],
+      "titulo": "A semana passa e o tempo some",
+      "apoio": "Falta um jeito simples de olhar antes"
+    },
+    {
+      "kind": "numero",
+      "ancora": "Quem gasta quinze",
+      "etiqueta": ["QUINZE MINUTOS", "NO DOMINGO"],
+      "valor": "3h",
+      "texto": "a menos de correria até sexta"
+    },
+    {
+      "kind": "lista",
+      "ancora": "O método tem",
+      "etiqueta": ["O MÉTODO", "TRÊS PASSOS"],
+      "titulo": "Três passos curtos",
+      "itens": ["Anote tudo que precisa sair", "Escolha as três que importam", "Marque um horário para cada"]
+    },
+    {
+      "kind": "contraste",
+      "ancora": "Sem esse olhar",
+      "etiqueta": ["SEM PLANO", "E COM PLANO"],
+      "rotulo_a": "Sem plano",
+      "texto_a": "Tudo parece urgente",
+      "rotulo_b": "Com plano",
+      "texto_b": "Você sabe por onde começar"
+    },
+    {
+      "kind": "frase",
+      "ancora": "Planejar não é",
+      "etiqueta": ["A IDEIA", "QUE FICA"],
+      "texto": "Planejar é decidir antes o que merece a sua melhor hora.",
+      "marca": "a sua melhor hora"
+    },
+    {
+      "kind": "cta",
+      "ancora": "Quer o modelo",
+      "etiqueta": ["O MODELO", "DA SEMANA"],
+      "texto": "Comenta ROTINA",
+      "apoio": "e salva para fazer no domingo"
+    }
+  ],
+  "legenda": "Quinze minutos no domingo mudam a semana inteira. Comenta ROTINA que eu te mando o modelo.",
+  "conteudo": { "gancho": "Você começa a semana correndo", "gancho_tipo": "processo", "cta_forma": "comentario" }
+}

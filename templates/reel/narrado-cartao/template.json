@@ -1,0 +1,110 @@
+{
+  "expxmedia_template": 1,
+  "template_id": "reel-narrado-cartao-870a5c",
+  "titulo": "Reel narrado em cartão ilustrado, com etiqueta, barra de progresso e legenda por blocos",
+  "tipo": "reel",
+  "motor": "remotion",
+  "formato": "9:16",
+  "canvas": { "w": 1080, "h": 1920 },
+  "status": "validado",
+  "criado_em": "2026-09-25T02:10:36-03:00",
+  "atualizado_em": "2026-09-25T02:10:36-03:00",
+
+  "estilos": ["explicador", "cartao", "ilustrado", "narrado"],
+  "serve_para": ["explicacao", "processo", "numero-e-dado", "antes-e-depois", "lista", "opiniao"],
+
+  "versoes": { "motor": "0.1.0", "remotion": "4.0.528" },
+  "dependencias": { "react": "19.3.0", "remotion": "4.0.528" },
+
+  "requisitos": ["narrar", "renderizar_motion", "legendar"],
+  "exige_porta_voz": true,
+
+  "tokens": ["fundo", "fundo_alt", "texto", "texto_inverso", "apoio", "destaque", "destaque_2", "positivo", "negativo"],
+  "fontes": ["titulo", "texto"],
+
+  "sequencia": ["abertura", "numero", "lista", "contraste", "frase", "cta"],
+  "kinds": {
+    "abertura": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão: o assunto e o ângulo, em caixa alta" },
+        "titulo":   { "tipo": "texto", "max": 44, "obrigatorio": true,  "nota": "o gancho da cena, dito na narração" },
+        "apoio":    { "tipo": "texto", "max": 70, "obrigatorio": false, "nota": "uma linha que completa o gancho" }
+      }
+    },
+    "numero": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão" },
+        "valor":    { "tipo": "texto", "max": 8,  "obrigatorio": true, "nota": "o número com unidade curta: 3x, 40%, 12 mil; o algarismo inicial conta de zero até ele" },
+        "texto":    { "tipo": "texto", "max": 70, "obrigatorio": true, "nota": "o que o número conta" }
+      }
+    },
+    "lista": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão" },
+        "titulo":   { "tipo": "texto", "max": 40, "obrigatorio": true, "nota": "o que a lista enumera" },
+        "itens":    { "tipo": "lista", "n": [2, 4], "max": 34, "obrigatorio": true, "nota": "itens curtos; cada um entra com um tique no seu evento (i0 a i3)" }
+      }
+    },
+    "contraste": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão" },
+        "rotulo_a": { "tipo": "texto", "max": 16, "obrigatorio": true, "nota": "o lado ruim, em uma palavra ou duas (antes, hoje, sem)" },
+        "texto_a":  { "tipo": "texto", "max": 44, "obrigatorio": true, "nota": "como é do lado ruim" },
+        "rotulo_b": { "tipo": "texto", "max": 16, "obrigatorio": true, "nota": "o lado bom (depois, amanhã, com)" },
+        "texto_b":  { "tipo": "texto", "max": 44, "obrigatorio": true, "nota": "como fica do lado bom" }
+      }
+    },
+    "frase": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão" },
+        "texto":    { "tipo": "texto", "max": 110, "obrigatorio": true, "nota": "a afirmação central da cena" },
+        "marca":    { "tipo": "texto", "max": 30, "obrigatorio": false, "nota": "trecho exato do texto que ganha o marca-texto no evento marca" }
+      }
+    },
+    "cta": {
+      "midia": "video",
+      "duracao_s": null,
+      "fit": null,
+      "requisitos": [],
+      "slots": {
+        "etiqueta": { "tipo": "lista", "n": [1, 2], "max": 26, "obrigatorio": true, "nota": "duas linhas curtas acima do cartão" },
+        "texto":    { "tipo": "texto", "max": 40, "obrigatorio": true, "nota": "o pedido falado no fim da narração (seguir, salvar, comentar)" },
+        "apoio":    { "tipo": "texto", "max": 60, "obrigatorio": false, "nota": "por que fazer isso agora" }
+      }
+    }
+  },
+
+  "assets": [],
+
+  "validacao": {
+    "contraste_min": null,
+    "fonte_min_px": 28,
+    "resultado": "aprovado",
+    "validado_em": "2026-09-25T02:10:36-03:00",
+    "achados": []
+  },
+
+  "origem": { "tipo": "criado", "id_compartilhado": null, "inspiracao": null },
+
+  "compartilhamento": { "estado": "nao_enviado", "enviado_em": null, "pr_url": null, "erro": null }
+}

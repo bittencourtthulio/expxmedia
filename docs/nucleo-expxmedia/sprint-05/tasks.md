@@ -69,7 +69,7 @@ tasks:
   - id: T-05.05
     titulo: "Template de reel embarcado"
     fase: F-05.2
-    status: em_andamento
+    status: concluida
     objetivo: "Criar um template de reel narrado em codigo Remotion sobre o kit, com cores e fontes da Alma (D-05, D-31)."
     arquivos:
       cria: [templates/reel/narrado-cartao/template.json, templates/reel/narrado-cartao/package.json, templates/reel/narrado-cartao/src/Composicao.tsx, templates/reel/narrado-cartao/src/cenas.tsx, templates/reel/narrado-cartao/cenas.json, templates/reel/narrado-cartao/exemplo.json, motor/tests/test_template_reel.py]
@@ -79,12 +79,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_template_reel.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.02, T-05.03, T-02.12]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.06
     titulo: "Producao de reel narrado"
     fase: F-05.2
-    status: em_andamento
+    status: concluida
     objetivo: "Produzir reel narrado em Remotion: gate de 130 a 180 palavras, narracao uma vez, montagem, render, normalizacao da mistura, verificacao no perfil reel (30 a 70 s) e peca.json (D-41)."
     arquivos:
       cria: [motor/src/expxmedia/producao/reel.py, motor/tests/producao/test_reel.py]
@@ -94,12 +94,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_reel.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.05, T-04.05, T-04.06, T-04.02]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.07
     titulo: "Slide de video no carrossel"
     fase: F-05.3
-    status: em_andamento
+    status: concluida
     objetivo: "Permitir kind com midia video no carrossel, renderizado em Remotion no formato do carrossel a partir de uma composicao do kit, registrado na peca (D-06)."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/SlideVideo/index.tsx, motor/tests/producao/test_carrossel_misto.py]
@@ -109,12 +109,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/test_carrossel_misto.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.03, T-03.12]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.08
     titulo: "Deck da apresentacao"
     fase: F-05.4
-    status: em_andamento
+    status: concluida
     objetivo: "Portar o schema do deck.json e sua validacao sem CTA fixo."
     arquivos:
       cria: [motor/src/expxmedia/producao/apresentacao/deck.py, motor/tests/producao/apresentacao/test_deck.py]
@@ -124,12 +124,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/apresentacao/test_deck.py termina com 0 failed"
     depende_de: [T-01.07, T-02.11]
     paralelizavel: true
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.09
     titulo: "Palco HTML navegavel"
     fase: F-05.4
-    status: em_andamento
+    status: concluida
     objetivo: "Gerar apresentacao.html autocontida e navegavel por teclado, com tokens e fontes da Alma."
     arquivos:
       cria: [motor/src/expxmedia/producao/apresentacao/palco.py, motor/src/expxmedia/recursos/palco.html, motor/tests/producao/apresentacao/test_palco.py]
@@ -139,12 +139,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/apresentacao/test_palco.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.08, T-02.10]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.10
     titulo: "Cenas e render da apresentacao"
     fase: F-05.4
-    status: em_andamento
+    status: concluida
     objetivo: "Portar as cenas da apresentacao para o kit e renderizar MP4 e PNG por slide."
     arquivos:
       cria: [motor/kit-remotion/src/composicoes/Apresentacao/index.tsx, motor/kit-remotion/src/composicoes/Apresentacao/cenas.tsx, motor/src/expxmedia/producao/apresentacao/render.py, motor/tests/producao/apresentacao/test_render.py]
@@ -154,12 +154,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/apresentacao/test_render.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.08, T-05.03]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.11
     titulo: "Template e producao de apresentacao"
     fase: F-05.4
-    status: em_andamento
+    status: concluida
     objetivo: "Criar o template de apresentacao embarcado e a producao que gera HTML, e opcionalmente MP4, com peca.json."
     arquivos:
       cria: [templates/apresentacao/padrao/template.json, templates/apresentacao/padrao/template.css, templates/apresentacao/padrao/exemplo.json, motor/src/expxmedia/producao/apresentacao/producao.py, motor/tests/producao/apresentacao/test_producao.py]
@@ -169,12 +169,12 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/producao/apresentacao/test_producao.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.09, T-05.10]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
   - id: T-05.12
     titulo: "CLI de motion"
     fase: F-05.5
-    status: pendente
+    status: concluida
     objetivo: "Expor produzir reel, produzir apresentacao, motion previa e motion render no CLI."
     arquivos:
       cria: [motor/src/expxmedia/cli_comandos/motion.py, motor/tests/test_cli_motion.py]
@@ -184,8 +184,8 @@ tasks:
     criterio_aceite: "cd motor && uv run pytest tests/test_cli_motion.py termina com 0 failed e 0 skipped nesta maquina"
     depende_de: [T-05.11, T-05.06, T-05.04]
     paralelizavel: false
-    concluida_em: null
-    suite: nao_executada
+    concluida_em: 2026-09-25
+    suite: verde
 ---
 
 # Tasks — Sprint 05
@@ -293,7 +293,8 @@ teste_funcional: O template passa em template.validar no modo template sem nenhu
 criterio_aceite: `cd motor && uv run pytest tests/test_template_reel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.02, T-05.03, T-02.12]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: 8 passed
 ```
 
 ---
@@ -313,7 +314,8 @@ teste_funcional: Um roteiro de 100 palavras é recusado antes de narrar e nenhum
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_reel.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.05, T-04.05, T-04.06, T-04.02]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: 6 passed
 ```
 
 ---
@@ -333,7 +335,8 @@ teste_funcional: A peça registra slides[0].midia video com duracao_s preenchida
 criterio_aceite: `cd motor && uv run pytest tests/producao/test_carrossel_misto.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.03, T-03.12]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: 3 passed
 ```
 
 ---
@@ -353,7 +356,8 @@ teste_funcional: Um slide com tipo desconhecido devolve achado citando os tipos 
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_deck.py` termina com 0 failed
 depende_de: [T-01.07, T-02.11]
 paralelizavel: true
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: apresentacao 59 passed, 0 skipped
 ```
 
 ---
@@ -373,7 +377,8 @@ teste_funcional: O HTML gerado não referencia nenhuma URL externa e contém as 
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_palco.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.08, T-02.10]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: apresentacao 59 passed, 0 skipped
 ```
 
 ---
@@ -393,7 +398,8 @@ teste_funcional: Cada tipo de slide do schema tem componente registrado nas cena
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_render.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.08, T-05.03]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: apresentacao 59 passed, 0 skipped
 ```
 
 ---
@@ -413,7 +419,8 @@ teste_funcional: Com --mp4, a peça lista também o MP4 com papel final e os PNG
 criterio_aceite: `cd motor && uv run pytest tests/producao/apresentacao/test_producao.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.09, T-05.10]
 paralelizavel: false
-status: em_andamento
+status: concluida
+concluida: 2026-09-25 · suíte: apresentacao 59 passed, 0 skipped
 ```
 
 ---
@@ -433,5 +440,6 @@ teste_funcional: produzir reel com roteiro de 100 palavras sai com código difer
 criterio_aceite: `cd motor && uv run pytest tests/test_cli_motion.py` termina com 0 failed e 0 skipped nesta maquina
 depende_de: [T-05.11, T-05.06, T-05.04]
 paralelizavel: false
-status: pendente
+status: concluida
+concluida: 2026-09-25 · suíte: 8 passed
 ```
